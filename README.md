@@ -94,6 +94,12 @@ python install.py
 
 Config file: `lib/unirig/configs/transform/inference_skin_transform.yaml`
 
+## Community
+
+Questions or feature requests? Open a [Discussion](https://github.com/PozzettiAndrea/ComfyUI-UniRig/discussions) on GitHub.
+
+Join the [Comfy3D Discord](https://discord.gg/PN743tE5) for help, updates, and chat about 3D workflows in ComfyUI.
+
 ## Credits
 
 - [UniRig Paper](https://zjp-shadow.github.io/works/UniRig/)

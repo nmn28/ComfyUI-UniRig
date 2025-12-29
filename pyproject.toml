@@ -56,7 +56,7 @@ Documentation = "https://github.com/PozzettiAndrea/ComfyUI-UniRig#readme"
 # Comfy Registry configuration
 [tool.comfy]
 PublisherId = "pznodes"
-DisplayName = "ComfyUI-UniRig"
+DisplayName = "UniRig"
 Icon = ""
 
 [project.optional-dependencies]
