@@ -1,13 +1,13 @@
 """
 Blender script to apply a Mixamo animation to a rigged FBX model.
-Uses constraint-based retargeting to properly transfer animation between armatures.
+Uses constraint-based retargeting with proper scale handling.
 Usage: blender --background --python blender_apply_animation.py -- <model_fbx> <animation_fbx> <output_fbx>
 """
 
 import bpy
 import sys
 import os
-import math
+from mathutils import Matrix, Vector, Quaternion
 
 # Get arguments after '--'
 argv = sys.argv
@@ -48,16 +48,9 @@ def check_mixamo_prefix(bone_names):
     return mixamo_count, len(bone_names)
 
 
-def get_bone_basename(bone_name):
-    """Get bone name without mixamorig: prefix."""
-    if bone_name.startswith("mixamorig:"):
-        return bone_name[10:]  # Remove "mixamorig:" prefix
-    return bone_name
-
-
 clean_scene()
 
-# Step 1: Import the rigged model FIRST (so we know what we're targeting)
+# Step 1: Import the rigged model FIRST
 print(f"[Blender Apply Animation] Importing model...")
 try:
     bpy.ops.import_scene.fbx(filepath=model_fbx)
@@ -121,6 +114,7 @@ if anim_armature is None:
 
 anim_bone_names = set(bone.name for bone in anim_armature.pose.bones)
 print(f"[Blender Apply Animation] Found animation armature: {anim_armature.name} with {len(anim_bone_names)} bones")
+print(f"[Blender Apply Animation] Animation armature scale: {anim_armature.scale[:]}")
 
 # Check animation bones for mixamo prefix
 anim_mixamo_count, anim_total = check_mixamo_prefix(anim_bone_names)
@@ -159,76 +153,85 @@ for mesh in anim_meshes:
 matching_bones = model_bone_names.intersection(anim_bone_names)
 print(f"[Blender Apply Animation] Matching bones: {len(matching_bones)} of {len(model_bone_names)} model bones")
 
-if len(matching_bones) < 10:
-    print(f"[Blender Apply Animation] WARNING: Very few matching bones ({len(matching_bones)})!")
-    print(f"[Blender Apply Animation] Model bones sample: {sorted(model_bone_names)[:5]}")
-    print(f"[Blender Apply Animation] Animation bones sample: {sorted(anim_bone_names)[:5]}")
+if len(matching_bones) == 0:
+    print(f"[Blender Apply Animation] ERROR: No matching bone names found!")
+    sys.exit(1)
 
-    # This is a fatal mismatch
-    if len(matching_bones) == 0:
-        print(f"[Blender Apply Animation] ERROR: No matching bone names found!")
-        print(f"[Blender Apply Animation] The model skeleton does not match the animation skeleton.")
-        sys.exit(1)
+# Step 3: Direct World-Space Matrix Copy Approach
+# This bypasses rest pose differences by copying the final visual result
+print(f"[Blender Apply Animation] Using world-space matrix copy approach...")
 
-# Step 3: Align armatures - make animation armature match model's location/rotation
-# This is crucial for proper retargeting
-print(f"[Blender Apply Animation] Aligning armatures...")
+# Get scale factor between armatures
+anim_scale = anim_armature.scale[0]
+model_scale = model_armature.scale[0]
+scale_ratio = anim_scale / model_scale if model_scale != 0 else anim_scale
+print(f"[Blender Apply Animation] Animation armature scale: {anim_scale}, Model scale: {model_scale}")
 
-# Copy transforms from model to animation armature
-anim_armature.location = model_armature.location.copy()
-anim_armature.rotation_euler = model_armature.rotation_euler.copy()
-anim_armature.rotation_quaternion = model_armature.rotation_quaternion.copy()
-anim_armature.scale = model_armature.scale.copy()
+# IMPORTANT: Scale model armature DOWN to match animation armature scale
+# This ensures world-space matrices are comparable
+print(f"[Blender Apply Animation] Scaling model to match animation armature...")
+model_armature.scale = anim_armature.scale
+for mesh in model_meshes:
+    mesh.scale = anim_armature.scale
 
-# Step 4: Add Copy Location/Rotation constraints for retargeting
-# Using separate constraints gives better control than Copy Transforms
-print(f"[Blender Apply Animation] Setting up constraints for retargeting...")
+# Position both at origin
+model_armature.location = (0, 0, 0)
+anim_armature.location = (0, 0, 0)
 
+bpy.context.view_layer.update()
+
+# Set up scene frame range
+bpy.context.scene.frame_start = frame_start
+bpy.context.scene.frame_end = frame_end
+
+# Enter pose mode for model armature
 bpy.context.view_layer.objects.active = model_armature
 bpy.ops.object.mode_set(mode='POSE')
 
-constraint_count = 0
+root_bone_name = "mixamorig:Hips"
+
+# Step 4: Set up WORLD space constraints (bypasses rest pose differences)
+print(f"[Blender Apply Animation] Setting up WORLD space constraints...")
+
 for bone_name in matching_bones:
-    if bone_name in model_armature.pose.bones and bone_name in anim_armature.pose.bones:
-        pose_bone = model_armature.pose.bones[bone_name]
+    model_bone = model_armature.pose.bones[bone_name]
 
-        # Add Copy Rotation constraint (most important for animation)
-        rot_constraint = pose_bone.constraints.new('COPY_ROTATION')
-        rot_constraint.name = "AnimRetarget_Rot"
-        rot_constraint.target = anim_armature
-        rot_constraint.subtarget = bone_name
-        rot_constraint.mix_mode = 'REPLACE'
-        rot_constraint.target_space = 'LOCAL'
-        rot_constraint.owner_space = 'LOCAL'
+    # Clear any existing constraints
+    for c in list(model_bone.constraints):
+        model_bone.constraints.remove(c)
 
-        # Add Copy Location only for root bone (Hips)
-        if bone_name in ["mixamorig:Hips", "Hips"]:
-            loc_constraint = pose_bone.constraints.new('COPY_LOCATION')
-            loc_constraint.name = "AnimRetarget_Loc"
-            loc_constraint.target = anim_armature
-            loc_constraint.subtarget = bone_name
-            loc_constraint.target_space = 'LOCAL'
-            loc_constraint.owner_space = 'LOCAL'
+    # Copy Rotation in WORLD space
+    rot_c = model_bone.constraints.new('COPY_ROTATION')
+    rot_c.name = "AnimRetarget_Rot"
+    rot_c.target = anim_armature
+    rot_c.subtarget = bone_name
+    rot_c.target_space = 'WORLD'
+    rot_c.owner_space = 'WORLD'
 
-        constraint_count += 1
+    # Copy Location only for root bone, also in WORLD space
+    if bone_name == root_bone_name:
+        loc_c = model_bone.constraints.new('COPY_LOCATION')
+        loc_c.name = "AnimRetarget_Loc"
+        loc_c.target = anim_armature
+        loc_c.subtarget = bone_name
+        loc_c.target_space = 'WORLD'
+        loc_c.owner_space = 'WORLD'
 
-print(f"[Blender Apply Animation] Added constraints to {constraint_count} bones")
+print(f"[Blender Apply Animation] Added WORLD space constraints to {len(matching_bones)} bones")
 
 bpy.ops.object.mode_set(mode='OBJECT')
 
-# Step 5: Bake the animation onto the model
+# Step 5: Bake the animation
 print(f"[Blender Apply Animation] Baking animation (frames {frame_start} to {frame_end})...")
 
 bpy.context.scene.frame_start = frame_start
 bpy.context.scene.frame_end = frame_end
 bpy.context.scene.frame_set(frame_start)
 
-# Select only model armature for baking
 bpy.ops.object.select_all(action='DESELECT')
 model_armature.select_set(True)
 bpy.context.view_layer.objects.active = model_armature
 
-# Bake action
 bpy.ops.nla.bake(
     frame_start=frame_start,
     frame_end=frame_end,
@@ -239,18 +242,50 @@ bpy.ops.nla.bake(
     bake_types={'POSE'}
 )
 
-print(f"[Blender Apply Animation] Animation baked successfully")
+# Debug: check result
+if model_armature.animation_data and model_armature.animation_data.action:
+    action = model_armature.animation_data.action
+    print(f"[Blender Apply Animation] Created {len(action.fcurves)} F-curves")
+    # Check a specific bone
+    for fc in action.fcurves[:5]:
+        if len(fc.keyframe_points) > 0:
+            print(f"[Blender Apply Animation] {fc.data_path}[{fc.array_index}]: first={fc.keyframe_points[0].co[1]:.4f}, last={fc.keyframe_points[-1].co[1]:.4f}")
 
-# Step 6: Clean up - remove animation armature
+print(f"[Blender Apply Animation] Animation baking complete")
+
+bpy.ops.object.mode_set(mode='OBJECT')
+
+# Step 5: Scale model back to original size
+print(f"[Blender Apply Animation] Restoring model scale...")
+model_armature.scale = (1.0, 1.0, 1.0)
+for mesh in model_meshes:
+    mesh.scale = (1.0, 1.0, 1.0)
+
+# Scale location keyframes to compensate for the scale change
+# When armature was at 0.01 scale, local position 82 = world 0.82
+# Now at 1.0 scale, we need local position 0.82 for the same world result
+# So multiply by scale_ratio (0.01) = divide by 100
+if model_armature.animation_data and model_armature.animation_data.action:
+    action = model_armature.animation_data.action
+    for fc in action.fcurves:
+        if '.location' in fc.data_path:
+            for kfp in fc.keyframe_points:
+                kfp.co[1] *= scale_ratio
+                kfp.handle_left[1] *= scale_ratio
+                kfp.handle_right[1] *= scale_ratio
+    print(f"[Blender Apply Animation] Scaled location keyframes by {scale_ratio:.4f}x")
+
+bpy.context.view_layer.update()
+
+# Step 6: Clean up
 print(f"[Blender Apply Animation] Cleaning up...")
 bpy.data.objects.remove(anim_armature, do_unlink=True)
 
-# Step 7: Export the animated model
+# Step 7: Export
 print(f"[Blender Apply Animation] Exporting animated FBX...")
 os.makedirs(os.path.dirname(output_fbx) if os.path.dirname(output_fbx) else '.', exist_ok=True)
 
 try:
-    # Select model objects for export
     bpy.ops.object.select_all(action='DESELECT')
     model_armature.select_set(True)
     for mesh in model_meshes:
@@ -271,7 +306,6 @@ try:
         bake_anim_force_startend_keying=True,
         path_mode='COPY',
         embed_textures=True,
-        # Important: preserve materials
         mesh_smooth_type='FACE',
         use_mesh_modifiers=True,
     )

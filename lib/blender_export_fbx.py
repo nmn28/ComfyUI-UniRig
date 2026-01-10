@@ -9,7 +9,7 @@ import sys
 import os
 import pickle
 import numpy as np
-from mathutils import Vector, Matrix
+from mathutils import Vector, Matrix, Quaternion
 from collections import defaultdict
 import math
 import tempfile
@@ -277,6 +277,318 @@ if is_smpl_skeleton:
         # Debug: show new bounds
         if vertices is not None:
             print(f"[Blender FBX Export] T-posed mesh bounds: {vertices.min(axis=0)} to {vertices.max(axis=0)}")
+
+# === MIXAMO NORMALIZATION ===
+# Normalize Mixamo skeletons to Mixamo-compatible rest pose for animation
+is_mixamo_skeleton = any(n.startswith('mixamorig:') for n in names)
+
+if is_mixamo_skeleton and vertices is not None and skin is not None:
+    print("[Blender FBX Export] Detected Mixamo skeleton, normalizing to Mixamo rest pose...")
+
+    # Get key bone indices
+    hips_idx = None
+    head_idx = None
+    l_arm_idx = None
+    r_arm_idx = None
+    l_forearm_idx = None
+    r_forearm_idx = None
+    l_hand_idx = None
+    r_hand_idx = None
+
+    for i, name in enumerate(names):
+        if name == 'mixamorig:Hips':
+            hips_idx = i
+        elif name == 'mixamorig:Head':
+            head_idx = i
+        elif name == 'mixamorig:LeftArm':
+            l_arm_idx = i
+        elif name == 'mixamorig:RightArm':
+            r_arm_idx = i
+        elif name == 'mixamorig:LeftForeArm':
+            l_forearm_idx = i
+        elif name == 'mixamorig:RightForeArm':
+            r_forearm_idx = i
+        elif name == 'mixamorig:LeftHand':
+            l_hand_idx = i
+        elif name == 'mixamorig:RightHand':
+            r_hand_idx = i
+
+    # === STEP 0: ORIENT MODEL TO MIXAMO STANDARD ===
+    # Mixamo expects: face toward -Y, arms along X, Z up
+    # We need to detect current orientation and rotate if needed
+
+    if l_arm_idx is not None and r_arm_idx is not None and hips_idx is not None:
+        l_shoulder = joints[l_arm_idx]
+        r_shoulder = joints[r_arm_idx]
+        hips = joints[hips_idx]
+
+        # Get head position for up direction (fallback to highest joint if no head)
+        if head_idx is not None:
+            head = joints[head_idx]
+        else:
+            head = joints[np.argmax(joints[:, 2])]  # Highest Z joint
+
+        # Compute current coordinate system
+        # Lateral: from left shoulder to right shoulder
+        lateral_vec = r_shoulder - l_shoulder
+        lateral_vec = lateral_vec / (np.linalg.norm(lateral_vec) + 1e-8)
+
+        # Up: from hips to head
+        up_vec = head - hips
+        up_vec = up_vec / (np.linalg.norm(up_vec) + 1e-8)
+
+        # Forward: cross product of up and lateral (right-hand rule)
+        forward_vec = np.cross(up_vec, lateral_vec)
+        forward_vec = forward_vec / (np.linalg.norm(forward_vec) + 1e-8)
+
+        print(f"[Blender FBX Export] Current orientation:")
+        print(f"[Blender FBX Export]   Lateral (L→R): {lateral_vec}")
+        print(f"[Blender FBX Export]   Up (Hips→Head): {up_vec}")
+        print(f"[Blender FBX Export]   Forward: {forward_vec}")
+
+        # Mixamo target orientation:
+        # Lateral = +X (left shoulder at -X, right at +X... wait, that's opposite)
+        # Actually in Mixamo: LeftArm is at positive X, RightArm at negative X
+        # So lateral vector (R-L) should point toward -X
+        target_lateral = np.array([-1.0, 0.0, 0.0])
+        target_up = np.array([0.0, 0.0, 1.0])
+        target_forward = np.array([0.0, -1.0, 0.0])  # Face toward -Y
+
+        # Check if we need to rotate around Z to align lateral with X axis
+        # Project lateral onto XY plane
+        lateral_xy = np.array([lateral_vec[0], lateral_vec[1], 0])
+        lateral_xy_len = np.linalg.norm(lateral_xy)
+
+        if lateral_xy_len > 0.1:  # Lateral has significant XY component
+            lateral_xy = lateral_xy / lateral_xy_len
+
+            # Angle to rotate around Z to align lateral with target
+            # Target lateral in XY is [-1, 0]
+            target_lateral_xy = np.array([-1.0, 0.0])
+
+            # Compute angle between current and target lateral
+            dot = lateral_xy[0] * target_lateral_xy[0] + lateral_xy[1] * target_lateral_xy[1]
+            cross_z = lateral_xy[0] * target_lateral_xy[1] - lateral_xy[1] * target_lateral_xy[0]
+            z_rotation_angle = math.atan2(cross_z, dot)
+
+            if abs(z_rotation_angle) > 0.05:  # More than ~3 degrees
+                print(f"[Blender FBX Export] Rotating {math.degrees(z_rotation_angle):.1f}° around Z to align with Mixamo orientation")
+
+                # Create rotation matrix around Z
+                cos_a = math.cos(z_rotation_angle)
+                sin_a = math.sin(z_rotation_angle)
+
+                def rotate_z(points):
+                    """Rotate points around Z axis"""
+                    rotated = np.zeros_like(points)
+                    rotated[..., 0] = cos_a * points[..., 0] - sin_a * points[..., 1]
+                    rotated[..., 1] = sin_a * points[..., 0] + cos_a * points[..., 1]
+                    rotated[..., 2] = points[..., 2]
+                    return rotated
+
+                # Rotate everything
+                vertices = rotate_z(vertices)
+                joints = rotate_z(joints)
+                if tails is not None:
+                    tails = rotate_z(tails)
+
+                # Update shoulder positions after rotation
+                l_shoulder = joints[l_arm_idx]
+                r_shoulder = joints[r_arm_idx]
+
+                print(f"[Blender FBX Export] ✓ Model rotated to Mixamo orientation")
+            else:
+                print(f"[Blender FBX Export] Model already aligned with Mixamo orientation (within 3°)")
+        else:
+            print(f"[Blender FBX Export] Warning: Lateral vector has no XY component, skipping orientation fix")
+
+    # 1. T-POSE CONVERSION (if arms are not horizontal)
+    # After orientation fix, arms should extend along X axis
+    # Mixamo: LeftArm at +X, RightArm at -X
+    if l_arm_idx is not None and r_arm_idx is not None and l_hand_idx is not None and r_hand_idx is not None:
+        l_shoulder = joints[l_arm_idx]
+        r_shoulder = joints[r_arm_idx]
+        l_hand = joints[l_hand_idx]
+        r_hand = joints[r_hand_idx]
+
+        # T-pose directions (Mixamo standard: left arm +X, right arm -X)
+        l_tpose_dir = np.array([1.0, 0.0, 0.0])
+        r_tpose_dir = np.array([-1.0, 0.0, 0.0])
+
+        # Check if arms need rotation
+        l_arm_vec = l_hand - l_shoulder
+        l_arm_vec_norm = l_arm_vec / (np.linalg.norm(l_arm_vec) + 1e-8)
+
+        # Arms should be mostly along X axis for T-pose
+        l_arm_x_component = abs(l_arm_vec_norm[0])
+        needs_tpose = l_arm_x_component < 0.9  # Arms not yet horizontal along X
+
+        if needs_tpose:
+            print(f"[Blender FBX Export] Arms not in T-pose (X component: {l_arm_x_component:.3f}), converting...")
+
+            # Get forearm positions if available
+            l_elbow = joints[l_forearm_idx] if l_forearm_idx else None
+            r_elbow = joints[r_forearm_idx] if r_forearm_idx else None
+
+            # Compute arm segment lengths
+            if l_elbow is not None:
+                l_upper_len = np.linalg.norm(l_elbow - l_shoulder)
+                l_lower_len = np.linalg.norm(l_hand - l_elbow)
+            else:
+                l_upper_len = np.linalg.norm(l_hand - l_shoulder) / 2
+                l_lower_len = l_upper_len
+
+            if r_elbow is not None:
+                r_upper_len = np.linalg.norm(r_elbow - r_shoulder)
+                r_lower_len = np.linalg.norm(r_hand - r_elbow)
+            else:
+                r_upper_len = np.linalg.norm(r_hand - r_shoulder) / 2
+                r_lower_len = r_upper_len
+
+            # Compute new T-pose positions
+            new_l_elbow = l_shoulder + l_tpose_dir * l_upper_len if l_elbow is not None else None
+            new_l_hand = (new_l_elbow if new_l_elbow is not None else l_shoulder) + l_tpose_dir * l_lower_len
+            new_r_elbow = r_shoulder + r_tpose_dir * r_upper_len if r_elbow is not None else None
+            new_r_hand = (new_r_elbow if new_r_elbow is not None else r_shoulder) + r_tpose_dir * r_lower_len
+
+            # Compute rotations for vertex transformation
+            # IMPORTANT: Use axis-angle rotation around the cross product axis to avoid twist
+            l_arm_vec_v = Vector(l_arm_vec).normalized()
+            new_l_arm_vec = Vector(new_l_hand - l_shoulder).normalized()
+
+            # Compute rotation axis (perpendicular to both vectors)
+            l_rot_axis = l_arm_vec_v.cross(new_l_arm_vec)
+            if l_rot_axis.length > 0.0001:
+                l_rot_axis.normalize()
+                # Compute rotation angle
+                l_rot_angle = math.acos(max(-1, min(1, l_arm_vec_v.dot(new_l_arm_vec))))
+                l_rotation = Quaternion(l_rot_axis, l_rot_angle)
+            else:
+                l_rotation = Quaternion()  # Identity
+
+            r_arm_vec = r_hand - r_shoulder
+            r_arm_vec_v = Vector(r_arm_vec).normalized()
+            new_r_arm_vec = Vector(new_r_hand - r_shoulder).normalized()
+
+            r_rot_axis = r_arm_vec_v.cross(new_r_arm_vec)
+            if r_rot_axis.length > 0.0001:
+                r_rot_axis.normalize()
+                r_rot_angle = math.acos(max(-1, min(1, r_arm_vec_v.dot(new_r_arm_vec))))
+                r_rotation = Quaternion(r_rot_axis, r_rot_angle)
+            else:
+                r_rotation = Quaternion()  # Identity
+
+            print(f"[Blender FBX Export] Left arm rotation: {math.degrees(l_rot_angle if l_rot_axis.length > 0.0001 else 0):.1f} deg around {l_rot_axis[:]}")
+            print(f"[Blender FBX Export] Right arm rotation: {math.degrees(r_rot_angle if r_rot_axis.length > 0.0001 else 0):.1f} deg around {r_rot_axis[:]}")
+
+            # Get bone indices for weight lookup
+            left_arm_bones = {'mixamorig:LeftArm', 'mixamorig:LeftForeArm', 'mixamorig:LeftHand'}
+            right_arm_bones = {'mixamorig:RightArm', 'mixamorig:RightForeArm', 'mixamorig:RightHand'}
+
+            # Add finger bones if present
+            for name in names:
+                if name.startswith('mixamorig:LeftHand'):
+                    left_arm_bones.add(name)
+                elif name.startswith('mixamorig:RightHand'):
+                    right_arm_bones.add(name)
+
+            left_bone_indices = [names.index(b) for b in left_arm_bones if b in names]
+            right_bone_indices = [names.index(b) for b in right_arm_bones if b in names]
+
+            # Transform vertices using skin weights
+            transformed_count = 0
+            for v_idx in range(len(vertices)):
+                left_weight = sum(skin[v_idx, idx] for idx in left_bone_indices if idx < skin.shape[1])
+                right_weight = sum(skin[v_idx, idx] for idx in right_bone_indices if idx < skin.shape[1])
+
+                if left_weight < 0.001 and right_weight < 0.001:
+                    continue
+
+                displacement = np.zeros(3)
+
+                if left_weight > 0.001:
+                    rel_pos = vertices[v_idx] - l_shoulder
+                    rotated = np.array(l_rotation @ Vector(rel_pos))
+                    displacement += (rotated - rel_pos) * left_weight
+
+                if right_weight > 0.001:
+                    rel_pos = vertices[v_idx] - r_shoulder
+                    rotated = np.array(r_rotation @ Vector(rel_pos))
+                    displacement += (rotated - rel_pos) * right_weight
+
+                vertices[v_idx] += displacement
+                transformed_count += 1
+
+            print(f"[Blender FBX Export] Transformed {transformed_count} vertices for T-pose")
+
+            # Update joint positions
+            if l_forearm_idx is not None and new_l_elbow is not None:
+                joints[l_forearm_idx] = new_l_elbow
+            joints[l_hand_idx] = new_l_hand
+
+            if r_forearm_idx is not None and new_r_elbow is not None:
+                joints[r_forearm_idx] = new_r_elbow
+            joints[r_hand_idx] = new_r_hand
+
+            # Update tails
+            if tails is not None:
+                if l_forearm_idx is not None and new_l_elbow is not None:
+                    tails[l_arm_idx] = new_l_elbow
+                    tails[l_forearm_idx] = new_l_hand
+                else:
+                    tails[l_arm_idx] = new_l_hand
+
+                if r_forearm_idx is not None and new_r_elbow is not None:
+                    tails[r_arm_idx] = new_r_elbow
+                    tails[r_forearm_idx] = new_r_hand
+                else:
+                    tails[r_arm_idx] = new_r_hand
+
+                # Update hand tails
+                hand_tail_len = 0.05
+                tails[l_hand_idx] = new_l_hand + l_tpose_dir * hand_tail_len
+                tails[r_hand_idx] = new_r_hand + r_tpose_dir * hand_tail_len
+
+            print("[Blender FBX Export] ✓ Mixamo T-pose conversion complete")
+        else:
+            print("[Blender FBX Export] Arms already horizontal, skipping T-pose conversion")
+
+    # 2. SCALE TO HUMAN SIZE
+    # Current mesh is normalized to [-1, 1], scale to realistic human height
+    current_height = vertices[:, 2].max() - vertices[:, 2].min()
+    target_height = 1.7  # meters (average human height)
+
+    if current_height > 0.01:  # Avoid division by zero
+        scale_factor = target_height / current_height
+        print(f"[Blender FBX Export] Scaling from {current_height:.3f} to {target_height:.1f}m (factor: {scale_factor:.2f}x)")
+
+        vertices *= scale_factor
+        joints *= scale_factor
+        if tails is not None:
+            tails *= scale_factor
+    else:
+        scale_factor = 1.0
+        print(f"[Blender FBX Export] Warning: mesh height too small ({current_height:.6f}), skipping scale")
+
+    # 3. POSITION HIPS AT MIXAMO TARGET HEIGHT
+    if hips_idx is not None:
+        target_hips_z = 1.04  # Mixamo's expected Hips height in meters
+        current_hips_z = joints[hips_idx, 2]
+        z_offset = target_hips_z - current_hips_z
+
+        print(f"[Blender FBX Export] Moving Hips from Z={current_hips_z:.3f} to Z={target_hips_z:.2f} (offset: {z_offset:.3f})")
+
+        vertices[:, 2] += z_offset
+        joints[:, 2] += z_offset
+        if tails is not None:
+            tails[:, 2] += z_offset
+    else:
+        print("[Blender FBX Export] Warning: mixamorig:Hips not found, skipping position adjustment")
+
+    print(f"[Blender FBX Export] ✓ Mixamo normalization complete")
+    print(f"[Blender FBX Export]   Final mesh bounds: {vertices.min(axis=0)} to {vertices.max(axis=0)}")
+    if hips_idx is not None:
+        print(f"[Blender FBX Export]   Hips position: {joints[hips_idx]}")
 
 # Make collection
 collection = bpy.data.collections.new('new_collection')
