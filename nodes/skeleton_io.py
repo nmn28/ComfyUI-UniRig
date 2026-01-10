@@ -208,17 +208,23 @@ class UniRigLoadRiggedMesh:
 
     @classmethod
     def INPUT_TYPES(cls):
+        # Get initial list for validation
+        fbx_files = cls.get_fbx_files_from_output()
+        if not fbx_files:
+            fbx_files = ["No FBX files found"]
+
         return {
             "required": {
                 "source_folder": (["input", "output"], {
                     "default": "output",
                     "tooltip": "Source folder to load FBX from (ComfyUI input or output directory)"
                 }),
-                "fbx_file": ("COMBO", {
+                "fbx_file": (fbx_files, {
                     "remote": {
                         "route": "/unirig/fbx_files",
                         "refresh_button": True,
                     },
+                    "tooltip": "FBX file to load. Click refresh after adding new files."
                 }),
             },
         }
@@ -448,7 +454,7 @@ class UniRigLoadRiggedMesh:
         print(f"[UniRigLoadRiggedMesh] Loaded successfully")
         print(info_string)
 
-        return (output_filename, info_string)
+        return (output_path, info_string)
 
 
 class UniRigPreviewRiggedMesh:

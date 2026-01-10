@@ -1,0 +1,202 @@
+{
+  "id": "0f21af90-ed2a-42be-8701-cf7248495ff4",
+  "revision": 0,
+  "last_node_id": 8,
+  "last_link_id": 3,
+  "nodes": [
+    {
+      "id": 6,
+      "type": "UniRigApplyAnimation",
+      "pos": [
+        -153.267417345993,
+        -532.0495121446268
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_fbx_path",
+          "type": "STRING",
+          "widget": {
+            "name": "model_fbx_path"
+          },
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "animated_fbx_path",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-unirig",
+        "ver": "9c723ea7abcf8e188d53ed8bf8d7339c4991c924",
+        "Node name for S&R": "UniRigApplyAnimation"
+      },
+      "widgets_values": [
+        "",
+        "mixamo",
+        "Breakdance.fbx",
+        ""
+      ]
+    },
+    {
+      "id": 7,
+      "type": "Preview3D",
+      "pos": [
+        235.11000813472302,
+        -561.0488795214613
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 2
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "/home/ubuntu/unirig/ComfyUI/output/rigged_human_mixamo_Breakdance.fbx",
+        "Resource Folder": "ubuntu/unirig/ComfyUI/output",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35,
+          "state": {
+            "position": {
+              "x": 12.220957466216108,
+              "y": 12.520099701607482,
+              "z": 12.22095746621611
+            },
+            "target": {
+              "x": 0,
+              "y": 2.5,
+              "z": 0
+            },
+            "zoom": 1,
+            "cameraType": "perspective"
+          }
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "/home/ubuntu/unirig/ComfyUI/output/rigged_human_mixamo_Breakdance.fbx",
+        ""
+      ]
+    },
+    {
+      "id": 8,
+      "type": "UniRigLoadRiggedMesh",
+      "pos": [
+        -501.784921951831,
+        -538.8046910363616
+      ],
+      "size": [
+        274.476171875,
+        150
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "fbx_output_path",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        },
+        {
+          "name": "info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-unirig",
+        "ver": "9c723ea7abcf8e188d53ed8bf8d7339c4991c924",
+        "Node name for S&R": "UniRigLoadRiggedMesh"
+      },
+      "widgets_values": [
+        "output",
+        "rigged_human_mixamo.fbx",
+        false,
+        "refresh"
+      ]
+    }
+  ],
+  "links": [
+    [
+      2,
+      6,
+      0,
+      7,
+      2,
+      "STRING"
+    ],
+    [
+      3,
+      8,
+      0,
+      6,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.1,
+      "offset": [
+        662.8458485196008,
+        768.9377475325178
+      ]
+    },
+    "workflowRendererVersion": "LG",
+    "frontendVersion": "1.36.13"
+  },
+  "version": 0.4
+}

@@ -416,16 +416,19 @@ class UniRigApplySkinningMLNew:
         # Auto-save FBX to output directory
         output_dir = folder_paths.get_output_directory()
 
-        # Determine output filename
+        # Determine output filename with skeleton template suffix
+        template_suffix = skeleton.get('output_format', 'unknown')
+
         if fbx_name and fbx_name.strip():
             # Use custom name from user
-            output_filename = fbx_name.strip()
-            # Ensure .fbx extension
-            if not output_filename.lower().endswith('.fbx'):
-                output_filename = output_filename + '.fbx'
+            base_name = fbx_name.strip()
+            # Remove .fbx extension if present
+            if base_name.lower().endswith('.fbx'):
+                base_name = base_name[:-4]
+            output_filename = f"{base_name}_{template_suffix}.fbx"
         else:
             # Use auto-generated name with timestamp
-            output_filename = f"rigged_{int(time.time())}.fbx"
+            output_filename = f"rigged_{int(time.time())}_{template_suffix}.fbx"
 
         output_path = os.path.join(output_dir, output_filename)
         shutil.copy(fbx_path, output_path)

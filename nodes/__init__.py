@@ -23,6 +23,7 @@ from .skeleton_io import (
 )
 from .skinning import UniRigApplySkinningMLNew
 from .mesh_io import UniRigLoadMesh, UniRigSaveMesh
+from .animation import UniRigApplyAnimation
 
 NODE_CLASS_MAPPINGS = {
     "UniRigLoadSkeletonModel": UniRigLoadSkeletonModel,
@@ -35,6 +36,7 @@ NODE_CLASS_MAPPINGS = {
     "UniRigApplySkinningMLNew": UniRigApplySkinningMLNew,
     "UniRigLoadMesh": UniRigLoadMesh,
     "UniRigSaveMesh": UniRigSaveMesh,
+    "UniRigApplyAnimation": UniRigApplyAnimation,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -48,6 +50,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "UniRigApplySkinningMLNew": "UniRig: Apply Skinning",
     "UniRigLoadMesh": "UniRig: Load Mesh",
     "UniRigSaveMesh": "UniRig: Save Mesh",
+    "UniRigApplyAnimation": "UniRig: Apply Animation",
 }
 
 __all__ = [

@@ -244,9 +244,9 @@ class UniRigExtractSkeletonNew:
                                "tooltip": "Random seed for skeleton generation variation"}),
             },
             "optional": {
-                "skeleton_template": (["auto", "vroid", "mixamo", "smpl", "articulationxl"], {
-                    "default": "auto",
-                    "tooltip": "Skeleton template: auto (let model decide), vroid (52 bones), mixamo (Mixamo-compatible 52 bones), smpl (22 joints, SMPL-compatible for direct motion application), articulationxl (generic/flexible)"
+                "skeleton_template": (["vroid", "mixamo", "smpl", "articulationxl"], {
+                    "default": "mixamo",
+                    "tooltip": "Skeleton template: vroid (52 bones), mixamo (Mixamo-compatible 52 bones), smpl (22 joints, SMPL-compatible for direct motion application), articulationxl (generic/flexible)"
                 }),
                 "target_face_count": ("INT", {
                     "default": 50000,
@@ -263,11 +263,14 @@ class UniRigExtractSkeletonNew:
     FUNCTION = "extract"
     CATEGORY = "UniRig"
 
-    def extract(self, trimesh, skeleton_model, seed, skeleton_template="auto", target_face_count=None):
+    def extract(self, trimesh, skeleton_model, seed, skeleton_template="mixamo", target_face_count=None):
         """Extract skeleton using UniRig with cached model only."""
         total_start = time.time()
         print(f"[UniRigExtractSkeletonNew] Starting skeleton extraction (cached model only)...")
         print(f"[UniRigExtractSkeletonNew] Skeleton template: {skeleton_template}")
+
+        # Store original template choice before any remapping
+        original_template = skeleton_template
 
         # Track if we need to remap to mixamo or smpl naming
         remap_to_mixamo = (skeleton_template == "mixamo")
@@ -1054,7 +1057,7 @@ class UniRigExtractSkeletonNew:
                 "skeleton_npz_path": persistent_npz,
                 "bone_names": names_list,
                 "bone_parents": parents_list,
-                "output_format": "smpl" if remap_to_smpl else ("mixamo" if remap_to_mixamo else "vroid"),
+                "output_format": original_template,
             }
 
             if skeleton_bone_to_head is not None:
