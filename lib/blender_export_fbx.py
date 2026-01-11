@@ -570,25 +570,47 @@ if is_mixamo_skeleton and vertices is not None and skin is not None:
         scale_factor = 1.0
         print(f"[Blender FBX Export] Warning: mesh height too small ({current_height:.6f}), skipping scale")
 
-    # 3. POSITION HIPS AT MIXAMO TARGET HEIGHT
+    # 3. POSITION FEET AT GROUND LEVEL (Z=0)
+    # This ensures the mesh stands on the ground like official Mixamo
+    mesh_min_z = vertices[:, 2].min()
+    z_offset = -mesh_min_z  # Move so feet are at Z=0
+
+    print(f"[Blender FBX Export] Moving feet from Z={mesh_min_z:.3f} to Z=0.0 (offset: {z_offset:.3f})")
+
+    vertices[:, 2] += z_offset
+    joints[:, 2] += z_offset
+    if tails is not None:
+        tails[:, 2] += z_offset
+
     if hips_idx is not None:
-        target_hips_z = 1.04  # Mixamo's expected Hips height in meters
-        current_hips_z = joints[hips_idx, 2]
-        z_offset = target_hips_z - current_hips_z
-
-        print(f"[Blender FBX Export] Moving Hips from Z={current_hips_z:.3f} to Z={target_hips_z:.2f} (offset: {z_offset:.3f})")
-
-        vertices[:, 2] += z_offset
-        joints[:, 2] += z_offset
-        if tails is not None:
-            tails[:, 2] += z_offset
-    else:
-        print("[Blender FBX Export] Warning: mixamorig:Hips not found, skipping position adjustment")
+        print(f"[Blender FBX Export] Hips now at Z={joints[hips_idx, 2]:.3f}")
 
     print(f"[Blender FBX Export] ✓ Mixamo normalization complete")
     print(f"[Blender FBX Export]   Final mesh bounds: {vertices.min(axis=0)} to {vertices.max(axis=0)}")
     if hips_idx is not None:
         print(f"[Blender FBX Export]   Hips position: {joints[hips_idx]}")
+
+    # 4. CONVERT TO MIXAMO LOCAL SPACE
+    # Official Mixamo FBX stores coordinates in Y-up format (local space)
+    # with 90° X rotation converting to Z-up (world space)
+    # We need to: 1) Convert Z-up to Y-up, 2) Scale by 100x
+    print(f"[Blender FBX Export] Converting to Mixamo local space (Y-up, 100x scale)...")
+
+    # Convert from Z-up to Y-up: (x, y, z) → (x, z, -y)
+    # This is the inverse of what 90° X rotation does
+    def convert_to_yup(coords):
+        result = np.zeros_like(coords)
+        result[..., 0] = coords[..., 0]      # X stays X
+        result[..., 1] = coords[..., 2]      # Z becomes Y
+        result[..., 2] = -coords[..., 1]     # -Y becomes Z
+        return result
+
+    vertices = convert_to_yup(vertices) * 100.0
+    joints = convert_to_yup(joints) * 100.0
+    if tails is not None:
+        tails = convert_to_yup(tails) * 100.0
+
+    print(f"[Blender FBX Export]   Converted mesh bounds: {vertices.min(axis=0)} to {vertices.max(axis=0)}")
 
 # Make collection
 collection = bpy.data.collections.new('new_collection')
@@ -784,6 +806,123 @@ try:
         bone.head = Vector((joints[i, 0], joints[i, 1], joints[i, 2]))
         bone.tail = Vector((tails[i, 0], tails[i, 1], tails[i, 2]))
 
+    # === FIX BONE ORIENTATIONS FOR MIXAMO COMPATIBILITY ===
+    # Mixamo animations expect specific bone Y-axis directions (bone direction = head→tail)
+    # After Y-up conversion: +Y is "up", so spine/head bones should point +Y
+    # Arms point outward along ±X, legs point down along -Y
+    if is_mixamo_skeleton:
+        print("[Blender FBX Export] Fixing bone orientations for Mixamo compatibility...")
+
+        # Standard bone lengths for each bone type (used when repositioning tails)
+        DEFAULT_BONE_LENGTH = 5.0  # In 100x scaled Mixamo space
+
+        # Bone directions in Y-up space (after convert_to_yup transformation)
+        # +Y = up, +X = left, -X = right, +Z = forward, -Z = back
+        MIXAMO_BONE_DIRECTIONS = {
+            # Spine chain - all point UP (+Y)
+            'mixamorig:Hips': Vector((0, 1, 0)),
+            'mixamorig:Spine': Vector((0, 1, 0)),
+            'mixamorig:Spine1': Vector((0, 1, 0)),
+            'mixamorig:Spine2': Vector((0, 1, 0)),
+            'mixamorig:Neck': Vector((0, 1, 0)),
+            'mixamorig:Head': Vector((0, 1, 0)),
+            # Left leg - points DOWN (-Y)
+            'mixamorig:LeftUpLeg': Vector((0, -1, 0)),
+            'mixamorig:LeftLeg': Vector((0, -1, 0)),
+            'mixamorig:LeftFoot': Vector((0, -0.632, 0.775)).normalized(),  # Points down-forward (matches Mixamo)
+            'mixamorig:LeftToeBase': Vector((0, -0.632, 0.775)).normalized(),
+            # Right leg - points DOWN (-Y)
+            'mixamorig:RightUpLeg': Vector((0, -1, 0)),
+            'mixamorig:RightLeg': Vector((0, -1, 0)),
+            'mixamorig:RightFoot': Vector((0, -0.632, 0.775)).normalized(),  # Points down-forward (matches Mixamo)
+            'mixamorig:RightToeBase': Vector((0, -0.632, 0.775)).normalized(),
+            # Left arm - points LEFT (+X)
+            'mixamorig:LeftShoulder': Vector((1, 0, 0)),
+            'mixamorig:LeftArm': Vector((1, 0, 0)),
+            'mixamorig:LeftForeArm': Vector((1, 0, 0)),
+            'mixamorig:LeftHand': Vector((1, 0, 0)),
+            # Right arm - points RIGHT (-X)
+            'mixamorig:RightShoulder': Vector((-1, 0, 0)),
+            'mixamorig:RightArm': Vector((-1, 0, 0)),
+            'mixamorig:RightForeArm': Vector((-1, 0, 0)),
+            'mixamorig:RightHand': Vector((-1, 0, 0)),
+        }
+
+        # Build a dict of bone name → joint index for quick lookup
+        bone_to_idx = {name: i for i, name in enumerate(names)}
+
+        orientation_fixes = 0
+        for bone_name, target_direction in MIXAMO_BONE_DIRECTIONS.items():
+            bone = edit_bones.get(bone_name)
+            if not bone:
+                continue
+
+            # Get current bone direction
+            current_direction = (bone.tail - bone.head).normalized()
+
+            # Check if direction matches target (dot product close to 1)
+            dot = current_direction.dot(target_direction)
+
+            if dot < 0.95:  # More than ~18° off
+                # Need to fix orientation
+                bone_length = (bone.tail - bone.head).length
+                if bone_length < 0.1:
+                    bone_length = DEFAULT_BONE_LENGTH
+
+                # Set new tail position in correct direction
+                new_tail = bone.head + target_direction * bone_length
+                bone.tail = new_tail
+
+                angle_diff = math.degrees(math.acos(max(-1, min(1, dot))))
+                print(f"[Blender FBX Export]   Fixed {bone_name}: {angle_diff:.1f}° correction")
+                orientation_fixes += 1
+
+        print(f"[Blender FBX Export] ✓ Fixed {orientation_fixes} bone orientations")
+
+        # === FIX BONE ROLLS FOR MIXAMO COMPATIBILITY ===
+        # Bone roll determines X and Z axes (rotation around Y-axis)
+        # Mixamo expects specific roll values for correct animation
+        print("[Blender FBX Export] Fixing bone rolls for Mixamo compatibility...")
+
+        # Define target Z-axis for each bone (used with align_roll)
+        # In Y-up space after conversion
+        MIXAMO_BONE_ROLLS = {
+            # Arms: Z-axis points DOWN (-Y in Y-up space)
+            'mixamorig:LeftShoulder': Vector((0, -1, 0)),
+            'mixamorig:LeftArm': Vector((0, -1, 0)),
+            'mixamorig:LeftForeArm': Vector((0, -1, 0)),
+            'mixamorig:LeftHand': Vector((0, -1, 0)),
+            'mixamorig:RightShoulder': Vector((0, -1, 0)),
+            'mixamorig:RightArm': Vector((0, -1, 0)),
+            'mixamorig:RightForeArm': Vector((0, -1, 0)),
+            'mixamorig:RightHand': Vector((0, -1, 0)),
+            # Legs: Z-axis points FORWARD (+Z in Y-up space)
+            'mixamorig:LeftUpLeg': Vector((0, 0, 1)),
+            'mixamorig:LeftLeg': Vector((0, 0, 1)),
+            'mixamorig:LeftFoot': Vector((0, 1, 0)),  # Foot Z points up
+            'mixamorig:LeftToeBase': Vector((0, 1, 0)),
+            'mixamorig:RightUpLeg': Vector((0, 0, 1)),
+            'mixamorig:RightLeg': Vector((0, 0, 1)),
+            'mixamorig:RightFoot': Vector((0, 1, 0)),
+            'mixamorig:RightToeBase': Vector((0, 1, 0)),
+            # Spine: Z-axis points BACK (+Z in Y-up space)
+            'mixamorig:Hips': Vector((0, 0, 1)),
+            'mixamorig:Spine': Vector((0, 0, 1)),
+            'mixamorig:Spine1': Vector((0, 0, 1)),
+            'mixamorig:Spine2': Vector((0, 0, 1)),
+            'mixamorig:Neck': Vector((0, 0, 1)),
+            'mixamorig:Head': Vector((0, 0, 1)),
+        }
+
+        roll_fixes = 0
+        for bone_name, target_z in MIXAMO_BONE_ROLLS.items():
+            bone = edit_bones.get(bone_name)
+            if bone:
+                bone.align_roll(target_z)
+                roll_fixes += 1
+
+        print(f"[Blender FBX Export] ✓ Fixed {roll_fixes} bone rolls")
+
     # Set bone roll for SMPL compatibility
     # SMPL motion expects local X = bone direction, but Blender has local Y = bone direction
     # We set roll so that the bone's local coordinate system matches what SMPL expects
@@ -864,6 +1003,23 @@ try:
                 ob.vertex_groups[n].add([v], vertex_group_reweight[v, ii], 'REPLACE')
 
     print("[Blender FBX Export] ✓ Armature created successfully")
+
+    # Apply Mixamo-standard object transforms for animation compatibility
+    # Official Mixamo FBX has: 90° X rotation, 0.01 scale on armature object only
+    # The mesh inherits the transform through armature parenting
+    if is_mixamo_skeleton:
+        print("[Blender FBX Export] Applying Mixamo-standard object transforms...")
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        arm_obj = bpy.data.objects.get('Armature')
+
+        if arm_obj:
+            arm_obj.rotation_euler = (math.radians(90), 0, 0)
+            arm_obj.scale = (0.01, 0.01, 0.01)
+            print(f"[Blender FBX Export]   Armature: rotation=90° X, scale=0.01")
+
+        bpy.context.view_layer.update()
+        print("[Blender FBX Export] ✓ Mixamo object transforms applied")
 
 except Exception as e:
     print(f"[Blender FBX Export] Armature creation failed: {e}")

@@ -3,7 +3,8 @@ ComfyUI-UniRig Prestartup Script
 
 Handles setup tasks before node loading:
 - Copy asset files to input/3d/
-- Copy workflow examples to user/default/workflows/ with "UniRig -" prefix
+- Copy animation templates to input/animation_templates/
+- Copy animation characters (e.g., official Mixamo rig) to input/animation_characters/
 - Create necessary directories
 """
 
@@ -23,6 +24,7 @@ WORKFLOWS_DIR = SCRIPT_DIR / "workflows"
 # Target directories (using relative paths from ComfyUI root)
 INPUT_3D_DIR = COMFYUI_DIR / "input" / "3d"
 INPUT_ANIMATION_TEMPLATES_DIR = COMFYUI_DIR / "input" / "animation_templates"
+INPUT_ANIMATION_CHARACTERS_DIR = COMFYUI_DIR / "input" / "animation_characters"
 USER_WORKFLOWS_DIR = COMFYUI_DIR / "user" / "default" / "workflows"
 
 
@@ -87,11 +89,43 @@ def copy_animation_templates():
         traceback.print_exc()
 
 
+def copy_animation_characters():
+    """Copy animation character references (e.g., official Mixamo rig) to input/animation_characters/"""
+    try:
+        source_dir = ASSETS_DIR / "animation_characters"
+
+        if not source_dir.exists():
+            print(f"[UniRig] Warning: Animation characters directory not found at {source_dir}")
+            return
+
+        # Create target directory
+        INPUT_ANIMATION_CHARACTERS_DIR.mkdir(parents=True, exist_ok=True)
+
+        # Copy all character files (FBX, etc.)
+        for char_file in source_dir.iterdir():
+            if char_file.is_file() and not char_file.name.startswith('.'):
+                target_file = INPUT_ANIMATION_CHARACTERS_DIR / char_file.name
+
+                if not target_file.exists():
+                    shutil.copy2(str(char_file), str(target_file))
+                    print(f"[UniRig] Copied animation character: {char_file.name}")
+                else:
+                    print(f"[UniRig] Animation character {char_file.name} already exists")
+
+        print(f"[UniRig] Animation characters ready at {INPUT_ANIMATION_CHARACTERS_DIR}")
+
+    except Exception as e:
+        print(f"[UniRig] Error copying animation characters: {e}")
+        import traceback
+        traceback.print_exc()
+
+
 # Execute setup tasks
 try:
     print("[UniRig] Running prestartup script...")
     copy_asset_files()
     copy_animation_templates()
+    copy_animation_characters()
     print("[UniRig] Prestartup script completed.")
 except Exception as e:
     print(f"[UniRig] Error during prestartup: {e}")
