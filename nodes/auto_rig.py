@@ -32,17 +32,14 @@ class UniRigAutoRig:
         return {
             "required": {
                 "trimesh": ("TRIMESH",),
-                "skeleton_model": ("UNIRIG_SKELETON_MODEL", {
-                    "tooltip": "Pre-loaded skeleton model (from UniRigLoadSkeletonModel)"
-                }),
-                "skinning_model": ("UNIRIG_SKINNING_MODEL", {
-                    "tooltip": "Pre-loaded skinning model (from UniRigLoadSkinningModel)"
+                "model": ("UNIRIG_MODEL", {
+                    "tooltip": "Pre-loaded UniRig model (from UniRigLoadModel)"
                 }),
             },
             "optional": {
-                "skeleton_template": (["mixamo", "smpl", "vroid"], {
+                "skeleton_template": (["mixamo", "articulationxl"], {
                     "default": "mixamo",
-                    "tooltip": "Skeleton template. 'mixamo' outputs Mixamo-compatible FBX ready for Mixamo animations."
+                    "tooltip": "Skeleton template. 'mixamo' remaps to Mixamo bone names (humanoids). 'articulationxl' outputs native skeleton (any 3D asset)."
                 }),
                 "fbx_name": ("STRING", {
                     "default": "",
@@ -63,7 +60,7 @@ class UniRigAutoRig:
     FUNCTION = "auto_rig"
     CATEGORY = "UniRig"
 
-    def auto_rig(self, trimesh, skeleton_model, skinning_model,
+    def auto_rig(self, trimesh, model,
                  skeleton_template="mixamo", fbx_name="", target_face_count=50000):
         """
         Complete rigging pipeline in one step.
@@ -76,6 +73,10 @@ class UniRigAutoRig:
         total_start = time.time()
         print(f"[UniRigAutoRig] Starting complete rigging pipeline...")
         print(f"[UniRigAutoRig] Skeleton template: {skeleton_template}")
+
+        # Extract individual models from combined model
+        skeleton_model = model["skeleton_model"]
+        skinning_model = model["skinning_model"]
 
         # Step 1: Extract skeleton
         print(f"[UniRigAutoRig] Step 1/2: Extracting skeleton...")
