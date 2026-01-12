@@ -1,0 +1,38 @@
+[env]
+name = "unirig"
+python = "3.10"
+cuda = "auto"
+
+[packages]
+requirements = [
+    "trimesh",
+    "numpy",
+    "scipy",
+    "transformers==4.51.3",
+    "python-box",
+    "einops",
+    "omegaconf",
+    "pytorch_lightning",
+    "lightning",
+    "addict",
+    "timm",
+    "huggingface_hub",
+    "wandb",
+    "fast-simplification",
+    "pyrender",
+    "libigl",
+]
+
+no_deps = [
+    "spconv-cu{cuda_short}",
+    "torch-scatter",
+    "torch-cluster",
+]
+
+[sources]
+wheel_sources = [
+    "https://data.pyg.org/whl/torch-{torch_mm}+cu{cuda_short}.html",
+]
+index_urls = [
+    "https://pypi.org/simple/",
+]

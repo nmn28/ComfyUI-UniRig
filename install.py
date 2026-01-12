@@ -1,34 +1,52 @@
 """
-Installation script for ComfyUI-UniRig dependencies.
+Installation script for ComfyUI-UniRig.
 
-This script is automatically run by ComfyUI Manager to install
-dependencies that require special handling (torch-cluster, torch-scatter, spconv).
+CUDA dependencies (torch-scatter, torch-cluster, spconv) are now handled by
+comfyui-envmanager. Run `comfy-env install` in this directory to install them.
 
-The actual installation logic is in the 'installer' package for modularity.
-This file is a thin wrapper for backwards compatibility.
+This script now only handles Blender installation for backwards compatibility.
 """
 
 import sys
 import os
 
-# Ensure installer package is importable when this module is loaded from different contexts
+# Ensure installer package is importable
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 if _SCRIPT_DIR not in sys.path:
     sys.path.insert(0, _SCRIPT_DIR)
 
 
 def main():
-    """Main installation routine."""
-    from installer import install
+    """Main installation routine - runs comfy-env install."""
+    import subprocess
 
-    # Run the main installation (Blender is installed separately via blender_install.py)
-    result = install()
+    print("=" * 60, flush=True)
+    print("[UniRig Install] ComfyUI-UniRig Installation", flush=True)
+    print("=" * 60, flush=True)
+    print(flush=True)
+    print("Installing CUDA dependencies via comfyui-envmanager...", flush=True)
+    print(flush=True)
 
-    if not result.get("success"):
-        print("[UniRig Install] Installation failed!")
-        sys.exit(1)
+    # Run comfy-env install
+    result = subprocess.run(
+        [sys.executable, "-m", "comfyui_envmanager.cli", "install"],
+        cwd=_SCRIPT_DIR
+    )
 
-    print("[UniRig Install] Installation complete!")
+    print(flush=True)
+    if result.returncode == 0:
+        print("[UniRig Install] CUDA dependencies installed successfully!")
+    else:
+        print("[UniRig Install] CUDA installation failed. Try running manually:")
+        print("  comfy-env install")
+
+    print()
+    print("To install Blender (for FBX export):")
+    print("  python blender_install.py")
+    print()
+    print("=" * 60)
+
+    return result.returncode
 
 
 # Legacy exports for backwards compatibility with nodes/base.py
@@ -51,15 +69,5 @@ def get_platform_info():
     return info["platform"], info["arch"]
 
 
-def get_torch_info():
-    """Get PyTorch and CUDA versions."""
-    from installer.detector import DependencyDetector
-    info = DependencyDetector.get_torch_info()
-    if not info.get("installed"):
-        print("[UniRig Install] ERROR: PyTorch not found. Please install PyTorch first.")
-        sys.exit(1)
-    return info["version"], info["cuda_suffix"]
-
-
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
