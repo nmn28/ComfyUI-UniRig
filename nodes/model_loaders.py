@@ -420,6 +420,59 @@ class UniRigLoadSkinningModel:
             return (model_wrapper,)
 
 
+class UniRigLoadModel:
+    """
+    Load and cache both UniRig models (skeleton + skinning) for the rigging pipeline.
+
+    This node downloads and caches both model weights so subsequent inference runs
+    are faster. When cache_to_gpu is enabled, models are loaded directly into GPU memory.
+    """
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "cache_to_gpu": ("BOOLEAN", {
+                    "default": True,
+                    "tooltip": "Keep models cached on GPU for faster inference. Disable to save VRAM (models will be loaded on-demand)."
+                }),
+            },
+        }
+
+    RETURN_TYPES = ("UNIRIG_MODEL",)
+    RETURN_NAMES = ("model",)
+    FUNCTION = "load_models"
+    CATEGORY = "UniRig"
+
+    def load_models(self, cache_to_gpu=True):
+        """Load and cache both skeleton and skinning models."""
+        print(f"[UniRigLoadModel] Loading UniRig models...")
+        print(f"[UniRigLoadModel] GPU caching: {'enabled' if cache_to_gpu else 'disabled'}")
+
+        model_id = "VAST-AI/UniRig"
+
+        # Load skeleton model
+        skeleton_loader = UniRigLoadSkeletonModel()
+        skeleton_result = skeleton_loader.load_model(model_id=model_id, cache_to_gpu=cache_to_gpu)
+        skeleton_model = skeleton_result[0]
+
+        # Load skinning model
+        skinning_loader = UniRigLoadSkinningModel()
+        skinning_result = skinning_loader.load_model(model_id=model_id, cache_to_gpu=cache_to_gpu)
+        skinning_model = skinning_result[0]
+
+        # Combine into single model dict
+        combined_model = {
+            "skeleton_model": skeleton_model,
+            "skinning_model": skinning_model,
+            "model_id": model_id,
+            "cache_to_gpu": cache_to_gpu,
+        }
+
+        print(f"[UniRigLoadModel] Both models loaded successfully")
+        return (combined_model,)
+
+
 def clear_model_cache():
     """Clear the global model cache."""
     global _MODEL_CACHE

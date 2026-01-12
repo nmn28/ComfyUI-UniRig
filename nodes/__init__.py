@@ -13,8 +13,7 @@ from .base import (
     BLENDER_EXTRACT_MESH_INFO,
 )
 
-from .model_loaders import UniRigLoadSkeletonModel, UniRigLoadSkinningModel
-from .skeleton_extraction import UniRigExtractSkeletonNew
+from .model_loaders import UniRigLoadModel
 from .auto_rig import UniRigAutoRig
 from .skeleton_io import (
     UniRigSaveSkeleton,
@@ -22,38 +21,41 @@ from .skeleton_io import (
     UniRigPreviewRiggedMesh,
     UniRigExportPosedFBX,
 )
-from .skinning import UniRigApplySkinningMLNew
 from .mesh_io import UniRigLoadMesh, UniRigSaveMesh
 from .animation import UniRigApplyAnimation
 
+# MIA (Make-It-Animatable) nodes
+from .mia_model_loader import MIALoadModel
+from .mia_auto_rig import MIAAutoRig
+
 NODE_CLASS_MAPPINGS = {
-    "UniRigLoadSkeletonModel": UniRigLoadSkeletonModel,
-    "UniRigLoadSkinningModel": UniRigLoadSkinningModel,
-    "UniRigExtractSkeletonNew": UniRigExtractSkeletonNew,
+    "UniRigLoadModel": UniRigLoadModel,
     "UniRigAutoRig": UniRigAutoRig,
     "UniRigSaveSkeleton": UniRigSaveSkeleton,
     "UniRigLoadRiggedMesh": UniRigLoadRiggedMesh,
     "UniRigPreviewRiggedMesh": UniRigPreviewRiggedMesh,
     "UniRigExportPosedFBX": UniRigExportPosedFBX,
-    "UniRigApplySkinningMLNew": UniRigApplySkinningMLNew,
     "UniRigLoadMesh": UniRigLoadMesh,
     "UniRigSaveMesh": UniRigSaveMesh,
     "UniRigApplyAnimation": UniRigApplyAnimation,
+    # MIA nodes
+    "MIALoadModel": MIALoadModel,
+    "MIAAutoRig": MIAAutoRig,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "UniRigLoadSkeletonModel": "UniRig: Load Skeleton Model",
-    "UniRigLoadSkinningModel": "UniRig: Load Skinning Model",
-    "UniRigExtractSkeletonNew": "UniRig: Extract Skeleton",
+    "UniRigLoadModel": "UniRig: Load Model",
     "UniRigAutoRig": "UniRig: Auto Rig",
     "UniRigSaveSkeleton": "UniRig: Save Skeleton",
     "UniRigLoadRiggedMesh": "UniRig: Load Rigged Mesh",
     "UniRigPreviewRiggedMesh": "UniRig: Preview Rigged Mesh",
     "UniRigExportPosedFBX": "UniRig: Export Posed FBX",
-    "UniRigApplySkinningMLNew": "UniRig: Apply Skinning",
     "UniRigLoadMesh": "UniRig: Load Mesh",
     "UniRigSaveMesh": "UniRig: Save Mesh",
     "UniRigApplyAnimation": "UniRig: Apply Animation",
+    # MIA nodes
+    "MIALoadModel": "MIA: Load Model",
+    "MIAAutoRig": "MIA: Auto Rig",
 }
 
 __all__ = [

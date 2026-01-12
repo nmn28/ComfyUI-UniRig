@@ -441,8 +441,8 @@ class UniRigExtractSkeletonNew:
 
                 # Map skeleton template to cls token
                 cls_value = None  # auto (let model decide)
-                if skeleton_template == "vroid":
-                    cls_value = "vroid"
+                if skeleton_template == "vroid" or skeleton_template == "mixamo":
+                    cls_value = "vroid"  # Both need VRoid 52-bone skeleton with fingers
                 elif skeleton_template == "articulationxl":
                     cls_value = "articulationxl"
 
@@ -492,11 +492,11 @@ class UniRigExtractSkeletonNew:
                 
                 # Map skeleton template to cls token
                 cls_value = None
-                if skeleton_template == "vroid":
-                    cls_value = "vroid"
+                if skeleton_template == "vroid" or skeleton_template == "mixamo":
+                    cls_value = "vroid"  # Both need VRoid 52-bone skeleton with fingers
                 elif skeleton_template == "articulationxl":
                     cls_value = "articulationxl"
-                
+
                 # Build command
                 run_cmd = [
                     sys.executable, unirig_run_py,

@@ -157,9 +157,155 @@ if len(matching_bones) == 0:
     print(f"[Blender Apply Animation] ERROR: No matching bone names found!")
     sys.exit(1)
 
-# Step 3: Direct World-Space Matrix Copy Approach
-# This bypasses rest pose differences by copying the final visual result
-print(f"[Blender Apply Animation] Using world-space matrix copy approach...")
+# Check if we can use direct action copy (same skeleton structure)
+# This works when model and animation have identical bone names
+use_direct_copy = (len(matching_bones) == len(model_bone_names) and
+                   len(matching_bones) == len(anim_bone_names))
+
+if use_direct_copy:
+    print(f"[Blender Apply Animation] Using DIRECT action copy (identical skeletons)...")
+
+    # Ensure model has animation data
+    if not model_armature.animation_data:
+        model_armature.animation_data_create()
+
+    # Copy the action (not just link, so we can modify it)
+    new_action = anim_action.copy()
+    new_action.name = f"{model_armature.name}|Animation"
+    model_armature.animation_data.action = new_action
+
+    # Handle scale difference between armatures
+    anim_scale = anim_armature.scale[0]
+    model_scale = model_armature.scale[0]
+
+    if abs(anim_scale - model_scale) > 0.0001:
+        scale_factor = anim_scale / model_scale
+        print(f"[Blender Apply Animation] Scaling location keyframes by {scale_factor:.4f}x")
+        for fc in new_action.fcurves:
+            if '.location' in fc.data_path:
+                for kfp in fc.keyframe_points:
+                    kfp.co[1] *= scale_factor
+                    kfp.handle_left[1] *= scale_factor
+                    kfp.handle_right[1] *= scale_factor
+
+    print(f"[Blender Apply Animation] Direct copy complete - {len(new_action.fcurves)} F-curves")
+
+    # Skip to cleanup
+    bpy.data.objects.remove(anim_armature, do_unlink=True)
+
+    # Export
+    print(f"[Blender Apply Animation] Exporting animated FBX...")
+    os.makedirs(os.path.dirname(output_fbx) if os.path.dirname(output_fbx) else '.', exist_ok=True)
+
+    bpy.ops.object.select_all(action='DESELECT')
+    model_armature.select_set(True)
+    for mesh in model_meshes:
+        if mesh.name in bpy.data.objects:
+            mesh.select_set(True)
+
+    bpy.context.view_layer.objects.active = model_armature
+
+    bpy.ops.export_scene.fbx(
+        filepath=output_fbx,
+        use_selection=True,
+        check_existing=False,
+        add_leaf_bones=False,
+        bake_anim=True,
+        bake_anim_use_all_bones=True,
+        bake_anim_use_nla_strips=False,
+        bake_anim_use_all_actions=False,
+        bake_anim_force_startend_keying=True,
+        path_mode='COPY',
+        embed_textures=True,
+        mesh_smooth_type='FACE',
+        use_mesh_modifiers=True,
+    )
+
+    print(f"[Blender Apply Animation] Saved to: {output_fbx}")
+    print("[Blender Apply Animation] Done!")
+    sys.exit(0)
+
+# Step 3: Partial action copy - copy only F-curves for matching bones
+print(f"[Blender Apply Animation] Using PARTIAL action copy ({len(matching_bones)} matching bones)...")
+
+# Ensure model has animation data
+if not model_armature.animation_data:
+    model_armature.animation_data_create()
+
+# Create new action for model
+new_action = bpy.data.actions.new(name=f"{model_armature.name}|Animation")
+model_armature.animation_data.action = new_action
+
+# Handle scale difference
+anim_scale = anim_armature.scale[0]
+model_scale = model_armature.scale[0]
+scale_factor = anim_scale / model_scale if model_scale != 0 else 1.0
+
+# Copy F-curves for matching bones
+copied_fcurves = 0
+for fc in anim_action.fcurves:
+    # Extract bone name from data_path like 'pose.bones["mixamorig:Hips"].location'
+    if 'pose.bones["' in fc.data_path:
+        start = fc.data_path.find('pose.bones["') + len('pose.bones["')
+        end = fc.data_path.find('"]', start)
+        bone_name = fc.data_path[start:end]
+
+        if bone_name in matching_bones:
+            # Create new fcurve in our action
+            new_fc = new_action.fcurves.new(data_path=fc.data_path, index=fc.array_index)
+
+            # Copy keyframes
+            for kfp in fc.keyframe_points:
+                value = kfp.co[1]
+                # Scale location values
+                if '.location' in fc.data_path and abs(scale_factor - 1.0) > 0.0001:
+                    value *= scale_factor
+
+                new_kfp = new_fc.keyframe_points.insert(kfp.co[0], value)
+                new_kfp.interpolation = kfp.interpolation
+                new_kfp.handle_left_type = kfp.handle_left_type
+                new_kfp.handle_right_type = kfp.handle_right_type
+
+            copied_fcurves += 1
+
+print(f"[Blender Apply Animation] Copied {copied_fcurves} F-curves for matching bones")
+
+# Cleanup and export
+bpy.data.objects.remove(anim_armature, do_unlink=True)
+
+print(f"[Blender Apply Animation] Exporting animated FBX...")
+os.makedirs(os.path.dirname(output_fbx) if os.path.dirname(output_fbx) else '.', exist_ok=True)
+
+bpy.ops.object.select_all(action='DESELECT')
+model_armature.select_set(True)
+for mesh in model_meshes:
+    if mesh.name in bpy.data.objects:
+        mesh.select_set(True)
+
+bpy.context.view_layer.objects.active = model_armature
+
+bpy.ops.export_scene.fbx(
+    filepath=output_fbx,
+    use_selection=True,
+    check_existing=False,
+    add_leaf_bones=False,
+    bake_anim=True,
+    bake_anim_use_all_bones=True,
+    bake_anim_use_nla_strips=False,
+    bake_anim_use_all_actions=False,
+    bake_anim_force_startend_keying=True,
+    path_mode='COPY',
+    embed_textures=True,
+    mesh_smooth_type='FACE',
+    use_mesh_modifiers=True,
+)
+
+print(f"[Blender Apply Animation] Saved to: {output_fbx}")
+print("[Blender Apply Animation] Done!")
+sys.exit(0)
+
+# OLD: Constraint-based retargeting (keeping for reference but unreachable)
+print(f"[Blender Apply Animation] Using constraint-based retargeting...")
 
 # Get scale factor between armatures
 anim_scale = anim_armature.scale[0]
@@ -284,6 +430,12 @@ bpy.data.objects.remove(anim_armature, do_unlink=True)
 # Step 7: Export
 print(f"[Blender Apply Animation] Exporting animated FBX...")
 os.makedirs(os.path.dirname(output_fbx) if os.path.dirname(output_fbx) else '.', exist_ok=True)
+
+# Fix material transparency (FBX import loses OPAQUE setting)
+for mat in bpy.data.materials:
+    if mat:
+        mat.blend_method = 'OPAQUE'
+        mat.shadow_method = 'OPAQUE'
 
 try:
     bpy.ops.object.select_all(action='DESELECT')
