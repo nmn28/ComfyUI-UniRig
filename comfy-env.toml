@@ -45,3 +45,9 @@ pytorch_version = "auto"   # Auto-detect compatible version
         "pyrender",
         "libigl",
     ]
+
+    [unirig.packages.windows]
+    requirements = ["triton-windows>=3.5.0"]
+
+    [unirig.packages.linux]
+    requirements = ["triton>=3.0.0"]
