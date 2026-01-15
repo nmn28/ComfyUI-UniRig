@@ -1,5 +1,7 @@
 """
 Skeleton extraction nodes for UniRig.
+
+Uses comfy-env isolated environment for GPU dependencies.
 """
 
 import os
@@ -11,6 +13,8 @@ from trimesh import Trimesh
 import time
 import shutil
 import folder_paths
+
+from comfy_env import isolated
 
 # Support both relative imports (ComfyUI) and absolute imports (testing)
 try:
@@ -221,14 +225,15 @@ def _get_model_cache():
 
 
 
+@isolated(env="unirig", import_paths=[".", ".."])
 class UniRigExtractSkeletonNew:
     """
-    Extract skeleton from mesh using UniRig (SIGGRAPH 2025) - CACHED MODEL ONLY.
+    Extract skeleton from mesh using UniRig (SIGGRAPH 2025).
 
     Uses ML-based approach for high-quality semantic skeleton extraction.
     Works on any mesh type: humans, animals, objects, cameras, etc.
 
-    This version uses ONLY in-process GPU cached models for faster inference.
+    Runs in isolated environment with GPU dependencies.
     Requires pre-loaded model from UniRigLoadSkeletonModel.
     """
 

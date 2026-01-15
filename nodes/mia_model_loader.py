@@ -1,9 +1,13 @@
 """
 MIALoadModel - Load Make-It-Animatable models for fast humanoid rigging.
+
+Uses comfy-env isolated environment for GPU dependencies.
 """
 
 import sys
 from pathlib import Path
+
+from comfy_env import isolated
 
 # Add lib to path for imports
 try:
@@ -15,6 +19,7 @@ except ImportError:
     from mia_inference import load_mia_models, ensure_mia_models, MIA_PATH
 
 
+@isolated(env="unirig", import_paths=[".", ".."])
 class MIALoadModel:
     """
     Load Make-It-Animatable models for fast humanoid rigging.

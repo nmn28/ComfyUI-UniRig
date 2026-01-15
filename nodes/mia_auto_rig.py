@@ -1,11 +1,15 @@
 """
 MIAAutoRig - Fast humanoid rigging using Make-It-Animatable.
+
+Uses comfy-env isolated environment for GPU dependencies.
 """
 
 import os
 import sys
 import time
 from pathlib import Path
+
+from comfy_env import isolated
 
 # ComfyUI folder paths
 try:
@@ -24,6 +28,7 @@ except ImportError:
     from mia_inference import run_mia_inference
 
 
+@isolated(env="unirig", import_paths=[".", ".."])
 class MIAAutoRig:
     """
     Fast humanoid rigging using Make-It-Animatable.

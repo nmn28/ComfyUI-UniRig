@@ -1,11 +1,15 @@
 """
 UniRigAutoRig - Single node for complete rigging pipeline.
 Takes mesh, outputs animation-ready FBX.
+
+Uses comfy-env isolated environment for GPU dependencies.
 """
 
 import os
 import sys
 import time
+
+from comfy_env import isolated
 
 # Support both relative imports (ComfyUI) and absolute imports (testing)
 try:
@@ -16,6 +20,7 @@ except ImportError:
     from skinning import UniRigApplySkinningMLNew
 
 
+@isolated(env="unirig", import_paths=[".", ".."])
 class UniRigAutoRig:
     """
     Single node for complete rigging pipeline.
@@ -23,6 +28,7 @@ class UniRigAutoRig:
     Combines skeleton extraction + skinning + normalization into one step.
     Takes mesh, outputs animation-ready FBX.
 
+    Runs in isolated environment with GPU dependencies.
     For Mixamo template: outputs FBX normalized to Mixamo rest pose
     (T-pose, human scale, Hips at 1.04m) ready for Mixamo animations.
     """

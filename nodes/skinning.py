@@ -1,5 +1,7 @@
 """
 Skinning nodes for UniRig - Apply skinning weights using ML models.
+
+Uses comfy-env isolated environment for GPU dependencies.
 """
 
 import os
@@ -12,6 +14,8 @@ import shutil
 import glob
 import json
 import folder_paths
+
+from comfy_env import isolated
 
 # Support both relative imports (ComfyUI) and absolute imports (testing)
 try:
@@ -65,13 +69,14 @@ def _get_model_cache():
     return _MODEL_CACHE_MODULE if _MODEL_CACHE_MODULE else None
 
 
+@isolated(env="unirig", import_paths=[".", ".."])
 class UniRigApplySkinningMLNew:
     """
-    Apply skinning weights using ML - CACHED MODEL ONLY.
+    Apply skinning weights using ML.
 
     Takes skeleton dict and mesh, prepares data and runs ML inference.
 
-    This version uses ONLY in-process GPU cached models for faster inference.
+    Runs in isolated environment with GPU dependencies.
     Requires pre-loaded model from UniRigLoadSkinningModel.
     """
 

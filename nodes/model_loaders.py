@@ -2,13 +2,15 @@
 Model loader nodes for UniRig - Pre-load and cache ML models for faster inference.
 
 These nodes download and cache models so subsequent inference runs are faster.
-When cache_to_gpu is enabled, models are loaded directly into GPU memory in the main process.
+Uses comfy-env isolated environment for GPU dependencies.
 """
 
 import os
 import sys
 import yaml
 from pathlib import Path
+
+from comfy_env import isolated
 
 # Lazy import for Box to avoid import errors before install.py runs
 def _get_box():
@@ -102,6 +104,7 @@ def _load_yaml_config(config_path: str):
     return Box(yaml.safe_load(open(config_path, 'r')))
 
 
+@isolated(env="unirig", import_paths=[".", ".."])
 class UniRigLoadSkeletonModel:
     """
     Load and cache the UniRig skeleton extraction model.
@@ -266,6 +269,7 @@ class UniRigLoadSkeletonModel:
             return (model_wrapper,)
 
 
+@isolated(env="unirig", import_paths=[".", ".."])
 class UniRigLoadSkinningModel:
     """
     Load and cache the UniRig skinning weight prediction model.
@@ -420,6 +424,7 @@ class UniRigLoadSkinningModel:
             return (model_wrapper,)
 
 
+@isolated(env="unirig", import_paths=[".", ".."])
 class UniRigLoadModel:
     """
     Load and cache both UniRig models (skeleton + skinning) for the rigging pipeline.
