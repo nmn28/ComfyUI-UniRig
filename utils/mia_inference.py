@@ -16,20 +16,6 @@ from unittest.mock import MagicMock
 if 'bpy' not in sys.modules:
     sys.modules['bpy'] = MagicMock()
 
-# Lazy loader for torch_cluster - it crashes if imported in ComfyUI main process
-# Create a module that lazily imports fps only when actually called
-class _LazyTorchCluster:
-    _fps = None
-
-    @property
-    def fps(self):
-        if self._fps is None:
-            from torch_cluster import fps
-            self._fps = fps
-        return self._fps
-
-sys.modules['torch_cluster'] = _LazyTorchCluster()
-
 import numpy as np
 import torch
 import trimesh
@@ -342,15 +328,14 @@ def _export_mia_fbx(
     import tempfile
     import json
 
-    # Get Blender path from UniRig
+    # Get Blender path
     import shutil
-    LIB_DIR = Path(__file__).parent
     BLENDER_DIR = LIB_DIR / "blender"
 
     BLENDER_EXE = None
     # Check environment variable
-    if os.environ.get('UNIRIG_BLENDER_PATH'):
-        blender_path = os.environ.get('UNIRIG_BLENDER_PATH')
+    if os.environ.get('BLENDER_PATH'):
+        blender_path = os.environ.get('BLENDER_PATH')
         if os.path.isfile(blender_path):
             BLENDER_EXE = blender_path
     # Check system PATH
@@ -369,7 +354,7 @@ def _export_mia_fbx(
     if BLENDER_EXE is None:
         raise RuntimeError(
             "Blender not found. Run: python blender_install.py\n"
-            "Or set UNIRIG_BLENDER_PATH environment variable to your Blender executable."
+            "Or set BLENDER_PATH environment variable to your Blender executable."
         )
 
     # Save mesh to temp file (can't pickle trimesh directly)

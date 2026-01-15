@@ -29,9 +29,10 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-unirig",
+        "aux_id": "PozzettiAndrea/ComfyUI-UniRig",
         "ver": "77db8b90cbac7fb087e4693e61f48a2e591220c7",
-        "Node name for S&R": "MIALoadModel"
+        "Node name for S&R": "MIALoadModel",
+        "cnr_id": "comfyui-unirig"
       },
       "widgets_values": [
         true
@@ -62,14 +63,55 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-unirig",
+        "aux_id": "PozzettiAndrea/ComfyUI-UniRig",
         "ver": "66be51b5fe9fb85dca17918f23822cf0cad7b927",
         "Node name for S&R": "UniRigLoadMesh",
-        "aux_id": "PozzettiAndrea/ComfyUI-UniRig"
+        "cnr_id": "comfyui-unirig"
       },
       "widgets_values": [
         "input",
         "3d/realistic_male_character.glb"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "UniRigPreviewRiggedMesh",
+      "pos": [
+        245.43257784359844,
+        -455.10889563540474
+      ],
+      "size": [
+        842.8834804687501,
+        822
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "fbx_output_path",
+          "type": "STRING",
+          "widget": {
+            "name": "fbx_output_path"
+          },
+          "link": 76
+        },
+        {
+          "name": "rigged_mesh",
+          "type": "RIGGED_MESH",
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "aux_id": "PozzettiAndrea/ComfyUI-UniRig",
+        "ver": "31be2f3349eb643d1255cc3280596968a762e0f6",
+        "Node name for S&R": "UniRigPreviewRiggedMesh",
+        "cnr_id": "comfyui-unirig"
+      },
+      "widgets_values": [
+        "mixamo.fbx",
+        ""
       ]
     },
     {
@@ -108,56 +150,16 @@
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-unirig",
+        "aux_id": "PozzettiAndrea/ComfyUI-UniRig",
         "ver": "77db8b90cbac7fb087e4693e61f48a2e591220c7",
-        "Node name for S&R": "MIAAutoRig"
+        "Node name for S&R": "MIAAutoRig",
+        "cnr_id": "comfyui-unirig"
       },
       "widgets_values": [
         "rigatoni",
-        true,
+        false,
         false,
         true
-      ]
-    },
-    {
-      "id": 10,
-      "type": "UniRigPreviewRiggedMesh",
-      "pos": [
-        245.43257784359844,
-        -455.10889563540474
-      ],
-      "size": [
-        842.8834804687501,
-        822
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "fbx_output_path",
-          "type": "STRING",
-          "widget": {
-            "name": "fbx_output_path"
-          },
-          "link": 76
-        },
-        {
-          "name": "rigged_mesh",
-          "type": "RIGGED_MESH",
-          "link": null
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfyui-unirig",
-        "ver": "31be2f3349eb643d1255cc3280596968a762e0f6",
-        "Node name for S&R": "UniRigPreviewRiggedMesh",
-        "aux_id": "PozzettiAndrea/ComfyUI-UniRig"
-      },
-      "widgets_values": [
-        "mixamo.fbx",
-        ""
       ]
     }
   ],
@@ -193,11 +195,11 @@
     "ds": {
       "scale": 0.8977133850548208,
       "offset": [
-        654.1533777266053,
-        807.1105217891798
+        646.2296000839609,
+        627.9182718705973
       ]
     },
-    "frontendVersion": "1.36.13",
+    "frontendVersion": "1.36.14",
     "workflowRendererVersion": "LG"
   },
   "version": 0.4

@@ -8,7 +8,14 @@ import torch.nn.functional as F
 
 from einops import rearrange, repeat
 
-from torch_cluster import fps
+# Lazy import torch_cluster - not available in ComfyUI main process
+_fps_func = None
+def _get_fps():
+    global _fps_func
+    if _fps_func is None:
+        from torch_cluster import fps
+        _fps_func = fps
+    return _fps_func
 
 from timm.layers import DropPath
 
@@ -248,7 +255,7 @@ class AutoEncoder(nn.Module):
 
         ratio = 1.0 * self.num_latents / self.num_inputs
 
-        idx = fps(pos, batch, ratio=ratio)
+        idx = _get_fps()(pos, batch, ratio=ratio)
 
         sampled_pc = pos[idx]
         sampled_pc = sampled_pc.view(B, -1, 3)
@@ -357,7 +364,7 @@ class KLAutoEncoder(nn.Module):
 
         ratio = 1.0 * self.num_latents / self.num_inputs
 
-        idx = fps(pos, batch, ratio=ratio)
+        idx = _get_fps()(pos, batch, ratio=ratio)
 
         sampled_pc = pos[idx]
         sampled_pc = sampled_pc.view(B, -1, 3)

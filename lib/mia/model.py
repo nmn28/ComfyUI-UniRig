@@ -6,7 +6,15 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from einops import repeat
-from torch_cluster import fps
+
+# Lazy import torch_cluster - not available in ComfyUI main process
+_fps_func = None
+def _get_fps():
+    global _fps_func
+    if _fps_func is None:
+        from torch_cluster import fps
+        _fps_func = fps
+    return _fps_func
 
 from .models_ae import Attention, DiagonalGaussianDistribution, create_autoencoder
 from .dataset_mixamo import Joint
@@ -472,7 +480,7 @@ class PCAE(nn.Module):
                 continue
             batch = torch.repeat_interleave(torch.arange(B).to(pc.device), N_)
             pos = pc_.reshape(-1, D)
-            idx = fps(pos[:, :3], batch, ratio=1.0 * N_latents[i] / N_)
+            idx = _get_fps()(pos[:, :3], batch, ratio=1.0 * N_latents[i] / N_)
             sampled_pc[:, latents_begin_idx[i] : latents_begin_idx[i] + N_latents[i], :] = pos[idx].view(B, -1, D)[
                 :, : N_latents[i], :
             ]
