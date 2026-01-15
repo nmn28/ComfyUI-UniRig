@@ -14,16 +14,19 @@ pytorch_version = "auto"   # Auto-detect compatible version
     # CUDA extensions - resolved automatically by comfy-env
     torch-scatter = "2.1.2"
     torch-cluster = "1.6.3"
+    cumm-cu126 = "*"      # Required by spconv (must match CUDA version)
     spconv-cu126 = "*"
     flash-attn = "2.8.3"
 
     [unirig.packages]
     requirements = [
         # Core
-        "trimesh",
+        "trimesh[easy]",  # Include optional deps like shapely
         "numpy",
         "scipy",
         "embreex",  # Required for trimesh ray casting
+        "pccm",     # Required by spconv
+        "shapely",  # Required by trimesh for mesh slicing
 
         # UniRig dependencies
         "transformers==4.51.3",

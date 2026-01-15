@@ -9,13 +9,19 @@ from pathlib import Path
 
 from comfy_env import isolated
 
-# Add lib to path for imports
+# Add lib to path for mia module (needed for torch.load unpickling)
+LIB_DIR = Path(__file__).parent.parent / "lib"
+if str(LIB_DIR) not in sys.path:
+    sys.path.insert(0, str(LIB_DIR))
+
+# Add utils to path for mia_inference
+UTILS_DIR = Path(__file__).parent.parent / "utils"
+if str(UTILS_DIR) not in sys.path:
+    sys.path.insert(0, str(UTILS_DIR))
+
 try:
-    from ..lib.mia_inference import load_mia_models, ensure_mia_models, MIA_PATH
+    from ..utils.mia_inference import load_mia_models, ensure_mia_models, MIA_PATH
 except ImportError:
-    LIB_DIR = Path(__file__).parent.parent / "lib"
-    if str(LIB_DIR) not in sys.path:
-        sys.path.insert(0, str(LIB_DIR))
     from mia_inference import load_mia_models, ensure_mia_models, MIA_PATH
 
 

@@ -18,13 +18,14 @@ try:
 except ImportError:
     OUTPUT_DIR = Path(__file__).parent.parent / "output"
 
-# Add lib to path for imports
+# Add utils to path for imports
+UTILS_DIR = Path(__file__).parent.parent / "utils"
+if str(UTILS_DIR) not in sys.path:
+    sys.path.insert(0, str(UTILS_DIR))
+
 try:
-    from ..lib.mia_inference import run_mia_inference
+    from ..utils.mia_inference import run_mia_inference
 except ImportError:
-    LIB_DIR = Path(__file__).parent.parent / "lib"
-    if str(LIB_DIR) not in sys.path:
-        sys.path.insert(0, str(LIB_DIR))
     from mia_inference import run_mia_inference
 
 

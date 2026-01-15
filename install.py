@@ -320,22 +320,49 @@ def main():
 # Legacy exports for backwards compatibility
 # =============================================================================
 
+def _get_installer_module(submodule):
+    """Import installer submodule, handling both package and standalone contexts."""
+    try:
+        # Try relative import first (when loaded as part of package)
+        if submodule == "blender":
+            from .installer import blender
+            return blender
+        elif submodule == "utils":
+            from .installer import utils
+            return utils
+    except ImportError:
+        pass
+
+    # Fallback for standalone/worker context - add parent dir so 'installer' package is importable
+    import sys
+    parent_dir = os.path.dirname(__file__)
+    if parent_dir not in sys.path:
+        sys.path.insert(0, parent_dir)
+
+    if submodule == "blender":
+        from installer import blender
+        return blender
+    elif submodule == "utils":
+        from installer import utils
+        return utils
+
+
 def find_blender_executable(blender_dir):
     """Find the blender executable in the extracted directory."""
-    from installer.blender import find_blender_executable as _find_blender_executable
-    return _find_blender_executable(blender_dir)
+    blender_module = _get_installer_module("blender")
+    return blender_module.find_blender_executable(blender_dir)
 
 
 def install_blender(target_dir=None):
     """Install Blender for mesh preprocessing."""
-    from installer.blender import install_blender as _install_blender
-    return _install_blender(target_dir)
+    blender_module = _get_installer_module("blender")
+    return blender_module.install_blender(target_dir)
 
 
 def get_platform_info():
     """Detect current platform and architecture."""
-    from installer.utils import get_platform_info as _get_platform_info
-    info = _get_platform_info()
+    utils_module = _get_installer_module("utils")
+    info = utils_module.get_platform_info()
     return info["platform"], info["arch"]
 
 

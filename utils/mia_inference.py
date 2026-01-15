@@ -16,13 +16,28 @@ from unittest.mock import MagicMock
 if 'bpy' not in sys.modules:
     sys.modules['bpy'] = MagicMock()
 
+# Lazy loader for torch_cluster - it crashes if imported in ComfyUI main process
+# Create a module that lazily imports fps only when actually called
+class _LazyTorchCluster:
+    _fps = None
+
+    @property
+    def fps(self):
+        if self._fps is None:
+            from torch_cluster import fps
+            self._fps = fps
+        return self._fps
+
+sys.modules['torch_cluster'] = _LazyTorchCluster()
+
 import numpy as np
 import torch
 import trimesh
 
-# Get paths relative to this file (vendored within the repo)
-LIB_DIR = Path(__file__).parent.absolute()
-NODE_DIR = LIB_DIR.parent
+# Get paths relative to this file
+UTILS_DIR = Path(__file__).parent.absolute()
+NODE_DIR = UTILS_DIR.parent
+LIB_DIR = NODE_DIR / "lib"
 
 # MIA models directory (downloaded from HuggingFace)
 # Stored within the custom node directory: ComfyUI-UniRig/models/mia/
@@ -111,8 +126,10 @@ def load_mia_models(cache_to_gpu: bool = True) -> Dict[str, Any]:
     device = torch.device("cuda" if torch.cuda.is_available() and cache_to_gpu else "cpu")
     print(f"[MIA] Loading models to {device}...")
 
-    # Import vendored MIA modules (no bpy dependency)
-    from .mia import PCAE, JOINTS_NUM, KINEMATIC_TREE
+    # Import vendored MIA modules from lib/mia (no bpy dependency)
+    if str(LIB_DIR) not in sys.path:
+        sys.path.insert(0, str(LIB_DIR))
+    from mia import PCAE, JOINTS_NUM, KINEMATIC_TREE
 
     N = 32768  # Number of points to sample
     hands_resample_ratio = 0.5
@@ -229,9 +246,11 @@ def run_mia_inference(
     Returns:
         Path to output FBX file.
     """
-    # Use vendored pipeline (no external dependencies)
-    from .mia.pipeline import prepare_input, preprocess, infer, bw_post_process
-    from .mia import BONES_IDX_DICT
+    # Use vendored pipeline from lib/mia
+    if str(LIB_DIR) not in sys.path:
+        sys.path.insert(0, str(LIB_DIR))
+    from mia.pipeline import prepare_input, preprocess, infer, bw_post_process
+    from mia import BONES_IDX_DICT
 
     device = models["device"]
     N = models["N"]
@@ -407,7 +426,7 @@ def _export_mia_fbx(
                 raise FileNotFoundError(f"No Mixamo template found. Expected at: {template_path}")
 
         # Build Blender command - use our own script (no torch dependency)
-        blender_script = LIB_DIR / "blender" / "mia_export.py"
+        blender_script = UTILS_DIR / "mia_export.py"
 
         cmd = [
             str(BLENDER_EXE),
