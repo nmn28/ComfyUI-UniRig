@@ -64,11 +64,13 @@ if os.environ.get('BLENDER_PATH'):
     else:
         print(f"[UniRig] Warning: BLENDER_PATH set but file not found: {blender_path}")
 
-# 2. Check system PATH and local tools/ via comfy_env
+# 2. Check system PATH and ComfyUI/tools/ via comfy_env
 if BLENDER_EXE is None:
     try:
         from comfy_env.tools import find_blender
-        blender_exe = find_blender(NODE_DIR / "tools" / "blender")
+        # Blender is installed to ComfyUI/tools/blender/ (shared across all nodes)
+        COMFYUI_ROOT = NODE_DIR.parent.parent  # custom_nodes/../.. = ComfyUI/
+        blender_exe = find_blender(COMFYUI_ROOT / "tools" / "blender")
         if blender_exe:
             BLENDER_EXE = str(blender_exe)
             print(f"[UniRig] Found Blender: {BLENDER_EXE}")

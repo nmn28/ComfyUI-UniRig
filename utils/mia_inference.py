@@ -356,11 +356,13 @@ def _export_mia_fbx(
         if os.path.isfile(blender_path):
             BLENDER_EXE = blender_path
 
-    # Use comfy_env to find Blender (checks PATH and tools/)
+    # Use comfy_env to find Blender (checks PATH and ComfyUI/tools/)
     if BLENDER_EXE is None:
         try:
             from comfy_env.tools import find_blender
-            blender_exe = find_blender(NODE_DIR / "tools" / "blender")
+            # Blender is installed to ComfyUI/tools/blender/ (shared across all nodes)
+            COMFYUI_ROOT = NODE_DIR.parent.parent  # custom_nodes/../.. = ComfyUI/
+            blender_exe = find_blender(COMFYUI_ROOT / "tools" / "blender")
             if blender_exe:
                 BLENDER_EXE = str(blender_exe)
         except ImportError:

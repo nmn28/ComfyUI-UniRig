@@ -27,9 +27,6 @@ _env_*/
 *.bak
 *.log
 
-# Blender installation (auto-downloaded by comfy-env)
-tools/
-
 # Model checkpoints and cache
 *.ckpt
 *.pth

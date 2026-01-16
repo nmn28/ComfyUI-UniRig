@@ -31,8 +31,9 @@ def main():
         print("[UniRig] Report issues at: https://github.com/PozzettiAndrea/ComfyUI-UniRig/issues")
         return 1
 
-    # Verify Blender is available
-    blender_exe = find_blender()
+    # Verify Blender is available (installed to ComfyUI/tools/blender/)
+    comfyui_root = node_root.parent.parent  # custom_nodes/../.. = ComfyUI/
+    blender_exe = find_blender(comfyui_root / "tools" / "blender")
     if blender_exe:
         print(f"[UniRig] Blender: {blender_exe}")
     else:
