@@ -426,7 +426,7 @@ def _export_mia_fbx(
 
     try:
         # Get template path - use UniRig's bundled Mixamo template
-        ASSETS_DIR = LIB_DIR.parent / "assets"
+        ASSETS_DIR = NODE_DIR / "assets"
         template_path = ASSETS_DIR / "animation_characters" / "mixamo.fbx"
         if not template_path.exists():
             # Fallback to MIA template if available

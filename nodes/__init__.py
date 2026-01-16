@@ -26,6 +26,9 @@ from .animation import UniRigApplyAnimation
 from .mia_model_loader import MIALoadModel
 from .mia_auto_rig import MIAAutoRig
 
+# Utility nodes
+from .orientation_check import UniRigOrientationCheck
+
 NODE_CLASS_MAPPINGS = {
     "UniRigLoadModel": UniRigLoadModel,
     "UniRigAutoRig": UniRigAutoRig,
@@ -38,6 +41,8 @@ NODE_CLASS_MAPPINGS = {
     # MIA nodes
     "MIALoadModel": MIALoadModel,
     "MIAAutoRig": MIAAutoRig,
+    # Utility nodes
+    "UniRigOrientationCheck": UniRigOrientationCheck,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -52,6 +57,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     # MIA nodes
     "MIALoadModel": "MIA: Load Model",
     "MIAAutoRig": "MIA: Auto Rig",
+    # Utility nodes
+    "UniRigOrientationCheck": "UniRig: Orientation Check",
 }
 
 __all__ = [

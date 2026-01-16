@@ -23,6 +23,7 @@ dependencies = [
     "trimesh",
     "numpy",
     "scipy",
+    "PyOpenGL>=3.1.5",
     "pyrender",
     "libigl",
 
