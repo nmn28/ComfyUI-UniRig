@@ -570,9 +570,11 @@ class UniRigExtractSkeletonNew:
                     else:
                         names_list = [f"bone_{i}" for i in range(num_bones)]
                     print(f"[UniRigExtractSkeletonNew] ✓ Using {len(names_list)} model-generated bone names")
+                    # Debug: show first few bone names to diagnose naming issues
+                    print(f"[UniRigExtractSkeletonNew] First 5 bone names: {names_list[:5]}")
                 else:
                     names_list = [f"bone_{i}" for i in range(num_bones)]
-                    print(f"[UniRigExtractSkeletonNew] Using {len(names_list)} generic bone names")
+                    print(f"[UniRigExtractSkeletonNew] Using {len(names_list)} generic bone names (model returned no names)")
 
                 # Map bones to their head joint positions
                 if skeleton_bone_to_head is not None:
@@ -616,13 +618,16 @@ class UniRigExtractSkeletonNew:
             # Remap bone names if mixamo was requested (applies to both branches above)
             if remap_to_mixamo:
                 remapped_names = []
+                remapped_count = 0
                 for name in names_list:
                     if name in VROID_TO_MIXAMO_BONE_MAP:
                         remapped_names.append(VROID_TO_MIXAMO_BONE_MAP[name])
+                        remapped_count += 1
                     else:
                         remapped_names.append(name)  # Keep original if not in map
                 names_list = remapped_names
-                print(f"[UniRigExtractSkeletonNew] Remapped {len(names_list)} bones to Mixamo naming")
+                print(f"[UniRigExtractSkeletonNew] Remapped {remapped_count}/{len(names_list)} bones to Mixamo naming")
+                print(f"[UniRigExtractSkeletonNew] First 5 names after remap: {names_list[:5]}")
 
             # Convert to SMPL skeleton if requested (filter 52 VRoid bones to 22 SMPL joints)
             if remap_to_smpl:

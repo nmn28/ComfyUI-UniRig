@@ -15,7 +15,6 @@ from .base import (
 from .model_loaders import UniRigLoadModel
 from .auto_rig import UniRigAutoRig
 from .skeleton_io import (
-    UniRigSaveSkeleton,
     UniRigLoadRiggedMesh,
     UniRigPreviewRiggedMesh,
     UniRigExportPosedFBX,
@@ -30,7 +29,6 @@ from .mia_auto_rig import MIAAutoRig
 NODE_CLASS_MAPPINGS = {
     "UniRigLoadModel": UniRigLoadModel,
     "UniRigAutoRig": UniRigAutoRig,
-    "UniRigSaveSkeleton": UniRigSaveSkeleton,
     "UniRigLoadRiggedMesh": UniRigLoadRiggedMesh,
     "UniRigPreviewRiggedMesh": UniRigPreviewRiggedMesh,
     "UniRigExportPosedFBX": UniRigExportPosedFBX,
@@ -45,7 +43,6 @@ NODE_CLASS_MAPPINGS = {
 NODE_DISPLAY_NAME_MAPPINGS = {
     "UniRigLoadModel": "UniRig: Load Model",
     "UniRigAutoRig": "UniRig: Auto Rig",
-    "UniRigSaveSkeleton": "UniRig: Save Skeleton",
     "UniRigLoadRiggedMesh": "UniRig: Load Rigged Mesh",
     "UniRigPreviewRiggedMesh": "UniRig: Preview Rigged Mesh",
     "UniRigExportPosedFBX": "UniRig: Export Posed FBX",
