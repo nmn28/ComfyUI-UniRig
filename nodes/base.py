@@ -32,17 +32,12 @@ BLENDER_PARSE_SKELETON = str(LIB_DIR / "blender_parse_skeleton.py")
 BLENDER_EXTRACT_MESH_INFO = str(LIB_DIR / "blender_extract_mesh_info.py")
 
 # Set up UniRig models directory in ComfyUI's models folder
-# IMPORTANT: This must happen BEFORE any HuggingFace imports
+# Only contains skeleton.safetensors and skin.safetensors - no HuggingFace cache
 UNIRIG_MODELS_DIR = Path(folder_paths.models_dir) / "unirig"
 UNIRIG_MODELS_DIR.mkdir(parents=True, exist_ok=True)
-(UNIRIG_MODELS_DIR / "hub").mkdir(parents=True, exist_ok=True)
+os.environ['UNIRIG_MODELS_DIR'] = str(UNIRIG_MODELS_DIR)
 
-# Set HuggingFace cache to use ComfyUI's models folder (never ~/.cache)
-os.environ['HF_HOME'] = str(UNIRIG_MODELS_DIR)
-os.environ['TRANSFORMERS_CACHE'] = str(UNIRIG_MODELS_DIR / "transformers")
-os.environ['HF_HUB_CACHE'] = str(UNIRIG_MODELS_DIR / "hub")
-
-print(f"[UniRig] Models cache location: {UNIRIG_MODELS_DIR}")
+print(f"[UniRig] Models directory: {UNIRIG_MODELS_DIR}")
 
 # Find Blender executable
 # Detection priority:
@@ -205,7 +200,7 @@ def setup_subprocess_env() -> dict:
     Set up environment variables for UniRig subprocess calls.
 
     Returns:
-        dict: Environment dictionary with Blender and HuggingFace paths configured
+        dict: Environment dictionary with Blender and models paths configured
     """
     env = os.environ.copy()
 
@@ -215,10 +210,8 @@ def setup_subprocess_env() -> dict:
     # Set PyOpenGL to use OSMesa for headless rendering (no EGL/X11 needed)
     env['PYOPENGL_PLATFORM'] = 'osmesa'
 
-    # Ensure HuggingFace cache is set for subprocess
+    # Pass models directory to subprocess
     if UNIRIG_MODELS_DIR:
-        env['HF_HOME'] = str(UNIRIG_MODELS_DIR)
-        env['TRANSFORMERS_CACHE'] = str(UNIRIG_MODELS_DIR / "transformers")
-        env['HF_HUB_CACHE'] = str(UNIRIG_MODELS_DIR / "hub")
+        env['UNIRIG_MODELS_DIR'] = str(UNIRIG_MODELS_DIR)
 
     return env
