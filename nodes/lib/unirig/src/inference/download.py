@@ -13,7 +13,7 @@ def _find_cached_model(filename: str) -> str | None:
         if not cache_dir:
             continue
         cache_path = Path(cache_dir)
-        model_dir = cache_path / "models--VAST-AI--UniRig" / "snapshots"
+        model_dir = cache_path / "models--apozz--UniRig-safetensors" / "snapshots"
 
         if not model_dir.exists():
             continue
@@ -30,9 +30,9 @@ def _find_cached_model(filename: str) -> str | None:
 
 def download(ckpt_name: str) -> str:
     MAP = {
-        'experiments/skeleton/articulation-xl_quantization_256/model.ckpt': 'skeleton/articulation-xl_quantization_256/model.ckpt',
-        'experiments/skin/articulation-xl/model.ckpt': 'skin/articulation-xl/model.ckpt',
-        'experiments/skin/skeleton/model.ckpt': 'skin/skeleton/model.ckpt',
+        'experiments/skeleton/articulation-xl_quantization_256/model.ckpt': 'skeleton.safetensors',
+        'experiments/skin/articulation-xl/model.ckpt': 'skin.safetensors',
+        'experiments/skin/skeleton/model.ckpt': 'skin.safetensors',
     }
 
     try:
@@ -48,9 +48,9 @@ def download(ckpt_name: str) -> str:
             return cached_path
 
         # Download to ComfyUI's models folder (HF_HUB_CACHE is set in base.py)
-        print(f"[UniRig] Downloading {filename}...")
+        print(f"[UniRig] Downloading {filename} from apozz/UniRig-safetensors...")
         return hf_hub_download(
-            repo_id='VAST-AI/UniRig',
+            repo_id='apozz/UniRig-safetensors',
             filename=filename,
         )
     except Exception as e:
