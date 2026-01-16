@@ -69,3 +69,10 @@ dev = [
     "black",
     "flake8",
 ]
+
+# Direct bpy preprocessing (requires Python 3.11+)
+# Enables mesh preprocessing without Blender subprocess
+# Install with: pip install comfyui-unirig[bpy]
+bpy = [
+    "bpy>=4.0.0",
+]
