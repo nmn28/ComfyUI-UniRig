@@ -23,19 +23,26 @@ import trimesh
 # Get paths relative to this file
 UTILS_DIR = Path(__file__).parent.absolute()
 NODE_DIR = UTILS_DIR.parent
-LIB_DIR = NODE_DIR / "lib"
+LIB_DIR = NODE_DIR / "nodes" / "lib"  # lib is inside nodes/
 
 # MIA models directory (downloaded from HuggingFace)
-# Stored within the custom node directory: ComfyUI-UniRig/models/mia/
+# Stored in ComfyUI's models folder: ComfyUI/models/mia/
 # HuggingFace downloads to: {local_dir}/output/best/new/
 # Supports override via MIA_MODELS_PATH environment variable
+try:
+    import folder_paths
+    _COMFY_MODELS_DIR = Path(folder_paths.models_dir)
+except ImportError:
+    # Fallback if not running in ComfyUI context
+    _COMFY_MODELS_DIR = NODE_DIR.parent.parent / "models"
+
 if os.environ.get('MIA_MODELS_PATH'):
     MIA_MODELS_DIR = Path(os.environ['MIA_MODELS_PATH'])
 else:
-    MIA_MODELS_DIR = NODE_DIR / "models" / "mia" / "output" / "best" / "new"
+    MIA_MODELS_DIR = _COMFY_MODELS_DIR / "mia" / "output" / "best" / "new"
 
 # MIA_PATH is the local_dir for HuggingFace downloads
-MIA_PATH = NODE_DIR / "models" / "mia"
+MIA_PATH = _COMFY_MODELS_DIR / "mia"
 
 # Required model files
 MIA_MODEL_FILES = [
@@ -341,30 +348,28 @@ def _export_mia_fbx(
 
     # Get Blender path
     import shutil
-    BLENDER_DIR = LIB_DIR / "blender"
-
     BLENDER_EXE = None
-    # Check environment variable
+
+    # Check environment variable first
     if os.environ.get('BLENDER_PATH'):
         blender_path = os.environ.get('BLENDER_PATH')
         if os.path.isfile(blender_path):
             BLENDER_EXE = blender_path
-    # Check system PATH
+
+    # Use comfy_env to find Blender (checks PATH and tools/)
     if BLENDER_EXE is None:
-        BLENDER_EXE = shutil.which('blender')
-    # Check local lib/blender/
-    if BLENDER_EXE is None and BLENDER_DIR.exists():
-        # Find blender executable in the directory
-        for subdir in BLENDER_DIR.iterdir():
-            if subdir.is_dir() and subdir.name.startswith('blender-'):
-                blender_bin = subdir / 'blender'
-                if blender_bin.exists():
-                    BLENDER_EXE = str(blender_bin)
-                    break
+        try:
+            from comfy_env.tools import find_blender
+            blender_exe = find_blender(NODE_DIR / "tools" / "blender")
+            if blender_exe:
+                BLENDER_EXE = str(blender_exe)
+        except ImportError:
+            # Fallback to PATH
+            BLENDER_EXE = shutil.which('blender')
 
     if BLENDER_EXE is None:
         raise RuntimeError(
-            "Blender not found. Run: python blender_install.py\n"
+            "Blender not found. Run: python install.py\n"
             "Or set BLENDER_PATH environment variable to your Blender executable."
         )
 

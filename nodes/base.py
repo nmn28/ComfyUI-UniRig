@@ -25,7 +25,7 @@ except ImportError:
 
 # Get paths relative to this file
 NODE_DIR = Path(__file__).parent.parent.absolute()  # Go up from nodes/ to ComfyUI-UniRig/
-LIB_DIR = NODE_DIR / "lib"
+LIB_DIR = Path(__file__).parent / "lib"  # lib is now inside nodes/
 UNIRIG_PATH = str(LIB_DIR / "unirig")
 BLENDER_SCRIPT = str(LIB_DIR / "blender_extract.py")
 BLENDER_PARSE_SKELETON = str(LIB_DIR / "blender_parse_skeleton.py")
@@ -46,17 +46,16 @@ print(f"[UniRig] Models cache location: {UNIRIG_MODELS_DIR}")
 
 # Find Blender executable
 # Detection priority:
-# 1. UNIRIG_BLENDER_PATH environment variable (explicit override)
+# 1. BLENDER_PATH environment variable (explicit override)
 # 2. System PATH ('blender' command)
-# 3. Local lib/blender/ directory
+# 3. Local tools/blender/ directory (installed by comfy-env)
 # 4. Print instructions (no auto-download)
 
 import shutil
 
-BLENDER_DIR = LIB_DIR / "blender"
 BLENDER_EXE = None
 
-# 1. Check explicit override first (BLENDER_PATH or UNIRIG_BLENDER_PATH)
+# 1. Check explicit override first (BLENDER_PATH)
 if os.environ.get('BLENDER_PATH'):
     blender_path = os.environ.get('BLENDER_PATH')
     if os.path.isfile(blender_path):
@@ -64,41 +63,30 @@ if os.environ.get('BLENDER_PATH'):
         print(f"[UniRig] Using Blender from BLENDER_PATH: {BLENDER_EXE}")
     else:
         print(f"[UniRig] Warning: BLENDER_PATH set but file not found: {blender_path}")
-elif os.environ.get('UNIRIG_BLENDER_PATH'):
-    # Backward compatibility
-    blender_path = os.environ.get('UNIRIG_BLENDER_PATH')
-    if os.path.isfile(blender_path):
-        BLENDER_EXE = blender_path
-        print(f"[UniRig] Using Blender from UNIRIG_BLENDER_PATH: {BLENDER_EXE}")
-    else:
-        print(f"[UniRig] Warning: UNIRIG_BLENDER_PATH set but file not found: {blender_path}")
 
-# 2. Check system PATH
+# 2. Check system PATH and local tools/ via comfy_env
 if BLENDER_EXE is None:
-    blender_in_path = shutil.which('blender')
-    if blender_in_path:
-        BLENDER_EXE = blender_in_path
-        print(f"[UniRig] Found Blender in PATH: {BLENDER_EXE}")
-
-# 3. Check local lib/blender/
-if BLENDER_EXE is None and BLENDER_DIR.exists():
     try:
-        from ..install import find_blender_executable
+        from comfy_env.tools import find_blender
+        blender_exe = find_blender(NODE_DIR / "tools" / "blender")
+        if blender_exe:
+            BLENDER_EXE = str(blender_exe)
+            print(f"[UniRig] Found Blender: {BLENDER_EXE}")
     except ImportError:
-        from install import find_blender_executable
-    blender_bin = find_blender_executable(str(BLENDER_DIR))
-    if blender_bin:
-        BLENDER_EXE = str(blender_bin)
-        print(f"[UniRig] Found local Blender: {BLENDER_EXE}")
+        # Fallback if comfy_env not available
+        blender_in_path = shutil.which('blender')
+        if blender_in_path:
+            BLENDER_EXE = blender_in_path
+            print(f"[UniRig] Found Blender in PATH: {BLENDER_EXE}")
 
-# 4. Print instructions if not found (no auto-download)
+# 3. Print instructions if not found
 if BLENDER_EXE is None:
     print("[UniRig] WARNING: Blender not found!")
     print("[UniRig] Skeleton extraction nodes require Blender 4.2+")
     print("[UniRig] Options:")
     print("[UniRig]   1. Install Blender and add to PATH")
     print("[UniRig]   2. Set BLENDER_PATH environment variable")
-    print("[UniRig]   3. Run: python blender_install.py")
+    print("[UniRig]   3. Run: python install.py")
 
 # Set environment variable for subprocesses
 if BLENDER_EXE:

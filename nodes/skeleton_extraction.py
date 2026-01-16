@@ -18,7 +18,7 @@ from comfy_env import isolated
 
 # Support both relative imports (ComfyUI) and absolute imports (testing)
 try:
-    from ..constants import BLENDER_TIMEOUT, INFERENCE_TIMEOUT, PARSE_TIMEOUT, TARGET_FACE_COUNT
+    from .constants import BLENDER_TIMEOUT, INFERENCE_TIMEOUT, PARSE_TIMEOUT, TARGET_FACE_COUNT
 except ImportError:
     from constants import BLENDER_TIMEOUT, INFERENCE_TIMEOUT, PARSE_TIMEOUT, TARGET_FACE_COUNT
 
@@ -358,7 +358,7 @@ class UniRigExtractSkeletonNew:
         # Check if Blender is available
         if not BLENDER_EXE or not os.path.exists(BLENDER_EXE):
             raise RuntimeError(
-                f"Blender not found. Please run blender_install.py or install manually."
+                f"Blender not found. Please run comfy-env install."
             )
 
         # Check if UniRig is available

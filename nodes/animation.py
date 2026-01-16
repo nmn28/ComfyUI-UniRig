@@ -131,7 +131,7 @@ class UniRigApplyAnimation:
         if not BLENDER_EXE or not os.path.exists(BLENDER_EXE):
             raise RuntimeError(
                 "Blender is required for animation application.\n"
-                "Run: python blender_install.py"
+                "Run: comfy-env install"
             )
 
         if not os.path.exists(BLENDER_APPLY_ANIMATION):

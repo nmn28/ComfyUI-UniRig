@@ -9,10 +9,11 @@ dist/
 build/
 .ipynb_checkpoints/
 
-# Virtual environments
+# Virtual environments (including comfy-env isolated envs)
 venv/
 env/
 ENV/
+_env_*/
 
 # IDE
 .vscode/
@@ -26,8 +27,8 @@ ENV/
 *.bak
 *.log
 
-# Blender installation (auto-downloaded)
-lib/blender/
+# Blender installation (auto-downloaded by comfy-env)
+tools/
 
 # Model checkpoints and cache
 *.ckpt

@@ -14,7 +14,7 @@ import folder_paths
 
 # Support both relative imports (ComfyUI) and absolute imports (testing)
 try:
-    from ..constants import BLENDER_TIMEOUT, PARSE_TIMEOUT, MESH_INFO_TIMEOUT, DEFAULT_EXTRUDE_SIZE
+    from .constants import BLENDER_TIMEOUT, PARSE_TIMEOUT, MESH_INFO_TIMEOUT, DEFAULT_EXTRUDE_SIZE
 except ImportError:
     from constants import BLENDER_TIMEOUT, PARSE_TIMEOUT, MESH_INFO_TIMEOUT, DEFAULT_EXTRUDE_SIZE
 
@@ -149,7 +149,7 @@ class UniRigSaveSkeleton:
             pickle.dump(data, f)
 
         try:
-            wrapper_script = os.path.join(NODE_DIR, 'lib', 'blender_export_fbx.py')
+            wrapper_script = os.path.join(NODE_DIR, 'nodes', 'lib', 'blender_export_fbx.py')
 
             if not os.path.exists(wrapper_script):
                 raise RuntimeError(f"Blender export script not found: {wrapper_script}")
@@ -577,7 +577,7 @@ class UniRigExportPosedFBX:
 
         try:
             # Path to Blender script
-            blender_script = os.path.join(NODE_DIR, 'lib', 'blender_export_posed_fbx.py')
+            blender_script = os.path.join(NODE_DIR, 'nodes', 'lib', 'blender_export_posed_fbx.py')
 
             if not os.path.exists(blender_script):
                 raise RuntimeError(f"Blender export script not found: {blender_script}")

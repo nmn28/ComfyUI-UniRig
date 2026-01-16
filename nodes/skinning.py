@@ -19,7 +19,7 @@ from comfy_env import isolated
 
 # Support both relative imports (ComfyUI) and absolute imports (testing)
 try:
-    from ..constants import BLENDER_TIMEOUT, INFERENCE_TIMEOUT
+    from .constants import BLENDER_TIMEOUT, INFERENCE_TIMEOUT
 except ImportError:
     from constants import BLENDER_TIMEOUT, INFERENCE_TIMEOUT
 
