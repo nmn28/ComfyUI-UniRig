@@ -127,6 +127,7 @@ def _load_skeleton_model(checkpoint_path: str, device: Optional[torch.device] = 
         Loaded model ready for inference
     """
     import sys
+    import os
     from pathlib import Path
 
     # Add unirig to path if needed
@@ -140,23 +141,32 @@ def _load_skeleton_model(checkpoint_path: str, device: Optional[torch.device] = 
     if device is None:
         device = _get_device()
 
-    # Load configs
-    config_dir = unirig_path / 'configs'
+    # Change to unirig directory so relative config paths resolve correctly
+    # (configs reference paths like ./configs/skeleton/vroid.yaml)
+    original_cwd = os.getcwd()
+    os.chdir(unirig_path)
 
-    with open(config_dir / 'model' / 'unirig_ar_350m_1024_81920_float32.yaml') as f:
-        model_config = Box(yaml.safe_load(f))
+    try:
+        # Load configs
+        config_dir = unirig_path / 'configs'
 
-    with open(config_dir / 'tokenizer' / 'tokenizer_parts_articulationxl_256.yaml') as f:
-        tokenizer_config = Box(yaml.safe_load(f))
+        with open(config_dir / 'model' / 'unirig_ar_350m_1024_81920_float32.yaml') as f:
+            model_config = Box(yaml.safe_load(f))
 
-    # Create tokenizer
-    from src.tokenizer.parse import get_tokenizer
-    from src.tokenizer.spec import TokenizerConfig
-    tokenizer = get_tokenizer(config=TokenizerConfig.parse(config=tokenizer_config))
+        with open(config_dir / 'tokenizer' / 'tokenizer_parts_articulationxl_256.yaml') as f:
+            tokenizer_config = Box(yaml.safe_load(f))
 
-    # Create model
-    from src.model.parse import get_model
-    model = get_model(tokenizer=tokenizer, **model_config)
+        # Create tokenizer
+        from src.tokenizer.parse import get_tokenizer
+        from src.tokenizer.spec import TokenizerConfig
+        tokenizer = get_tokenizer(config=TokenizerConfig.parse(config=tokenizer_config))
+
+        # Create model
+        from src.model.parse import get_model
+        model = get_model(tokenizer=tokenizer, **model_config)
+    finally:
+        # Restore original working directory
+        os.chdir(original_cwd)
 
     # Load weights from safetensors
     print(f"[UniRig Direct] Loading skeleton weights from {checkpoint_path}")
@@ -188,6 +198,7 @@ def _load_skin_model(checkpoint_path: str, device: Optional[torch.device] = None
         Loaded model ready for inference
     """
     import sys
+    import os
     from pathlib import Path
 
     # Add unirig to path if needed
@@ -201,15 +212,23 @@ def _load_skin_model(checkpoint_path: str, device: Optional[torch.device] = None
     if device is None:
         device = _get_device()
 
-    # Load config
-    config_dir = unirig_path / 'configs'
+    # Change to unirig directory so relative config paths resolve correctly
+    original_cwd = os.getcwd()
+    os.chdir(unirig_path)
 
-    with open(config_dir / 'model' / 'unirig_skin.yaml') as f:
-        model_config = Box(yaml.safe_load(f))
+    try:
+        # Load config
+        config_dir = unirig_path / 'configs'
 
-    # Create model
-    from src.model.parse import get_model
-    model = get_model(tokenizer=None, **model_config)
+        with open(config_dir / 'model' / 'unirig_skin.yaml') as f:
+            model_config = Box(yaml.safe_load(f))
+
+        # Create model
+        from src.model.parse import get_model
+        model = get_model(tokenizer=None, **model_config)
+    finally:
+        # Restore original working directory
+        os.chdir(original_cwd)
 
     # Load weights from safetensors
     print(f"[UniRig Direct] Loading skin weights from {checkpoint_path}")
@@ -349,6 +368,9 @@ def predict_skinning(
     joints: np.ndarray,
     parents: np.ndarray,
     checkpoint_path: str,
+    faces: Optional[np.ndarray] = None,
+    tails: Optional[np.ndarray] = None,
+    voxel_grid_size: int = 196,
     device: Optional[torch.device] = None,
 ) -> np.ndarray:
     """
@@ -360,6 +382,9 @@ def predict_skinning(
         joints: Joint positions (J, 3)
         parents: Parent indices (J,)
         checkpoint_path: Path to skin.safetensors
+        faces: Mesh faces (F, 3) - required for voxel_skin computation
+        tails: Bone tail positions (J, 3) - if None, computed from joints
+        voxel_grid_size: Grid size for voxel_skin (default 196)
         device: Device to run on
 
     Returns:
@@ -373,13 +398,63 @@ def predict_skinning(
     num_joints = len(joints)
     num_vertices = len(vertices)
 
+    # Compute tails if not provided (use joint positions as tails)
+    if tails is None:
+        # Default: tails = joints (bone has zero length, point bone)
+        tails = joints.copy()
+
+    # Compute voxel_skin if faces provided
+    if faces is not None:
+        # Import voxelization functions
+        import sys
+        from pathlib import Path
+        unirig_path = Path(__file__).parents[2]
+        if str(unirig_path) not in sys.path:
+            sys.path.insert(0, str(unirig_path))
+
+        from src.data.vertex_group import voxelization, voxel_skin
+
+        print(f"[UniRig Direct] Computing voxel_skin (grid={voxel_grid_size})...")
+
+        # Voxelize the mesh
+        grid_coords = voxelization(
+            vertices=vertices,
+            faces=faces,
+            grid=voxel_grid_size,
+            backend='trimesh',
+        )
+
+        # Compute voxel skin weights
+        voxel_skin_weights = voxel_skin(
+            grid=voxel_grid_size,
+            grid_coords=grid_coords,
+            joints=joints,
+            vertices=vertices,
+            faces=faces,
+            alpha=0.5,
+            link_dis=0.00001,
+            grid_query=7,
+            vertex_query=1,
+            grid_weight=3.0,
+        )
+        voxel_skin_weights = np.nan_to_num(voxel_skin_weights, nan=0., posinf=0., neginf=0.)
+        print(f"[UniRig Direct] voxel_skin shape: {voxel_skin_weights.shape}")
+    else:
+        # Fallback: zero voxel_skin
+        voxel_skin_weights = np.zeros((num_joints, num_vertices), dtype=np.float32)
+
     # Prepare batch
+    # Note: offset is for PTv3 sparse convolutions - indicates where each batch element ends
+    # For a single batch with N vertices, offset = [N]
     batch = {
         'vertices': torch.from_numpy(vertices).float().unsqueeze(0).to(device),
         'normals': torch.from_numpy(normals).float().unsqueeze(0).to(device),
         'joints': torch.from_numpy(joints).float().unsqueeze(0).to(device),
+        'tails': torch.from_numpy(tails).float().unsqueeze(0).to(device),
+        'voxel_skin': torch.from_numpy(voxel_skin_weights).float().unsqueeze(0).to(device),
         'parents': torch.from_numpy(parents).long().unsqueeze(0).to(device),
         'num_bones': torch.tensor([num_joints], dtype=torch.long, device=device),
+        'offset': torch.tensor([num_vertices], dtype=torch.long, device=device),  # PTv3 batch offset for single sample
         'path': ['direct_inference'],
     }
 

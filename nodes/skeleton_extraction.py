@@ -693,7 +693,7 @@ class UniRigExtractSkeletonNew:
                 # Create edges from parent relationships
                 edges = []
                 for i, parent in enumerate(skeleton_bone_parents):
-                    if parent >= 0:
+                    if parent is not None and parent >= 0:
                         edges.append([parent, i])
 
                 print(f"[UniRigExtractSkeletonNew] Direct results: {len(all_joints)} joints, {len(edges)} edges")
@@ -881,7 +881,7 @@ class UniRigExtractSkeletonNew:
             if skeleton_bone_parents is not None:
                 bone_parents = skeleton_bone_parents
                 num_bones = len(bone_parents)
-                parents_list = [None if p == -1 else int(p) for p in bone_parents]
+                parents_list = [None if (p is None or p == -1) else int(p) for p in bone_parents]
 
                 # Get bone names - for direct inference we already have them from model output
                 # For subprocess, try to load from predict_skeleton.npz

@@ -19,9 +19,8 @@ import folder_paths
 from comfy_env import isolated
 
 # Direct inference flag - when True, uses in-process inference without subprocess
-# Note: Skinning direct inference is disabled because it requires complex preprocessing
-# (voxel_skin, tails, etc.) that the data pipeline handles. Skeleton direct inference works fine.
-USE_DIRECT_INFERENCE = False  # Disabled for skinning - preprocessing requirements too complex
+# Enable direct inference for skinning (no subprocess)
+USE_DIRECT_INFERENCE = True
 
 # Support both relative imports (ComfyUI) and absolute imports (testing)
 try:
@@ -367,14 +366,24 @@ class UniRigApplySkinningMLNew:
                     mesh_normals = np.array(normalized_mesh.vertex_normals, dtype=np.float32)
 
                 joints = np.array(skeleton['joints'], dtype=np.float32)
-                parents = np.array(skeleton['parents'], dtype=np.int64)
+                # Convert parent indices: None -> -1 for the model (handle before numpy conversion)
+                parents_list = skeleton['parents']
+                parents = np.array([-1 if p is None else int(p) for p in parents_list], dtype=np.int64)
 
-                # Convert parent indices: None -> -1 for the model
-                for i, p in enumerate(parents):
-                    if p is None:
-                        parents[i] = -1
+                # Get mesh faces
+                mesh_faces = skeleton.get('mesh_faces')
+                if mesh_faces is None:
+                    mesh_faces = np.array(normalized_mesh.faces, dtype=np.int32)
 
-                print(f"[UniRigApplySkinningMLNew] Mesh: {len(mesh_vertices)} vertices")
+                # Get bone tails (if available)
+                tails = skeleton.get('tails')
+                if tails is not None:
+                    tails = np.array(tails, dtype=np.float32)
+
+                # Get voxel grid size from config overrides
+                voxel_grid_size = config_overrides.get('voxel_grid_size', 196)
+
+                print(f"[UniRigApplySkinningMLNew] Mesh: {len(mesh_vertices)} vertices, {len(mesh_faces)} faces")
                 print(f"[UniRigApplySkinningMLNew] Skeleton: {len(joints)} joints")
 
                 # Run direct skinning prediction
@@ -384,6 +393,9 @@ class UniRigApplySkinningMLNew:
                     joints=joints,
                     parents=parents,
                     checkpoint_path=checkpoint_path,
+                    faces=mesh_faces,
+                    tails=tails,
+                    voxel_grid_size=voxel_grid_size,
                 )
 
                 inference_time = time.time() - step_start
@@ -537,9 +549,9 @@ class UniRigApplySkinningMLNew:
                         tails=skeleton.get('tails'),
                         uv_coords=skeleton.get('uv_coords'),
                         uv_faces=skeleton.get('uv_faces'),
-                        texture_data_base64=skeleton.get('texture_data_base64', ''),
-                        texture_format=skeleton.get('texture_format', 'PNG'),
-                        material_name=skeleton.get('material_name', 'Material'),
+                        texture_data_base64=skeleton.get('texture_data_base64') or '',
+                        texture_format=skeleton.get('texture_format') or 'PNG',
+                        material_name=skeleton.get('material_name') or 'Material',
                     )
                     print(f"[UniRigApplySkinningMLNew] ✓ FBX generated (direct bpy): {output_fbx}")
 

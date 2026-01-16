@@ -666,6 +666,10 @@ def _apply_texture(obj, texture_data_base64, material_name):
     """Apply texture to mesh object."""
     print(f"[Direct FBX Export] Creating textured material...")
     try:
+        # Ensure material_name is not None
+        if material_name is None:
+            material_name = "Material"
+
         png_data = base64.b64decode(texture_data_base64)
 
         with tempfile.NamedTemporaryFile(suffix='.png', delete=False) as tmp:
