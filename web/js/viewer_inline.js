@@ -1,5 +1,5 @@
 // Auto-generated inline viewer - DO NOT EDIT
-// Generated on 2025-11-20T23:55:01.387Z
+// Generated on 2026-01-16T02:33:20.020Z
 
 export const VIEWER_HTML = `<!DOCTYPE html>
 <html>
@@ -37498,6 +37498,14 @@ version 0.6.9
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2();
 
+        // Helper function to validate bounding box
+        function isValidBounds(box) {
+            if (!box || box.isEmpty()) return false;
+            const size = box.getSize(new THREE.Vector3());
+            return isFinite(size.x) && isFinite(size.y) && isFinite(size.z) &&
+                   size.x > 0 && size.y > 0 && size.z > 0;
+        }
+
         // Animation loop
         function animate() {
             requestAnimationFrame(animate);
@@ -37506,20 +37514,12 @@ version 0.6.9
         }
         animate();
 
-        // Handle resize with proper container dimensions
-        function handleResize() {
-            const container = document.getElementById('viewerContainer');
-            const width = container ? container.clientWidth : window.innerWidth;
-            const height = container ? container.clientHeight : window.innerHeight;
-            if (width > 0 && height > 0) {
-                camera.aspect = width / height;
-                camera.updateProjectionMatrix();
-                renderer.setSize(width, height);
-            }
-        }
-
-        // Handle browser window resize
-        window.addEventListener('resize', handleResize);
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
 
         // Cleanup on page unload to prevent memory leaks
         window.addEventListener('beforeunload', () => {
@@ -37687,11 +37687,30 @@ version 0.6.9
             boneGizmos = [];
 
             // Calculate appropriate gizmo size based on mesh bounds
-            if (meshBounds) {
+            if (meshBounds && isValidBounds(meshBounds)) {
                 const size = meshBounds.getSize(new THREE.Vector3());
                 const maxDim = Math.max(size.x, size.y, size.z);
                 boneGizmoSize = maxDim * 0.02; // 2% of largest dimension
                 console.log('[UniRig FBX Viewer] Bone gizmo size:', boneGizmoSize);
+            } else {
+                // Fallback: estimate size from bone positions
+                if (bones.length > 1) {
+                    let totalDist = 0;
+                    let count = 0;
+                    const tempPos = new THREE.Vector3();
+                    bones.forEach(bone => {
+                        bone.getWorldPosition(tempPos);
+                        if (isFinite(tempPos.x) && isFinite(tempPos.y) && isFinite(tempPos.z)) {
+                            totalDist += tempPos.length();
+                            count++;
+                        }
+                    });
+                    if (count > 0) {
+                        const avgDist = totalDist / count;
+                        boneGizmoSize = Math.max(0.02, avgDist * 0.03);
+                    }
+                }
+                console.log('[UniRig FBX Viewer] Using fallback bone gizmo size:', boneGizmoSize);
             }
 
             bones.forEach((bone, index) => {
@@ -37869,17 +37888,101 @@ version 0.6.9
                     console.log('[UniRig FBX Viewer] FBX loaded successfully');
                     currentModel = fbx;
 
-                    // Center model
+                    // Center model - compute bounds with validation
                     const box = new THREE.Box3().setFromObject(currentModel);
-                    const center = box.getCenter(new THREE.Vector3());
-                    currentModel.position.sub(center);
+                    let maxDim = 2; // Default fallback size
 
-                    // Store bounds for later use
-                    meshBounds = box;
+                    if (isValidBounds(box)) {
+                        const center = box.getCenter(new THREE.Vector3());
+                        currentModel.position.sub(center);
+                        meshBounds = box;
+                        const size = box.getSize(new THREE.Vector3());
+                        maxDim = Math.max(size.x, size.y, size.z);
+                        console.log('[UniRig FBX Viewer] Valid mesh bounds:', size);
+                    } else {
+                        console.warn('[UniRig FBX Viewer] Invalid mesh bounds (NaN or empty), using default size');
+                        console.log('[UniRig FBX Viewer] DEBUG box:', box);
+                        meshBounds = null;
 
-                    // Calculate size and maxDim early (needed in traverse)
-                    const size = box.getSize(new THREE.Vector3());
-                    const maxDim = Math.max(size.x, size.y, size.z);
+                        // Diagnose why bounds are NaN
+                        currentModel.traverse((child) => {
+                            if (child.isMesh || child.isSkinnedMesh) {
+                                console.log('[UniRig FBX Viewer] DEBUG mesh:', child.name, 'type:', child.type);
+
+                                let geomBox = null;
+
+                                // Check geometry
+                                if (child.geometry) {
+                                    const posAttr = child.geometry.attributes.position;
+                                    if (posAttr) {
+                                        const arr = posAttr.array;
+                                        let hasNaN = false;
+                                        let minVal = Infinity, maxVal = -Infinity;
+                                        for (let i = 0; i < arr.length; i++) {
+                                            if (!isFinite(arr[i])) hasNaN = true;
+                                            if (arr[i] < minVal) minVal = arr[i];
+                                            if (arr[i] > maxVal) maxVal = arr[i];
+                                        }
+                                        console.log('[UniRig FBX Viewer] DEBUG geometry positions: count=', posAttr.count, 'hasNaN=', hasNaN, 'range=[', minVal, ',', maxVal, ']');
+                                    }
+
+                                    // Check if geometry bounding box works
+                                    child.geometry.computeBoundingBox();
+                                    geomBox = child.geometry.boundingBox;
+                                    if (geomBox) {
+                                        const gMin = geomBox.min;
+                                        const gMax = geomBox.max;
+                                        console.log('[UniRig FBX Viewer] DEBUG geometry boundingBox min:', gMin.x, gMin.y, gMin.z, 'max:', gMax.x, gMax.y, gMax.z);
+                                    }
+                                }
+
+                                // Check world matrix
+                                child.updateMatrixWorld(true);
+                                const m = child.matrixWorld.elements;
+                                let matrixHasNaN = false;
+                                for (let i = 0; i < 16; i++) {
+                                    if (!isFinite(m[i])) matrixHasNaN = true;
+                                }
+                                console.log('[UniRig FBX Viewer] DEBUG matrixWorld hasNaN:', matrixHasNaN);
+
+                                // Check skeleton if skinned mesh
+                                if (child.isSkinnedMesh && child.skeleton) {
+                                    console.log('[UniRig FBX Viewer] DEBUG skeleton bones:', child.skeleton.bones.length);
+                                    const bindMatrix = child.bindMatrix.elements;
+                                    let bindHasNaN = false;
+                                    for (let i = 0; i < 16; i++) {
+                                        if (!isFinite(bindMatrix[i])) bindHasNaN = true;
+                                    }
+                                    console.log('[UniRig FBX Viewer] DEBUG bindMatrix hasNaN:', bindHasNaN);
+
+                                    // Check bone matrices
+                                    let boneMatricesHasNaN = false;
+                                    if (child.skeleton.boneMatrices) {
+                                        for (let i = 0; i < child.skeleton.boneMatrices.length; i++) {
+                                            if (!isFinite(child.skeleton.boneMatrices[i])) {
+                                                boneMatricesHasNaN = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    console.log('[UniRig FBX Viewer] DEBUG boneMatrices hasNaN:', boneMatricesHasNaN);
+                                }
+
+                                // Use geometry bounds as fallback (always prefer valid geometry bounds)
+                                if (geomBox && isValidBounds(geomBox)) {
+                                    const geomSize = geomBox.getSize(new THREE.Vector3());
+                                    const geomMaxDim = Math.max(geomSize.x, geomSize.y, geomSize.z);
+                                    // Always use geometry bounds when setFromObject failed
+                                    maxDim = geomMaxDim;
+                                    meshBounds = geomBox.clone();
+                                    // Center the model using geometry bounds
+                                    const geomCenter = geomBox.getCenter(new THREE.Vector3());
+                                    currentModel.position.sub(geomCenter);
+                                    console.log('[UniRig FBX Viewer] Using geometry bounds, maxDim:', maxDim, 'center:', geomCenter);
+                                }
+                            }
+                        });
+                    }
 
                     // Find skeleton
                     let foundSkeleton = false;
@@ -37928,8 +38031,9 @@ version 0.6.9
                                 console.log('[UniRig FBX Viewer] Skeleton bounds:', skeletonBox);
                                 console.log('[UniRig FBX Viewer] Skeleton size:', skeletonSize);
                                 console.log('[UniRig FBX Viewer] Skeleton center:', skeletonCenter);
-                                console.log('[UniRig FBX Viewer] Mesh size:', size);
-                                console.log('[UniRig FBX Viewer] Scale ratio (mesh/skeleton):', maxDim / Math.max(skeletonSize.x, skeletonSize.y, skeletonSize.z));
+                                console.log('[UniRig FBX Viewer] Mesh maxDim:', maxDim);
+                                const skelMaxDim = Math.max(skeletonSize.x, skeletonSize.y, skeletonSize.z);
+                                console.log('[UniRig FBX Viewer] Scale ratio (mesh/skeleton):', isFinite(skelMaxDim) && skelMaxDim > 0 ? maxDim / skelMaxDim : 'N/A');
 
                                 // Save rest pose (only if not already saved)
                                 // This prevents overwriting the original rest pose when loading exported FBX files
@@ -38472,13 +38576,8 @@ version 0.6.9
                     console.log('[UniRig FBX Viewer] Stored filename:', currentFBXFilename);
                 }
                 loadFBX(event.data.filepath);
-            } else if (event.data.type === 'RESIZE') {
-                handleResize();
             }
         });
-
-        // Initial resize to handle iframe embedding
-        handleResize();
 
         // Notify parent that viewer is ready
         console.log('[UniRig FBX Viewer] Ready');

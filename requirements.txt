@@ -6,6 +6,7 @@ trimesh
 numpy
 scipy
 pyrender
+libigl
 
 # UniRig ML dependencies
 transformers==4.51.3
@@ -21,6 +22,7 @@ python-box
 
 # HuggingFace
 huggingface-hub
+hf_xet
 
 # Mesh processing
 fast-simplification

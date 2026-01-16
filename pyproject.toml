@@ -23,6 +23,7 @@ dependencies = [
     "numpy",
     "scipy",
     "pyrender",
+    "libigl",
 
     # UniRig ML dependencies
     "transformers==4.51.3",
@@ -38,6 +39,7 @@ dependencies = [
 
     # HuggingFace
     "huggingface-hub",
+    "hf_xet",
 
     # Mesh processing
     "fast-simplification",
