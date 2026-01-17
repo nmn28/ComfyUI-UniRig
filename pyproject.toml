@@ -20,7 +20,7 @@ dependencies = [
     "torchvision",
 
     # Shared 3D viewers (FBX viewer components)
-    "comfy-3d-viewers>=0.2.0",
+    "comfy-3d-viewers>=0.1.0",
 
     # Core 3D processing
     "trimesh",
