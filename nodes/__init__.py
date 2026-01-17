@@ -18,6 +18,7 @@ from .skeleton_io import (
     UniRigLoadRiggedMesh,
     UniRigPreviewRiggedMesh,
     UniRigExportPosedFBX,
+    UniRigViewRigging,
 )
 from .mesh_io import UniRigLoadMesh, UniRigSaveMesh
 from .animation import UniRigApplyAnimation
@@ -35,6 +36,7 @@ NODE_CLASS_MAPPINGS = {
     "UniRigLoadRiggedMesh": UniRigLoadRiggedMesh,
     "UniRigPreviewRiggedMesh": UniRigPreviewRiggedMesh,
     "UniRigExportPosedFBX": UniRigExportPosedFBX,
+    "UniRigViewRigging": UniRigViewRigging,
     "UniRigLoadMesh": UniRigLoadMesh,
     "UniRigSaveMesh": UniRigSaveMesh,
     "UniRigApplyAnimation": UniRigApplyAnimation,
@@ -51,6 +53,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "UniRigLoadRiggedMesh": "UniRig: Load Rigged Mesh",
     "UniRigPreviewRiggedMesh": "UniRig: Preview Rigged Mesh",
     "UniRigExportPosedFBX": "UniRig: Export Posed FBX",
+    "UniRigViewRigging": "UniRig: View Rigging",
     "UniRigLoadMesh": "UniRig: Load Mesh",
     "UniRigSaveMesh": "UniRig: Save Mesh",
     "UniRigApplyAnimation": "UniRig: Apply Animation",

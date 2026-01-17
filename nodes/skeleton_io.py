@@ -24,6 +24,7 @@ try:
         BLENDER_PARSE_SKELETON,
         BLENDER_EXTRACT_MESH_INFO,
         NODE_DIR,
+        LIB_DIR,
     )
 except ImportError:
     from base import (
@@ -31,7 +32,36 @@ except ImportError:
         BLENDER_PARSE_SKELETON,
         BLENDER_EXTRACT_MESH_INFO,
         NODE_DIR,
+        LIB_DIR,
     )
+
+
+# Direct bone debug extraction module (bpy as Python module)
+_DIRECT_BONE_DEBUG_MODULE = None
+
+
+def _get_direct_bone_debug():
+    """Get the direct bone debug extraction module for in-process extraction using bpy."""
+    global _DIRECT_BONE_DEBUG_MODULE
+    if _DIRECT_BONE_DEBUG_MODULE is None:
+        debug_path = os.path.join(LIB_DIR, "unirig", "src", "inference", "direct_extract_bone_debug.py")
+        if os.path.exists(debug_path):
+            try:
+                import importlib.util
+                spec = importlib.util.spec_from_file_location("unirig_direct_bone_debug", debug_path)
+                _DIRECT_BONE_DEBUG_MODULE = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(_DIRECT_BONE_DEBUG_MODULE)
+                print(f"[UniRig] Loaded direct bone debug module from {debug_path}")
+            except ImportError as e:
+                print(f"[UniRig] Direct bone debug not available (bpy not installed): {e}")
+                _DIRECT_BONE_DEBUG_MODULE = False
+            except Exception as e:
+                print(f"[UniRig] Warning: Could not load direct bone debug module: {e}")
+                _DIRECT_BONE_DEBUG_MODULE = False
+        else:
+            print(f"[UniRig] Warning: Direct bone debug module not found at {debug_path}")
+            _DIRECT_BONE_DEBUG_MODULE = False
+    return _DIRECT_BONE_DEBUG_MODULE if _DIRECT_BONE_DEBUG_MODULE else None
 
 
 class UniRigLoadRiggedMesh:
@@ -451,3 +481,74 @@ class UniRigExportPosedFBX:
             # Clean up temporary JSON file
             if os.path.exists(transforms_json_path):
                 os.unlink(transforms_json_path)
+
+
+class UniRigViewRigging:
+    """
+    View rigging debug information.
+
+    Displays skeleton bones with names, roll/rotation values, and other
+    debugging information in an interactive 3D viewer.
+    """
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "fbx_output_path": ("STRING", {
+                    "tooltip": "FBX filename from output directory"
+                }),
+            },
+        }
+
+    RETURN_TYPES = ()
+    OUTPUT_NODE = True
+    FUNCTION = "view_rigging"
+    CATEGORY = "unirig"
+
+    def view_rigging(self, fbx_output_path):
+        """View rigging debug information for the FBX file."""
+        print(f"[UniRigViewRigging] Preparing debug view...")
+
+        # FBX should already be in output directory
+        output_dir = folder_paths.get_output_directory()
+
+        # Handle both relative paths and absolute paths
+        if os.path.isabs(fbx_output_path):
+            fbx_path = fbx_output_path
+        else:
+            fbx_path = os.path.join(output_dir, fbx_output_path)
+
+        if not os.path.exists(fbx_path):
+            raise RuntimeError(f"FBX file not found: {fbx_output_path}")
+
+        print(f"[UniRigViewRigging] FBX path: {fbx_path}")
+
+        # Extract bone debug data using direct bpy module
+        bone_debug_data = None
+        bone_debug_module = _get_direct_bone_debug()
+
+        if bone_debug_module:
+            try:
+                bone_debug_data = bone_debug_module.extract_bone_debug(fbx_path)
+                print(f"[UniRigViewRigging] Extracted debug data for {bone_debug_data.get('bone_count', 0)} bones")
+            except Exception as e:
+                print(f"[UniRigViewRigging] Warning: Could not extract bone debug data: {e}")
+                bone_debug_data = {'error': str(e), 'bones': [], 'bone_count': 0}
+        else:
+            print("[UniRigViewRigging] Warning: bpy module not available, bone debug data will be limited")
+            bone_debug_data = {'error': 'bpy module not available', 'bones': [], 'bone_count': 0}
+
+        # Return data for the viewer widget
+        # For relative path, just use the filename for the viewer
+        if os.path.isabs(fbx_output_path):
+            viewer_filename = os.path.basename(fbx_output_path)
+        else:
+            viewer_filename = fbx_output_path
+
+        return {
+            "ui": {
+                "fbx_file": [viewer_filename],
+                "bone_debug_data": [json.dumps(bone_debug_data)],
+            }
+        }
