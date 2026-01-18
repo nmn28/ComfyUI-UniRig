@@ -342,7 +342,7 @@ def run_mia_inference(
     if data.pose is not None:
         print(f"[MIA] Pose shape: {data.pose.shape}")
         # Save pose to known location for debugging
-        pose_debug_path = "/tmp/mia_pose_debug.npy"
+        pose_debug_path = os.path.join(folder_paths.get_temp_directory(), "mia_pose_debug.npy")
         np.save(pose_debug_path, data.pose.squeeze(0).numpy())
         print(f"[MIA] Saved pose data to {pose_debug_path}")
 
