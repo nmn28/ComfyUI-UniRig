@@ -235,14 +235,14 @@ def create_comparison_image(user_mesh: trimesh.Trimesh, ref_mesh: trimesh.Trimes
     draw.rectangle([0, footer_y, total_width, total_height], fill=(25, 25, 30))
 
     if is_correct:
-        status_text = "✓ Orientation looks correct (Y-up, character should be facing you)"
+        status_text = "[OK] Orientation looks correct (Y-up, character should be facing you)"
         status_color = (100, 255, 100)
     else:
-        status_text = f"⚠ Check orientation: {tallest_axis} is tallest (expected Y)"
+        status_text = f"[WARNING] Check orientation: {tallest_axis} is tallest (expected Y)"
         status_color = (255, 180, 50)
 
     draw.text((10, footer_y + 8), status_text, fill=status_color, font=font_small)
-    draw.text((10, footer_y + 25), "If sideways: rotate 90° around Y axis in Blender before export",
+    draw.text((10, footer_y + 25), "If sideways: rotate 90 degrees around Y axis in Blender before export",
               fill=(140, 140, 140), font=font_small)
 
     return np.array(combined)
@@ -306,9 +306,9 @@ class UniRigOrientationCheck:
         print(f"[OrientationCheck] Tallest axis: {tallest_axis}")
 
         if tallest_axis == 'Y':
-            print(f"[OrientationCheck] ✓ Orientation appears correct (Y-up)")
+            print(f"[OrientationCheck] [OK] Orientation appears correct (Y-up)")
         else:
-            print(f"[OrientationCheck] ⚠ Warning: {tallest_axis} is tallest, expected Y for Y-up")
+            print(f"[OrientationCheck] [WARNING] {tallest_axis} is tallest, expected Y for Y-up")
 
         # Load reference mesh
         ref_mesh = load_reference_mesh()

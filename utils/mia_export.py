@@ -624,7 +624,7 @@ def main():
     print(f"[MIA Export] Loaded template armature: {armature.name}")
     print(f"[MIA Export] Template rotation: {[r for r in armature.rotation_euler]}")
 
-    # Keep template's rotation (90° X) - this transforms Y-up local to Z-up world
+    # Keep template's rotation (90 deg X) - this transforms Y-up local to Z-up world
     # MIA joints are Y-up, so they match the template's local space directly
 
     # Capture template bone orientations (in local/Y-up space)

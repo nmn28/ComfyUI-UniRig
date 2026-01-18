@@ -968,6 +968,8 @@ def _export_mia_fbx_subprocess(
             capture_output=True,
             text=True,
             timeout=300,
+            encoding='utf-8',
+            errors='replace'
         )
 
         # Always print output for debugging

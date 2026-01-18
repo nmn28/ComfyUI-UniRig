@@ -308,7 +308,7 @@ class UniRigApplySkinningMLNew:
         )
 
         inference_time = time.time() - step_start
-        print(f"[UniRigApplySkinningMLNew] ✓ Direct inference completed in {inference_time:.2f}s")
+        print(f"[UniRigApplySkinningMLNew] [OK] Direct inference completed in {inference_time:.2f}s")
         print(f"[UniRigApplySkinningMLNew] Skin weights shape: {skin_weights.shape}")
 
         # Generate FBX output using direct bpy export
@@ -333,7 +333,7 @@ class UniRigApplySkinningMLNew:
             texture_format=skeleton.get('texture_format') or 'PNG',
             material_name=skeleton.get('material_name') or 'Material',
         )
-        print(f"[UniRigApplySkinningMLNew] ✓ FBX generated: {output_fbx}")
+        print(f"[UniRigApplySkinningMLNew] [OK] FBX generated: {output_fbx}")
 
         print(f"[UniRigApplySkinningMLNew] Skinning completed")
 

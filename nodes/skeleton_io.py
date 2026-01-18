@@ -181,7 +181,7 @@ class UniRigLoadRiggedMesh:
                 ]
 
                 print(f"[UniRigLoadRiggedMesh] Extracting mesh info with Blender...")
-                result = subprocess.run(cmd, capture_output=True, text=True, timeout=MESH_INFO_TIMEOUT)
+                result = subprocess.run(cmd, capture_output=True, text=True, timeout=MESH_INFO_TIMEOUT, encoding='utf-8', errors='replace')
 
                 if os.path.exists(mesh_npz):
                     data = np.load(mesh_npz, allow_pickle=True)
@@ -238,7 +238,7 @@ class UniRigLoadRiggedMesh:
                 ]
 
                 print(f"[UniRigLoadRiggedMesh] Parsing skeleton with Blender...")
-                result = subprocess.run(cmd, capture_output=True, text=True, timeout=MESH_INFO_TIMEOUT)
+                result = subprocess.run(cmd, capture_output=True, text=True, timeout=MESH_INFO_TIMEOUT, encoding='utf-8', errors='replace')
 
                 if os.path.exists(skeleton_npz):
                     data = np.load(skeleton_npz, allow_pickle=True)
@@ -463,7 +463,7 @@ class UniRigExportPosedFBX:
             ]
 
             print(f"[UniRigExportPosedFBX] Running Blender to export posed FBX...")
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=BLENDER_TIMEOUT)
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=BLENDER_TIMEOUT, encoding='utf-8', errors='replace')
 
             if result.returncode != 0:
                 print(f"[UniRigExportPosedFBX] Blender stderr: {result.stderr}")
@@ -473,7 +473,7 @@ class UniRigExportPosedFBX:
             if not os.path.exists(output_fbx_path):
                 raise RuntimeError(f"Export completed but output file not found: {output_fbx_path}")
 
-            print(f"[UniRigExportPosedFBX] ✓ Successfully exported to: {output_fbx_path}")
+            print(f"[UniRigExportPosedFBX] [OK] Successfully exported to: {output_fbx_path}")
 
             return (output_fbx_path,)
 

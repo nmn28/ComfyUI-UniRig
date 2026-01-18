@@ -316,7 +316,7 @@ class Exporter():
             # Run Blender
             print(f"[Exporter] Running Blender FBX export to: {path}")
             print(f"[Exporter] Blender command: {' '.join(cmd[:3])} ... {cmd[-2:]}")
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=120, encoding='utf-8', errors='replace')
 
             # Always print output for debugging
             if result.stdout:

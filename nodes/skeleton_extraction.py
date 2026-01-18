@@ -368,7 +368,7 @@ class UniRigExtractSkeletonNew:
                 raise RuntimeError(f"Preprocessing failed: {npz_path} not created")
 
             preprocess_time = time.time() - step_start
-            print(f"[UniRigExtractSkeletonNew] ✓ Mesh preprocessed in {preprocess_time:.2f}s: {npz_path}")
+            print(f"[UniRigExtractSkeletonNew] [OK] Mesh preprocessed in {preprocess_time:.2f}s: {npz_path}")
 
             # Step 2: Run skeleton inference
             step_start = time.time()
@@ -428,7 +428,7 @@ class UniRigExtractSkeletonNew:
                 raise RuntimeError("Skeleton prediction failed - no joints generated")
 
             num_joints = len(direct_skeleton_result['joints'])
-            print(f"[UniRigExtractSkeletonNew] ✓ Inference completed in {inference_time:.2f}s")
+            print(f"[UniRigExtractSkeletonNew] [OK] Inference completed in {inference_time:.2f}s")
             print(f"[UniRigExtractSkeletonNew] Generated {num_joints} joints")
 
             # Step 3: Process results
@@ -569,7 +569,7 @@ class UniRigExtractSkeletonNew:
                         names_list = [str(name) for name in skeleton_bone_names]
                     else:
                         names_list = [f"bone_{i}" for i in range(num_bones)]
-                    print(f"[UniRigExtractSkeletonNew] ✓ Using {len(names_list)} model-generated bone names")
+                    print(f"[UniRigExtractSkeletonNew] [OK] Using {len(names_list)} model-generated bone names")
                     # Debug: show first few bone names to diagnose naming issues
                     print(f"[UniRigExtractSkeletonNew] First 5 bone names: {names_list[:5]}")
                 else:
@@ -730,9 +730,9 @@ class UniRigExtractSkeletonNew:
                     print(f"[UniRigExtractSkeletonNew] Lateral axis already aligned with X")
                     z_rotation_angle = 0
                 elif lateral_axis == 1:
-                    # Lateral is along Y, need to rotate 90° around Z
+                    # Lateral is along Y, need to rotate 90 degrees around Z
                     z_rotation_angle = np.pi / 2 if shoulder_vec[1] > 0 else -np.pi / 2
-                    print(f"[UniRigExtractSkeletonNew] Rotating {np.degrees(z_rotation_angle):.0f}° around Z to align lateral with X")
+                    print(f"[UniRigExtractSkeletonNew] Rotating {np.degrees(z_rotation_angle):.0f} degrees around Z to align lateral with X")
                 else:
                     # Lateral is along Z (our current case), need to rotate around up axis
                     # This shouldn't happen in Z-up Blender coords, but handle it
@@ -744,22 +744,22 @@ class UniRigExtractSkeletonNew:
                 # We need to rotate so lateral is along X before the conversion
 
                 # Actually, let's detect more carefully:
-                # If shoulders differ mainly in Y, we need 90° rotation around Z
+                # If shoulders differ mainly in Y, we need 90 degree rotation around Z
                 if abs(shoulder_vec[1]) > abs(shoulder_vec[0]) and abs(shoulder_vec[1]) > 0.5:
-                    # Lateral is along Y, rotate 90° around Z
+                    # Lateral is along Y, rotate 90 degrees around Z
                     cos_a, sin_a = 0, 1  # 90 degrees
                     if shoulder_vec[1] < 0:
                         sin_a = -1  # -90 degrees
 
                     def rotate_around_z(points):
-                        """Rotate points 90° around Z axis"""
+                        """Rotate points 90 degrees around Z axis"""
                         rotated = np.zeros_like(points)
                         rotated[..., 0] = cos_a * points[..., 0] - sin_a * points[..., 1]
                         rotated[..., 1] = sin_a * points[..., 0] + cos_a * points[..., 1]
                         rotated[..., 2] = points[..., 2]
                         return rotated
 
-                    print(f"[UniRigExtractSkeletonNew] Rotating 90° around Z to align shoulders with X axis")
+                    print(f"[UniRigExtractSkeletonNew] Rotating 90 degrees around Z to align shoulders with X axis")
                     bone_joints = rotate_around_z(bone_joints)
                     tails = rotate_around_z(tails)
                     mesh_vertices = rotate_around_z(mesh_vertices)
@@ -767,7 +767,7 @@ class UniRigExtractSkeletonNew:
                     face_normals = rotate_around_z(face_normals)
 
                 # === STEP 2: Rotate from Blender Z-up to SMPL Y-up ===
-                # This is a -90° rotation around X axis: (x, y, z) -> (x, z, -y)
+                # This is a -90 degree rotation around X axis: (x, y, z) -> (x, z, -y)
                 # SMPL uses: X=right, Y=up, Z=back
                 # Blender uses: X=right, Y=forward, Z=up
                 def rotate_to_smpl_coords(points):

@@ -211,8 +211,8 @@ if is_smpl_skeleton:
         new_r_arm_vec = Vector(new_r_wrist - r_shoulder).normalized()
         r_rotation = r_arm_vec_v.rotation_difference(new_r_arm_vec)
 
-        print(f"[Blender FBX Export] Left arm rotation: {math.degrees(l_rotation.angle):.1f}°")
-        print(f"[Blender FBX Export] Right arm rotation: {math.degrees(r_rotation.angle):.1f}°")
+        print(f"[Blender FBX Export] Left arm rotation: {math.degrees(l_rotation.angle):.1f} deg")
+        print(f"[Blender FBX Export] Right arm rotation: {math.degrees(r_rotation.angle):.1f} deg")
 
         # Transform mesh vertices if skin weights available
         if vertices is not None and skin is not None:
@@ -272,7 +272,7 @@ if is_smpl_skeleton:
             tails[l_wrist_idx] = new_l_wrist + l_tpose_dir * wrist_tail_len
             tails[r_wrist_idx] = new_r_wrist + r_tpose_dir * wrist_tail_len
 
-        print("[Blender FBX Export] ✓ T-pose conversion complete")
+        print("[Blender FBX Export] [OK] T-pose conversion complete")
 
         # Debug: show new bounds
         if vertices is not None:
@@ -342,8 +342,8 @@ if is_mixamo_skeleton and vertices is not None and skin is not None:
         forward_vec = forward_vec / (np.linalg.norm(forward_vec) + 1e-8)
 
         print(f"[Blender FBX Export] Current orientation:")
-        print(f"[Blender FBX Export]   Lateral (L→R): {lateral_vec}")
-        print(f"[Blender FBX Export]   Up (Hips→Head): {up_vec}")
+        print(f"[Blender FBX Export]   Lateral (L->R): {lateral_vec}")
+        print(f"[Blender FBX Export]   Up (Hips->Head): {up_vec}")
         print(f"[Blender FBX Export]   Forward: {forward_vec}")
 
         # Mixamo target orientation:
@@ -372,7 +372,7 @@ if is_mixamo_skeleton and vertices is not None and skin is not None:
             z_rotation_angle = math.atan2(cross_z, dot)
 
             if abs(z_rotation_angle) > 0.05:  # More than ~3 degrees
-                print(f"[Blender FBX Export] Rotating {math.degrees(z_rotation_angle):.1f}° around Z to align with Mixamo orientation")
+                print(f"[Blender FBX Export] Rotating {math.degrees(z_rotation_angle):.1f} deg around Z to align with Mixamo orientation")
 
                 # Create rotation matrix around Z
                 cos_a = math.cos(z_rotation_angle)
@@ -396,9 +396,9 @@ if is_mixamo_skeleton and vertices is not None and skin is not None:
                 l_shoulder = joints[l_arm_idx]
                 r_shoulder = joints[r_arm_idx]
 
-                print(f"[Blender FBX Export] ✓ Model rotated to Mixamo orientation")
+                print(f"[Blender FBX Export] [OK] Model rotated to Mixamo orientation")
             else:
-                print(f"[Blender FBX Export] Model already aligned with Mixamo orientation (within 3°)")
+                print(f"[Blender FBX Export] Model already aligned with Mixamo orientation (within 3 deg)")
         else:
             print(f"[Blender FBX Export] Warning: Lateral vector has no XY component, skipping orientation fix")
 
@@ -549,7 +549,7 @@ if is_mixamo_skeleton and vertices is not None and skin is not None:
                 tails[l_hand_idx] = new_l_hand + l_tpose_dir * hand_tail_len
                 tails[r_hand_idx] = new_r_hand + r_tpose_dir * hand_tail_len
 
-            print("[Blender FBX Export] ✓ Mixamo T-pose conversion complete")
+            print("[Blender FBX Export] [OK] Mixamo T-pose conversion complete")
         else:
             print("[Blender FBX Export] Arms already horizontal, skipping T-pose conversion")
 
@@ -585,19 +585,19 @@ if is_mixamo_skeleton and vertices is not None and skin is not None:
     if hips_idx is not None:
         print(f"[Blender FBX Export] Hips now at Z={joints[hips_idx, 2]:.3f}")
 
-    print(f"[Blender FBX Export] ✓ Mixamo normalization complete")
+    print(f"[Blender FBX Export] [OK] Mixamo normalization complete")
     print(f"[Blender FBX Export]   Final mesh bounds: {vertices.min(axis=0)} to {vertices.max(axis=0)}")
     if hips_idx is not None:
         print(f"[Blender FBX Export]   Hips position: {joints[hips_idx]}")
 
     # 4. CONVERT TO MIXAMO LOCAL SPACE
     # Official Mixamo FBX stores coordinates in Y-up format (local space)
-    # with 90° X rotation converting to Z-up (world space)
+    # with 90 deg X rotation converting to Z-up (world space)
     # We need to: 1) Convert Z-up to Y-up, 2) Scale by 100x
     print(f"[Blender FBX Export] Converting to Mixamo local space (Y-up, 100x scale)...")
 
-    # Convert from Z-up to Y-up: (x, y, z) → (x, z, -y)
-    # This is the inverse of what 90° X rotation does
+    # Convert from Z-up to Y-up: (x, y, z) -> (x, z, -y)
+    # This is the inverse of what 90 deg X rotation does
     def convert_to_yup(coords):
         result = np.zeros_like(coords)
         result[..., 0] = coords[..., 0]      # X stays X
@@ -638,7 +638,7 @@ if vertices is not None:
                     if uv_idx < len(uv_coords):
                         uv_layer.data[loop_idx].uv = uv_coords[uv_idx]
 
-        print(f"[Blender FBX Export] ✓ UV coordinates applied")
+        print(f"[Blender FBX Export] [OK] UV coordinates applied")
     else:
         print(f"[Blender FBX Export] No UV coordinates available")
 
@@ -717,7 +717,7 @@ if vertices is not None:
             for poly in obj.data.polygons:
                 poly.material_index = 0
 
-            print(f"[Blender FBX Export] ✓ Textured material applied: {material_name_from_data}")
+            print(f"[Blender FBX Export] [OK] Textured material applied: {material_name_from_data}")
 
             # Clean up temp file
             try:
@@ -810,9 +810,9 @@ try:
         bone.tail = Vector((tails[i, 0], tails[i, 1], tails[i, 2]))
 
     # === FIX BONE ORIENTATIONS FOR MIXAMO COMPATIBILITY ===
-    # Mixamo animations expect specific bone Y-axis directions (bone direction = head→tail)
+    # Mixamo animations expect specific bone Y-axis directions (bone direction = head->tail)
     # After Y-up conversion: +Y is "up", so spine/head bones should point +Y
-    # Arms point outward along ±X, legs point down along -Y
+    # Arms point outward along +/-X, legs point down along -Y
     if is_mixamo_skeleton:
         print("[Blender FBX Export] Fixing bone orientations for Mixamo compatibility...")
 
@@ -851,7 +851,7 @@ try:
             'mixamorig:RightHand': Vector((-1, 0, 0)),
         }
 
-        # Build a dict of bone name → joint index for quick lookup
+        # Build a dict of bone name -> joint index for quick lookup
         bone_to_idx = {name: i for i, name in enumerate(names)}
 
         orientation_fixes = 0
@@ -866,7 +866,7 @@ try:
             # Check if direction matches target (dot product close to 1)
             dot = current_direction.dot(target_direction)
 
-            if dot < 0.95:  # More than ~18° off
+            if dot < 0.95:  # More than ~18 deg off
                 # Need to fix orientation
                 bone_length = (bone.tail - bone.head).length
                 if bone_length < 0.1:
@@ -877,10 +877,10 @@ try:
                 bone.tail = new_tail
 
                 angle_diff = math.degrees(math.acos(max(-1, min(1, dot))))
-                print(f"[Blender FBX Export]   Fixed {bone_name}: {angle_diff:.1f}° correction")
+                print(f"[Blender FBX Export]   Fixed {bone_name}: {angle_diff:.1f} deg correction")
                 orientation_fixes += 1
 
-        print(f"[Blender FBX Export] ✓ Fixed {orientation_fixes} bone orientations")
+        print(f"[Blender FBX Export] [OK] Fixed {orientation_fixes} bone orientations")
 
         # === FIX BONE ROLLS FOR MIXAMO COMPATIBILITY ===
         # Bone roll determines X and Z axes (rotation around Y-axis)
@@ -924,7 +924,7 @@ try:
                 bone.align_roll(target_z)
                 roll_fixes += 1
 
-        print(f"[Blender FBX Export] ✓ Fixed {roll_fixes} bone rolls")
+        print(f"[Blender FBX Export] [OK] Fixed {roll_fixes} bone rolls")
 
     # Set bone roll for SMPL compatibility
     # SMPL motion expects local X = bone direction, but Blender has local Y = bone direction
@@ -950,20 +950,20 @@ try:
                 # Use Blender's align_roll to set the Z-axis direction
                 # Then the X axis is determined by cross product
 
-                if abs(dx) > 0.9:  # Arms (bone along ±X)
+                if abs(dx) > 0.9:  # Arms (bone along +/-X)
                     # For arms, we want local Z to point up (world +Y in SMPL coords)
                     bone.align_roll(Vector((0, 1, 0)))  # Z up
-                elif abs(dy) > 0.9:  # Spine/Legs (bone along ±Y)
+                elif abs(dy) > 0.9:  # Spine/Legs (bone along +/-Y)
                     # For vertical bones, we want local Z to point back (world +Z in SMPL coords)
                     bone.align_roll(Vector((0, 0, 1)))  # Z back
-                elif abs(dz) > 0.9:  # Feet (bone along ±Z)
+                elif abs(dz) > 0.9:  # Feet (bone along +/-Z)
                     # For feet, we want local Z to point up (world +Y)
                     bone.align_roll(Vector((0, 1, 0)))  # Z up
                 else:
                     # Default: use world up as reference
                     bone.align_roll(Vector((0, 1, 0)))
 
-        print("[Blender FBX Export] ✓ Bone rolls set for SMPL compatibility")
+        print("[Blender FBX Export] [OK] Bone rolls set for SMPL compatibility")
 
     # Add skinning weights if vertices and skin provided
     if vertices is not None and skin is not None:
@@ -1005,10 +1005,10 @@ try:
                     continue
                 ob.vertex_groups[n].add([v], vertex_group_reweight[v, ii], 'REPLACE')
 
-    print("[Blender FBX Export] ✓ Armature created successfully")
+    print("[Blender FBX Export] [OK] Armature created successfully")
 
     # Apply Mixamo-standard object transforms for animation compatibility
-    # Official Mixamo FBX has: 90° X rotation, 0.01 scale on armature object only
+    # Official Mixamo FBX has: 90 deg X rotation, 0.01 scale on armature object only
     # The mesh inherits the transform through armature parenting
     if is_mixamo_skeleton:
         print("[Blender FBX Export] Applying Mixamo-standard object transforms...")
@@ -1019,10 +1019,10 @@ try:
         if arm_obj:
             arm_obj.rotation_euler = (math.radians(90), 0, 0)
             arm_obj.scale = (0.01, 0.01, 0.01)
-            print(f"[Blender FBX Export]   Armature: rotation=90° X, scale=0.01")
+            print(f"[Blender FBX Export]   Armature: rotation=90 deg X, scale=0.01")
 
         bpy.context.view_layer.update()
-        print("[Blender FBX Export] ✓ Mixamo object transforms applied")
+        print("[Blender FBX Export] [OK] Mixamo object transforms applied")
 
 except Exception as e:
     print(f"[Blender FBX Export] Armature creation failed: {e}")
@@ -1045,7 +1045,7 @@ try:
     )
     print(f"[Blender FBX Export] Saved to: {output_fbx}")
     if texture_data_base64 and len(texture_data_base64) > 0:
-        print(f"[Blender FBX Export] ✓ Textures embedded in FBX")
+        print(f"[Blender FBX Export] [OK] Textures embedded in FBX")
     print("[Blender FBX Export] Done!")
 except Exception as e:
     print(f"[Blender FBX Export] Export failed: {e}")

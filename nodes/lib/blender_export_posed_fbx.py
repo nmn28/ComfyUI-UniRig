@@ -45,7 +45,7 @@ clean_bpy()
 try:
     print(f"[Blender Posed FBX Export] Importing FBX...")
     bpy.ops.import_scene.fbx(filepath=input_fbx)
-    print(f"[Blender Posed FBX Export] ✓ FBX imported successfully")
+    print(f"[Blender Posed FBX Export] [OK] FBX imported successfully")
 
     # Recreate materials from scratch to match original export encoding
     # This prevents transparency issues where Three.js interprets re-exported materials differently
@@ -121,9 +121,9 @@ try:
                 # Assign material to mesh
                 obj.data.materials.append(mat)
 
-                print(f"[Blender Posed FBX Export] ✓ Recreated material: {mat_name}")
+                print(f"[Blender Posed FBX Export] [OK] Recreated material: {mat_name}")
 
-    print(f"[Blender Posed FBX Export] ✓ Recreated {len(texture_images)} materials from scratch")
+    print(f"[Blender Posed FBX Export] [OK] Recreated {len(texture_images)} materials from scratch")
 
 except Exception as e:
     print(f"[Blender Posed FBX Export] Failed to import FBX: {e}")
@@ -194,7 +194,7 @@ try:
         else:
             print(f"[Blender Posed FBX Export] Warning: Bone '{bone_name}' not found in armature")
 
-    print(f"[Blender Posed FBX Export] ✓ Applied transforms to {applied_count}/{len(bone_transforms)} bones")
+    print(f"[Blender Posed FBX Export] [OK] Applied transforms to {applied_count}/{len(bone_transforms)} bones")
 
     # Return to object mode
     bpy.ops.object.mode_set(mode='OBJECT')
@@ -219,7 +219,7 @@ try:
         embed_textures=True,
     )
 
-    print(f"[Blender Posed FBX Export] ✓ Saved to: {output_fbx}")
+    print(f"[Blender Posed FBX Export] [OK] Saved to: {output_fbx}")
     print("[Blender Posed FBX Export] Done!")
 except Exception as e:
     print(f"[Blender Posed FBX Export] Export failed: {e}")
