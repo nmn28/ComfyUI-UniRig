@@ -860,137 +860,14 @@ def _export_mia_fbx_subprocess(
     """
     Fallback: Export MIA results to FBX using Blender subprocess.
 
-    Used when bpy is not available (inference-only mode).
+    NOTE: Blender subprocess export is no longer supported.
+    This function now raises an error directing users to use the bpy-based export.
     """
-    import subprocess
-    import tempfile
-    import json
-    import shutil
-
-    BLENDER_EXE = None
-
-    # Check environment variable first
-    if os.environ.get('BLENDER_PATH'):
-        blender_path = os.environ.get('BLENDER_PATH')
-        if os.path.isfile(blender_path):
-            BLENDER_EXE = blender_path
-
-    # Use comfy_env to find Blender (checks PATH and ComfyUI/tools/)
-    if BLENDER_EXE is None:
-        try:
-            from comfy_env.tools import find_blender
-            # Blender is installed to ComfyUI/tools/blender/ (shared across all nodes)
-            COMFYUI_ROOT = NODE_DIR.parent.parent  # custom_nodes/../.. = ComfyUI/
-            blender_exe = find_blender(COMFYUI_ROOT / "tools" / "blender")
-            if blender_exe:
-                BLENDER_EXE = str(blender_exe)
-        except ImportError:
-            # Fallback to PATH
-            BLENDER_EXE = shutil.which('blender')
-
-    if BLENDER_EXE is None:
-        raise RuntimeError(
-            "Blender not found and bpy not available. Run: python install.py\n"
-            "Or set BLENDER_PATH environment variable to your Blender executable."
-        )
-
-    # Save mesh to temp file (can't pickle trimesh directly)
-    temp_mesh_path = tempfile.NamedTemporaryFile(suffix=".glb", delete=False).name
-    mesh = data["mesh"]
-    if hasattr(mesh, 'export'):
-        mesh.export(temp_mesh_path)
-    else:
-        # If it's already a path or vertices/faces
-        import trimesh
-        trimesh.Trimesh(vertices=mesh.vertices, faces=mesh.faces).export(temp_mesh_path)
-
-    # Save data using JSON + raw binary (avoids numpy pickle version issues)
-    temp_dir = tempfile.mkdtemp()
-    temp_json = os.path.join(temp_dir, "data.json")
-    temp_bw = os.path.join(temp_dir, "bw.bin")
-    temp_joints = os.path.join(temp_dir, "joints.bin")
-    temp_joints_tail = os.path.join(temp_dir, "joints_tail.bin")
-    temp_pose = os.path.join(temp_dir, "pose.bin")
-
-    # Save arrays as raw binary
-    data["bw"].astype(np.float32).tofile(temp_bw)
-    data["joints"].astype(np.float32).tofile(temp_joints)
-    if data.get("joints_tail") is not None:
-        data["joints_tail"].astype(np.float32).tofile(temp_joints_tail)
-    if data.get("pose") is not None:
-        data["pose"].astype(np.float32).tofile(temp_pose)
-
-    # Save metadata as JSON
-    bones_idx_dict = dict(data["bones_idx_dict"])
-    json_data = {
-        "mesh_path": temp_mesh_path,
-        "bw_path": temp_bw,
-        "bw_shape": list(data["bw"].shape),
-        "joints_path": temp_joints,
-        "joints_shape": list(data["joints"].shape),
-        "bones_idx_dict": bones_idx_dict,
-    }
-    if data.get("joints_tail") is not None:
-        json_data["joints_tail_path"] = temp_joints_tail
-        json_data["joints_tail_shape"] = list(data["joints_tail"].shape)
-    if data.get("pose") is not None:
-        json_data["pose_path"] = temp_pose
-        json_data["pose_shape"] = list(data["pose"].shape)
-    if data.get("parent_indices") is not None:
-        json_data["parent_indices"] = data["parent_indices"]
-
-    with open(temp_json, 'w') as f:
-        json.dump(json_data, f)
-
-    try:
-        # Build Blender command - use our own script (no torch dependency)
-        blender_script = UTILS_DIR / "mia_export.py"
-
-        cmd = [
-            str(BLENDER_EXE),
-            "--background",
-            "--python", str(blender_script),
-            "--",
-            "--input_path", temp_json,
-            "--output_path", output_path,
-            "--template_path", str(template_path),
-        ]
-
-        if remove_fingers:
-            cmd.append("--remove_fingers")
-        if reset_to_rest:
-            cmd.append("--reset_to_rest")
-
-        # Run Blender
-        print(f"[MIA] Running Blender: {' '.join(cmd[:4])}...")
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            timeout=300,
-            encoding='utf-8',
-            errors='replace'
-        )
-
-        # Always print output for debugging
-        if result.stdout:
-            print(f"[MIA] Blender stdout: {result.stdout[-2000:]}")  # Last 2000 chars
-        if result.stderr:
-            print(f"[MIA] Blender stderr: {result.stderr[-2000:]}")
-
-        if result.returncode != 0:
-            raise RuntimeError(f"Blender export failed with code {result.returncode}")
-
-        # Verify output was created
-        if not os.path.exists(output_path):
-            raise RuntimeError(f"Blender completed but output file not created: {output_path}")
-
-    finally:
-        # Cleanup temp files
-        if os.path.exists(temp_dir):
-            shutil.rmtree(temp_dir)
-        if os.path.exists(temp_mesh_path):
-            os.remove(temp_mesh_path)
+    raise RuntimeError(
+        "Blender subprocess export is no longer supported.\n"
+        "Please ensure bpy is available in your environment.\n"
+        "The MIA nodes require running in the unirig isolated environment with bpy."
+    )
 
 
 def clear_mia_cache():

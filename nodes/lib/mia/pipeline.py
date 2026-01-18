@@ -450,4 +450,12 @@ def bw_post_process(
                     )
                 ] = 0
 
+    # Normalize weights to sum to 1
+    bw = bw / (bw.sum(dim=-1, keepdim=True) + 1e-10)
+
+    # Only keep weights from the top joints_per_point joints
+    joints_per_point = 4
+    thresholds = torch.topk(bw, k=joints_per_point, dim=-1, sorted=True).values[..., -1:]
+    bw[bw < thresholds] = 0
+
     return bw

@@ -38,55 +38,7 @@ os.environ['UNIRIG_MODELS_DIR'] = str(UNIRIG_MODELS_DIR)
 
 print(f"[UniRig] Models directory: {UNIRIG_MODELS_DIR}")
 
-# Find Blender executable
-# Detection priority:
-# 1. BLENDER_PATH environment variable (explicit override)
-# 2. System PATH ('blender' command)
-# 3. Local tools/blender/ directory (installed by comfy-env)
-# 4. Print instructions (no auto-download)
-
 import shutil
-
-BLENDER_EXE = None
-
-# 1. Check explicit override first (BLENDER_PATH)
-if os.environ.get('BLENDER_PATH'):
-    blender_path = os.environ.get('BLENDER_PATH')
-    if os.path.isfile(blender_path):
-        BLENDER_EXE = blender_path
-        print(f"[UniRig] Using Blender from BLENDER_PATH: {BLENDER_EXE}")
-    else:
-        print(f"[UniRig] Warning: BLENDER_PATH set but file not found: {blender_path}")
-
-# 2. Check system PATH and ComfyUI/tools/ via comfy_env
-if BLENDER_EXE is None:
-    try:
-        from comfy_env.tools import find_blender
-        # Blender is installed to ComfyUI/tools/blender/ (shared across all nodes)
-        COMFYUI_ROOT = NODE_DIR.parent.parent  # custom_nodes/../.. = ComfyUI/
-        blender_exe = find_blender(COMFYUI_ROOT / "tools" / "blender")
-        if blender_exe:
-            BLENDER_EXE = str(blender_exe)
-            print(f"[UniRig] Found Blender: {BLENDER_EXE}")
-    except ImportError:
-        # Fallback if comfy_env not available
-        blender_in_path = shutil.which('blender')
-        if blender_in_path:
-            BLENDER_EXE = blender_in_path
-            print(f"[UniRig] Found Blender in PATH: {BLENDER_EXE}")
-
-# 3. Print instructions if not found
-if BLENDER_EXE is None:
-    print("[UniRig] WARNING: Blender not found!")
-    print("[UniRig] Skeleton extraction nodes require Blender 4.2+")
-    print("[UniRig] Options:")
-    print("[UniRig]   1. Install Blender and add to PATH")
-    print("[UniRig]   2. Set BLENDER_PATH environment variable")
-    print("[UniRig]   3. Run: python install.py")
-
-# Set environment variable for subprocesses
-if BLENDER_EXE:
-    os.environ['BLENDER_EXE'] = BLENDER_EXE
 
 # Add local UniRig to path
 if UNIRIG_PATH not in sys.path:

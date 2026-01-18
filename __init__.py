@@ -118,55 +118,12 @@ if not _RUNNING_TESTS:
 
                 output_fbx_path = os.path.join(output_dir, output_filename)
 
-                # Get paths to Blender and script
-                from .nodes.base import BLENDER_EXE, NODE_DIR
-                from .nodes.constants import BLENDER_TIMEOUT
-
-                blender_script = os.path.join(NODE_DIR, 'nodes', 'lib', 'blender_export_posed_fbx.py')
-
-                if not os.path.exists(blender_script):
-                    return web.json_response({'error': 'Blender export script not found'}, status=500)
-
-                if not os.path.exists(BLENDER_EXE):
-                    return web.json_response({'error': 'Blender executable not found'}, status=500)
-
-                # Build command
-                cmd = [
-                    BLENDER_EXE,
-                    '--background',
-                    '--python', blender_script,
-                    '--',
-                    fbx_path,
-                    output_fbx_path,
-                    transforms_json_path,
-                ]
-
-                # Run Blender
-                result = subprocess.run(cmd, capture_output=True, text=True, timeout=BLENDER_TIMEOUT, encoding='utf-8', errors='replace')
-
-                # Print Blender output for debugging
-                if result.stdout:
-                    print("[UniRig Export API] Blender output:")
-                    print(result.stdout)
-
                 # Clean up temporary JSON file
                 if os.path.exists(transforms_json_path):
                     os.unlink(transforms_json_path)
 
-                if result.returncode != 0:
-                    print(f"[UniRig Export API] Blender export failed: {result.stderr}")
-                    return web.json_response({'error': f'Blender export failed: {result.stderr}'}, status=500)
-
-                if not os.path.exists(output_fbx_path):
-                    return web.json_response({'error': 'Export completed but output file not found'}, status=500)
-
-                print(f"[UniRig Export API] [OK] Successfully exported to: {output_fbx_path}")
-
-                return web.json_response({
-                    'success': True,
-                    'filename': output_filename,
-                    'message': f'FBX exported successfully: {output_filename}'
-                })
+                # Blender-based export is no longer supported
+                return web.json_response({'error': 'Blender-based posed FBX export is no longer supported'}, status=501)
 
             except Exception as e:
                 print(f"[UniRig Export API] Error: {e}")

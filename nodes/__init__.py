@@ -7,7 +7,6 @@ from .base import (
     LIB_DIR,
     UNIRIG_PATH,
     UNIRIG_MODELS_DIR,
-    BLENDER_EXE,
     BLENDER_PARSE_SKELETON,
     BLENDER_EXTRACT_MESH_INFO,
 )
