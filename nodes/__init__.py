@@ -21,6 +21,7 @@ from .skeleton_io import (
     UniRigDebugSkeleton,
     UniRigCompareSkeletons,
 )
+from .rest_pose_node import UniRigExtractRestPose
 from .mesh_io import UniRigLoadMesh, UniRigSaveMesh
 from .animation import UniRigApplyAnimation
 
@@ -40,6 +41,7 @@ NODE_CLASS_MAPPINGS = {
     "UniRigViewRigging": UniRigViewRigging,
     "UniRigDebugSkeleton": UniRigDebugSkeleton,
     "UniRigCompareSkeletons": UniRigCompareSkeletons,
+    "UniRigExtractRestPose": UniRigExtractRestPose,
     "UniRigLoadMesh": UniRigLoadMesh,
     "UniRigSaveMesh": UniRigSaveMesh,
     "UniRigApplyAnimation": UniRigApplyAnimation,
@@ -59,6 +61,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "UniRigViewRigging": "UniRig: View Rigging",
     "UniRigDebugSkeleton": "UniRig: Debug Skeleton",
     "UniRigCompareSkeletons": "UniRig: Compare Skeletons",
+    "UniRigExtractRestPose": "UniRig: Extract Rest Pose",
     "UniRigLoadMesh": "UniRig: Load Mesh",
     "UniRigSaveMesh": "UniRig: Save Mesh",
     "UniRigApplyAnimation": "UniRig: Apply Animation",
