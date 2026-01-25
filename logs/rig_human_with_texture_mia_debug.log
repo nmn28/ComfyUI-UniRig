@@ -1,0 +1,57 @@
+Capturing execution frames: rig_human_with_texture_mia_debug.json
+  Validating workflow...
+  [ComfyUI] === /validate endpoint called ===
+  [ComfyUI] Received JSON with keys: ['prompt']
+  [ComfyUI] Prompt has 11 nodes
+  [ComfyUI]   Node 27: UniRigLoadMesh
+  [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
+  [ComfyUI]   Node 41: MIALoadModel
+  [ComfyUI]     Inputs: {"cache_to_gpu": true}
+  [ComfyUI]   Node 42: MIAAutoRig
+  [ComfyUI]     Inputs: {"fbx_name": "rigatoni", "no_fingers": false, "use_normal": false, "reset_to_rest": true, "trimesh": ["45", 0], "model": ["41", 0]}
+  [ComfyUI]   Node 43: UniRigOrientationCheck
+  [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["45", 0]}
+  [ComfyUI]   Node 44: PreviewImage
+  [ComfyUI]     Inputs: {"images": ["43", 0]}
+  [ComfyUI]   Node 45: GeomPackTransformMesh
+  [ComfyUI]     Inputs: {"operation": "rotate", "rotate_z": 0, "rotate_y": 0, "rotate_x": 0, "trimesh": ["27", 0]}
+  [ComfyUI]   Node 46: UniRigOrientationCheck
+  [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["27", 0]}
+  [ComfyUI]   Node 47: PreviewImage
+  [ComfyUI]     Inputs: {"images": ["46", 0]}
+  [ComfyUI]   Node 49: UniRigCompareSkeletons
+  [ComfyUI]     Inputs: {"fbx_path_left": ["42", 0], "fbx_path_right": ["51", 0], "preview": ""}
+  [ComfyUI]   Node 50: UniRigLoadMesh
+  [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/mixamo.fbx"}
+  [ComfyUI]   Node 51: PrimitiveString
+  [ComfyUI]     Inputs: {"value": "/home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx"}
+  [ComfyUI] Generated prompt_id: fb321b26-dd6d-4d99-acc9-964590049773
+  [ComfyUI] Calling execution.validate_prompt()...
+  [ComfyUI] Validation result: valid=True
+  [ComfyUI] === Validation PASSED ===
+  Queuing workflow for execution...
+  [ComfyUI] got prompt
+  [ComfyUI] !!! Exception during processing !!! Right FBX file not found: /home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx
+  [ComfyUI] Traceback (most recent call last):
+  [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/execution.py", line 518, in execute
+  [ComfyUI]     output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+  [ComfyUI]                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/execution.py", line 329, in get_output_data
+  [ComfyUI]     return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+  [ComfyUI]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/execution.py", line 303, in _async_map_node_over_list
+  [ComfyUI]     await process_inputs(input_dict, i)
+  [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/execution.py", line 291, in process_inputs
+  [ComfyUI]     result = f(**inputs)
+  [ComfyUI]              ^^^^^^^^^^^
+  [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/skeleton_io.py", line 633, in compare_skeletons
+  [ComfyUI]     raise RuntimeError(f"Right FBX file not found: {fbx_path_right}")
+  [ComfyUI] RuntimeError: Right FBX file not found: /home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx
+  [ComfyUI] 
+  [ComfyUI] Prompt executed in 0.01 seconds
+  Execution error: {'prompt_id': '6217613b-7a19-47ac-8f2c-a494e6a57486', 'node_id': '49', 'node_type': 'UniRigCompareSkeletons', 'executed': ['51'], 'exception_message': 'Right FBX file not found: /home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx\n', 'exception_type': 'RuntimeError', 'traceback': ['  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/execution.py", line 291, in process_inputs\n    result = f(**inputs)\n             ^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/skeleton_io.py", line 633, in compare_skeletons\n    raise RuntimeError(f"Right FBX file not found: {fbx_path_right}")\n'], 'current_inputs': {'fbx_path_left': ['/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/output/rigatoni_mia.fbx'], 'fbx_path_right': ['/home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx']}, 'current_outputs': ['46', '47', '45', '43', '49', '44', '42', '27', '50', '51', '41'], 'timestamp': 1769303817830}
+  Captured 5 frames over 1.84s
+  4 unique frames saved as WebP
+  Waiting 5000ms for previews to render...
+  Saved high-quality screenshot: rig_human_with_texture_mia_debug_executed.png
+    Captured 5 video frames

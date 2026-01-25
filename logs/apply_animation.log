@@ -1,0 +1,46 @@
+Capturing execution frames: apply_animation.json
+  Validating workflow...
+  [ComfyUI] === /validate endpoint called ===
+  [ComfyUI] Received JSON with keys: ['prompt']
+  [ComfyUI] Prompt has 3 nodes
+  [ComfyUI]   Node 6: UniRigApplyAnimation
+  [ComfyUI]     Inputs: {"model_fbx_path": ["8", 0], "animation_type": "mixamo", "animation_file": "Breakdance.fbx", "output_name": ""}
+  [ComfyUI]   Node 7: Preview3D
+  [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
+  [ComfyUI]   Node 8: UniRigLoadRiggedMesh
+  [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
+  [ComfyUI] Generated prompt_id: cd51d313-ff98-45b4-a7ec-58a31a90736b
+  [ComfyUI] Calling execution.validate_prompt()...
+  [ComfyUI] Failed to validate prompt for output 7:
+  [ComfyUI] * UniRigLoadRiggedMesh 8:
+  [ComfyUI]   - Required input is missing: fbx_file
+  [ComfyUI] Output will be ignored
+  [ComfyUI] Failed to validate prompt for output 6:
+  [ComfyUI] Output will be ignored
+  [ComfyUI] Validation result: valid=False
+  [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
+  [ComfyUI]   Node errors: {"8": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["7", "6"], "class_type": "UniRigLoadRiggedMesh"}}
+  [ComfyUI] === Validation FAILED ===
+    Status: FAILED
+    Error: Workflow validation failed
+    Details: Prompt outputs failed validation
+Node errors:
+{
+  "8": {
+    "errors": [
+      {
+        "type": "required_input_missing",
+        "message": "Required input is missing",
+        "details": "fbx_file",
+        "extra_info": {
+          "input_name": "fbx_file"
+        }
+      }
+    ],
+    "dependent_outputs": [
+      "7",
+      "6"
+    ],
+    "class_type": "UniRigLoadRiggedMesh"
+  }
+}

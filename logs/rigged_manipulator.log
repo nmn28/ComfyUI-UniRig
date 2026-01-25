@@ -1,0 +1,21 @@
+Capturing execution frames: rigged_manipulator.json
+  Validating workflow...
+  [ComfyUI] === /validate endpoint called ===
+  [ComfyUI] Received JSON with keys: ['prompt']
+  [ComfyUI] Prompt has 2 nodes
+  [ComfyUI]   Node 1: UniRigLoadRiggedMesh
+  [ComfyUI]     Inputs: {"source_folder": "output", "fbx_file": "rigatoni_mia.fbx", "refresh": "refresh"}
+  [ComfyUI]   Node 3: UniRigPreviewRiggedMesh
+  [ComfyUI]     Inputs: {"fbx_output_path": ["1", 0], "preview": ""}
+  [ComfyUI] Generated prompt_id: 8d48df75-588a-468c-bdab-d59d48e75f09
+  [ComfyUI] Calling execution.validate_prompt()...
+  [ComfyUI] Validation result: valid=True
+  [ComfyUI] === Validation PASSED ===
+  Queuing workflow for execution...
+  [ComfyUI] got prompt
+  [ComfyUI] Prompt executed in 0.01 seconds
+  Captured 5 frames over 15.96s
+  4 unique frames saved as WebP
+  Waiting 5000ms for previews to render...
+  Saved high-quality screenshot: rigged_manipulator_executed.png
+    Captured 5 video frames

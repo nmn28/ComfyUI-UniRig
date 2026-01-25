@@ -1,0 +1,172 @@
+Capturing execution frames: rig_human_with_texture_mia.json
+  Validating workflow...
+  [ComfyUI] === /validate endpoint called ===
+  [ComfyUI] Received JSON with keys: ['prompt']
+  [ComfyUI] Prompt has 9 nodes
+  [ComfyUI]   Node 10: UniRigPreviewRiggedMesh
+  [ComfyUI]     Inputs: {"fbx_output_path": ["42", 0], "preview": ""}
+  Queuing workflow for execution...
+  [ComfyUI]   Node 27: UniRigLoadMesh
+  [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
+  [ComfyUI]   Node 41: MIALoadModel
+  [ComfyUI]     Inputs: {"cache_to_gpu": true}
+  [ComfyUI]   Node 42: MIAAutoRig
+  [ComfyUI]     Inputs: {"fbx_name": "rigatoni", "no_fingers": false, "use_normal": false, "reset_to_rest": true, "trimesh": ["45", 0], "model": ["41", 0]}
+  [ComfyUI]   Node 43: UniRigOrientationCheck
+  [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["45", 0]}
+  [ComfyUI]   Node 44: PreviewImage
+  [ComfyUI]     Inputs: {"images": ["43", 0]}
+  [ComfyUI]   Node 45: GeomPackTransformMesh
+  [ComfyUI]     Inputs: {"operation": "rotate", "rotate_z": 0, "rotate_y": 0, "rotate_x": 0, "trimesh": ["27", 0]}
+  [ComfyUI]   Node 46: UniRigOrientationCheck
+  [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["27", 0]}
+  [ComfyUI]   Node 47: PreviewImage
+  [ComfyUI]     Inputs: {"images": ["46", 0]}
+  [ComfyUI] Generated prompt_id: 724971e3-a5ec-4943-8d1f-3e2f87ed8532
+  [ComfyUI] Calling execution.validate_prompt()...
+  [ComfyUI] Validation result: valid=True
+  [ComfyUI] === Validation PASSED ===
+  [ComfyUI] got prompt
+  [ComfyUI] triangulating faces
+  [ComfyUI] No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+  [ComfyUI]   /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/_env_unirig/lib/python3.11/site-packages/huggingface_hub/file_download.py:979: UserWarning: `local_dir_use_symlinks` parameter is deprecated and will be ignored. The process to download files to a local folder has been updated and do not rely on symlinks anymore. You only need to pass a destination folder as`local_dir`.
+  [ComfyUI]   For more details, check out https://huggingface.co/docs/huggingface_hub/main/en/guides/download#download-files-to-local-folder.
+  [ComfyUI]     warnings.warn(
+  [ComfyUI]   [UniRig] Models directory: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/unirig
+  [ComfyUI]   [UniRigLoadModel] Loading UniRig models...
+  [ComfyUI]   [UniRigLoadModel] GPU caching: disabled
+  [ComfyUI]   [UniRigLoadSkeletonModel] Loading skeleton model: apozz/UniRig-safetensors
+  [ComfyUI]   [UniRigLoadSkeletonModel] GPU caching: disabled (will offload to CPU)
+  [ComfyUI]   [UniRigLoadSkeletonModel] Downloading/verifying checkpoint...
+  [ComfyUI]   [UniRig] Downloading skeleton.safetensors from apozz/UniRig-safetensors...
+  [ComfyUI]   [UniRig] Downloaded to: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/unirig/skeleton.safetensors
+  [ComfyUI]   [UniRigLoadSkeletonModel] Checkpoint ready: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/unirig/skeleton.safetensors
+  [ComfyUI]   [UniRigLoadSkeletonModel] Model configuration cached successfully
+  [ComfyUI]   [UniRigLoadSkeletonModel] Checkpoint: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/unirig/skeleton.safetensors
+  [ComfyUI]   [UniRigLoadSkinningModel] Loading skinning model: apozz/UniRig-safetensors
+  [ComfyUI]   [UniRigLoadSkinningModel] GPU caching: disabled (will offload to CPU)
+  [ComfyUI]   [UniRigLoadSkinningModel] Downloading/verifying checkpoint...
+  [ComfyUI]   [UniRig] Downloading skin.safetensors from apozz/UniRig-safetensors...
+  [ComfyUI]   [UniRig] Downloaded to: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/unirig/skin.safetensors
+  [ComfyUI]   [UniRigLoadSkinningModel] Checkpoint ready: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/unirig/skin.safetensors
+  [ComfyUI]   [UniRigLoadSkinningModel] Model configuration cached successfully
+  [ComfyUI]   [UniRigLoadSkinningModel] Checkpoint: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/unirig/skin.safetensors
+  [ComfyUI]   [UniRigLoadModel] Both models loaded successfully
+  [ComfyUI]   [UniRigAutoRig] Starting complete rigging pipeline...
+  [ComfyUI]   [UniRigAutoRig] Skeleton template: mixamo
+  [ComfyUI]   [UniRigAutoRig] Step 1/2: Extracting skeleton...
+  [ComfyUI]   [UniRigExtractSkeletonNew] Starting skeleton extraction (cached model only)...
+  [ComfyUI]   [UniRigExtractSkeletonNew] Skeleton template: mixamo
+  [ComfyUI]   [UniRigExtractSkeletonNew] Mixamo requested, using vroid extraction + name remapping
+  [ComfyUI]   [UniRigExtractSkeletonNew] Using pre-loaded cached model
+  [ComfyUI]   [UniRigExtractSkeletonNew] Exporting mesh to /tmp/tmp4f5eddu9/input.glb
+  [ComfyUI]   [UniRigExtractSkeletonNew] Mesh has 394992 vertices, 642547 faces
+  [ComfyUI]   [UniRigExtractSkeletonNew] Mesh exported in 0.35s
+  [ComfyUI]   [UniRigExtractSkeletonNew] Using target face count: 50000
+  [ComfyUI]   [UniRig] Loaded direct preprocessing module from /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/lib/unirig/src/inference/direct_preprocess.py
+  [ComfyUI]   [UniRigExtractSkeletonNew] Step 1: Preprocessing mesh with direct bpy...
+  [ComfyUI]   [Direct Preprocess] Input: /tmp/tmp4f5eddu9/input.glb
+  [ComfyUI]   [Direct Preprocess] Output: /tmp/tmp4f5eddu9/input/raw_data.npz
+  [ComfyUI]   [Direct Preprocess] Target faces: 50000
+  [ComfyUI]   [Direct Preprocess] Loading .glb file...
+  [ComfyUI]   [Direct Preprocess] Import successful
+  [ComfyUI]   [Direct Preprocess] Found 1 mesh(es)
+  [ComfyUI]   [Direct Preprocess] Processing mesh: geometry_0
+  [ComfyUI]   [Direct Preprocess] Triangulating...
+  [ComfyUI]   [Direct Preprocess] Current face count: 642547
+  [ComfyUI]   [Direct Preprocess] Decimating to 50000 faces...
+  [ComfyUI]   [Direct Preprocess] Decimated to 50000 faces
+  [ComfyUI]   [Direct Preprocess] Extracted 71646 vertices, 50000 faces
+  [ComfyUI]   [Direct Preprocess] Calculated vertex normals
+  [ComfyUI]   [Direct Preprocess] Calculated face normals
+  [ComfyUI]   [Direct Preprocess] Extracted UV coordinates: 150000 UVs for 50000 faces
+  [ComfyUI]   [Direct Preprocess] Found texture node: Image Texture
+  [ComfyUI]   [Direct Preprocess] Texture path:
+  [ComfyUI]   [Direct Preprocess] Extracting texture: 1024x1024, 4 channels
+  [ComfyUI]   [Direct Preprocess] Texture encoded: 1331.3 KB base64
+  [ComfyUI]   [Direct Preprocess] Texture extracted successfully: 1024x1024 PNG
+  [ComfyUI]   [Direct Preprocess] Material: tripo_mat_d0bcade7
+  [ComfyUI]   [Direct Preprocess] Saved to: /tmp/tmp4f5eddu9/input/raw_data.npz
+  [ComfyUI]   [Direct Preprocess] Texture data included: 1024x1024 PNG
+  [ComfyUI]   [Direct Preprocess] Done!
+  [ComfyUI]   [UniRigExtractSkeletonNew] [OK] Mesh preprocessed in 16.52s: /tmp/tmp4f5eddu9/input/raw_data.npz
+  [ComfyUI]   [UniRigExtractSkeletonNew] Forcing skeleton template: vroid
+  [ComfyUI]   [UniRig] Loaded direct inference module from /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/lib/unirig/src/inference/direct.py
+  [ComfyUI]   [UniRigExtractSkeletonNew] Step 2: Running skeleton inference...
+  [ComfyUI]   [UniRigExtractSkeletonNew] Using checkpoint: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/unirig/skeleton.safetensors
+  [ComfyUI]   [MIALoadModel] Loading Make-It-Animatable models...
+  [ComfyUI]   [MIALoadModel] GPU caching: enabled
+  [ComfyUI]   [MIA] Downloading missing models: ['bw.pth', 'bw_normal.pth', 'joints.pth', 'joints_coarse.pth', 'pose.pth']
+  [ComfyUI]   [MIA] Downloading bw.pth...
+  [ComfyUI]   [MIA] Downloading bw_normal.pth...
+  [ComfyUI]   [MIA] Downloading joints.pth...
+  [ComfyUI]   [MIA] Downloading joints_coarse.pth...
+  [ComfyUI]   [MIA] Downloading pose.pth...
+  [ComfyUI]   [MIA] All models downloaded successfully
+  [ComfyUI]   [MIA] Loading models to cpu...
+  [ComfyUI]   [MIA] Loading joints_coarse model...
+  [ComfyUI]   Loaded model from /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/mia/output/best/new/joints_coarse.pth
+  [ComfyUI]   [MIA] Loading bw model...
+  [ComfyUI]   Loaded model from /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/mia/output/best/new/bw.pth
+  [ComfyUI]   [MIA] Loading bw_normal model...
+  [ComfyUI]   Loaded model from /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/mia/output/best/new/bw_normal.pth
+  [ComfyUI]   [MIA] Loading joints model...
+  [ComfyUI]   Loaded model from /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/mia/output/best/new/joints.pth
+  [ComfyUI]   [MIA] Loading pose model...
+  [ComfyUI]   Loaded model from /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/models/mia/output/best/new/pose.pth
+  [ComfyUI]   [MIA] All models loaded successfully
+  [ComfyUI]   [MIALoadModel] Models loaded successfully
+  [ComfyUI]   [MIAAutoRig] Starting Make-It-Animatable rigging pipeline...
+  [ComfyUI]   [MIAAutoRig] Options: no_fingers=False, use_normal=False, reset_to_rest=True
+  [ComfyUI]   [MIA] Starting inference...
+  [ComfyUI]   [MIA] Options: no_fingers=False, use_normal=False, reset_to_rest=True
+  [ComfyUI]   [MIA] Input mesh: 394992 vertices, 642547 faces
+  [ComfyUI]   [MIA] Input mesh visual type: TextureVisuals
+  [ComfyUI]   [MIA]   Has UV coords: (394992, 2)
+  [ComfyUI]   [MIA]   Material type: PBRMaterial
+  [ComfyUI]   [MIA]   Has baseColorTexture!
+  [ComfyUI]   [MIA] Preparing input...
+  [ComfyUI]   [MIA] After prepare_input: data.mesh has 394992 vertices
+  [ComfyUI]   [MIA]   data.mesh visual type: TextureVisuals
+  [ComfyUI]   [MIA]   Has UV coords: (394992, 2)
+  [ComfyUI]   [MIA]   Has material: PBRMaterial
+  [ComfyUI]   [MIA] Preprocessing...
+  [ComfyUI]   [MIA] Running model inference...
+  [ComfyUI]   [MIA] Post-processing...
+  [ComfyUI]   [MIA] reset_to_rest=True, data.pose is None: False
+  [ComfyUI]   [MIA] Pose shape: torch.Size([1, 52, 6])
+  [ComfyUI]   [MIA] Saved pose data to /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test-env/ComfyUI/custom_nodes/ComfyUI-UniRig/.comfy-test-env/ComfyUI/temp/mia_pose_debug.npy
+  [ComfyUI]   [MIA] Exporting to FBX...
+  [ComfyUI]   [MIA] Using bpy directly for FBX export...
+  [ComfyUI]   [MIA Export] Mesh to export: 394992 vertices, 642547 faces
+  [ComfyUI]   [MIA Export] Mesh visual type: TextureVisuals
+  [ComfyUI]   [MIA Export]   Has UV coords: (394992, 2)
+  [ComfyUI]   [MIA Export]   Material type: PBRMaterial
+  [ComfyUI]   [MIA Export]   Has baseColorTexture!
+  [ComfyUI]   [MIA Export] About to export mesh to: /tmp/tmpslb97xmk.glb
+  [ComfyUI]   [MIA Export] Mesh has visual: True
+  [ComfyUI]   [MIA Export] Visual kind: texture
+  [ComfyUI]   [MIA Export] Has UV: shape=(394992, 2)
+  [ComfyUI]   [MIA Export] Material: PBRMaterial
+  [ComfyUI]   [MIA Export]   baseColorTexture: Image
+  [ComfyUI]   [MIA Export] Exported GLB size: 16287072 bytes
+  [ComfyUI]   [MIA Export] Weights: (394992, 52), Joints: (52, 3), Bones: 52
+  [ComfyUI]   FBX version: 7700
+  [ComfyUI]   WARNING: User property type 'Short' is not supported
+  [ComfyUI]   WARNING: User property type 'Short' is not supported
+  [ComfyUI]   WARNING: User property type 'Short' is not supported
+  [ComfyUI]   WARNING: User property type 'Short' is not supported01:14:56 | INFO: Data are loaded, start creating Blender stuff
+  [ComfyUI]   01:14:56 | INFO: Blender create Mesh node geometry_0
+  [ComfyUI]   01:14:56 | INFO: glTF import finished in 0.62s
+  [ComfyUI]   01:15:52 | INFO: Starting glTF 2.0 export
+  [ComfyUI]   01:15:53 | INFO: Extracting primitive: geometry_0
+  [ComfyUI]   01:15:57 | INFO: Primitives created: 1
+  [ComfyUI]   01:15:57 | WARNING: There are more than 4 joint vertex influences.The 4 with highest weight will be used (and normalized).
+  [ComfyUI]   01:15:59 | INFO: Finished glTF 2.0 export in 6.365877628326416 s
+  [ComfyUI] triangulating faces
+  [ComfyUI] Prompt executed in 139.31 seconds
+  Captured 466 frames over 155.22s
+  8 unique frames saved as WebP
+  Waiting 5000ms for previews to render...
+  Saved high-quality screenshot: rig_human_with_texture_mia_executed.png
+    Captured 9 video frames
