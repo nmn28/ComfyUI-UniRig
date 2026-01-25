@@ -19,10 +19,9 @@ pytorch_version = "auto"   # Auto-detect compatible version
 
     [unirig.cuda]
     # CUDA extensions - resolved automatically by comfy-env
-    torch-scatter = "2.1.2"
-    torch-cluster = "1.6.3"
-    cumm-cu126 = "*"      # Required by spconv (must match CUDA version)
-    spconv-cu126 = "*"
+    torch-scatter = "*"
+    torch-cluster = "*"
+    spconv = "*"
     flash-attn = "2.8.3"
 
     [unirig.packages]
@@ -30,7 +29,7 @@ pytorch_version = "auto"   # Auto-detect compatible version
         # Blender as Python module (direct import, no subprocess for preprocessing)
         # Using 4.2 to match original UniRig
         "bpy==4.2",
-
+        "cumm",
         # Core
         "trimesh[easy]",  # Include optional deps like shapely
         "numpy<2.0",      # bpy requires numpy<2.0

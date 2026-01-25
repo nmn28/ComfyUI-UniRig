@@ -41,3 +41,6 @@ checkpoints/
 .pytest_cache/
 /tmp/
 tests/outputs/
+
+# comfy-test output
+.comfy-test-logs/
