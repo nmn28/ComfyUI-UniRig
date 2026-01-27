@@ -1,5 +1,17 @@
 [test]
 name = "ComfyUI-UniRig"
+levels = "all"
+
+[test.workflows]
+run = "all"
+screenshot = "all"
+gpu = "all"
+timeout = 300
+
+[test.platforms]
+linux = true
+windows = true
+windows_portable = true
 
 [test.verification]
 expected_nodes = [

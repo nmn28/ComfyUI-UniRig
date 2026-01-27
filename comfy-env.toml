@@ -1,21 +1,8 @@
-# ComfyUI-UniRig - Environment Configuration
-# Run: comfy-env install
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# TOOLS
-# ═══════════════════════════════════════════════════════════════════════════════
-
-[tools]
-blender = "4.2"
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# ISOLATED ENVIRONMENT
-# ═══════════════════════════════════════════════════════════════════════════════
-
 [unirig]
 python = "3.11"            # Python 3.11 required for bpy (Blender as Python module)
 cuda_version = "auto"      # Auto-detect from system
 pytorch_version = "auto"   # Auto-detect compatible version
+isolated = true            # Run node FUNCTION methods in subprocess with pixi Python
 
     [unirig.cuda]
     # CUDA extensions - resolved automatically by comfy-env
