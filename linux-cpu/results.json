@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-01-27T21:13:17.768997+00:00",
+  "platform": "linux",
+  "hardware": {
+    "os": "Linux-6.11.0-1018-azure-x86_64-with-glibc2.39",
+    "cpu": "AMD EPYC 7763 64-Core Processor"
+  },
+  "summary": {
+    "total": 5,
+    "passed": 0,
+    "failed": 0
+  },
+  "workflows": [
+    {
+      "name": "apply_animation",
+      "status": "skipped",
+      "duration_seconds": 0,
+      "error": "GPU required but not available",
+      "hardware": null
+    },
+    {
+      "name": "rig_human_with_texture",
+      "status": "skipped",
+      "duration_seconds": 0,
+      "error": "GPU required but not available",
+      "hardware": null
+    },
+    {
+      "name": "rig_human_with_texture_mia",
+      "status": "skipped",
+      "duration_seconds": 0,
+      "error": "GPU required but not available",
+      "hardware": null
+    },
+    {
+      "name": "rig_human_with_texture_mia_debug",
+      "status": "skipped",
+      "duration_seconds": 0,
+      "error": "GPU required but not available",
+      "hardware": null
+    },
+    {
+      "name": "rigged_manipulator",
+      "status": "skipped",
+      "duration_seconds": 0,
+      "error": "GPU required but not available",
+      "hardware": null
+    }
+  ]
+}
