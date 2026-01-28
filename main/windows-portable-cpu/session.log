@@ -13,196 +13,196 @@
 [00:00] Fetching latest release version...
 [00:00] Latest version: v0.11.0
 [00:00] Downloading portable ComfyUI from https://github.com/comfyanonymous/ComfyUI/releases/download/v0.11.0/ComfyUI_windows_portable_nvidia.7z...
-[00:02]   Downloaded: 10%
-[00:03]   Downloaded: 20%
-[00:04]   Downloaded: 30%
-[00:05]   Downloaded: 40%
-[00:05]   Downloaded: 50%
-[00:06]   Downloaded: 60%
-[00:07]   Downloaded: 70%
-[00:08]   Downloaded: 80%
-[00:09]   Downloaded: 90%
-[00:10]   Downloaded: 100%
-[00:10] Downloaded to C:\Users\runneradmin\.comfy-test\cache\portable\ComfyUI_portable_v0.11.0.7z
-[00:10] Extracting to cache: C:\Users\runneradmin\.comfy-test\cache\portable\ComfyUI_portable_v0.11.0
-[00:10] Extracting ComfyUI_portable_v0.11.0.7z...
-[00:10] Using 7z: 7z
-[01:43] Extracted to C:\Users\runneradmin\.comfy-test\cache\portable\ComfyUI_portable_v0.11.0
-[01:43] Extracting to: C:\Users\runneradmin\Desktop\portabletest
-[01:43] Extracting ComfyUI_portable_v0.11.0.7z...
-[01:43] Using 7z: 7z
-[03:35] Extracted to C:\Users\runneradmin\Desktop\portabletest
-[03:35] Installing custom node...
-[03:35] Copying ComfyUI-UniRig to custom_nodes/...
-[03:36] Installing node requirements...
-[03:36] Running: C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\python_embeded\python.exe -m pip install -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt
-[04:34]   Collecting comfy-env==0.0.45 (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
-[04:34]     Downloading comfy_env-0.0.45-py3-none-any.whl.metadata (7.1 kB)
-[04:34]   Collecting comfy-3d-viewers>=0.1.0 (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 5))
-[04:34]     Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl.metadata (2.2 kB)
-[04:34]   Collecting trimesh (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 8))
-[04:34]     Downloading trimesh-4.11.1-py3-none-any.whl.metadata (13 kB)
-[04:34]   Requirement already satisfied: numpy in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 9)) (2.4.1)
-[04:34]   Requirement already satisfied: scipy in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 10)) (1.17.0)
-[04:34]   Collecting PyOpenGL==3.1.0 (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 11))
-[04:34]     Downloading PyOpenGL-3.1.0.zip (2.2 MB)
-[04:34]        ---------------------------------------- 2.2/2.2 MB 15.1 MB/s  0:00:00
-[04:34]     Installing build dependencies: started
-[04:34]     Installing build dependencies: finished with status 'done'
-[04:34]     Getting requirements to build wheel: started
-[04:34]     Getting requirements to build wheel: finished with status 'done'
-[04:34]     Preparing metadata (pyproject.toml): started
-[04:34]     Preparing metadata (pyproject.toml): finished with status 'done'
-[04:34]   Collecting pyrender (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12))
-[04:34]     Downloading pyrender-0.1.45-py3-none-any.whl.metadata (1.5 kB)
-[04:34]   Collecting libigl (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 13))
-[04:34]     Downloading libigl-2.6.1-cp312-abi3-win_amd64.whl.metadata (4.8 kB)
-[04:34]   Collecting transformers==4.51.3 (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16))
-[04:34]     Downloading transformers-4.51.3-py3-none-any.whl.metadata (38 kB)
-[04:34]   Collecting pytorch-lightning (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17))
-[04:34]     Downloading pytorch_lightning-2.6.0-py3-none-any.whl.metadata (21 kB)
-[04:34]   Collecting lightning (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 18))
-[04:34]     Downloading lightning-2.6.0-py3-none-any.whl.metadata (44 kB)
-[04:34]   Collecting timm (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 19))
-[04:34]     Downloading timm-1.0.24-py3-none-any.whl.metadata (38 kB)
-[04:34]   Requirement already satisfied: einops in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 20)) (0.8.2)
-[04:34]   Collecting addict (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 21))
-[04:34]     Downloading addict-2.4.0-py3-none-any.whl.metadata (1.0 kB)
-[04:34]   Collecting omegaconf (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 24))
-[04:34]     Downloading omegaconf-2.3.0-py3-none-any.whl.metadata (3.9 kB)
-[04:34]   Collecting python-box (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 25))
-[04:34]     Downloading python_box-7.3.2-cp313-cp313-win_amd64.whl.metadata (8.3 kB)
-[04:34]   Requirement already satisfied: huggingface-hub in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 28)) (1.3.4)
-[04:34]   Requirement already satisfied: hf_xet in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 29)) (1.2.0)
-[04:34]   Collecting fast-simplification (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 32))
-[04:34]     Downloading fast_simplification-0.1.13-cp311-abi3-win_amd64.whl.metadata (10 kB)
-[04:34]   Requirement already satisfied: pyyaml>=6.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from comfy-env==0.0.45->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2)) (6.0.3)
-[04:34]   Collecting uv>=0.4.0 (from comfy-env==0.0.45->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
-[04:34]     Using cached uv-0.9.27-py3-none-win_amd64.whl.metadata (12 kB)
-[04:34]   Requirement already satisfied: filelock in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (3.20.3)
-[04:34]   Collecting huggingface-hub (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 28))
-[04:34]     Downloading huggingface_hub-0.36.0-py3-none-any.whl.metadata (14 kB)
-[04:34]   Requirement already satisfied: packaging>=20.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (26.0)
-[04:34]   Requirement already satisfied: regex!=2019.12.17 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (2026.1.15)
-[04:34]   Requirement already satisfied: requests in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (2.32.5)
-[04:34]   Collecting tokenizers<0.22,>=0.21 (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16))
-[04:34]     Downloading tokenizers-0.21.4-cp39-abi3-win_amd64.whl.metadata (6.9 kB)
-[04:34]   Requirement already satisfied: safetensors>=0.4.3 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (0.7.0)
-[04:34]   Requirement already satisfied: tqdm>=4.27 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (4.67.1)
-[04:34]   Requirement already satisfied: fsspec>=2023.5.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from huggingface-hub->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 28)) (2026.1.0)
-[04:34]   Requirement already satisfied: typing-extensions>=3.7.4.3 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from huggingface-hub->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 28)) (4.15.0)
-[04:34]   Collecting freetype-py (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12))
-[04:34]     Downloading freetype_py-2.5.1-py3-none-win_amd64.whl.metadata (6.5 kB)
-[04:34]   Collecting imageio (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12))
-[04:34]     Downloading imageio-2.37.2-py3-none-any.whl.metadata (9.7 kB)
-[04:34]   Requirement already satisfied: networkx in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12)) (3.6.1)
-[04:34]   Requirement already satisfied: Pillow in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12)) (12.1.0)
-[04:34]   Collecting pyglet>=1.4.10 (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12))
-[04:34]     Downloading pyglet-2.1.12-py3-none-any.whl.metadata (7.7 kB)
-[04:34]   Collecting six (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12))
-[04:34]     Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
-[04:34]   Requirement already satisfied: torch>=2.1.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (2.10.0+cu130)
-[04:34]   Collecting torchmetrics>0.7.0 (from pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17))
-[04:34]     Downloading torchmetrics-1.8.2-py3-none-any.whl.metadata (22 kB)
-[04:34]   Collecting lightning-utilities>=0.10.0 (from pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17))
-[04:34]     Downloading lightning_utilities-0.15.2-py3-none-any.whl.metadata (5.7 kB)
-[04:34]   Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (3.13.3)
-[04:34]   Requirement already satisfied: setuptools in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from lightning-utilities>=0.10.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (80.10.2)
-[04:34]   Requirement already satisfied: sympy>=1.13.3 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from torch>=2.1.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (1.14.0)
-[04:34]   Requirement already satisfied: jinja2 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from torch>=2.1.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (3.1.6)
-[04:34]   Requirement already satisfied: colorama in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from tqdm>=4.27->transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (0.4.6)
-[04:34]   Requirement already satisfied: torchvision in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from timm->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 19)) (0.25.0+cu130)
-[04:34]   Collecting antlr4-python3-runtime==4.9.* (from omegaconf->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 24))
-[04:34]     Downloading antlr4-python3-runtime-4.9.3.tar.gz (117 kB)
-[04:34]     Installing build dependencies: started
-[04:34]     Installing build dependencies: finished with status 'done'
-[04:34]     Getting requirements to build wheel: started
-[04:34]     Getting requirements to build wheel: finished with status 'done'
-[04:34]     Preparing metadata (pyproject.toml): started
-[04:34]     Preparing metadata (pyproject.toml): finished with status 'done'
-[04:34]   Requirement already satisfied: aiohappyeyeballs>=2.5.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (2.6.1)
-[04:34]   Requirement already satisfied: aiosignal>=1.4.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (1.4.0)
-[04:34]   Requirement already satisfied: attrs>=17.3.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (25.4.0)
-[04:34]   Requirement already satisfied: frozenlist>=1.1.1 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (1.8.0)
-[04:34]   Requirement already satisfied: multidict<7.0,>=4.5 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (6.7.1)
-[04:34]   Requirement already satisfied: propcache>=0.2.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (0.4.1)
-[04:34]   Requirement already satisfied: yarl<2.0,>=1.17.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (1.22.0)
-[04:34]   Requirement already satisfied: idna>=2.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from yarl<2.0,>=1.17.0->aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (3.11)
-[04:34]   Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from sympy>=1.13.3->torch>=2.1.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (1.3.0)
-[04:34]   Requirement already satisfied: MarkupSafe>=2.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from jinja2->torch>=2.1.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (3.0.3)
-[04:34]   Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from requests->transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (3.4.4)
-[04:34]   Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from requests->transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (2.6.3)
-[04:34]   Requirement already satisfied: certifi>=2017.4.17 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from requests->transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (2026.1.4)
-[04:34]   Downloading comfy_env-0.0.45-py3-none-any.whl (103 kB)
-[04:34]   Downloading transformers-4.51.3-py3-none-any.whl (10.4 MB)
-[04:34]      ---------------------------------------- 10.4/10.4 MB 47.1 MB/s  0:00:00
-[04:34]   Downloading huggingface_hub-0.36.0-py3-none-any.whl (566 kB)
-[04:34]      ---------------------------------------- 566.1/566.1 kB 15.1 MB/s  0:00:00
-[04:34]   Downloading tokenizers-0.21.4-cp39-abi3-win_amd64.whl (2.5 MB)
-[04:34]      ---------------------------------------- 2.5/2.5 MB 45.1 MB/s  0:00:00
-[04:34]   Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl (1.3 MB)
-[04:34]      ---------------------------------------- 1.3/1.3 MB 45.6 MB/s  0:00:00
-[04:34]   Downloading trimesh-4.11.1-py3-none-any.whl (740 kB)
-[04:34]      ---------------------------------------- 740.4/740.4 kB 21.0 MB/s  0:00:00
-[04:34]   Downloading pyrender-0.1.45-py3-none-any.whl (1.2 MB)
-[04:34]      ---------------------------------------- 1.2/1.2 MB 35.6 MB/s  0:00:00
-[04:34]   Downloading libigl-2.6.1-cp312-abi3-win_amd64.whl (13.5 MB)
-[04:34]      ---------------------------------------- 13.5/13.5 MB 118.2 MB/s  0:00:00
-[04:34]   Downloading pytorch_lightning-2.6.0-py3-none-any.whl (849 kB)
-[04:34]      ---------------------------------------- 849.5/849.5 kB 33.5 MB/s  0:00:00
-[04:34]   Downloading lightning-2.6.0-py3-none-any.whl (845 kB)
-[04:34]      ---------------------------------------- 846.0/846.0 kB 25.5 MB/s  0:00:00
-[04:34]   Downloading lightning_utilities-0.15.2-py3-none-any.whl (29 kB)
-[04:34]   Downloading torchmetrics-1.8.2-py3-none-any.whl (983 kB)
-[04:34]      ---------------------------------------- 983.2/983.2 kB 32.2 MB/s  0:00:00
-[04:34]   Downloading timm-1.0.24-py3-none-any.whl (2.6 MB)
-[04:34]      ---------------------------------------- 2.6/2.6 MB 83.2 MB/s  0:00:00
-[04:34]   Downloading addict-2.4.0-py3-none-any.whl (3.8 kB)
-[04:34]   Downloading omegaconf-2.3.0-py3-none-any.whl (79 kB)
-[04:34]   Downloading python_box-7.3.2-cp313-cp313-win_amd64.whl (1.2 MB)
-[04:34]      ---------------------------------------- 1.2/1.2 MB 48.4 MB/s  0:00:00
-[04:34]   Downloading fast_simplification-0.1.13-cp311-abi3-win_amd64.whl (378 kB)
-[04:34]   Downloading pyglet-2.1.12-py3-none-any.whl (1.0 MB)
-[04:34]      ---------------------------------------- 1.0/1.0 MB 43.7 MB/s  0:00:00
-[04:34]   Using cached uv-0.9.27-py3-none-win_amd64.whl (23.4 MB)
-[04:34]   Downloading freetype_py-2.5.1-py3-none-win_amd64.whl (814 kB)
-[04:34]      ---------------------------------------- 814.6/814.6 kB 25.2 MB/s  0:00:00
-[04:34]   Downloading imageio-2.37.2-py3-none-any.whl (317 kB)
-[04:34]   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
-[04:34]   Building wheels for collected packages: PyOpenGL, antlr4-python3-runtime
-[04:34]     Building wheel for PyOpenGL (pyproject.toml): started
-[04:34]     Building wheel for PyOpenGL (pyproject.toml): finished with status 'done'
-[04:34]     Created wheel for PyOpenGL: filename=pyopengl-3.1.0-py3-none-any.whl size=1749359 sha256=e0e3430b7e4df900809ddf0ac03449426c4157b30a46413e19e64f207cdcf084
-[04:34]     Stored in directory: c:\users\runneradmin\appdata\local\pip\cache\wheels\94\1e\b7\936470a7f31b366f4310a639af74c9d485cfa0ecc4b386987e
-[04:34]     Building wheel for antlr4-python3-runtime (pyproject.toml): started
-[04:34]     Building wheel for antlr4-python3-runtime (pyproject.toml): finished with status 'done'
-[04:34]     Created wheel for antlr4-python3-runtime: filename=antlr4_python3_runtime-4.9.3-py3-none-any.whl size=144613 sha256=e206ecd70fea92990163f3f1bf4fc9a8a726b70c4e51a89459a666a98f82e118
-[04:34]     Stored in directory: c:\users\runneradmin\appdata\local\pip\cache\wheels\d5\b3\74\a35b66048c9de6631cd74cbc9475e6feb3e69a467983446bd8
-[04:34]   Successfully built PyOpenGL antlr4-python3-runtime
-[04:34]   Installing collected packages: PyOpenGL, antlr4-python3-runtime, addict, uv, trimesh, six, python-box, pyglet, omegaconf, lightning-utilities, imageio, freetype-py, fast-simplification, comfy-3d-viewers, pyrender, libigl, huggingface-hub, comfy-env, torchmetrics, tokenizers, transformers, timm, pytorch-lightning, lightning
-[04:34]     Attempting uninstall: huggingface-hub
-[04:34]       Found existing installation: huggingface_hub 1.3.4
-[04:34]       Uninstalling huggingface_hub-1.3.4:
-[04:34]         Successfully uninstalled huggingface_hub-1.3.4
-[04:34]     Attempting uninstall: tokenizers
-[04:34]       Found existing installation: tokenizers 0.22.2
-[04:34]       Uninstalling tokenizers-0.22.2:
-[04:34]         Successfully uninstalled tokenizers-0.22.2
-[04:34]     Attempting uninstall: transformers
-[04:34]       Found existing installation: transformers 5.0.0
-[04:34]       Uninstalling transformers-5.0.0:
-[04:34]         Successfully uninstalled transformers-5.0.0
-[04:34]   
-[04:34]   Successfully installed PyOpenGL-3.1.0 addict-2.4.0 antlr4-python3-runtime-4.9.3 comfy-3d-viewers-0.2.1 comfy-env-0.0.45 fast-simplification-0.1.13 freetype-py-2.5.1 huggingface-hub-0.36.0 imageio-2.37.2 libigl-2.6.1 lightning-2.6.0 lightning-utilities-0.15.2 omegaconf-2.3.0 pyglet-2.1.12 pyrender-0.1.45 python-box-7.3.2 pytorch-lightning-2.6.0 six-1.17.0 timm-1.0.24 tokenizers-0.21.4 torchmetrics-1.8.2 transformers-4.51.3 trimesh-4.11.1 uv-0.9.27
-[04:34] Running install.py...
-[04:34] Running: C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\python_embeded\python.exe C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\install.py
-[04:36]   ============================================================
-[04:36]   ComfyUI-UniRig Installation
-[04:36]   ============================================================
-[04:36]   
-[04:36]   [UniRig] Installation FAILED: install() got an unexpected keyword argument 'config'
-[04:36]   [UniRig] Report issues at: https://github.com/PozzettiAndrea/ComfyUI-UniRig/issues
-[04:36] Command failed with code 1
-[04:36] 
+[00:03]   Downloaded: 10%
+[00:04]   Downloaded: 20%
+[00:05]   Downloaded: 30%
+[00:06]   Downloaded: 40%
+[00:07]   Downloaded: 50%
+[00:08]   Downloaded: 60%
+[00:10]   Downloaded: 70%
+[00:11]   Downloaded: 80%
+[00:12]   Downloaded: 90%
+[00:13]   Downloaded: 100%
+[00:13] Downloaded to C:\Users\runneradmin\.comfy-test\cache\portable\ComfyUI_portable_v0.11.0.7z
+[00:13] Extracting to cache: C:\Users\runneradmin\.comfy-test\cache\portable\ComfyUI_portable_v0.11.0
+[00:13] Extracting ComfyUI_portable_v0.11.0.7z...
+[00:13] Using 7z: 7z
+[02:45] Extracted to C:\Users\runneradmin\.comfy-test\cache\portable\ComfyUI_portable_v0.11.0
+[02:45] Extracting to: C:\Users\runneradmin\Desktop\portabletest
+[02:45] Extracting ComfyUI_portable_v0.11.0.7z...
+[02:45] Using 7z: 7z
+[04:47] Extracted to C:\Users\runneradmin\Desktop\portabletest
+[04:47] Installing custom node...
+[04:47] Copying ComfyUI-UniRig to custom_nodes/...
+[04:48] Installing node requirements...
+[04:48] Running: C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\python_embeded\python.exe -m pip install -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt
+[06:02]   Collecting comfy-env==0.0.45 (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
+[06:02]     Downloading comfy_env-0.0.45-py3-none-any.whl.metadata (7.1 kB)
+[06:02]   Collecting comfy-3d-viewers>=0.1.0 (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 5))
+[06:02]     Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl.metadata (2.2 kB)
+[06:02]   Collecting trimesh (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 8))
+[06:02]     Downloading trimesh-4.11.1-py3-none-any.whl.metadata (13 kB)
+[06:02]   Requirement already satisfied: numpy in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 9)) (2.4.1)
+[06:02]   Requirement already satisfied: scipy in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 10)) (1.17.0)
+[06:02]   Collecting PyOpenGL==3.1.0 (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 11))
+[06:02]     Downloading PyOpenGL-3.1.0.zip (2.2 MB)
+[06:02]        ---------------------------------------- 2.2/2.2 MB 20.6 MB/s  0:00:00
+[06:02]     Installing build dependencies: started
+[06:02]     Installing build dependencies: finished with status 'done'
+[06:02]     Getting requirements to build wheel: started
+[06:02]     Getting requirements to build wheel: finished with status 'done'
+[06:02]     Preparing metadata (pyproject.toml): started
+[06:02]     Preparing metadata (pyproject.toml): finished with status 'done'
+[06:02]   Collecting pyrender (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12))
+[06:02]     Downloading pyrender-0.1.45-py3-none-any.whl.metadata (1.5 kB)
+[06:02]   Collecting libigl (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 13))
+[06:02]     Downloading libigl-2.6.1-cp312-abi3-win_amd64.whl.metadata (4.8 kB)
+[06:02]   Collecting transformers==4.51.3 (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16))
+[06:02]     Downloading transformers-4.51.3-py3-none-any.whl.metadata (38 kB)
+[06:02]   Collecting pytorch-lightning (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17))
+[06:02]     Downloading pytorch_lightning-2.6.0-py3-none-any.whl.metadata (21 kB)
+[06:02]   Collecting lightning (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 18))
+[06:02]     Downloading lightning-2.6.0-py3-none-any.whl.metadata (44 kB)
+[06:02]   Collecting timm (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 19))
+[06:02]     Downloading timm-1.0.24-py3-none-any.whl.metadata (38 kB)
+[06:02]   Requirement already satisfied: einops in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 20)) (0.8.2)
+[06:02]   Collecting addict (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 21))
+[06:02]     Downloading addict-2.4.0-py3-none-any.whl.metadata (1.0 kB)
+[06:02]   Collecting omegaconf (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 24))
+[06:02]     Downloading omegaconf-2.3.0-py3-none-any.whl.metadata (3.9 kB)
+[06:02]   Collecting python-box (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 25))
+[06:02]     Downloading python_box-7.3.2-cp313-cp313-win_amd64.whl.metadata (8.3 kB)
+[06:02]   Requirement already satisfied: huggingface-hub in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 28)) (1.3.4)
+[06:02]   Requirement already satisfied: hf_xet in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 29)) (1.2.0)
+[06:02]   Collecting fast-simplification (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 32))
+[06:02]     Downloading fast_simplification-0.1.13-cp311-abi3-win_amd64.whl.metadata (10 kB)
+[06:02]   Requirement already satisfied: pyyaml>=6.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from comfy-env==0.0.45->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2)) (6.0.3)
+[06:02]   Collecting uv>=0.4.0 (from comfy-env==0.0.45->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
+[06:02]     Using cached uv-0.9.27-py3-none-win_amd64.whl.metadata (12 kB)
+[06:02]   Requirement already satisfied: filelock in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (3.20.3)
+[06:02]   Collecting huggingface-hub (from -r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 28))
+[06:02]     Downloading huggingface_hub-0.36.0-py3-none-any.whl.metadata (14 kB)
+[06:02]   Requirement already satisfied: packaging>=20.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (26.0)
+[06:02]   Requirement already satisfied: regex!=2019.12.17 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (2026.1.15)
+[06:02]   Requirement already satisfied: requests in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (2.32.5)
+[06:02]   Collecting tokenizers<0.22,>=0.21 (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16))
+[06:02]     Downloading tokenizers-0.21.4-cp39-abi3-win_amd64.whl.metadata (6.9 kB)
+[06:02]   Requirement already satisfied: safetensors>=0.4.3 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (0.7.0)
+[06:02]   Requirement already satisfied: tqdm>=4.27 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (4.67.1)
+[06:02]   Requirement already satisfied: fsspec>=2023.5.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from huggingface-hub->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 28)) (2026.1.0)
+[06:02]   Requirement already satisfied: typing-extensions>=3.7.4.3 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from huggingface-hub->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 28)) (4.15.0)
+[06:02]   Collecting freetype-py (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12))
+[06:02]     Downloading freetype_py-2.5.1-py3-none-win_amd64.whl.metadata (6.5 kB)
+[06:02]   Collecting imageio (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12))
+[06:02]     Downloading imageio-2.37.2-py3-none-any.whl.metadata (9.7 kB)
+[06:02]   Requirement already satisfied: networkx in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12)) (3.6.1)
+[06:02]   Requirement already satisfied: Pillow in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12)) (12.1.0)
+[06:02]   Collecting pyglet>=1.4.10 (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12))
+[06:02]     Downloading pyglet-2.1.12-py3-none-any.whl.metadata (7.7 kB)
+[06:02]   Collecting six (from pyrender->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 12))
+[06:02]     Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+[06:02]   Requirement already satisfied: torch>=2.1.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (2.10.0+cu130)
+[06:02]   Collecting torchmetrics>0.7.0 (from pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17))
+[06:02]     Downloading torchmetrics-1.8.2-py3-none-any.whl.metadata (22 kB)
+[06:02]   Collecting lightning-utilities>=0.10.0 (from pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17))
+[06:02]     Downloading lightning_utilities-0.15.2-py3-none-any.whl.metadata (5.7 kB)
+[06:02]   Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (3.13.3)
+[06:02]   Requirement already satisfied: setuptools in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from lightning-utilities>=0.10.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (80.10.2)
+[06:02]   Requirement already satisfied: sympy>=1.13.3 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from torch>=2.1.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (1.14.0)
+[06:02]   Requirement already satisfied: jinja2 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from torch>=2.1.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (3.1.6)
+[06:02]   Requirement already satisfied: colorama in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from tqdm>=4.27->transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (0.4.6)
+[06:02]   Requirement already satisfied: torchvision in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from timm->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 19)) (0.25.0+cu130)
+[06:02]   Collecting antlr4-python3-runtime==4.9.* (from omegaconf->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 24))
+[06:02]     Downloading antlr4-python3-runtime-4.9.3.tar.gz (117 kB)
+[06:02]     Installing build dependencies: started
+[06:02]     Installing build dependencies: finished with status 'done'
+[06:02]     Getting requirements to build wheel: started
+[06:02]     Getting requirements to build wheel: finished with status 'done'
+[06:02]     Preparing metadata (pyproject.toml): started
+[06:02]     Preparing metadata (pyproject.toml): finished with status 'done'
+[06:02]   Requirement already satisfied: aiohappyeyeballs>=2.5.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (2.6.1)
+[06:02]   Requirement already satisfied: aiosignal>=1.4.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (1.4.0)
+[06:02]   Requirement already satisfied: attrs>=17.3.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (25.4.0)
+[06:02]   Requirement already satisfied: frozenlist>=1.1.1 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (1.8.0)
+[06:02]   Requirement already satisfied: multidict<7.0,>=4.5 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (6.7.1)
+[06:02]   Requirement already satisfied: propcache>=0.2.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (0.4.1)
+[06:02]   Requirement already satisfied: yarl<2.0,>=1.17.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (1.22.0)
+[06:02]   Requirement already satisfied: idna>=2.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from yarl<2.0,>=1.17.0->aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>=2022.5.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (3.11)
+[06:02]   Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from sympy>=1.13.3->torch>=2.1.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (1.3.0)
+[06:02]   Requirement already satisfied: MarkupSafe>=2.0 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from jinja2->torch>=2.1.0->pytorch-lightning->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 17)) (3.0.3)
+[06:02]   Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from requests->transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (3.4.4)
+[06:02]   Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from requests->transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (2.6.3)
+[06:02]   Requirement already satisfied: certifi>=2017.4.17 in c:\users\runneradmin\desktop\portabletest\comfyui_windows_portable\python_embeded\lib\site-packages (from requests->transformers==4.51.3->-r C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 16)) (2026.1.4)
+[06:02]   Downloading comfy_env-0.0.45-py3-none-any.whl (103 kB)
+[06:02]   Downloading transformers-4.51.3-py3-none-any.whl (10.4 MB)
+[06:02]      ---------------------------------------- 10.4/10.4 MB 102.2 MB/s  0:00:00
+[06:02]   Downloading huggingface_hub-0.36.0-py3-none-any.whl (566 kB)
+[06:02]      ---------------------------------------- 566.1/566.1 kB 4.5 MB/s  0:00:00
+[06:02]   Downloading tokenizers-0.21.4-cp39-abi3-win_amd64.whl (2.5 MB)
+[06:02]      ---------------------------------------- 2.5/2.5 MB 59.8 MB/s  0:00:00
+[06:02]   Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl (1.3 MB)
+[06:02]      ---------------------------------------- 1.3/1.3 MB 20.4 MB/s  0:00:00
+[06:02]   Downloading trimesh-4.11.1-py3-none-any.whl (740 kB)
+[06:02]      ---------------------------------------- 740.4/740.4 kB 9.6 MB/s  0:00:00
+[06:02]   Downloading pyrender-0.1.45-py3-none-any.whl (1.2 MB)
+[06:02]      ---------------------------------------- 1.2/1.2 MB 20.5 MB/s  0:00:00
+[06:02]   Downloading libigl-2.6.1-cp312-abi3-win_amd64.whl (13.5 MB)
+[06:02]      ---------------------------------------- 13.5/13.5 MB 122.0 MB/s  0:00:00
+[06:02]   Downloading pytorch_lightning-2.6.0-py3-none-any.whl (849 kB)
+[06:02]      ---------------------------------------- 849.5/849.5 kB 19.2 MB/s  0:00:00
+[06:02]   Downloading lightning-2.6.0-py3-none-any.whl (845 kB)
+[06:02]      ---------------------------------------- 846.0/846.0 kB 15.5 MB/s  0:00:00
+[06:02]   Downloading lightning_utilities-0.15.2-py3-none-any.whl (29 kB)
+[06:02]   Downloading torchmetrics-1.8.2-py3-none-any.whl (983 kB)
+[06:02]      ---------------------------------------- 983.2/983.2 kB 12.1 MB/s  0:00:00
+[06:02]   Downloading timm-1.0.24-py3-none-any.whl (2.6 MB)
+[06:02]      ---------------------------------------- 2.6/2.6 MB 1.0 MB/s  0:00:02
+[06:02]   Downloading addict-2.4.0-py3-none-any.whl (3.8 kB)
+[06:02]   Downloading omegaconf-2.3.0-py3-none-any.whl (79 kB)
+[06:02]   Downloading python_box-7.3.2-cp313-cp313-win_amd64.whl (1.2 MB)
+[06:02]      ---------------------------------------- 1.2/1.2 MB 14.6 MB/s  0:00:00
+[06:02]   Downloading fast_simplification-0.1.13-cp311-abi3-win_amd64.whl (378 kB)
+[06:02]   Downloading pyglet-2.1.12-py3-none-any.whl (1.0 MB)
+[06:02]      ---------------------------------------- 1.0/1.0 MB 11.7 MB/s  0:00:00
+[06:02]   Using cached uv-0.9.27-py3-none-win_amd64.whl (23.4 MB)
+[06:02]   Downloading freetype_py-2.5.1-py3-none-win_amd64.whl (814 kB)
+[06:02]      ---------------------------------------- 814.6/814.6 kB 17.7 MB/s  0:00:00
+[06:02]   Downloading imageio-2.37.2-py3-none-any.whl (317 kB)
+[06:02]   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+[06:02]   Building wheels for collected packages: PyOpenGL, antlr4-python3-runtime
+[06:02]     Building wheel for PyOpenGL (pyproject.toml): started
+[06:02]     Building wheel for PyOpenGL (pyproject.toml): finished with status 'done'
+[06:02]     Created wheel for PyOpenGL: filename=pyopengl-3.1.0-py3-none-any.whl size=1749359 sha256=24e96b8ded6687d229b3434f40eeb83f40963b319537e394df28ca2e987285fc
+[06:02]     Stored in directory: c:\users\runneradmin\appdata\local\pip\cache\wheels\94\1e\b7\936470a7f31b366f4310a639af74c9d485cfa0ecc4b386987e
+[06:02]     Building wheel for antlr4-python3-runtime (pyproject.toml): started
+[06:02]     Building wheel for antlr4-python3-runtime (pyproject.toml): finished with status 'done'
+[06:02]     Created wheel for antlr4-python3-runtime: filename=antlr4_python3_runtime-4.9.3-py3-none-any.whl size=144613 sha256=6e4990debb91dd06f5e823c8c07495bea1f28e26c195c1ee7e0e0e27da423a05
+[06:02]     Stored in directory: c:\users\runneradmin\appdata\local\pip\cache\wheels\d5\b3\74\a35b66048c9de6631cd74cbc9475e6feb3e69a467983446bd8
+[06:02]   Successfully built PyOpenGL antlr4-python3-runtime
+[06:02]   Installing collected packages: PyOpenGL, antlr4-python3-runtime, addict, uv, trimesh, six, python-box, pyglet, omegaconf, lightning-utilities, imageio, freetype-py, fast-simplification, comfy-3d-viewers, pyrender, libigl, huggingface-hub, comfy-env, torchmetrics, tokenizers, transformers, timm, pytorch-lightning, lightning
+[06:02]     Attempting uninstall: huggingface-hub
+[06:02]       Found existing installation: huggingface_hub 1.3.4
+[06:02]       Uninstalling huggingface_hub-1.3.4:
+[06:02]         Successfully uninstalled huggingface_hub-1.3.4
+[06:02]     Attempting uninstall: tokenizers
+[06:02]       Found existing installation: tokenizers 0.22.2
+[06:02]       Uninstalling tokenizers-0.22.2:
+[06:02]         Successfully uninstalled tokenizers-0.22.2
+[06:02]     Attempting uninstall: transformers
+[06:02]       Found existing installation: transformers 5.0.0
+[06:02]       Uninstalling transformers-5.0.0:
+[06:02]         Successfully uninstalled transformers-5.0.0
+[06:02]   
+[06:02]   Successfully installed PyOpenGL-3.1.0 addict-2.4.0 antlr4-python3-runtime-4.9.3 comfy-3d-viewers-0.2.1 comfy-env-0.0.45 fast-simplification-0.1.13 freetype-py-2.5.1 huggingface-hub-0.36.0 imageio-2.37.2 libigl-2.6.1 lightning-2.6.0 lightning-utilities-0.15.2 omegaconf-2.3.0 pyglet-2.1.12 pyrender-0.1.45 python-box-7.3.2 pytorch-lightning-2.6.0 six-1.17.0 timm-1.0.24 tokenizers-0.21.4 torchmetrics-1.8.2 transformers-4.51.3 trimesh-4.11.1 uv-0.9.27
+[06:02] Running install.py...
+[06:02] Running: C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\python_embeded\python.exe C:\Users\runneradmin\Desktop\portabletest\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\install.py
+[06:05]   ============================================================
+[06:05]   ComfyUI-UniRig Installation
+[06:05]   ============================================================
+[06:05]   
+[06:05]   [UniRig] Installation FAILED: install() got an unexpected keyword argument 'config'
+[06:05]   [UniRig] Report issues at: https://github.com/PozzettiAndrea/ComfyUI-UniRig/issues
+[06:05] Command failed with code 1
+[06:05] 
 windows-portable: FAILED (unexpected error)
-[04:36] Error: Command '['C:\\Users\\runneradmin\\Desktop\\portabletest\\ComfyUI_windows_portable\\python_embeded\\python.exe', 'C:\\Users\\runneradmin\\Desktop\\portabletest\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\install.py']' returned non-zero exit status 1.
+[06:05] Error: Command '['C:\\Users\\runneradmin\\Desktop\\portabletest\\ComfyUI_windows_portable\\python_embeded\\python.exe', 'C:\\Users\\runneradmin\\Desktop\\portabletest\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\install.py']' returned non-zero exit status 1.

@@ -11,26 +11,26 @@
 [00:00] ----------------------------------------
 [00:00] Setting up ComfyUI...
 [00:00] Cloning ComfyUI (latest)...
-[00:00] Running: git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_kr9z_qsh/ComfyUI
-[00:02] Creating virtual environment...
-[00:02] Running: /Library/Frameworks/Python.framework/Versions/3.12/bin/python -m venv /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_kr9z_qsh/venv
+[00:00] Running: git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/ComfyUI
+[00:01] Creating virtual environment...
+[00:01] Running: /Library/Frameworks/Python.framework/Versions/3.13/bin/python -m venv /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv
 [00:04] Installing uv into venv...
-[00:04] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_kr9z_qsh/venv/bin/python -m pip install uv
-[00:05]   Collecting uv
-[00:05]     Using cached uv-0.9.27-py3-none-macosx_11_0_arm64.whl.metadata (11 kB)
-[00:05]   Using cached uv-0.9.27-py3-none-macosx_11_0_arm64.whl (19.8 MB)
-[00:05]   Installing collected packages: uv
-[00:05]   Successfully installed uv-0.9.27
-[00:05] Installing PyTorch...
-[00:05] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_kr9z_qsh/venv/bin/python -m uv pip install torch torchvision torchaudio
-[00:10] Installing ComfyUI requirements...
-[00:10] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_kr9z_qsh/venv/bin/python -m uv pip install -r /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_kr9z_qsh/ComfyUI/requirements.txt
-[00:20] Installing custom node...
-[00:20] Linking ComfyUI-UniRig to custom_nodes/...
-[00:20] Installing node requirements...
-[00:20] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_kr9z_qsh/venv/bin/python -m uv pip install -r /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
+[00:04] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python -m pip install uv
+[00:04]   Collecting uv
+[00:04]     Using cached uv-0.9.27-py3-none-macosx_11_0_arm64.whl.metadata (11 kB)
+[00:04]   Using cached uv-0.9.27-py3-none-macosx_11_0_arm64.whl (19.8 MB)
+[00:04]   Installing collected packages: uv
+[00:04]   Successfully installed uv-0.9.27
+[00:04] Installing PyTorch...
+[00:04] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python -m uv pip install torch torchvision torchaudio
+[00:12] Installing ComfyUI requirements...
+[00:12] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python -m uv pip install -r /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/ComfyUI/requirements.txt
+[00:22] Installing custom node...
+[00:22] Linking ComfyUI-UniRig to custom_nodes/...
+[00:22] Installing node requirements...
+[00:22] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python -m uv pip install -r /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
 [00:29] Running install.py...
-[00:29] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_kr9z_qsh/venv/bin/python /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
+[00:29] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
 [00:34]   ============================================================
 [00:34]   ComfyUI-UniRig Installation
 [00:34]   ============================================================
@@ -38,6 +38,6 @@
 [00:34]   [UniRig] Installation FAILED: install() got an unexpected keyword argument 'config'
 [00:34]   [UniRig] Report issues at: https://github.com/PozzettiAndrea/ComfyUI-UniRig/issues
 [00:34] Command failed with code 1
-[00:38] 
+[00:37] 
 macos: FAILED (unexpected error)
-[00:38] Error: Command '['/private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_kr9z_qsh/venv/bin/python', '/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py']' returned non-zero exit status 1.
+[00:37] Error: Command '['/private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python', '/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py']' returned non-zero exit status 1.
