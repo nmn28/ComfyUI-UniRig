@@ -1,0 +1,49 @@
+[00:00] Crash dump logging enabled: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\.comfy-test\crash_dump.log
+[00:00] 
+[00:00] [1/7] SYNTAX
+[00:00] ----------------------------------------
+[00:00] Found pyproject.toml (modern format)
+[00:00] Found requirements.txt (legacy format)
+[00:00] Unicode check: OK (all characters cp1252-safe)
+[00:00] [SYNTAX] PASSED
+[00:00] Setting up Windows isolation...
+[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o0k7sk05\temp
+[00:00]   Isolation active
+[00:00] 
+[00:00] [2/7] INSTALL
+[00:00] ----------------------------------------
+[00:00] Setting up ComfyUI...
+[00:00] Cloning ComfyUI (latest)...
+[00:00] Running: git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o0k7sk05\ComfyUI
+[00:02] Creating virtual environment...
+[00:02] Running: C:\hostedtoolcache\windows\Python\3.11.9\x64\python.exe -m venv C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o0k7sk05\venv
+[00:10] Installing uv into venv...
+[00:10] Running: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o0k7sk05\venv\Scripts\python.exe -m pip install uv
+[00:14]   Collecting uv
+[00:14]     Using cached uv-0.9.27-py3-none-win_amd64.whl.metadata (12 kB)
+[00:14]   Using cached uv-0.9.27-py3-none-win_amd64.whl (23.4 MB)
+[00:14]   Installing collected packages: uv
+[00:14]   Successfully installed uv-0.9.27
+[00:14] Installing PyTorch (CPU)...
+[00:14] Running: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o0k7sk05\venv\Scripts\python.exe -m uv pip install torch==2.8.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+[01:11] Installing ComfyUI requirements...
+[01:11] Running: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o0k7sk05\venv\Scripts\python.exe -m uv pip install -r C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o0k7sk05\ComfyUI\requirements.txt
+[01:51] Installing custom node...
+[01:51] Copying ComfyUI-UniRig to custom_nodes/...
+[01:52] Installing node requirements...
+[01:52] Running: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o0k7sk05\venv\Scripts\python.exe -m uv pip install -r C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o0k7sk05\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt
+[02:30] Running install.py...
+[02:30] Running: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o0k7sk05\venv\Scripts\python.exe C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o0k7sk05\ComfyUI\custom_nodes\ComfyUI-UniRig\install.py
+[02:36]   ============================================================
+[02:36]   ComfyUI-UniRig Installation
+[02:36]   ============================================================
+[02:36]   
+[02:36]   [UniRig] Installation FAILED: install() got an unexpected keyword argument 'config'
+[02:36]   [UniRig] Report issues at: https://github.com/PozzettiAndrea/ComfyUI-UniRig/issues
+[02:36] Command failed with code 1
+[02:50] Tearing down Windows isolation...
+[02:50]   Environment restored
+[02:50]   Isolation torn down
+[02:50] 
+windows: FAILED (unexpected error)
+[02:50] Error: Command '['C:\\Users\\runneradmin\\AppData\\Local\\Temp\\comfy_test_o0k7sk05\\venv\\Scripts\\python.exe', 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\comfy_test_o0k7sk05\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\install.py']' returned non-zero exit status 1.

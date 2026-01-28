@@ -1,0 +1,43 @@
+[00:00] Crash dump logging enabled: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test/crash_dump.log
+[00:00] 
+[00:00] [1/7] SYNTAX
+[00:00] ----------------------------------------
+[00:00] Found pyproject.toml (modern format)
+[00:00] Found requirements.txt (legacy format)
+[00:00] Unicode check: OK (all characters cp1252-safe)
+[00:00] [SYNTAX] PASSED
+[00:00] 
+[00:00] [2/7] INSTALL
+[00:00] ----------------------------------------
+[00:00] Setting up ComfyUI...
+[00:00] Cloning ComfyUI (latest)...
+[00:00] Running: git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /private/var/folders/kg/7q73ww8s3llgyl61c9z_j5g40000gn/T/comfy_test_mhwv1k60/ComfyUI
+[00:01] Creating virtual environment...
+[00:01] Running: /Library/Frameworks/Python.framework/Versions/3.11/bin/python -m venv /private/var/folders/kg/7q73ww8s3llgyl61c9z_j5g40000gn/T/comfy_test_mhwv1k60/venv
+[00:04] Installing uv into venv...
+[00:04] Running: /private/var/folders/kg/7q73ww8s3llgyl61c9z_j5g40000gn/T/comfy_test_mhwv1k60/venv/bin/python -m pip install uv
+[00:05]   Collecting uv
+[00:05]     Using cached uv-0.9.27-py3-none-macosx_11_0_arm64.whl.metadata (11 kB)
+[00:05]   Using cached uv-0.9.27-py3-none-macosx_11_0_arm64.whl (19.8 MB)
+[00:05]   Installing collected packages: uv
+[00:05]   Successfully installed uv-0.9.27
+[00:05] Installing PyTorch...
+[00:05] Running: /private/var/folders/kg/7q73ww8s3llgyl61c9z_j5g40000gn/T/comfy_test_mhwv1k60/venv/bin/python -m uv pip install torch torchvision torchaudio
+[00:12] Installing ComfyUI requirements...
+[00:12] Running: /private/var/folders/kg/7q73ww8s3llgyl61c9z_j5g40000gn/T/comfy_test_mhwv1k60/venv/bin/python -m uv pip install -r /private/var/folders/kg/7q73ww8s3llgyl61c9z_j5g40000gn/T/comfy_test_mhwv1k60/ComfyUI/requirements.txt
+[00:21] Installing custom node...
+[00:21] Linking ComfyUI-UniRig to custom_nodes/...
+[00:21] Installing node requirements...
+[00:21] Running: /private/var/folders/kg/7q73ww8s3llgyl61c9z_j5g40000gn/T/comfy_test_mhwv1k60/venv/bin/python -m uv pip install -r /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
+[00:28] Running install.py...
+[00:28] Running: /private/var/folders/kg/7q73ww8s3llgyl61c9z_j5g40000gn/T/comfy_test_mhwv1k60/venv/bin/python /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
+[00:32]   ============================================================
+[00:32]   ComfyUI-UniRig Installation
+[00:32]   ============================================================
+[00:32]   
+[00:32]   [UniRig] Installation FAILED: install() got an unexpected keyword argument 'config'
+[00:32]   [UniRig] Report issues at: https://github.com/PozzettiAndrea/ComfyUI-UniRig/issues
+[00:32] Command failed with code 1
+[00:34] 
+macos: FAILED (unexpected error)
+[00:34] Error: Command '['/private/var/folders/kg/7q73ww8s3llgyl61c9z_j5g40000gn/T/comfy_test_mhwv1k60/venv/bin/python', '/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py']' returned non-zero exit status 1.

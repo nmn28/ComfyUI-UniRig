@@ -1,0 +1,32 @@
+[00:00] Crash dump logging enabled: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test/crash_dump.log
+[00:00] 
+[00:00] [1/7] SYNTAX
+[00:00] ----------------------------------------
+[00:00] Found pyproject.toml (modern format)
+[00:00] Found requirements.txt (legacy format)
+[00:00] Unicode check: OK (all characters cp1252-safe)
+[00:00] [SYNTAX] PASSED
+[00:00] 
+[00:00] [2/7] INSTALL
+[00:00] ----------------------------------------
+[00:00] Setting up ComfyUI...
+[00:00] Cloning ComfyUI (latest)...
+[00:00] Running: git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /tmp/comfy_test_7btml41a/ComfyUI
+[00:02] Installing ComfyUI requirements...
+[00:02] Running: uv pip install --system -r /tmp/comfy_test_7btml41a/ComfyUI/requirements.txt
+[00:36] Installing custom node...
+[00:36] Linking ComfyUI-UniRig to custom_nodes/...
+[00:36] Installing node requirements...
+[00:36] Running: uv pip install --system -r /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
+[00:40] Running install.py...
+[00:40] Running: /opt/hostedtoolcache/Python/3.11.14/x64/bin/python /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
+[00:43]   ============================================================
+[00:43]   ComfyUI-UniRig Installation
+[00:43]   ============================================================
+[00:43]   
+[00:43]   [UniRig] Installation FAILED: install() got an unexpected keyword argument 'config'
+[00:43]   [UniRig] Report issues at: https://github.com/PozzettiAndrea/ComfyUI-UniRig/issues
+[00:43] Command failed with code 1
+[00:43] 
+linux: FAILED (unexpected error)
+[00:43] Error: Command '['/opt/hostedtoolcache/Python/3.11.14/x64/bin/python', '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py']' returned non-zero exit status 1.
