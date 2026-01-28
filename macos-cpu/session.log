@@ -1,0 +1,71 @@
+[00:00] Crash dump logging enabled: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test/crash_dump.log
+[00:00] 
+[00:00] [1/7] SYNTAX
+[00:00] ----------------------------------------
+[00:00] Found pyproject.toml (modern format)
+[00:00] Found requirements.txt (legacy format)
+[00:00] Unicode check: OK (all characters cp1252-safe)
+[00:00] [SYNTAX] PASSED
+[00:00] 
+[00:00] [2/7] INSTALL
+[00:00] ----------------------------------------
+[00:00] Setting up ComfyUI...
+[00:00] Cloning ComfyUI (latest)...
+[00:00] Running: git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/ComfyUI
+[00:02] Creating virtual environment...
+[00:02] Running: /Library/Frameworks/Python.framework/Versions/3.13/bin/python -m venv /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/venv
+[00:04] Installing uv into venv...
+[00:04] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/venv/bin/python -m pip install uv
+[00:05]   Collecting uv
+[00:05]     Using cached uv-0.9.27-py3-none-macosx_11_0_arm64.whl.metadata (11 kB)
+[00:05]   Using cached uv-0.9.27-py3-none-macosx_11_0_arm64.whl (19.8 MB)
+[00:05]   Installing collected packages: uv
+[00:05]   Successfully installed uv-0.9.27
+[00:05] Installing PyTorch...
+[00:05] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/venv/bin/python -m uv pip install torch torchvision torchaudio
+[00:12] Installing ComfyUI requirements...
+[00:12] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/venv/bin/python -m uv pip install -r /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/ComfyUI/requirements.txt
+[00:23] Installing custom node...
+[00:23] Linking ComfyUI-UniRig to custom_nodes/...
+[00:23] Installing node requirements...
+[00:23] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/venv/bin/python -m uv pip install -r /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
+[00:29] Running install.py...
+[00:29] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/venv/bin/python /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
+[01:23]   [apt] Skipping apt packages (not Linux)
+[01:23]   
+[01:23]   Installing 1 node dependencies...
+[01:23]     Cloning ComfyUI-GeometryPack from https://github.com/PozzettiAndrea/ComfyUI-GeometryPack...
+[01:23]     Running install.py for ComfyUI-GeometryPack...
+[01:23]   
+[01:23]   Installing via pixi:
+[01:23]     PyPI packages: 4
+[01:23]   Pixi not found, downloading...
+[01:23]   Installed pixi to: /Users/runner/.local/bin/pixi
+[01:23]   Generated /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/pixi.toml
+[01:23]   Running pixi install...
+[01:23]   pixi install failed:
+[01:23]   Error:   × failed to solve the pypi requirements of environment 'default' for platform 'osx-arm64'
+[01:23]     ├─▶ failed to resolve pypi dependencies
+[01:23]     ╰─▶ Because igl was not found in the package registry and you require igl, we can conclude that your requirements are unsatisfiable.
+[01:23] Command failed with code 1
+[01:23] stderr: Traceback (most recent call last):
+  File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py", line 2, in <module>
+    install()
+    ~~~~~~~^^
+  File "/private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/venv/lib/python3.13/site-packages/comfy_env/install.py", line 71, in install
+    _install_via_pixi(cfg, node_dir, log, dry_run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/venv/lib/python3.13/site-packages/comfy_env/install.py", line 291, in _install_via_pixi
+    pixi_install(cfg, node_dir, log)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/venv/lib/python3.13/site-packages/comfy_env/pixi/core.py", line 311, in pixi_install
+    raise RuntimeError(f"pixi install failed: {result.stderr}")
+RuntimeError: pixi install failed: Error:   × failed to solve the pypi requirements of environment 'default' for platform 'osx-arm64'
+  ├─▶ failed to resolve pypi dependencies
+  ╰─▶ Because igl was not found in the package registry and you require igl, we can conclude that your requirements are unsatisfiable.
+
+
+
+[01:27] 
+macos: FAILED (unexpected error)
+[01:27] Error: Command '['/private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_ho8234ht/venv/bin/python', '/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py']' returned non-zero exit status 1.
