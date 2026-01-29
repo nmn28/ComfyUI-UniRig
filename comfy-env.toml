@@ -1,16 +1,5 @@
-# Root configuration - minimal deps for main nodes
-# Heavy dependencies are in nodes/blender/ and nodes/gpu/ isolated environments
-
 [apt]
 packages = ["libgl1-mesa-glx", "libglu1-mesa"]
 
-# Main nodes only need basic mesh processing
-[pypi-dependencies]
-trimesh = { version = "*", extras = ["easy"] }
-numpy = "*"
-scipy = "*"
-igl = "*"
-
-# Node dependencies (other ComfyUI custom nodes required by workflows)
 [node_reqs]
 ComfyUI-GeometryPack = "PozzettiAndrea/ComfyUI-GeometryPack"

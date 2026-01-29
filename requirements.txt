@@ -1,32 +1,7 @@
 # Environment manager (handles isolated environment and CUDA packages)
-comfy-env>=0.0.19
-
-# Shared 3D viewers (FBX viewer components)
-comfy-3d-viewers>=0.1.0
-
-# Core 3D processing
-trimesh
-numpy
-scipy
-PyOpenGL==3.1.0
-pyrender
-libigl
-
-# UniRig ML dependencies
-transformers==4.51.3
-pytorch-lightning
-lightning
-timm
-einops
-addict
-
-# Configuration
-omegaconf
-python-box
-
-# HuggingFace
-huggingface-hub
-hf_xet
-
-# Mesh processing
-fast-simplification
+comfy-env>=0.1.8
+comfy-3d-viewers==0.2.0
+trimesh = "*"
+numpy = "*"
+scipy = "*"
+libigl = "*"

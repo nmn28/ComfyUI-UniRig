@@ -1,7 +1,3 @@
-python = "3.11"
-cuda_version = "auto"
-pytorch_version = "auto"
-
 [cuda]
 torch-scatter = "*"
 torch-cluster = "*"
@@ -9,7 +5,6 @@ spconv = "*"
 flash-attn = "2.8.3"
 
 [pypi-dependencies]
-bpy = ">=4.2,<4.3"
 numpy = "<2.0"
 trimesh = { version = "*", extras = ["easy"] }
 transformers = "==4.51.3"
@@ -30,8 +25,5 @@ embreex = "*"
 pccm = "*"
 shapely = "*"
 
-[pypi-dependencies.windows]
-triton-windows = ">=3.5.0"
-
-[pypi-dependencies.linux]
+[target.linux-64.pypi-dependencies]
 triton = ">=3.0.0"
