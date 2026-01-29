@@ -1,8 +1,5 @@
 [cuda]
-torch-scatter = "*"
-torch-cluster = "*"
-spconv = "*"
-flash-attn = "2.8.3"
+packages = ["torch-scatter","torch-cluster","spconv","flash-attn"]
 
 [pypi-dependencies]
 numpy = "<2.0"
