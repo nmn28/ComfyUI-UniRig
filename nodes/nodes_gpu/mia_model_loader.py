@@ -7,22 +7,6 @@ Uses comfy-env isolated environment for GPU dependencies.
 import sys
 from pathlib import Path
 
-# Add lib to path for mia module (needed for torch.load unpickling)
-# Now in nodes/gpu/, so go up one level to nodes/, then lib/
-LIB_DIR = Path(__file__).parent.parent / "lib"
-if str(LIB_DIR) not in sys.path:
-    sys.path.insert(0, str(LIB_DIR))
-
-# Add utils to path for mia_inference (go up two levels to custom_node root)
-UTILS_DIR = Path(__file__).parent.parent.parent / "utils"
-if str(UTILS_DIR) not in sys.path:
-    sys.path.insert(0, str(UTILS_DIR))
-
-try:
-    from ...utils.mia_inference import load_mia_models, ensure_mia_models, MIA_PATH
-except ImportError:
-    from mia_inference import load_mia_models, ensure_mia_models, MIA_PATH
-
 
 class MIALoadModel:
     """
@@ -52,6 +36,9 @@ class MIALoadModel:
 
     def load_models(self, cache_to_gpu=True):
         """Load and cache MIA models."""
+        # Lazy imports - only run in isolated worker
+        from .mia_inference import load_mia_models
+
         print(f"[MIALoadModel] Loading Make-It-Animatable models...")
         print(f"[MIALoadModel] GPU caching: {'enabled' if cache_to_gpu else 'disabled'}")
 

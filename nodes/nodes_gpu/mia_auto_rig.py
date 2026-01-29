@@ -4,8 +4,6 @@ MIAAutoRig - Fast humanoid rigging using Make-It-Animatable.
 Uses comfy-env isolated environment for GPU dependencies.
 """
 
-import os
-import sys
 import time
 from pathlib import Path
 
@@ -15,16 +13,6 @@ try:
     OUTPUT_DIR = Path(folder_paths.get_output_directory())
 except ImportError:
     OUTPUT_DIR = Path(__file__).parent.parent / "output"
-
-# Add utils to path for imports (now in nodes/gpu/, so go up two levels)
-UTILS_DIR = Path(__file__).parent.parent.parent / "utils"
-if str(UTILS_DIR) not in sys.path:
-    sys.path.insert(0, str(UTILS_DIR))
-
-try:
-    from ...utils.mia_inference import run_mia_inference
-except ImportError:
-    from mia_inference import run_mia_inference
 
 
 class MIAAutoRig:
@@ -88,6 +76,9 @@ class MIAAutoRig:
         3. Predict blend weights, joint positions, and pose
         4. Post-process and export FBX
         """
+        # Lazy import - only run in isolated worker
+        from .mia_inference import run_mia_inference
+
         total_start = time.time()
         print(f"[MIAAutoRig] Starting Make-It-Animatable rigging pipeline...")
         print(f"[MIAAutoRig] Options: no_fingers={no_fingers}, use_normal={use_normal}, reset_to_rest={reset_to_rest}")

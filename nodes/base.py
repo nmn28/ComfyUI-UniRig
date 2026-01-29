@@ -8,7 +8,6 @@ import os
 import sys
 from pathlib import Path
 import numpy as np
-import torch
 import base64
 from io import BytesIO
 
@@ -59,6 +58,8 @@ def decode_texture_to_comfy_image(texture_data_base64: str):
         return None, 0, 0
 
     try:
+        import torch  # Lazy import
+
         # Decode base64
         image_data = base64.b64decode(texture_data_base64)
         pil_image = PILImage.open(BytesIO(image_data))
@@ -94,6 +95,8 @@ def create_placeholder_texture(width: int = 256, height: int = 256, text: str = 
     Returns:
         torch.Tensor: Placeholder image tensor [1, H, W, 3]
     """
+    import torch  # Lazy import
+
     try:
         # Create a gray image with text
         img_array = np.full((height, width, 3), 0.3, dtype=np.float32)
@@ -144,5 +147,3 @@ def normalize_skeleton(vertices: np.ndarray) -> tuple:
     }
 
     return vertices_normalized, normalization_params
-
-
