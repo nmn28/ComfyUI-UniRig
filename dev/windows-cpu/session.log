@@ -7,7 +7,7 @@
 [00:00] Unicode check: OK (all characters cp1252-safe)
 [00:00] [SYNTAX] PASSED
 [00:00] Setting up Windows isolation...
-[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_ng2whz9i\temp
+[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_8s19ohjs\temp
 [00:00]   Isolation active
 [00:00] 
 [00:00] [2/7] INSTALL
@@ -17,16 +17,15 @@
 [00:00] Copying ComfyUI-UniRig to custom_nodes/...
 [00:01] Installing node requirements...
 [00:01] Running: C:\Users\runneradmin\venv\venv\Scripts\python.exe -m pip install -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt
-[00:03] Command failed with code 1
-[00:03] stderr: ERROR: Invalid requirement: 'trimesh = "*"' (from line 4 of C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt)
-Hint: = is not a valid operator. Did you mean == ?
+[00:02]   Collecting comfy-env>=0.1.8 (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
+[00:02]     Downloading comfy_env-0.1.8-py3-none-any.whl.metadata (6.9 kB)
+[00:02] Command failed with code 1
+[00:02] stderr: ERROR: Could not find a version that satisfies the requirement comfy-3d-viewers==0.2.0 (from versions: 0.1.2, 0.1.3, 0.1.5, 0.1.6, 0.1.7, 0.1.8, 0.1.9, 0.1.10, 0.1.11, 0.1.12, 0.1.13, 0.1.14, 0.2.1)
+ERROR: No matching distribution found for comfy-3d-viewers==0.2.0
 
-[notice] A new release of pip is available: 24.0 -> 25.3
-[notice] To update, run: C:\Users\runneradmin\venv\venv\Scripts\python.exe -m pip install --upgrade pip
-
-[00:03] Tearing down Windows isolation...
-[00:03]   Environment restored
-[00:03]   Isolation torn down
-[00:03] 
+[00:02] Tearing down Windows isolation...
+[00:02]   Environment restored
+[00:02]   Isolation torn down
+[00:02] 
 windows: FAILED (unexpected error)
-[00:03] Error: Command '['C:\\Users\\runneradmin\\venv\\venv\\Scripts\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\runneradmin\\venv\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\requirements.txt']' returned non-zero exit status 1.
+[00:02] Error: Command '['C:\\Users\\runneradmin\\venv\\venv\\Scripts\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\runneradmin\\venv\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\requirements.txt']' returned non-zero exit status 1.
