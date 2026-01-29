@@ -1,0 +1,25 @@
+[00:00] Crash dump logging enabled: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/crash_dump.log
+[00:00] 
+[00:00] [1/7] SYNTAX
+[00:00] ----------------------------------------
+[00:00] Found pyproject.toml (modern format)
+[00:00] Found requirements.txt (legacy format)
+[00:00] Unicode check: OK (all characters cp1252-safe)
+[00:00] [SYNTAX] PASSED
+[00:00] 
+[00:00] [2/7] INSTALL
+[00:00] ----------------------------------------
+[00:00] Using existing ComfyUI: /Users/runner/venv/ComfyUI
+[00:00] Installing custom node...
+[00:00] Linking ComfyUI-UniRig to custom_nodes/...
+[00:00] Installing node requirements...
+[00:00] Running: /Users/runner/venv/venv/bin/python3.11 -m uv pip install -r /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
+[00:00] Command failed with code 2
+[00:00] stderr: error: Couldn't parse requirement in `requirements.txt` at position 112
+  Caused by: no such comparison operator "=", must be one of ~= == != <= >= < > ===
+trimesh = "*"
+        ^^^^^
+
+[00:00] 
+macos: FAILED (unexpected error)
+[00:00] Error: Command '['/Users/runner/venv/venv/bin/python3.11', '-m', 'uv', 'pip', 'install', '-r', '/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt']' returned non-zero exit status 2.
