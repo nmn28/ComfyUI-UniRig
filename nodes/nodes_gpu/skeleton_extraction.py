@@ -13,11 +13,7 @@ from trimesh import Trimesh
 import time
 import folder_paths
 
-# Support both relative imports (ComfyUI) and absolute imports (testing)
-try:
-    from ..main.constants import TARGET_FACE_COUNT
-except ImportError:
-    from constants import TARGET_FACE_COUNT
+TARGET_FACE_COUNT = 50000  # default for mesh decimation
 
 try:
     from ..base import (

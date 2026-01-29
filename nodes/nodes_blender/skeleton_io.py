@@ -12,11 +12,7 @@ import pickle
 import json
 import folder_paths
 
-# Support both relative imports (ComfyUI) and absolute imports (testing)
-try:
-    from ..main.constants import BLENDER_TIMEOUT, PARSE_TIMEOUT, MESH_INFO_TIMEOUT, DEFAULT_EXTRUDE_SIZE
-except ImportError:
-    from constants import BLENDER_TIMEOUT, PARSE_TIMEOUT, MESH_INFO_TIMEOUT, DEFAULT_EXTRUDE_SIZE
+MESH_INFO_TIMEOUT = 30  # seconds
 
 try:
     from ..base import (
