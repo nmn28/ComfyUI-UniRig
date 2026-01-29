@@ -16,166 +16,299 @@
 [00:00] Running: uv pip install -r /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
 [00:01] Running install.py...
 [00:01] Running: /home/runner/venv/venv/bin/python /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
-[04:34]   [apt] Installing 2 system package(s):
-[04:34]     - libgl1-mesa-glx
-[04:34]     - libglu1-mesa
-[04:34]   [apt] Updating package lists...
-[04:34]   [apt] Installing packages...
-[04:34]     [apt] Skipped libgl1-mesa-glx (not available)
-[04:34]     [apt] Installed libglu1-mesa
-[04:34]   [apt] Installed 1 package(s)
-[04:34]   [apt] Skipped 1 unavailable package(s)
-[04:34]   
-[04:34]   Installing 1 node dependencies...
-[04:34]     Cloning ComfyUI-GeometryPack from https://github.com/PozzettiAndrea/ComfyUI-GeometryPack...
-[04:34]     Installing requirements for ComfyUI-GeometryPack...
-[04:34]     Running install.py for ComfyUI-GeometryPack...
-[04:34]   No packages to install
-[04:34]   
-[04:34]   [isolated] Installing: nodes/nodes_blender
-[04:34]   Using specified Python 3.11
-[04:34]   Generated /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/nodes_blender/pixi.toml
-[04:34]   Running pixi install...
-[04:34]   Installation complete!
-[04:34]   
-[04:34]   [isolated] Installing: nodes/nodes_gpu
-[04:34]   Generated /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/nodes_gpu/pixi.toml
-[04:34]   Running pixi install...
-[04:34]   Installation complete!
-[04:34]   
-[04:34]   Installation complete!
-[04:34] Installing 1 node dependency(ies)...
-[04:34]   ComfyUI-GeometryPack from PozzettiAndrea/ComfyUI-GeometryPack
-[04:34]   Cloning PozzettiAndrea/ComfyUI-GeometryPack...
-[04:34] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-GeometryPack.git /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack
-[04:35]   Installing ComfyUI-GeometryPack requirements...
-[04:35] Running: uv pip install -r /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack/requirements.txt
-[04:35]   Running ComfyUI-GeometryPack install.py...
-[04:35] Running: /home/runner/venv/venv/bin/python /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack/install.py
-[04:50]   [apt] Installing 4 system package(s):
-[04:50]     - libgl1-mesa-glx
-[04:50]     - libgl1
-[04:50]     - libopengl0
-[04:50]     - libglu1-mesa
-[04:50]   [apt] Updating package lists...
-[04:50]   [apt] Installing packages...
-[04:50]     [apt] Skipped libgl1-mesa-glx (not available)
-[04:50]     [apt] Installed libgl1
-[04:50]     [apt] Installed libopengl0
-[04:50]     [apt] Installed libglu1-mesa
-[04:50]   [apt] Installed 3 package(s)
-[04:50]   [apt] Skipped 1 unavailable package(s)
-[04:50]   
-[04:50]   [env] Setting 2 persistent environment variable(s)...
-[04:50]     - KMP_DUPLICATE_LIB_OK=TRUE
-[04:50]     - OMP_NUM_THREADS=1
-[04:50]     [env] Wrote /home/runner/.comfy-env-profile
-[04:50]     [env] Already configured in /home/runner/.bashrc
-[04:50]   [env] Restart terminal/ComfyUI for changes to take effect
-[04:50]   No packages to install
-[04:50]   
-[04:50]   [isolated] Installing: nodes/gpu
-[04:50]   Detected CUDA 12.8 -> PyTorch 2.8
-[04:50]   Generated /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/gpu/pixi.toml
-[04:50]   Running pixi install...
-[04:50]   Installing CUDA packages: ['cumesh']
-[04:50]     Installing cumesh
-[04:50]   CUDA packages installed
-[04:50]   Installation complete!
-[04:50]   
-[04:50]   [isolated] Installing: nodes/cgal
-[04:50]   Installing apt packages: ['libgl1-mesa-glx', 'libglu1-mesa']
-[04:50]   Generated /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/cgal/pixi.toml
-[04:50]   Running pixi install...
-[04:50]   Installation complete!
-[04:50]   
-[04:50]   [isolated] Installing: nodes/blender
-[04:50]   Using specified Python 3.11
-[04:50]   Generated /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/blender/pixi.toml
-[04:50]   Running pixi install...
-[04:50]   Installation complete!
-[04:50]   
-[04:50]   Installation complete!
-[04:50] Installing validation endpoint...
-[04:50]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
-[04:50] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
-[04:50] [INSTALL] PASSED
-[04:50] COMFY_TEST_GPU env var = None
-[04:50] 
+[02:29]   [apt] Installing 2 system package(s):
+[02:29]     - libgl1-mesa-glx
+[02:29]     - libglu1-mesa
+[02:29]   [apt] Updating package lists...
+[02:29]   [apt] Installing packages...
+[02:29]     [apt] Skipped libgl1-mesa-glx (not available)
+[02:29]     [apt] Installed libglu1-mesa
+[02:29]   [apt] Installed 1 package(s)
+[02:29]   [apt] Skipped 1 unavailable package(s)
+[02:29]   
+[02:29]   Installing 1 node dependencies...
+[02:29]     Cloning ComfyUI-GeometryPack from https://github.com/PozzettiAndrea/ComfyUI-GeometryPack...
+[02:29]     Installing requirements for ComfyUI-GeometryPack...
+[02:29]     Running install.py for ComfyUI-GeometryPack...
+[02:29]   No packages to install
+[02:29]   
+[02:29]   [isolated] Installing: nodes/nodes_blender
+[02:29]   Using specified Python 3.11
+[02:29]   Generated /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/nodes_blender/pixi.toml
+[02:29]   Running pixi install...
+[02:29]   Installation complete!
+[02:29]   
+[02:29]   [isolated] Installing: nodes/nodes_gpu
+[02:29]   Generated /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/nodes_gpu/pixi.toml
+[02:29]   Running pixi install...
+[02:29]   Installation complete!
+[02:29]   
+[02:29]   Installation complete!
+[02:29] Installing 1 node dependency(ies)...
+[02:29]   ComfyUI-GeometryPack from PozzettiAndrea/ComfyUI-GeometryPack
+[02:29]   Cloning PozzettiAndrea/ComfyUI-GeometryPack...
+[02:29] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-GeometryPack.git /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[02:32]   Installing ComfyUI-GeometryPack requirements...
+[02:32] Running: uv pip install -r /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack/requirements.txt
+[02:32]   Running ComfyUI-GeometryPack install.py...
+[02:32] Running: /home/runner/venv/venv/bin/python /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack/install.py
+[02:49]   [apt] Installing 4 system package(s):
+[02:49]     - libgl1-mesa-glx
+[02:49]     - libgl1
+[02:49]     - libopengl0
+[02:49]     - libglu1-mesa
+[02:49]   [apt] Updating package lists...
+[02:49]   [apt] Installing packages...
+[02:49]     [apt] Skipped libgl1-mesa-glx (not available)
+[02:49]     [apt] Installed libgl1
+[02:49]     [apt] Installed libopengl0
+[02:49]     [apt] Installed libglu1-mesa
+[02:49]   [apt] Installed 3 package(s)
+[02:49]   [apt] Skipped 1 unavailable package(s)
+[02:49]   
+[02:49]   [env] Setting 2 persistent environment variable(s)...
+[02:49]     - KMP_DUPLICATE_LIB_OK=TRUE
+[02:50]     - OMP_NUM_THREADS=1
+[02:50]     [env] Wrote /home/runner/.comfy-env-profile
+[02:50]     [env] Already configured in /home/runner/.bashrc
+[02:50]   [env] Restart terminal/ComfyUI for changes to take effect
+[02:50]   No packages to install
+[02:50]   
+[02:50]   [isolated] Installing: nodes/gpu
+[02:50]   Detected CUDA 12.8 -> PyTorch 2.8
+[02:50]   Generated /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/gpu/pixi.toml
+[02:50]   Running pixi install...
+[02:50]   Installing CUDA packages: ['cumesh']
+[02:50]     Installing cumesh
+[02:50]   CUDA packages installed
+[02:50]   Installation complete!
+[02:50]   
+[02:50]   [isolated] Installing: nodes/cgal
+[02:50]   Installing apt packages: ['libgl1-mesa-glx', 'libglu1-mesa']
+[02:50]   Generated /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/cgal/pixi.toml
+[02:50]   Running pixi install...
+[02:50]   Installation complete!
+[02:50]   
+[02:50]   [isolated] Installing: nodes/blender
+[02:50]   Using specified Python 3.11
+[02:50]   Generated /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/blender/pixi.toml
+[02:50]   Running pixi install...
+[02:50]   Installation complete!
+[02:50]   
+[02:50]   Installation complete!
+[02:50] Installing validation endpoint...
+[02:50]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
+[02:50] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
+[02:50] [INSTALL] PASSED
+[02:50] COMFY_TEST_GPU env var = None
+[02:50] 
 Starting ComfyUI server...
-[04:50] Starting ComfyUI server on port 8188...
-[04:50] Starting ComfyUI server on port 8188...
-[04:50] Waiting for server to be ready (timeout: 300s)...
-[04:52]   [ComfyUI] 
-[04:52]   [ComfyUI] Prestartup times for custom nodes:
-[04:52]   [ComfyUI]    0.1 seconds: /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack
-[04:52]   [ComfyUI]    0.2 seconds: /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-UniRig
-[04:52]   [ComfyUI] 
-[04:57]   [ComfyUI] Checkpoint files will always be loaded safely.
-[04:57]   [ComfyUI] Total VRAM 15991 MB, total RAM 15991 MB
-[04:57]   [ComfyUI] pytorch version: 2.10.0+cu128
-[04:57]   [ComfyUI] Set vram state to: DISABLED
-[04:57]   [ComfyUI] Device: cpu
-[05:02]   [ComfyUI] WARNING: You need pytorch with cu130 or higher to use optimized CUDA operations.
-[05:02]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
-[05:02]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
-[05:02]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
-[05:03]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
-[05:08]   [ComfyUI] Python version: 3.13.11 (main, Dec  8 2025, 02:51:34) [GCC 13.3.0]
-[05:08]   [ComfyUI] ComfyUI version: 0.11.1
-[05:08]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
-[05:08]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
-[05:08]   [ComfyUI] ComfyUI frontend version: 1.37.11
-[05:08]   [ComfyUI] [Prompt Server] web root: /home/runner/venv/venv/lib/python3.13/site-packages/comfyui_frontend_package/static
-[05:13]   [ComfyUI] 
-[05:13]   [ComfyUI] Import times for custom nodes:
-[05:13]   [ComfyUI]    0.0 seconds: /home/runner/venv/ComfyUI/custom_nodes/websocket_image_save.py
-[05:13]   [ComfyUI]    0.0 seconds: /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
-[05:13]   [ComfyUI]    1.1 seconds: /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-UniRig
-[05:13]   [ComfyUI]    1.3 seconds: /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack
-[05:13]   [ComfyUI] 
-[05:13]   [ComfyUI] Context impl SQLiteImpl.
-[05:13]   [ComfyUI] Will assume non-transactional DDL.
-[05:13]   [ComfyUI] Context impl SQLiteImpl.
-[05:13]   [ComfyUI] Will assume non-transactional DDL.
-[05:13]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
-[05:13]   [ComfyUI] Revision ID: 0001_assets
-[05:13]   [ComfyUI] Revises: None
-[05:13]   [ComfyUI] Create Date: 2025-12-10 00:00:00
-[05:13]   [ComfyUI] Database upgraded from None to 0001_assets
-[05:13]   [ComfyUI] Assets scan(roots=['models']) completed in 0.034s (created=11, skipped_existing=0, total_seen=11)
-[05:13]   [ComfyUI] Starting server
-[05:13]   [ComfyUI] 
-[05:13]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
-[05:14] Server responding, waiting for nodes to load...
-[05:34] Server is ready!
-[05:34] 
-[05:34] [3/7] REGISTRATION
-[05:34] ----------------------------------------
-[05:34] Checking for import errors in server logs...
-[05:34] No import errors detected
-[05:34] [REGISTRATION] PASSED
-[05:34] Found 675 registered nodes
-[05:34] 
-[05:34] [4/7] INSTANTIATION
-[05:34] ----------------------------------------
-[05:34] Testing node constructors...
-[05:37] All 675 node(s) instantiated successfully!
-[05:37] [INSTANTIATION] PASSED
-[05:37] 
-[05:37] [5/7] STATIC_CAPTURE
-[05:37] ----------------------------------------
-[05:37] Capturing 5 static screenshot(s)...
-[05:37] Starting headless browser...
-[05:39]   [1/5] STATIC apply_animation.json
-[05:39] Capturing: apply_animation.json
-[05:39]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:39]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:39]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:39]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:40]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:40]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[05:40]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+[02:50] Starting ComfyUI server on port 8188...
+[02:50] Starting ComfyUI server on port 8188...
+[02:50] Waiting for server to be ready (timeout: 300s)...
+[02:52]   [ComfyUI] 
+[02:52]   [ComfyUI] Prestartup times for custom nodes:
+[02:52]   [ComfyUI]    0.1 seconds: /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[02:52]   [ComfyUI]    0.2 seconds: /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-UniRig
+[02:52]   [ComfyUI] 
+[02:57]   [ComfyUI] Checkpoint files will always be loaded safely.
+[02:57]   [ComfyUI] Total VRAM 15991 MB, total RAM 15991 MB
+[02:57]   [ComfyUI] pytorch version: 2.10.0+cu128
+[02:57]   [ComfyUI] Set vram state to: DISABLED
+[02:57]   [ComfyUI] Device: cpu
+[03:01]   [ComfyUI] WARNING: You need pytorch with cu130 or higher to use optimized CUDA operations.
+[03:01]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
+[03:01]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
+[03:01]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+[03:02]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+[03:06]   [ComfyUI] Python version: 3.11.14 (main, Oct 10 2025, 01:03:14) [GCC 13.3.0]
+[03:06]   [ComfyUI] ComfyUI version: 0.11.1
+[03:06]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
+[03:06]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
+[03:06]   [ComfyUI] ComfyUI frontend version: 1.37.11
+[03:06]   [ComfyUI] [Prompt Server] web root: /home/runner/venv/venv/lib/python3.11/site-packages/comfyui_frontend_package/static
+[03:11]   [ComfyUI] 
+[03:11]   [ComfyUI] Import times for custom nodes:
+[03:11]   [ComfyUI]    0.0 seconds: /home/runner/venv/ComfyUI/custom_nodes/websocket_image_save.py
+[03:11]   [ComfyUI]    0.0 seconds: /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
+[03:11]   [ComfyUI]    1.1 seconds: /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[03:11]   [ComfyUI]    1.1 seconds: /home/runner/venv/ComfyUI/custom_nodes/ComfyUI-UniRig
+[03:11]   [ComfyUI] 
+[03:11]   [ComfyUI] Context impl SQLiteImpl.
+[03:11]   [ComfyUI] Will assume non-transactional DDL.
+[03:11]   [ComfyUI] Context impl SQLiteImpl.
+[03:11]   [ComfyUI] Will assume non-transactional DDL.
+[03:11]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
+[03:11]   [ComfyUI] Revision ID: 0001_assets
+[03:11]   [ComfyUI] Revises: None
+[03:11]   [ComfyUI] Create Date: 2025-12-10 00:00:00
+[03:11]   [ComfyUI] Database upgraded from None to 0001_assets
+[03:11]   [ComfyUI] Assets scan(roots=['models']) completed in 0.033s (created=11, skipped_existing=0, total_seen=11)
+[03:11]   [ComfyUI] Starting server
+[03:11]   [ComfyUI] 
+[03:11]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
+[03:11] Server responding, waiting for nodes to load...
+[03:31] Server is ready!
+[03:31] 
+[03:31] [3/7] REGISTRATION
+[03:31] ----------------------------------------
+[03:31] Checking for import errors in server logs...
+[03:31] No import errors detected
+[03:31] [REGISTRATION] PASSED
+[03:31] Found 675 registered nodes
+[03:31] 
+[03:31] [4/7] INSTANTIATION
+[03:31] ----------------------------------------
+[03:31] Testing node constructors...
+[03:34] All 675 node(s) instantiated successfully!
+[03:34] [INSTANTIATION] PASSED
+[03:34] 
+[03:34] [5/7] STATIC_CAPTURE
+[03:34] ----------------------------------------
+[03:34] Capturing 5 static screenshot(s)...
+[03:34] Starting headless browser...
+[03:35]   [1/5] STATIC apply_animation.json
+[03:35] Capturing: apply_animation.json
+[03:35]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:35]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:36]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:36]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:36]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:36]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[03:36]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[03:36]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[03:36]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[03:36]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[03:38]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0501800B4050000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[03:38]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[03:38]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[03:38]   [Console-warning] [.WebGL-0x37ac05849a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[03:38]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[03:38]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[03:38]   [Console-warning] [.WebGL-0x37ac05849a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[03:38]   [Console-warning] [.WebGL-0x37ac05849a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[03:41]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/screenshots/apply_animation.png
+[03:41]   [2/5] STATIC rig_human_with_texture.json
+[03:41] Capturing: rig_human_with_texture.json
+[03:41]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:41]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:42]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:42]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:42]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:42]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[03:42]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[03:42]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[03:42]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[03:42]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[03:43]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0201800B4050000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[03:43]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[03:43]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[03:43]   [Console-warning] [.WebGL-0x37ac0584a600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[03:43]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[03:43]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[03:44]   [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
+[03:44]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0201800B4050000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[03:48]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture.png
+[03:48]   [3/5] STATIC rig_human_with_texture_mia.json
+[03:48] Capturing: rig_human_with_texture_mia.json
+[03:48]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:48]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:48]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:48]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:48]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:48]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[03:48]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[03:48]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[03:48]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[03:48]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[03:49]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0501800B4050000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[03:50]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0501800B4050000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[03:53]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture_mia.png
+[03:53]   [4/5] STATIC rig_human_with_texture_mia_debug.json
+[03:53] Capturing: rig_human_with_texture_mia_debug.json
+[03:53]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:53]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:54]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:54]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:54]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:54]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[03:54]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -184,7 +317,7 @@ Starting ComfyUI server...
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
-[05:40]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+[03:54]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -193,7 +326,7 @@ Starting ComfyUI server...
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
-[05:40]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+[03:54]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -202,113 +335,21 @@ Starting ComfyUI server...
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
-[05:40]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[05:42]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0201800DC340000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[05:42]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[05:42]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[05:42]   [Console-warning] [.WebGL-0x13b404a6f000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[05:42]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[05:42]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[05:42]   [Console-warning] [.WebGL-0x13b404a6f000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[05:42]   [Console-warning] [.WebGL-0x13b404a6f000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[05:45]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/screenshots/apply_animation.png
-[05:45]   [2/5] STATIC rig_human_with_texture.json
-[05:45] Capturing: rig_human_with_texture.json
-[05:45]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:45]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:46]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:46]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:46]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:46]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[05:46]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[05:46]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[05:46]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[05:46]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[05:47]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0201800DC340000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[05:47]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[05:47]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[05:47]   [Console-warning] [.WebGL-0x13b404a73800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
-[05:47]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[05:47]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[05:47]   [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
-[05:48]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0201800DC340000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[05:51]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture.png
-[05:51]   [3/5] STATIC rig_human_with_texture_mia.json
-[05:51] Capturing: rig_human_with_texture_mia.json
-[05:51]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:51]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:51]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:51]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:51]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:51]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[05:52]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[05:52]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[05:52]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[05:52]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[05:52]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0201800DC340000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[05:53]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0201800DC340000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[05:57]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture_mia.png
-[05:57]   [4/5] STATIC rig_human_with_texture_mia_debug.json
-[05:57] Capturing: rig_human_with_texture_mia_debug.json
-[05:57]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:57]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:57]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:57]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:57]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:57]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[05:57]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+[03:54]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[03:55]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:55]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[03:56]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:56]   [Console-error] [UniRig Compare] Failed to load bundle
+[03:59]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture_mia_debug.png
+[03:59]   [5/5] STATIC rigged_manipulator.json
+[03:59] Capturing: rigged_manipulator.json
+[03:59]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:59]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:59]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:59]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:59]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[03:59]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[03:59]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -317,7 +358,7 @@ Starting ComfyUI server...
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
-[05:57]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+[03:59]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -326,7 +367,7 @@ Starting ComfyUI server...
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
-[05:57]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+[03:59]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -335,21 +376,26 @@ Starting ComfyUI server...
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
-[05:57]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[05:58]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:58]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
-[05:59]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[05:59]   [Console-error] [UniRig Compare] Failed to load bundle
-[06:02]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture_mia_debug.png
-[06:02]   [5/5] STATIC rigged_manipulator.json
-[06:02] Capturing: rigged_manipulator.json
-[06:02]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:02]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:02]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:02]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:02]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:03]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[06:03]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+[03:59]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[04:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:00]   [Console-error] [UniRig Compare] Failed to load bundle
+[04:01]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:01]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[04:04]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/screenshots/rigged_manipulator.png
+[04:04] [STATIC_CAPTURE] PASSED
+[04:04] 
+[04:04] [6/7] VALIDATION
+[04:04] ----------------------------------------
+[04:04] Validating 5 workflow(s)...
+[04:04] Starting headless browser...
+[04:04]   [1/5] Validating apply_animation.json
+[04:04]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:04]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:05]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:05]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:05]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:05]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[04:05]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -358,7 +404,7 @@ Starting ComfyUI server...
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:03]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+[04:05]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -367,7 +413,7 @@ Starting ComfyUI server...
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:03]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+[04:05]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -376,74 +422,29 @@ Starting ComfyUI server...
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:03]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[06:04]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0501800DC340000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[06:04]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0201800DC340000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[06:04]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0201800DC340000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[06:08]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/screenshots/rigged_manipulator.png
-[06:08] [STATIC_CAPTURE] PASSED
-[06:08] 
-[06:08] [6/7] VALIDATION
-[06:08] ----------------------------------------
-[06:08] Validating 5 workflow(s)...
-[06:08] Starting headless browser...
-[06:08]   [1/5] Validating apply_animation.json
-[06:08]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:08]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:09]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:09]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:09]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:09]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[06:09]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:09]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:09]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:09]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[06:11]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A02018003C290000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[06:11]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[06:11]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+[04:05]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[04:07]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A050180014320000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[04:07]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[04:07]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[06:11]   [Console-warning] [.WebGL-0x1b14068e4e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[06:11]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[06:11]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+[04:07]   [Console-warning] [.WebGL-0xec406f8e000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[04:07]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[04:07]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[06:11]   [Console-warning] [.WebGL-0x1b14068e4e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[06:11]   [Console-warning] [.WebGL-0x1b14068e4e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[06:12]   [ComfyUI] === /validate endpoint called ===
-[06:12]   [ComfyUI] Received JSON with keys: ['prompt']
-[06:12]   [ComfyUI] Prompt has 3 nodes
-[06:12]   [ComfyUI]   Node 6: UniRigApplyAnimation
-[06:12]   [ComfyUI]     Inputs: {"model_fbx_path": ["8", 0], "animation_type": "mixamo", "animation_file": "Breakdance.fbx", "output_name": ""}
-[06:12]   [ComfyUI]   Node 7: Preview3D
-[06:12]   [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
-[06:12]   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
-[06:12]   [ComfyUI]   Node 8: UniRigLoadRiggedMesh
-[06:12]   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
-[06:12]   [ComfyUI] Generated prompt_id: e54a1732-b658-4e58-9ee9-f7b611865fb2
-[06:12]     FAILED: Workflow validation failed
+[04:07]   [Console-warning] [.WebGL-0xec406f8e000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[04:07]   [Console-warning] [.WebGL-0xec406f8e000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[04:07]   [ComfyUI] === /validate endpoint called ===
+[04:07]   [ComfyUI] Received JSON with keys: ['prompt']
+[04:07]   [ComfyUI] Prompt has 3 nodes
+[04:07]   [ComfyUI]   Node 6: UniRigApplyAnimation
+[04:07]   [ComfyUI]     Inputs: {"model_fbx_path": ["8", 0], "animation_type": "mixamo", "animation_file": "Breakdance.fbx", "output_name": ""}
+[04:07]   [ComfyUI]   Node 7: Preview3D
+[04:07]   [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
+[04:07]   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
+[04:07]   [ComfyUI]   Node 8: UniRigLoadRiggedMesh
+[04:07]   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
+[04:07]   [ComfyUI] Generated prompt_id: c79b98d9-f105-4383-ac15-2dbaaab063ea
+[04:07]     FAILED: Workflow validation failed
 
 Details:
 Prompt outputs failed validation
@@ -467,25 +468,25 @@ Node errors:
     "class_type": "UniRigLoadRiggedMesh"
   }
 }
-[06:12]   [ComfyUI] Calling execution.validate_prompt()...
-[06:12]   [2/5] Validating rig_human_with_texture.json
-[06:12]   [ComfyUI] Failed to validate prompt for output 6:
-[06:12]   [ComfyUI] * UniRigLoadRiggedMesh 8:
-[06:12]   [ComfyUI]   - Required input is missing: fbx_file
-[06:12]   [ComfyUI] Output will be ignored
-[06:12]   [ComfyUI] Failed to validate prompt for output 7:
-[06:12]   [ComfyUI] Output will be ignored
-[06:12]   [ComfyUI] Validation result: valid=False
-[06:12]   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
-[06:12]   [ComfyUI]   Node errors: {"8": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["6", "7"], "class_type": "UniRigLoadRiggedMesh"}}
-[06:12]   [ComfyUI] === Validation FAILED ===
-[06:12]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:12]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:12]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:12]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:12]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:12]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[06:12]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+[04:07]   [ComfyUI] Calling execution.validate_prompt()...
+[04:07]   [ComfyUI] Failed to validate prompt for output 6:
+[04:07]   [2/5] Validating rig_human_with_texture.json
+[04:07]   [ComfyUI] * UniRigLoadRiggedMesh 8:
+[04:07]   [ComfyUI]   - Required input is missing: fbx_file
+[04:07]   [ComfyUI] Output will be ignored
+[04:07]   [ComfyUI] Failed to validate prompt for output 7:
+[04:07]   [ComfyUI] Output will be ignored
+[04:07]   [ComfyUI] Validation result: valid=False
+[04:07]   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
+[04:07]   [ComfyUI]   Node errors: {"8": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["6", "7"], "class_type": "UniRigLoadRiggedMesh"}}
+[04:07]   [ComfyUI] === Validation FAILED ===
+[04:07]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:07]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:08]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:08]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:08]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:08]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[04:08]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -494,7 +495,7 @@ Node errors:
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:12]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+[04:08]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -503,7 +504,7 @@ Node errors:
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:12]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+[04:08]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -512,104 +513,41 @@ Node errors:
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:12]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[06:13]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A0C077023C290000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[06:13]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[06:13]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+[04:08]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[04:09]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A050180014320000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[04:09]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[04:09]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[06:13]   [Console-warning] [.WebGL-0x1b14068e8a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
-[06:13]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[06:13]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+[04:09]   [Console-warning] [.WebGL-0xec406f90a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[04:09]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[04:09]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[06:14]   [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
-[06:14]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A05018003C290000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[06:15]   [ComfyUI] === /validate endpoint called ===
-[06:15]   [ComfyUI] Received JSON with keys: ['prompt']
-[06:15]   [ComfyUI] Prompt has 4 nodes
-[06:15]   [ComfyUI]   Node 10: UniRigPreviewRiggedMesh
-[06:15]   [ComfyUI]     Inputs: {"fbx_output_path": ["39", 0], "preview": ""}
-[06:15]   [ComfyUI]   Node 27: UniRigLoadMesh
-[06:15]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
-[06:15]   [ComfyUI]   Node 39: UniRigAutoRig
-[06:15]   [ComfyUI]     Inputs: {"skeleton_template": "mixamo", "fbx_name": "", "target_face_count": 50000, "trimesh": ["27", 0], "model": ["40", 0]}
-[06:15]   [ComfyUI]   Node 40: UniRigLoadModel
-[06:15]   [ComfyUI]     Inputs: {"cache_to_gpu": false}
-[06:15]   [ComfyUI] Generated prompt_id: 110efca6-1889-4f6e-8d42-9f1ada409601
-[06:15]   [ComfyUI] Calling execution.validate_prompt()...
-[06:15]   [ComfyUI] Validation result: valid=True
-[06:15]   [ComfyUI] === Validation PASSED ===
-[06:15]     OK
-[06:15]   [3/5] Validating rig_human_with_texture_mia.json
-[06:15]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:15]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:15]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:15]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:15]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:16]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[06:16]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:16]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:16]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
-    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
-    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
-    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
-    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
-    at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:16]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[06:17]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A05018003C290000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[06:18]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A05018003C290000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[06:18]   [ComfyUI] === /validate endpoint called ===
-[06:18]   [ComfyUI] Received JSON with keys: ['prompt']
-[06:18]   [ComfyUI] Prompt has 9 nodes
-[06:18]   [ComfyUI]   Node 10: UniRigPreviewRiggedMesh
-[06:18]   [ComfyUI]     Inputs: {"fbx_output_path": ["42", 0], "preview": ""}
-[06:18]   [ComfyUI]   Node 27: UniRigLoadMesh
-[06:18]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
-[06:18]   [ComfyUI]   Node 41: MIALoadModel
-[06:18]   [ComfyUI]     Inputs: {"cache_to_gpu": true}
-[06:18]   [ComfyUI]   Node 42: MIAAutoRig
-[06:18]   [ComfyUI]     Inputs: {"fbx_name": "rigatoni", "no_fingers": false, "use_normal": false, "reset_to_rest": true, "trimesh": ["45", 0], "model": ["41", 0]}
-[06:18]   [ComfyUI]   Node 43: UniRigOrientationCheck
-[06:18]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["45", 0]}
-[06:18]   [ComfyUI]   Node 44: PreviewImage
-[06:18]   [ComfyUI]     Inputs: {"images": ["43", 0]}
-[06:18]   [ComfyUI]   Node 45: GeomPackTransformMesh
-[06:18]   [ComfyUI]     Inputs: {"operation": "rotate", "translate_x": 0, "translate_y": -90, "translate_z": 0, "rotate_x": 0, "rotate_y": 0, "rotate_z": 0, "scale_uniform": 1, "scale_x": 1, "scale_y": 1, "scale_z": 1, "mirror_axis"
-[06:18]   [ComfyUI]   Node 46: UniRigOrientationCheck
-[06:18]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["27", 0]}
-[06:18]   [ComfyUI]   Node 47: PreviewImage
-[06:18]   [ComfyUI]     Inputs: {"images": ["46", 0]}
-[06:18]   [ComfyUI] Generated prompt_id: b1ba7e57-2664-4280-8b8b-5bb63c351e1a
-[06:18]   [ComfyUI] Calling execution.validate_prompt()...
-[06:18]   [ComfyUI] Validation result: valid=True
-[06:18]   [ComfyUI] === Validation PASSED ===
-[06:18]     OK
-[06:18]   [4/5] Validating rig_human_with_texture_mia_debug.json
-[06:18]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:18]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:19]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:19]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:19]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:19]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[06:19]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+[04:10]   [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
+[04:10]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A050180014320000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[04:11]   [ComfyUI] === /validate endpoint called ===
+[04:11]   [ComfyUI] Received JSON with keys: ['prompt']
+[04:11]   [ComfyUI] Prompt has 4 nodes
+[04:11]   [ComfyUI]   Node 10: UniRigPreviewRiggedMesh
+[04:11]   [ComfyUI]     Inputs: {"fbx_output_path": ["39", 0], "preview": ""}
+[04:11]   [ComfyUI]   Node 27: UniRigLoadMesh
+[04:11]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
+[04:11]   [ComfyUI]   Node 39: UniRigAutoRig
+[04:11]   [ComfyUI]     Inputs: {"skeleton_template": "mixamo", "fbx_name": "", "target_face_count": 50000, "trimesh": ["27", 0], "model": ["40", 0]}
+[04:11]   [ComfyUI]   Node 40: UniRigLoadModel
+[04:11]   [ComfyUI]     Inputs: {"cache_to_gpu": false}
+[04:11]   [ComfyUI] Generated prompt_id: 84606b8f-5db9-4a31-93d7-ec4d4612eb33
+[04:11]   [ComfyUI] Calling execution.validate_prompt()...
+[04:11]   [ComfyUI] Validation result: valid=True
+[04:11]   [ComfyUI] === Validation PASSED ===
+[04:11]     OK
+[04:11]   [3/5] Validating rig_human_with_texture_mia.json
+[04:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:11]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[04:11]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -618,7 +556,7 @@ Node errors:
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
-[06:19]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+[04:11]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -627,7 +565,7 @@ Node errors:
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
-[06:19]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+[04:11]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
@@ -636,98 +574,154 @@ Node errors:
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
     at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
-[06:19]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[06:20]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:20]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
-[06:20]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:20]   [Console-error] [UniRig Compare] Failed to load bundle
-[06:21]   [ComfyUI] === /validate endpoint called ===
-[06:21]   [ComfyUI] Received JSON with keys: ['prompt']
-[06:21]   [ComfyUI] Prompt has 11 nodes
-[06:21]   [ComfyUI]   Node 27: UniRigLoadMesh
-[06:21]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
-[06:21]   [ComfyUI]   Node 41: MIALoadModel
-[06:21]     OK
-[06:21]   [ComfyUI]     Inputs: {"cache_to_gpu": true}
-[06:21]   [ComfyUI]   Node 42: MIAAutoRig
-[06:21]   [5/5] Validating rigged_manipulator.json
-[06:21]   [ComfyUI]     Inputs: {"fbx_name": "rigatoni", "no_fingers": false, "use_normal": false, "reset_to_rest": true, "trimesh": ["45", 0], "model": ["41", 0]}
-[06:21]   [ComfyUI]   Node 43: UniRigOrientationCheck
-[06:21]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["45", 0]}
-[06:21]   [ComfyUI]   Node 44: PreviewImage
-[06:21]   [ComfyUI]     Inputs: {"images": ["43", 0]}
-[06:21]   [ComfyUI]   Node 45: GeomPackTransformMesh
-[06:21]   [ComfyUI]     Inputs: {"operation": "rotate", "translate_x": 0, "translate_y": 0, "translate_z": 0, "rotate_x": 0, "rotate_y": 0, "rotate_z": 0, "scale_uniform": 1, "scale_x": 1, "scale_y": 1, "scale_z": 1, "mirror_axis":
-[06:21]   [ComfyUI]   Node 46: UniRigOrientationCheck
-[06:21]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["27", 0]}
-[06:21]   [ComfyUI]   Node 47: PreviewImage
-[06:21]   [ComfyUI]     Inputs: {"images": ["46", 0]}
-[06:21]   [ComfyUI]   Node 49: UniRigCompareSkeletons
-[06:21]   [ComfyUI]     Inputs: {"fbx_path_left": ["42", 0], "fbx_path_right": ["51", 0], "preview": ""}
-[06:21]   [ComfyUI]   Node 50: UniRigLoadMesh
-[06:21]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/mixamo.fbx"}
-[06:21]   [ComfyUI]   Node 51: PrimitiveString
-[06:21]   [ComfyUI]     Inputs: {"value": "/home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx"}
-[06:21]   [ComfyUI] Generated prompt_id: 1f6330ec-58a2-4f4f-8c7e-7a81b5ce4043
-[06:21]   [ComfyUI] Calling execution.validate_prompt()...
-[06:21]   [ComfyUI] Validation result: valid=True
-[06:21]   [ComfyUI] === Validation PASSED ===
-[06:21]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:21]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:21]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:21]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:21]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[06:22]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[06:22]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+[04:11]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[04:12]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:12]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[04:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:13]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[04:13]   [ComfyUI] === /validate endpoint called ===
+[04:13]   [ComfyUI] Received JSON with keys: ['prompt']
+[04:13]   [ComfyUI] Prompt has 9 nodes
+[04:13]   [ComfyUI]   Node 10: UniRigPreviewRiggedMesh
+[04:13]   [ComfyUI]     Inputs: {"fbx_output_path": ["42", 0], "preview": ""}
+[04:13]   [ComfyUI]   Node 27: UniRigLoadMesh
+[04:13]     OK
+[04:13]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
+[04:13]   [4/5] Validating rig_human_with_texture_mia_debug.json
+[04:13]   [ComfyUI]   Node 41: MIALoadModel
+[04:13]   [ComfyUI]     Inputs: {"cache_to_gpu": true}
+[04:13]   [ComfyUI]   Node 42: MIAAutoRig
+[04:13]   [ComfyUI]     Inputs: {"fbx_name": "rigatoni", "no_fingers": false, "use_normal": false, "reset_to_rest": true, "trimesh": ["45", 0], "model": ["41", 0]}
+[04:13]   [ComfyUI]   Node 43: UniRigOrientationCheck
+[04:13]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["45", 0]}
+[04:13]   [ComfyUI]   Node 44: PreviewImage
+[04:13]   [ComfyUI]     Inputs: {"images": ["43", 0]}
+[04:13]   [ComfyUI]   Node 45: GeomPackTransformMesh
+[04:13]   [ComfyUI]     Inputs: {"operation": "rotate", "translate_x": 0, "translate_y": -90, "translate_z": 0, "rotate_x": 0, "rotate_y": 0, "rotate_z": 0, "scale_uniform": 1, "scale_x": 1, "scale_y": 1, "scale_z": 1, "mirror_axis"
+[04:13]   [ComfyUI]   Node 46: UniRigOrientationCheck
+[04:13]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["27", 0]}
+[04:13]   [ComfyUI]   Node 47: PreviewImage
+[04:13]   [ComfyUI]     Inputs: {"images": ["46", 0]}
+[04:13]   [ComfyUI] Generated prompt_id: c57053c5-229f-4681-98e6-d01aed038375
+[04:13]   [ComfyUI] Calling execution.validate_prompt()...
+[04:13]   [ComfyUI] Validation result: valid=True
+[04:13]   [ComfyUI] === Validation PASSED ===
+[04:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:14]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:14]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:14]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:14]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[04:14]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
     at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:22]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[04:14]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
     at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:22]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[04:14]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
     at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
     at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
     at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
     at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
-    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
     at Array.forEach (<anonymous>)
-    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
-[06:22]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[06:23]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A05018003C290000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[06:23]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A02018003C290000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[06:24]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A02018003C290000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
-[06:24]   [ComfyUI] === /validate endpoint called ===
-[06:24]   [ComfyUI] Received JSON with keys: ['prompt']
-[06:24]   [ComfyUI] Prompt has 2 nodes
-[06:24]   [ComfyUI]   Node 1: UniRigLoadRiggedMesh
-[06:24]   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
-[06:24]   [ComfyUI]   Node 3: UniRigPreviewRiggedMesh
-[06:24]   [ComfyUI]     Inputs: {"fbx_output_path": ["1", 0], "preview": ""}
-[06:24]   [ComfyUI] Generated prompt_id: 38a470bb-9c61-4352-ad35-6a98761b5b38
-[06:24]   [ComfyUI] Calling execution.validate_prompt()...
-[06:24]   [ComfyUI] Failed to validate prompt for output 3:
-[06:24]   [ComfyUI] * UniRigLoadRiggedMesh 1:
-[06:24]   [ComfyUI]   - Required input is missing: fbx_file
-[06:24]   [ComfyUI] Output will be ignored
-[06:24]   [ComfyUI] Validation result: valid=False
-[06:24]   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
-[06:24]   [ComfyUI]   Node errors: {"1": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["3"], "class_type": "UniRigLoadRiggedMesh"}}
-[06:24]   [ComfyUI] === Validation FAILED ===
-[06:24]   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
-[06:24]     FAILED: Workflow validation failed
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[04:14]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[04:15]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:15]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[04:15]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:15]   [Console-error] [UniRig Compare] Failed to load bundle
+[04:16]   [ComfyUI] === /validate endpoint called ===
+[04:16]   [ComfyUI] Received JSON with keys: ['prompt']
+[04:16]   [ComfyUI] Prompt has 11 nodes
+[04:16]   [ComfyUI]   Node 27: UniRigLoadMesh
+[04:16]     OK
+[04:16]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
+[04:16]   [5/5] Validating rigged_manipulator.json
+[04:16]   [ComfyUI]   Node 41: MIALoadModel
+[04:16]   [ComfyUI]     Inputs: {"cache_to_gpu": true}
+[04:16]   [ComfyUI]   Node 42: MIAAutoRig
+[04:16]   [ComfyUI]     Inputs: {"fbx_name": "rigatoni", "no_fingers": false, "use_normal": false, "reset_to_rest": true, "trimesh": ["45", 0], "model": ["41", 0]}
+[04:16]   [ComfyUI]   Node 43: UniRigOrientationCheck
+[04:16]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["45", 0]}
+[04:16]   [ComfyUI]   Node 44: PreviewImage
+[04:16]   [ComfyUI]     Inputs: {"images": ["43", 0]}
+[04:16]   [ComfyUI]   Node 45: GeomPackTransformMesh
+[04:16]   [ComfyUI]     Inputs: {"operation": "rotate", "translate_x": 0, "translate_y": 0, "translate_z": 0, "rotate_x": 0, "rotate_y": 0, "rotate_z": 0, "scale_uniform": 1, "scale_x": 1, "scale_y": 1, "scale_z": 1, "mirror_axis":
+[04:16]   [ComfyUI]   Node 46: UniRigOrientationCheck
+[04:16]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["27", 0]}
+[04:16]   [ComfyUI]   Node 47: PreviewImage
+[04:16]   [ComfyUI]     Inputs: {"images": ["46", 0]}
+[04:16]   [ComfyUI]   Node 49: UniRigCompareSkeletons
+[04:16]   [ComfyUI]     Inputs: {"fbx_path_left": ["42", 0], "fbx_path_right": ["51", 0], "preview": ""}
+[04:16]   [ComfyUI]   Node 50: UniRigLoadMesh
+[04:16]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/mixamo.fbx"}
+[04:16]   [ComfyUI]   Node 51: PrimitiveString
+[04:16]   [ComfyUI]     Inputs: {"value": "/home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx"}
+[04:16]   [ComfyUI] Generated prompt_id: 10b3023b-e3c2-4f72-955e-5eed0a8b865f
+[04:16]   [ComfyUI] Calling execution.validate_prompt()...
+[04:16]   [ComfyUI] Validation result: valid=True
+[04:16]   [ComfyUI] === Validation PASSED ===
+[04:16]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:16]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:17]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:17]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:17]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:17]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[04:17]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[04:17]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[04:17]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[04:17]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[04:18]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:18]   [Console-error] [UniRig Compare] Failed to load bundle
+[04:18]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[04:18]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[04:19]   [ComfyUI] === /validate endpoint called ===
+[04:19]   [ComfyUI] Received JSON with keys: ['prompt']
+[04:19]   [ComfyUI] Prompt has 2 nodes
+[04:19]   [ComfyUI]   Node 1: UniRigLoadRiggedMesh
+[04:19]   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
+[04:19]   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
+[04:19]   [ComfyUI]   Node 3: UniRigPreviewRiggedMesh
+[04:19]   [ComfyUI]     Inputs: {"fbx_output_path": ["1", 0], "preview": ""}
+[04:19]     FAILED: Workflow validation failed
 
 Details:
 Prompt outputs failed validation
@@ -750,11 +744,21 @@ Node errors:
     "class_type": "UniRigLoadRiggedMesh"
   }
 }
-[06:24] Stopping ComfyUI server...
-[06:24] 
+[04:19]   [ComfyUI] Generated prompt_id: 7dada053-3385-4630-a1f7-6bb49d7d8052
+[04:19]   [ComfyUI] Calling execution.validate_prompt()...
+[04:19]   [ComfyUI] Failed to validate prompt for output 3:
+[04:19]   [ComfyUI] * UniRigLoadRiggedMesh 1:
+[04:19]   [ComfyUI]   - Required input is missing: fbx_file
+[04:19]   [ComfyUI] Output will be ignored
+[04:19]   [ComfyUI] Validation result: valid=False
+[04:19]   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
+[04:19]   [ComfyUI]   Node errors: {"1": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["3"], "class_type": "UniRigLoadRiggedMesh"}}
+[04:19]   [ComfyUI] === Validation FAILED ===
+[04:19] Stopping ComfyUI server...
+[04:19] 
 linux: FAILED
-[06:24] Error: Workflow validation failed (2 error(s))
-[06:24] Details:   - apply_animation.json: Workflow validation failed
+[04:19] Error: Workflow validation failed (2 error(s))
+[04:19] Details:   - apply_animation.json: Workflow validation failed
 
 Details:
 Prompt outputs failed validation

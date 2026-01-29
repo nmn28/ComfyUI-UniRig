@@ -7,7 +7,7 @@
 [00:00] Unicode check: OK (all characters cp1252-safe)
 [00:00] [SYNTAX] PASSED
 [00:00] Setting up Windows isolation...
-[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_1hkvgscv\temp
+[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_8uut0kj5\temp
 [00:00]   Isolation active
 [00:00] 
 [00:00] [2/7] INSTALL
@@ -17,417 +17,1079 @@
 [00:00] Copying ComfyUI-UniRig to custom_nodes/...
 [00:01] Installing node requirements...
 [00:01] Running: C:\Users\runneradmin\venv\venv\Scripts\python.exe -m pip install -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt
-[00:10]   Collecting comfy-env>=0.1.8 (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
-[00:10]     Downloading comfy_env-0.1.9-py3-none-any.whl.metadata (7.0 kB)
-[00:10]   Collecting comfy-3d-viewers==0.2.1 (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 3))
-[00:10]     Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl.metadata (2.2 kB)
-[00:10]   Requirement already satisfied: numpy in c:\users\runneradmin\venv\venv\lib\site-packages (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 5)) (2.4.1)
-[00:10]   Requirement already satisfied: scipy in c:\users\runneradmin\venv\venv\lib\site-packages (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 6)) (1.17.0)
-[00:10]   Collecting libigl (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 7))
-[00:10]     Downloading libigl-2.6.1-cp312-abi3-win_amd64.whl.metadata (4.8 kB)
-[00:10]   Collecting trimesh[easy] (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading trimesh-4.11.1-py3-none-any.whl.metadata (13 kB)
-[00:10]   Requirement already satisfied: pip>=21.0 in c:\users\runneradmin\venv\venv\lib\site-packages (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2)) (25.3)
-[00:10]   Collecting tomli-w>=1.0.0 (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
-[00:10]     Downloading tomli_w-1.2.0-py3-none-any.whl.metadata (5.7 kB)
-[00:10]   Requirement already satisfied: uv>=0.4.0 in c:\users\runneradmin\venv\venv\lib\site-packages (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2)) (0.9.27)
-[00:10]   Collecting colorlog (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading colorlog-6.10.1-py3-none-any.whl.metadata (11 kB)
-[00:10]   Collecting manifold3d>=2.3.0 (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading manifold3d-3.3.2-cp313-cp313-win_amd64.whl.metadata (19 kB)
-[00:10]   Requirement already satisfied: charset-normalizer in c:\users\runneradmin\venv\venv\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.4.4)
-[00:10]   Collecting lxml (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading lxml-6.0.2-cp313-cp313-win_amd64.whl.metadata (3.7 kB)
-[00:10]   Collecting jsonschema (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
-[00:10]   Requirement already satisfied: networkx in c:\users\runneradmin\venv\venv\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.6.1)
-[00:10]   Collecting svg.path (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading svg_path-7.0-py2.py3-none-any.whl.metadata (14 kB)
-[00:10]   Collecting pycollada (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading pycollada-0.9.3-py3-none-any.whl.metadata (1.7 kB)
-[00:10]   Collecting shapely (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading shapely-2.1.2-cp313-cp313-win_amd64.whl.metadata (7.1 kB)
-[00:10]   Collecting xxhash (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading xxhash-3.6.0-cp313-cp313-win_amd64.whl.metadata (13 kB)
-[00:10]   Collecting rtree (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading rtree-1.4.1-py3-none-win_amd64.whl.metadata (2.2 kB)
-[00:10]   Requirement already satisfied: httpx in c:\users\runneradmin\venv\venv\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.28.1)
-[00:10]   Requirement already satisfied: pillow in c:\users\runneradmin\venv\venv\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (12.1.0)
-[00:10]   Collecting vhacdx (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading vhacdx-0.0.10-cp313-cp313-win_amd64.whl.metadata (1.1 kB)
-[00:10]   Collecting mapbox_earcut>=1.0.2 (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading mapbox_earcut-2.0.0-cp313-cp313-win_amd64.whl.metadata (2.5 kB)
-[00:10]   Requirement already satisfied: colorama in c:\users\runneradmin\venv\venv\lib\site-packages (from colorlog->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.4.6)
-[00:10]   Requirement already satisfied: anyio in c:\users\runneradmin\venv\venv\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (4.12.1)
-[00:10]   Requirement already satisfied: certifi in c:\users\runneradmin\venv\venv\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (2026.1.4)
-[00:10]   Requirement already satisfied: httpcore==1.* in c:\users\runneradmin\venv\venv\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (1.0.9)
-[00:10]   Requirement already satisfied: idna in c:\users\runneradmin\venv\venv\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.11)
-[00:10]   Requirement already satisfied: h11>=0.16 in c:\users\runneradmin\venv\venv\lib\site-packages (from httpcore==1.*->httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.16.0)
-[00:10]   Requirement already satisfied: attrs>=22.2.0 in c:\users\runneradmin\venv\venv\lib\site-packages (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (25.4.0)
-[00:10]   Collecting jsonschema-specifications>=2023.03.6 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
-[00:10]   Collecting referencing>=0.28.4 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
-[00:10]   Collecting rpds-py>=0.25.0 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading rpds_py-0.30.0-cp313-cp313-win_amd64.whl.metadata (4.2 kB)
-[00:10]   Collecting python-dateutil (from pycollada->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
-[00:10]   Collecting six>=1.5 (from python-dateutil->pycollada->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:10]     Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
-[00:10]   Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl (1.3 MB)
-[00:10]      ---------------------------------------- 1.3/1.3 MB 40.9 MB/s  0:00:00
-[00:10]   Downloading comfy_env-0.1.9-py3-none-any.whl (72 kB)
-[00:10]   Downloading trimesh-4.11.1-py3-none-any.whl (740 kB)
-[00:10]      ---------------------------------------- 740.4/740.4 kB 17.7 MB/s  0:00:00
-[00:10]   Downloading libigl-2.6.1-cp312-abi3-win_amd64.whl (13.5 MB)
-[00:10]      ---------------------------------------- 13.5/13.5 MB 99.1 MB/s  0:00:00
-[00:10]   Downloading manifold3d-3.3.2-cp313-cp313-win_amd64.whl (961 kB)
-[00:10]      ---------------------------------------- 961.4/961.4 kB 32.7 MB/s  0:00:00
-[00:10]   Downloading mapbox_earcut-2.0.0-cp313-cp313-win_amd64.whl (56 kB)
-[00:10]   Downloading tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
-[00:10]   Downloading colorlog-6.10.1-py3-none-any.whl (11 kB)
-[00:10]   Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
-[00:10]   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
-[00:10]   Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
-[00:10]   Downloading rpds_py-0.30.0-cp313-cp313-win_amd64.whl (240 kB)
-[00:10]   Downloading lxml-6.0.2-cp313-cp313-win_amd64.whl (4.0 MB)
-[00:10]      ---------------------------------------- 4.0/4.0 MB 64.4 MB/s  0:00:00
-[00:10]   Downloading pycollada-0.9.3-py3-none-any.whl (129 kB)
-[00:10]   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
-[00:10]   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
-[00:10]   Downloading rtree-1.4.1-py3-none-win_amd64.whl (389 kB)
-[00:10]   Downloading shapely-2.1.2-cp313-cp313-win_amd64.whl (1.7 MB)
-[00:10]      ---------------------------------------- 1.7/1.7 MB 45.3 MB/s  0:00:00
-[00:10]   Downloading svg_path-7.0-py2.py3-none-any.whl (18 kB)
-[00:10]   Downloading vhacdx-0.0.10-cp313-cp313-win_amd64.whl (195 kB)
-[00:10]   Downloading xxhash-3.6.0-cp313-cp313-win_amd64.whl (31 kB)
-[00:10]   Installing collected packages: xxhash, vhacdx, trimesh, tomli-w, svg.path, six, shapely, rtree, rpds-py, mapbox_earcut, manifold3d, lxml, comfy-3d-viewers, colorlog, referencing, python-dateutil, libigl, comfy-env, pycollada, jsonschema-specifications, jsonschema
-[00:10]   
-[00:10]   Successfully installed colorlog-6.10.1 comfy-3d-viewers-0.2.1 comfy-env-0.1.9 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 libigl-2.6.1 lxml-6.0.2 manifold3d-3.3.2 mapbox_earcut-2.0.0 pycollada-0.9.3 python-dateutil-2.9.0.post0 referencing-0.37.0 rpds-py-0.30.0 rtree-1.4.1 shapely-2.1.2 six-1.17.0 svg.path-7.0 tomli-w-1.2.0 trimesh-4.11.1 vhacdx-0.0.10 xxhash-3.6.0
-[00:10] Running install.py...
-[00:10] Running: C:\Users\runneradmin\venv\venv\Scripts\python.exe C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\install.py
-[07:51]   [apt] Skipping apt packages (not Linux)
-[07:51]   
-[07:51]   Installing 1 node dependencies...
-[07:51]     Cloning ComfyUI-GeometryPack from https://github.com/PozzettiAndrea/ComfyUI-GeometryPack...
-[07:51]     Installing requirements for ComfyUI-GeometryPack...
-[07:51]     Warning: Failed to install ComfyUI-GeometryPack: [WinError 2] The system cannot find the file specified
-[07:51]   No packages to install
-[07:51]   
-[07:51]   [isolated] Installing: nodes\nodes_blender
-[07:51]   Pixi not found, downloading...
-[07:51]   Installed pixi to: C:\Users\runneradmin\.local\bin\pixi.exe
-[07:51]   Using specified Python 3.11
-[07:51]   Generated C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_blender\pixi.toml
-[07:51]   Running pixi install...
-[07:51]   Installation complete!
-[07:51]   
-[07:51]   [isolated] Installing: nodes\nodes_gpu
-[07:51]   Generated C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_gpu\pixi.toml
-[07:51]   Running pixi install...
-[07:51]   Installation complete!
-[07:51]   
-[07:51]   Installation complete!
-[07:51] Installing 1 node dependency(ies)...
-[07:51]   ComfyUI-GeometryPack from PozzettiAndrea/ComfyUI-GeometryPack
-[07:51]   ComfyUI-GeometryPack already exists, skipping...
-[07:51] Installing validation endpoint...
-[07:51]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
-[07:51] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-[07:52] [INSTALL] PASSED
-[07:52] COMFY_TEST_GPU env var = None
-[07:52] 
+[00:13]   Collecting comfy-env>=0.1.8 (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
+[00:13]     Downloading comfy_env-0.1.9-py3-none-any.whl.metadata (7.0 kB)
+[00:13]   Collecting comfy-3d-viewers==0.2.1 (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 3))
+[00:13]     Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl.metadata (2.2 kB)
+[00:13]   Requirement already satisfied: numpy in c:\users\runneradmin\venv\venv\lib\site-packages (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 5)) (2.4.1)
+[00:13]   Requirement already satisfied: scipy in c:\users\runneradmin\venv\venv\lib\site-packages (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 6)) (1.17.0)
+[00:13]   Collecting libigl (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 7))
+[00:13]     Downloading libigl-2.6.1-cp311-cp311-win_amd64.whl.metadata (4.8 kB)
+[00:13]   Collecting trimesh[easy] (from -r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading trimesh-4.11.1-py3-none-any.whl.metadata (13 kB)
+[00:13]   Requirement already satisfied: pip>=21.0 in c:\users\runneradmin\venv\venv\lib\site-packages (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2)) (24.0)
+[00:13]   Collecting tomli-w>=1.0.0 (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
+[00:13]     Downloading tomli_w-1.2.0-py3-none-any.whl.metadata (5.7 kB)
+[00:13]   Collecting uv>=0.4.0 (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
+[00:13]     Using cached uv-0.9.28-py3-none-win_amd64.whl.metadata (12 kB)
+[00:13]   Collecting colorlog (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading colorlog-6.10.1-py3-none-any.whl.metadata (11 kB)
+[00:13]   Collecting manifold3d>=2.3.0 (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading manifold3d-3.3.2-cp311-cp311-win_amd64.whl.metadata (19 kB)
+[00:13]   Requirement already satisfied: charset-normalizer in c:\users\runneradmin\venv\venv\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.4.4)
+[00:13]   Collecting lxml (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading lxml-6.0.2-cp311-cp311-win_amd64.whl.metadata (3.7 kB)
+[00:13]   Collecting jsonschema (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+[00:13]   Requirement already satisfied: networkx in c:\users\runneradmin\venv\venv\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.6.1)
+[00:13]   Collecting svg.path (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading svg_path-7.0-py2.py3-none-any.whl.metadata (14 kB)
+[00:13]   Collecting pycollada (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading pycollada-0.9.3-py3-none-any.whl.metadata (1.7 kB)
+[00:13]   Collecting shapely (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading shapely-2.1.2-cp311-cp311-win_amd64.whl.metadata (7.1 kB)
+[00:13]   Collecting xxhash (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading xxhash-3.6.0-cp311-cp311-win_amd64.whl.metadata (13 kB)
+[00:13]   Collecting rtree (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading rtree-1.4.1-py3-none-win_amd64.whl.metadata (2.2 kB)
+[00:13]   Requirement already satisfied: httpx in c:\users\runneradmin\venv\venv\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.28.1)
+[00:13]   Requirement already satisfied: pillow in c:\users\runneradmin\venv\venv\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (12.1.0)
+[00:13]   Collecting vhacdx (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading vhacdx-0.0.10-cp311-cp311-win_amd64.whl.metadata (1.1 kB)
+[00:13]   Collecting mapbox_earcut>=1.0.2 (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading mapbox_earcut-2.0.0-cp311-cp311-win_amd64.whl.metadata (2.5 kB)
+[00:13]   Requirement already satisfied: colorama in c:\users\runneradmin\venv\venv\lib\site-packages (from colorlog->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.4.6)
+[00:13]   Requirement already satisfied: anyio in c:\users\runneradmin\venv\venv\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (4.12.1)
+[00:13]   Requirement already satisfied: certifi in c:\users\runneradmin\venv\venv\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (2026.1.4)
+[00:13]   Requirement already satisfied: httpcore==1.* in c:\users\runneradmin\venv\venv\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (1.0.9)
+[00:13]   Requirement already satisfied: idna in c:\users\runneradmin\venv\venv\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.11)
+[00:13]   Requirement already satisfied: h11>=0.16 in c:\users\runneradmin\venv\venv\lib\site-packages (from httpcore==1.*->httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.16.0)
+[00:13]   Requirement already satisfied: attrs>=22.2.0 in c:\users\runneradmin\venv\venv\lib\site-packages (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (25.4.0)
+[00:13]   Collecting jsonschema-specifications>=2023.03.6 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+[00:13]   Collecting referencing>=0.28.4 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+[00:13]   Collecting rpds-py>=0.25.0 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading rpds_py-0.30.0-cp311-cp311-win_amd64.whl.metadata (4.2 kB)
+[00:13]   Collecting python-dateutil (from pycollada->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+[00:13]   Requirement already satisfied: typing-extensions>=4.4.0 in c:\users\runneradmin\venv\venv\lib\site-packages (from referencing>=0.28.4->jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (4.15.0)
+[00:13]   Collecting six>=1.5 (from python-dateutil->pycollada->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:13]     Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+[00:13]   Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl (1.3 MB)
+[00:13]      ---------------------------------------- 1.3/1.3 MB 11.9 MB/s eta 0:00:00
+[00:13]   Downloading comfy_env-0.1.9-py3-none-any.whl (72 kB)
+[00:13]      ---------------------------------------- 72.2/72.2 kB 3.9 MB/s eta 0:00:00
+[00:13]   Downloading libigl-2.6.1-cp311-cp311-win_amd64.whl (13.5 MB)
+[00:13]      ---------------------------------------- 13.5/13.5 MB 93.8 MB/s eta 0:00:00
+[00:13]   Downloading manifold3d-3.3.2-cp311-cp311-win_amd64.whl (962 kB)
+[00:13]      --------------------------------------- 962.0/962.0 kB 30.7 MB/s eta 0:00:00
+[00:13]   Downloading mapbox_earcut-2.0.0-cp311-cp311-win_amd64.whl (56 kB)
+[00:13]      ---------------------------------------- 56.7/56.7 kB 2.9 MB/s eta 0:00:00
+[00:13]   Downloading tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
+[00:13]   Using cached uv-0.9.28-py3-none-win_amd64.whl (23.4 MB)
+[00:13]   Downloading colorlog-6.10.1-py3-none-any.whl (11 kB)
+[00:13]   Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+[00:13]      ---------------------------------------- 90.6/90.6 kB 5.0 MB/s eta 0:00:00
+[00:13]   Downloading lxml-6.0.2-cp311-cp311-win_amd64.whl (4.0 MB)
+[00:13]      ---------------------------------------- 4.0/4.0 MB 85.7 MB/s eta 0:00:00
+[00:13]   Downloading pycollada-0.9.3-py3-none-any.whl (129 kB)
+[00:13]      ---------------------------------------- 129.2/129.2 kB 7.4 MB/s eta 0:00:00
+[00:13]   Downloading rtree-1.4.1-py3-none-win_amd64.whl (389 kB)
+[00:13]      --------------------------------------- 389.4/389.4 kB 12.2 MB/s eta 0:00:00
+[00:13]   Downloading shapely-2.1.2-cp311-cp311-win_amd64.whl (1.7 MB)
+[00:13]      ---------------------------------------- 1.7/1.7 MB 9.1 MB/s eta 0:00:00
+[00:13]   Downloading svg_path-7.0-py2.py3-none-any.whl (18 kB)
+[00:13]   Downloading trimesh-4.11.1-py3-none-any.whl (740 kB)
+[00:13]      --------------------------------------- 740.4/740.4 kB 45.6 MB/s eta 0:00:00
+[00:13]   Downloading vhacdx-0.0.10-cp311-cp311-win_amd64.whl (194 kB)
+[00:13]      --------------------------------------- 194.1/194.1 kB 11.5 MB/s eta 0:00:00
+[00:13]   Downloading xxhash-3.6.0-cp311-cp311-win_amd64.whl (31 kB)
+[00:13]   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+[00:13]   Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+[00:13]   Downloading rpds_py-0.30.0-cp311-cp311-win_amd64.whl (236 kB)
+[00:13]      --------------------------------------- 236.0/236.0 kB 14.1 MB/s eta 0:00:00
+[00:13]   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+[00:13]      ---------------------------------------- 229.9/229.9 kB 7.1 MB/s eta 0:00:00
+[00:13]   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+[00:13]   Installing collected packages: xxhash, vhacdx, uv, trimesh, tomli-w, svg.path, six, shapely, rtree, rpds-py, mapbox_earcut, manifold3d, lxml, comfy-3d-viewers, colorlog, referencing, python-dateutil, libigl, comfy-env, pycollada, jsonschema-specifications, jsonschema
+[00:13]   Successfully installed colorlog-6.10.1 comfy-3d-viewers-0.2.1 comfy-env-0.1.9 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 libigl-2.6.1 lxml-6.0.2 manifold3d-3.3.2 mapbox_earcut-2.0.0 pycollada-0.9.3 python-dateutil-2.9.0.post0 referencing-0.37.0 rpds-py-0.30.0 rtree-1.4.1 shapely-2.1.2 six-1.17.0 svg.path-7.0 tomli-w-1.2.0 trimesh-4.11.1 uv-0.9.28 vhacdx-0.0.10 xxhash-3.6.0
+[00:13] Running install.py...
+[00:13] Running: C:\Users\runneradmin\venv\venv\Scripts\python.exe C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\install.py
+[04:46]   [apt] Skipping apt packages (not Linux)
+[04:46]   
+[04:46]   Installing 1 node dependencies...
+[04:46]     Cloning ComfyUI-GeometryPack from https://github.com/PozzettiAndrea/ComfyUI-GeometryPack...
+[04:46]     Installing requirements for ComfyUI-GeometryPack...
+[04:46]     Running install.py for ComfyUI-GeometryPack...
+[04:46]   No packages to install
+[04:46]   
+[04:46]   [isolated] Installing: nodes\nodes_blender
+[04:46]   Using specified Python 3.11
+[04:46]   Generated C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_blender\pixi.toml
+[04:46]   Running pixi install...
+[04:46]   Installation complete!
+[04:46]   
+[04:46]   [isolated] Installing: nodes\nodes_gpu
+[04:46]   Generated C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_gpu\pixi.toml
+[04:46]   Running pixi install...
+[04:46]   Installation complete!
+[04:46]   
+[04:46]   Installation complete!
+[04:46] Installing 1 node dependency(ies)...
+[04:46]   ComfyUI-GeometryPack from PozzettiAndrea/ComfyUI-GeometryPack
+[04:46]   ComfyUI-GeometryPack already exists, skipping...
+[04:46] Installing validation endpoint...
+[04:46]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
+[04:46] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
+[04:47] [INSTALL] PASSED
+[04:47] COMFY_TEST_GPU env var = None
+[04:47] 
 Starting ComfyUI server...
-[07:52] Starting ComfyUI server on port 8188...
-[07:52] Starting ComfyUI server on port 8188...
-[07:52] Waiting for server to be ready (timeout: 300s)...
-[07:55]   [ComfyUI] [GeometryPack] Copied 96 file(s) from comfy-3d-viewers package
-[07:55]   [ComfyUI] [GeometryPack] Warning: comfy-dynamic-widgets not installed
-[07:55]   [ComfyUI] [GeometryPack] Copied ArmoredWarrior_00005_.glb to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied camelhead.off to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied camel_b.obj to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied coca_cola.blend to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied cow.off to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied fandisk.ply to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied mount_textured.glb to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied rigged_human.fbx to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied spot_the_cow.obj to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied Stanford_Bunny.stl to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied truck.obj to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied tshirt.glb to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] Copied utah_teapot.stl to input/3d/
-[07:55]   [ComfyUI] [GeometryPack] [OK] Copied 13 asset(s) to C:\Users\runneradmin\venv\ComfyUI\input\3d
-[07:55]   [ComfyUI] [UniRig] Running prestartup script...
-[07:55]   [ComfyUI] [UniRig] Copied viewer_fbx.html from comfy-3d-viewers
-[07:55]   [ComfyUI] [UniRig] Copied viewer-bundle.js from comfy-3d-viewers
-[07:55]   [ComfyUI] [UniRig] Copied mesh_preview_fbx.js from comfy-3d-viewers
-[07:55]   [ComfyUI] [UniRig] Copied viewer_fbx_debug.html from comfy-3d-viewers
-[07:55]   [ComfyUI] [UniRig] Copied viewer_fbx_compare.html from comfy-3d-viewers
-[07:55]   [ComfyUI] [UniRig] Copied debug_skeleton_widget.js from comfy-3d-viewers
-[07:55]   [ComfyUI] [UniRig] Copied compare_skeleton_widget.js from comfy-3d-viewers
-[07:55]   [ComfyUI] [UniRig] Copied FinalBaseMesh.obj to C:\Users\runneradmin\venv\ComfyUI\input\3d\FinalBaseMesh.obj
-[07:55]   [ComfyUI] [UniRig] Copied mixamo.fbx to C:\Users\runneradmin\venv\ComfyUI\input\3d\mixamo.fbx
-[07:55]   [ComfyUI] [UniRig] Copied realistic_male_character.glb to C:\Users\runneradmin\venv\ComfyUI\input\3d\realistic_male_character.glb
-[07:55]   [ComfyUI] [UniRig] Copied mixamo/Breakdance.fbx to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\mixamo\Breakdance.fbx
-[07:55]   [ComfyUI] [UniRig] Copied mixamo/Capoeira.fbx to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\mixamo\Capoeira.fbx
-[07:55]   [ComfyUI] [UniRig] Copied mixamo/Dying.fbx to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\mixamo\Dying.fbx
-[07:55]   [ComfyUI] [UniRig] Copied mixamo/Hip_Hop_Dancing.fbx to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\mixamo\Hip_Hop_Dancing.fbx
-[07:55]   [ComfyUI] [UniRig] Copied mixamo/Mma_Kick.fbx to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\mixamo\Mma_Kick.fbx
-[07:55]   [ComfyUI] [UniRig] Copied smpl/amass_sample.npz to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\smpl\amass_sample.npz
-[07:55]   [ComfyUI] [UniRig] Copied smpl/dmpl_sample.npz to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\smpl\dmpl_sample.npz
-[07:55]   [ComfyUI] [UniRig] Animation templates ready at C:\Users\runneradmin\venv\ComfyUI\input\animation_templates
-[07:55]   [ComfyUI] [UniRig] Copied animation character: mixamo.fbx
-[07:55]   [ComfyUI] [UniRig] Animation characters ready at C:\Users\runneradmin\venv\ComfyUI\input\animation_characters
-[07:55]   [ComfyUI] [UniRig] Prestartup script completed.
-[07:55]   [ComfyUI] 
-[07:55]   [ComfyUI] Prestartup times for custom nodes:
-[07:55]   [ComfyUI]    0.0 seconds: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig
-[07:55]   [ComfyUI]    0.3 seconds: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack
-[07:55]   [ComfyUI] 
-[08:00]   [ComfyUI] Checkpoint files will always be loaded safely.
-[08:00]   [ComfyUI] Total VRAM 16383 MB, total RAM 16383 MB
-[08:00]   [ComfyUI] pytorch version: 2.10.0+cpu
-[08:00]   [ComfyUI] Set vram state to: DISABLED
-[08:00]   [ComfyUI] Device: cpu
-[08:05]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
-[08:05]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
-[08:05]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
-[08:06]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
-[08:13]   [ComfyUI] Python version: 3.13.11 (tags/v3.13.11:6278944, Dec  5 2025, 16:26:58) [MSC v.1944 64 bit (AMD64)]
-[08:13]   [ComfyUI] ComfyUI version: 0.11.1
-[08:13]   [ComfyUI] Using proactor: IocpProactor
-[08:13]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
-[08:13]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
-[08:13]   [ComfyUI] ComfyUI frontend version: 1.37.11
-[08:13]   [ComfyUI] [Prompt Server] web root: C:\Users\runneradmin\venv\venv\Lib\site-packages\comfyui_frontend_package\static
-[08:13]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_latent.py
-[08:13]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hypernetwork.py
-[08:13]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\hypernetworks
-[08:13]   [ComfyUI] found 1 files
-[08:13]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_upscale_model.py
-[08:14]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\upscale_models
-[08:14]   [ComfyUI] found 1 files
-[08:14]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_post_processing.py
-[08:14]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_mask.py
-[08:14]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_compositing.py
-[08:14]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_rebatch.py
-[08:14]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_model_merging.py
-[08:14]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_tomesd.py
-[08:14]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_clip_sdxl.py
-[08:14]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_canny.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_freelunch.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_custom_sampler.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hypertile.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_model_advanced.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_model_downscale.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_images.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_video_model.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_train.py
-[08:16]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\loras
-[08:16]   [ComfyUI] found 1 files
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_dataset.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_sag.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_perpneg.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_stable3d.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_sdupscale.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_photomaker.py
-[08:16]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\photomaker
-[08:16]   [ComfyUI] found 1 files
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_pixart.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_cond.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_morphology.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_stable_cascade.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_differential_diffusion.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_ip2p.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_model_merging_model_specific.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_pag.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_align_your_steps.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_attention_multiply.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_advanced_samplers.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_webcam.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_audio.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_sd3.py
-[08:16]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\text_encoders
-[08:16]   [ComfyUI] found 1 files
-[08:16]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\clip
-[08:16]   [ComfyUI] found 1 files
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_gits.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_controlnet.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hunyuan.py
-[08:16]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\latent_upscale_models
-[08:16]   [ComfyUI] found 1 files
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_eps.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_flux.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lora_extract.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_torch_compile.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_mochi.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_slg.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_mahiro.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lt_upsampler.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lt_audio.py
-[08:16]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\checkpoints
-[08:16]   [ComfyUI] found 1 files
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lt.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hooks.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_load_3d.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_cosmos.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_video.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lumina2.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_wan.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lotus.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hunyuan3d.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_primitive.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_cfg.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_optimalsteps.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hidream.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_fresca.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_apg.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_preview_any.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_ace.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_string.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_camera_trajectory.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_edit_model.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_tcfg.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_context_windows.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_qwen.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_chroma_radiance.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_model_patch.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_easycache.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_audio_encoder.py
-[08:16]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\audio_encoders
-[08:16]   [ComfyUI] found 1 files
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_rope.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_logic.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_nop.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_kandinsky5.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_wanmove.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_image_compare.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_zimage.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lora_debug.py
-[08:16]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_bfl.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_bria.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_bytedance.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_gemini.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_grok.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_hunyuan3d.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_ideogram.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_kling.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_ltxv.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_luma.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_magnific.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_meshy.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_minimax.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_moonvalley.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_openai.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_pixverse.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_recraft.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_rodin.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_runway.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_sora.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_stability.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_topaz.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_tripo.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_veo2.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_vidu.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_wan.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_wavespeed.py
-[08:17]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack
-[08:17]   [ComfyUI] searching for blender in: C:\cabal\bin;/c/Users/runneradmin/venv/venv/Scripts;C:\Program Files\MongoDB\Server\7.0\bin;C:\hostedtoolcache\windows\Python\3.12.10\x64;C:\Program Files\Git\usr\bin;C:\Program Files\PowerShell\7;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\CMake\bin;C:\Strawberry\perl\site\bin;C:\mingw64\bin;C:\SeleniumWebDrivers\GeckoDriver;C:\Program Files\Git\mingw64\bin;C:\Program Files\R\R-4.5.2\bin\x64;C:\npm\prefix;C:\tools\kotlinc\bin;C:\ProgramData\kind;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Strawberry\c\bin;C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\170\DTS\Binn\;C:\Program Files\PowerShell\7\;C:\Program Files\OpenSSL\bin;C:\Program Files\Microsoft SDKs\Service Fabric\Tools\ServiceFabricLocalClusterManager;C:\Program Files\Amazon\SessionManagerPlugin\bin\;C:\Program Files\nodejs\;C:\SeleniumWebDrivers\ChromeDriver;C:\hostedtoolcache\windows\stack\3.9.1\x64;C:\Users\runneradmin\.dotnet\tools;C:\Program Files (x86)\LLVM\bin;C:\hostedtoolcache\windows\go\1.24.12\x64\bin;C:\Program Files\mongosh\;C:\Program Files (x86)\sbt\bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\bin;C:\ProgramData\chocolatey\lib\pulumi\tools\Pulumi\bin;C:\Windows\System32\Wbem;C:\Program Files (x86)\WiX Toolset v3.14\bin;C:\hostedtoolcache\windows\Python\3.13.11\x64;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\ProgramData\Chocolatey\bin;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Users\runneradmin\.cargo\bin;C:\Program Files\LLVM\bin;C:\Program Files\ImageMagick-7.1.2-Q16-HDRI;c:\tools\php;C:\Windows;C:\Users\runneradmin\AppData\Roaming\Python\Python313\Scripts;C:\Windows\system32;C:\Strawberry\perl\bin;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft\Web Platform Installer\;C:\SeleniumWebDrivers\EdgeDriver\;C:\Program Files\Microsoft Service Fabric\bin\Fabric\Fabric.Code;C:\vcpkg;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\pipx_bin;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.12\bin;C:\Program Files\GitHub CLI\;C:\hostedtoolcache\windows\Ruby\3.3.10\x64\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\dotnet;C:\tools\zstd;C:\hostedtoolcache\windows\Python\3.13.11\x64\Scripts;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\\ghcup\bin;C:\Program Files (x86)\GitHub CLI;C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.17-10\x64\bin;C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\hostedtoolcache\windows\Python\3.12.10\x64\Scripts
-[08:18]   [ComfyUI] [mesh_utils] Warning: pymeshlab not available. Install with: pip install pymeshlab
-[08:18]   [ComfyUI] Traceback (most recent call last):
-[08:18]   [ComfyUI]   File "C:\Users\runneradmin\venv\ComfyUI\nodes.py", line 2216, in load_custom_node
-[08:18]   [ComfyUI]     module_spec.loader.exec_module(module)
-[08:18]   [ComfyUI]     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-[08:18]   [ComfyUI]   File "<frozen importlib._bootstrap_external>", line 1023, in exec_module
-[08:18]   [ComfyUI]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-[08:18]   [ComfyUI]   File "C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack\__init__.py", line 20, in <module>
-[08:18]   [ComfyUI]     from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
-[08:18]   [ComfyUI]   File "C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\__init__.py", line 17, in <module>
-[08:18]   [ComfyUI]     from .main import NODE_CLASS_MAPPINGS as main_mappings
-[08:18]   [ComfyUI]   File "C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\main\__init__.py", line 19, in <module>
-[08:18]   [ComfyUI]     from . import repair
-[08:18]   [ComfyUI]   File "C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\main\repair\__init__.py", line 17, in <module>
-[08:18]   [ComfyUI]     from .meshfix import NODE_CLASS_MAPPINGS as MESHFIX_MAPS, NODE_DISPLAY_NAME_MAPPINGS as MESHFIX_DISP
-[08:18]   [ComfyUI]   File "C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\main\repair\meshfix.py", line 13, in <module>
-[08:18]   [ComfyUI]     import pymeshfix
-[08:18]   [ComfyUI] ModuleNotFoundError: No module named 'pymeshfix'
-[08:18]   [ComfyUI] 
-[08:18]   [ComfyUI] Cannot import C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack module for custom nodes: No module named 'pymeshfix'
-[08:18]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig
-[08:18]   [ComfyUI] [UniRig] Models directory: C:\Users\runneradmin\venv\ComfyUI\models\unirig
-[08:18]   [ComfyUI] [UniRig] Main nodes loaded (2 nodes)
-[08:18]   [ComfyUI] [comfy-env] Wrapping 9 nodes from nodes_blender
-[08:18]   [ComfyUI] [comfy-env]   site-packages: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_blender\.pixi\envs\default\Lib\site-packages
-[08:18]   [ComfyUI] [comfy-env]   lib: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_blender\.pixi\envs\default\Library\bin
-[08:18]   [ComfyUI] [comfy-env]   env_vars: COMFYUI_BASE=C:\Users\runneradmin\venv\ComfyUI
-[08:18]   [ComfyUI] [UniRig] nodes_blender loaded (9 nodes, isolated)
-[08:18]   [ComfyUI] [comfy-env] Wrapping 6 nodes from nodes_gpu
-[08:18]   [ComfyUI] [comfy-env]   site-packages: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_gpu\.pixi\envs\default\Lib\site-packages
-[08:18]   [ComfyUI] [comfy-env]   lib: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_gpu\.pixi\envs\default\Library\bin
-[08:18]   [ComfyUI] [comfy-env]   env_vars: COMFYUI_BASE=C:\Users\runneradmin\venv\ComfyUI
-[08:18]   [ComfyUI] [UniRig] nodes_gpu loaded (6 nodes, isolated)
-[08:18]   [ComfyUI] [UniRig] Total nodes loaded: 17
-[08:18]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-[08:18]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\custom_nodes\websocket_image_save.py
-[08:18]   [ComfyUI] 
-[08:18]   [ComfyUI] Import times for custom nodes:
-[08:18]   [ComfyUI]    0.0 seconds: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\websocket_image_save.py
-[08:18]   [ComfyUI]    0.0 seconds: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-[08:18]   [ComfyUI]    0.1 seconds: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig
-[08:18]   [ComfyUI]    1.3 seconds (IMPORT FAILED): C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack
-[08:18]   [ComfyUI] 
-[08:18]   [ComfyUI] Database URL: sqlite:///C:\Users\runneradmin\venv\ComfyUI\user\comfyui.db
-[08:19]   [ComfyUI] Context impl SQLiteImpl.
-[08:19]   [ComfyUI] Will assume non-transactional DDL.
-[08:19]   [ComfyUI] Context impl SQLiteImpl.
-[08:19]   [ComfyUI] Will assume non-transactional DDL.
-[08:19]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
-[08:19]   [ComfyUI] Revision ID: 0001_assets
-[08:19]   [ComfyUI] Revises: None
-[08:19]   [ComfyUI] Create Date: 2025-12-10 00:00:00
-[08:19]   [ComfyUI] new branch insert 0001_assets
-[08:19]   [ComfyUI] Database upgraded from None to 0001_assets
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\configs
-[08:19]   [ComfyUI] found 11 files
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\vae
-[08:19]   [ComfyUI] found 1 files
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\unet
-[08:19]   [ComfyUI] found 1 files
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\diffusion_models
-[08:19]   [ComfyUI] found 1 files
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\clip_vision
-[08:19]   [ComfyUI] found 1 files
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\style_models
-[08:19]   [ComfyUI] found 1 files
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\embeddings
-[08:19]   [ComfyUI] found 1 files
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\diffusers
-[08:19]   [ComfyUI] found 1 files
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\vae_approx
-[08:19]   [ComfyUI] found 1 files
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\controlnet
-[08:19]   [ComfyUI] found 1 files
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\gligen
-[08:19]   [ComfyUI] found 1 files
-[08:19]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\model_patches
-[08:19]   [ComfyUI] found 1 files
-[08:19]   [ComfyUI] Assets scan(roots=['models']) completed in 0.065s (created=11, skipped_existing=0, total_seen=11)
-[08:19]   [ComfyUI] Found example workflow folder 'workflows' for custom node 'ComfyUI-UniRig', consider renaming it to 'example_workflows'
-[08:19]   [ComfyUI] Starting server
-[08:19]   [ComfyUI] 
-[08:19]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
-[08:19] Server responding, waiting for nodes to load...
-[08:39] Server is ready!
-[08:39] 
-[08:39] [3/7] REGISTRATION
-[08:39] ----------------------------------------
-[08:39] Checking for import errors in server logs...
-[08:39] Stopping ComfyUI server...
-[08:40] Tearing down Windows isolation...
-[08:40]   Environment restored
-[08:40]   Isolation torn down
-[08:40] 
+[04:47] Starting ComfyUI server on port 8188...
+[04:47] Starting ComfyUI server on port 8188...
+[04:47] Waiting for server to be ready (timeout: 300s)...
+[04:54]   [ComfyUI] [GeometryPack] Copied 96 file(s) from comfy-3d-viewers package
+[04:54]   [ComfyUI] [GeometryPack] Copied dynamic_widgets.js from comfy-dynamic-widgets package
+[04:54]   [ComfyUI] [GeometryPack] Copied ArmoredWarrior_00005_.glb to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied camelhead.off to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied camel_b.obj to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied coca_cola.blend to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied cow.off to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied fandisk.ply to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied mount_textured.glb to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied rigged_human.fbx to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied spot_the_cow.obj to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied Stanford_Bunny.stl to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied truck.obj to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied tshirt.glb to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] Copied utah_teapot.stl to input/3d/
+[04:54]   [ComfyUI] [GeometryPack] [OK] Copied 13 asset(s) to C:\Users\runneradmin\venv\ComfyUI\input\3d
+[04:54]   [ComfyUI] [UniRig] Running prestartup script...
+[04:54]   [ComfyUI] [UniRig] Copied viewer_fbx.html from comfy-3d-viewers
+[04:54]   [ComfyUI] [UniRig] Copied viewer-bundle.js from comfy-3d-viewers
+[04:54]   [ComfyUI] [UniRig] Copied mesh_preview_fbx.js from comfy-3d-viewers
+[04:54]   [ComfyUI] [UniRig] Copied viewer_fbx_debug.html from comfy-3d-viewers
+[04:54]   [ComfyUI] [UniRig] Copied viewer_fbx_compare.html from comfy-3d-viewers
+[04:54]   [ComfyUI] [UniRig] Copied debug_skeleton_widget.js from comfy-3d-viewers
+[04:54]   [ComfyUI] [UniRig] Copied compare_skeleton_widget.js from comfy-3d-viewers
+[04:54]   [ComfyUI] [UniRig] Copied FinalBaseMesh.obj to C:\Users\runneradmin\venv\ComfyUI\input\3d\FinalBaseMesh.obj
+[04:54]   [ComfyUI] [UniRig] Copied mixamo.fbx to C:\Users\runneradmin\venv\ComfyUI\input\3d\mixamo.fbx
+[04:54]   [ComfyUI] [UniRig] Copied realistic_male_character.glb to C:\Users\runneradmin\venv\ComfyUI\input\3d\realistic_male_character.glb
+[04:54]   [ComfyUI] [UniRig] Copied mixamo/Breakdance.fbx to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\mixamo\Breakdance.fbx
+[04:54]   [ComfyUI] [UniRig] Copied mixamo/Capoeira.fbx to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\mixamo\Capoeira.fbx
+[04:54]   [ComfyUI] [UniRig] Copied mixamo/Dying.fbx to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\mixamo\Dying.fbx
+[04:54]   [ComfyUI] [UniRig] Copied mixamo/Hip_Hop_Dancing.fbx to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\mixamo\Hip_Hop_Dancing.fbx
+[04:54]   [ComfyUI] [UniRig] Copied mixamo/Mma_Kick.fbx to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\mixamo\Mma_Kick.fbx
+[04:54]   [ComfyUI] [UniRig] Copied smpl/amass_sample.npz to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\smpl\amass_sample.npz
+[04:54]   [ComfyUI] [UniRig] Copied smpl/dmpl_sample.npz to C:\Users\runneradmin\venv\ComfyUI\input\animation_templates\smpl\dmpl_sample.npz
+[04:54]   [ComfyUI] [UniRig] Animation templates ready at C:\Users\runneradmin\venv\ComfyUI\input\animation_templates
+[04:54]   [ComfyUI] [UniRig] Copied animation character: mixamo.fbx
+[04:54]   [ComfyUI] [UniRig] Animation characters ready at C:\Users\runneradmin\venv\ComfyUI\input\animation_characters
+[04:54]   [ComfyUI] [UniRig] Prestartup script completed.
+[04:54]   [ComfyUI] 
+[04:54]   [ComfyUI] Prestartup times for custom nodes:
+[04:54]   [ComfyUI]    0.1 seconds: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig
+[04:54]   [ComfyUI]    0.6 seconds: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack
+[04:54]   [ComfyUI] 
+[05:01]   [ComfyUI] Checkpoint files will always be loaded safely.
+[05:01]   [ComfyUI] Total VRAM 16379 MB, total RAM 16379 MB
+[05:01]   [ComfyUI] pytorch version: 2.10.0+cpu
+[05:01]   [ComfyUI] Set vram state to: DISABLED
+[05:01]   [ComfyUI] Device: cpu
+[05:08]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
+[05:08]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+[05:08]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+[05:10]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+[05:24]   [ComfyUI] Python version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+[05:24]   [ComfyUI] ComfyUI version: 0.11.1
+[05:24]   [ComfyUI] Using proactor: IocpProactor
+[05:24]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
+[05:24]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
+[05:24]   [ComfyUI] ComfyUI frontend version: 1.37.11
+[05:24]   [ComfyUI] [Prompt Server] web root: C:\Users\runneradmin\venv\venv\Lib\site-packages\comfyui_frontend_package\static
+[05:24]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_latent.py
+[05:24]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hypernetwork.py
+[05:24]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\hypernetworks
+[05:24]   [ComfyUI] found 1 files
+[05:24]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_upscale_model.py
+[05:25]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\upscale_models
+[05:25]   [ComfyUI] found 1 files
+[05:25]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_post_processing.py
+[05:25]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_mask.py
+[05:25]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_compositing.py
+[05:25]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_rebatch.py
+[05:25]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_model_merging.py
+[05:25]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_tomesd.py
+[05:25]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_clip_sdxl.py
+[05:25]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_canny.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_freelunch.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_custom_sampler.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hypertile.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_model_advanced.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_model_downscale.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_images.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_video_model.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_train.py
+[05:28]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\loras
+[05:28]   [ComfyUI] found 1 files
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_dataset.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_sag.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_perpneg.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_stable3d.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_sdupscale.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_photomaker.py
+[05:28]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\photomaker
+[05:28]   [ComfyUI] found 1 files
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_pixart.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_cond.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_morphology.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_stable_cascade.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_differential_diffusion.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_ip2p.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_model_merging_model_specific.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_pag.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_align_your_steps.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_attention_multiply.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_advanced_samplers.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_webcam.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_audio.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_sd3.py
+[05:28]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\text_encoders
+[05:28]   [ComfyUI] found 1 files
+[05:28]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\clip
+[05:28]   [ComfyUI] found 1 files
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_gits.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_controlnet.py
+[05:28]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hunyuan.py
+[05:29]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\latent_upscale_models
+[05:29]   [ComfyUI] found 1 files
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_eps.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_flux.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lora_extract.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_torch_compile.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_mochi.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_slg.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_mahiro.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lt_upsampler.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lt_audio.py
+[05:29]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\checkpoints
+[05:29]   [ComfyUI] found 1 files
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lt.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hooks.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_load_3d.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_cosmos.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_video.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lumina2.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_wan.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lotus.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hunyuan3d.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_primitive.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_cfg.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_optimalsteps.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_hidream.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_fresca.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_apg.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_preview_any.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_ace.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_string.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_camera_trajectory.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_edit_model.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_tcfg.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_context_windows.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_qwen.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_chroma_radiance.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_model_patch.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_easycache.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_audio_encoder.py
+[05:29]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\audio_encoders
+[05:29]   [ComfyUI] found 1 files
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_rope.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_logic.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_nop.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_kandinsky5.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_wanmove.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_image_compare.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_zimage.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_extras\nodes_lora_debug.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_bfl.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_bria.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_bytedance.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_gemini.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_grok.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_hunyuan3d.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_ideogram.py
+[05:29]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_kling.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_ltxv.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_luma.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_magnific.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_meshy.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_minimax.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_moonvalley.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_openai.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_pixverse.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_recraft.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_rodin.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_runway.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_sora.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_stability.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_topaz.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_tripo.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_veo2.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_vidu.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_wan.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\comfy_api_nodes\nodes_wavespeed.py
+[05:30]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack
+[05:30]   [ComfyUI] searching for blender in: C:\Program Files\mongosh\;C:\Program Files\PowerShell\7;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.17-10\x64\bin;C:\SeleniumWebDrivers\EdgeDriver\;C:\ProgramData\kind;C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps;C:\Windows\system32;C:\cabal\bin;C:\hostedtoolcache\windows\Ruby\3.3.10\x64\bin;C:\Program Files (x86)\pipx_bin;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\tools\kotlinc\bin;C:\Program Files\Git\cmd;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\GitHub CLI\;C:\mingw64\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\MongoDB\Server\7.0\bin;C:\Program Files (x86)\sbt\bin;C:\Program Files\R\R-4.5.2\bin\x64;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;c:\tools\php;C:\hostedtoolcache\windows\stack\3.9.1\x64;C:\Program Files\OpenSSL\bin;C:\Program Files (x86)\GitHub CLI;C:\ProgramData\chocolatey\lib\pulumi\tools\Pulumi\bin;C:\Program Files\CMake\bin;C:\Strawberry\c\bin;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.12\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Amazon\SessionManagerPlugin\bin\;C:\Program Files\Amazon\AWSCLIV2\;C:\hostedtoolcache\windows\Python\3.11.9\x64\Scripts;C:\Program Files\Microsoft SDKs\Service Fabric\Tools\ServiceFabricLocalClusterManager;C:\vcpkg;C:\Program Files (x86)\WiX Toolset v3.14\bin;C:\hostedtoolcache\windows\Python\3.12.10\x64\Scripts;C:\ProgramData\Chocolatey\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files (x86)\LLVM\bin;C:\Windows;C:\Program Files\PowerShell\7\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Users\runneradmin\.dotnet\tools;/c/Users/runneradmin/venv/venv/Scripts;C:\tools\zstd;C:\Program Files\Git\bin;C:\Program Files\LLVM\bin;C:\\ghcup\bin;C:\hostedtoolcache\windows\Python\3.11.9\x64;C:\Strawberry\perl\bin;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\170\DTS\Binn\;C:\Program Files\Git\usr\bin;C:\Windows\System32\Wbem;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\hostedtoolcache\windows\Python\3.12.10\x64;C:\Program Files\Microsoft Service Fabric\bin\Fabric\Fabric.Code;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Users\runneradmin\AppData\Roaming\Python\Python311\Scripts;C:\SeleniumWebDrivers\GeckoDriver;C:\Strawberry\perl\site\bin;C:\SeleniumWebDrivers\ChromeDriver;C:\Users\runneradmin\.cargo\bin;C:\npm\prefix;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files\ImageMagick-7.1.2-Q16-HDRI;C:\hostedtoolcache\windows\go\1.24.12\x64\bin;C:\Program Files\dotnet\
+[05:34]   [ComfyUI] [GeomPack] Main nodes loaded (50 nodes)
+[05:34]   [ComfyUI] [comfy-env] Wrapping 6 nodes from cgal
+[05:34]   [ComfyUI] [comfy-env]   site-packages: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\cgal\.pixi\envs\default\Lib\site-packages
+[05:34]   [ComfyUI] [comfy-env]   lib: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\cgal\.pixi\envs\default\Library\bin
+[05:34]   [ComfyUI] [comfy-env]   env_vars: KMP_DUPLICATE_LIB_OK=TRUE, OMP_NUM_THREADS=1
+[05:34]   [ComfyUI] [GeomPack] CGAL nodes loaded (6 nodes, isolated)
+[05:34]   [ComfyUI] [comfy-env] Wrapping 5 nodes from blender
+[05:34]   [ComfyUI] [comfy-env]   site-packages: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\blender\.pixi\envs\default\Lib\site-packages
+[05:34]   [ComfyUI] [comfy-env]   lib: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\blender\.pixi\envs\default\Library\bin
+[05:34]   [ComfyUI] [GeomPack] Blender nodes loaded (5 nodes, isolated)
+[05:34]   [ComfyUI] [comfy-env] Wrapping 1 nodes from gpu
+[05:34]   [ComfyUI] [comfy-env]   site-packages: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\gpu\.pixi\envs\default\Lib\site-packages
+[05:34]   [ComfyUI] [comfy-env]   lib: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\gpu\.pixi\envs\default\Library\bin
+[05:34]   [ComfyUI] [GeomPack] GPU nodes loaded (1 nodes, isolated)
+[05:34]   [ComfyUI] [GeomPack] Total nodes loaded: 62
+[05:34]   [ComfyUI] [GeometryPack] Generated widget mappings for 6 nodes (6 selectors)
+[05:34]   [ComfyUI] [GeomPack] Custom server routes registered
+[05:34]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig
+[05:35]   [ComfyUI] [UniRig] Models directory: C:\Users\runneradmin\venv\ComfyUI\models\unirig
+[05:35]   [ComfyUI] [UniRig] Main nodes loaded (2 nodes)
+[05:35]   [ComfyUI] [comfy-env] Wrapping 9 nodes from nodes_blender
+[05:35]   [ComfyUI] [comfy-env]   site-packages: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_blender\.pixi\envs\default\Lib\site-packages
+[05:35]   [ComfyUI] [comfy-env]   lib: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_blender\.pixi\envs\default\Library\bin
+[05:35]   [ComfyUI] [UniRig] nodes_blender loaded (9 nodes, isolated)
+[05:35]   [ComfyUI] [comfy-env] Wrapping 6 nodes from nodes_gpu
+[05:35]   [ComfyUI] [comfy-env]   site-packages: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_gpu\.pixi\envs\default\Lib\site-packages
+[05:35]   [ComfyUI] [comfy-env]   lib: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_gpu\.pixi\envs\default\Library\bin
+[05:35]   [ComfyUI] [UniRig] nodes_gpu loaded (6 nodes, isolated)
+[05:35]   [ComfyUI] [UniRig] Total nodes loaded: 17
+[05:35]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
+[05:35]   [ComfyUI] Trying to load custom node C:\Users\runneradmin\venv\ComfyUI\custom_nodes\websocket_image_save.py
+[05:35]   [ComfyUI] 
+[05:35]   [ComfyUI] Import times for custom nodes:
+[05:35]   [ComfyUI]    0.0 seconds: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
+[05:35]   [ComfyUI]    0.0 seconds: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\websocket_image_save.py
+[05:35]   [ComfyUI]    0.1 seconds: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-UniRig
+[05:35]   [ComfyUI]    4.4 seconds: C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack
+[05:35]   [ComfyUI] 
+[05:35]   [ComfyUI] Database URL: sqlite:///C:\Users\runneradmin\venv\ComfyUI\user\comfyui.db
+[05:35]   [ComfyUI] Context impl SQLiteImpl.
+[05:35]   [ComfyUI] Will assume non-transactional DDL.
+[05:35]   [ComfyUI] Context impl SQLiteImpl.
+[05:35]   [ComfyUI] Will assume non-transactional DDL.
+[05:35]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
+[05:35]   [ComfyUI] Revision ID: 0001_assets
+[05:35]   [ComfyUI] Revises: None
+[05:35]   [ComfyUI] Create Date: 2025-12-10 00:00:00
+[05:35]   [ComfyUI] new branch insert 0001_assets
+[05:35]   [ComfyUI] Database upgraded from None to 0001_assets
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\configs
+[05:35]   [ComfyUI] found 11 files
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\vae
+[05:35]   [ComfyUI] found 1 files
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\unet
+[05:35]   [ComfyUI] found 1 files
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\diffusion_models
+[05:35]   [ComfyUI] found 1 files
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\clip_vision
+[05:35]   [ComfyUI] found 1 files
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\style_models
+[05:35]   [ComfyUI] found 1 files
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\embeddings
+[05:35]   [ComfyUI] found 1 files
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\diffusers
+[05:35]   [ComfyUI] found 1 files
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\vae_approx
+[05:35]   [ComfyUI] found 1 files
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\controlnet
+[05:35]   [ComfyUI] found 1 files
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\gligen
+[05:35]   [ComfyUI] found 1 files
+[05:35]   [ComfyUI] recursive file list on directory C:\Users\runneradmin\venv\ComfyUI\models\model_patches
+[05:35]   [ComfyUI] found 1 files
+[05:35]   [ComfyUI] Assets scan(roots=['models']) completed in 0.078s (created=11, skipped_existing=0, total_seen=11)
+[05:35]   [ComfyUI] Found example workflow folder 'workflows' for custom node 'ComfyUI-GeometryPack', consider renaming it to 'example_workflows'
+[05:35]   [ComfyUI] Found example workflow folder 'workflows' for custom node 'ComfyUI-UniRig', consider renaming it to 'example_workflows'
+[05:35]   [ComfyUI] Starting server
+[05:35]   [ComfyUI] 
+[05:35]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
+[05:36] Server responding, waiting for nodes to load...
+[05:56] Server is ready!
+[05:56] 
+[05:56] [3/7] REGISTRATION
+[05:56] ----------------------------------------
+[05:56] Checking for import errors in server logs...
+[05:56] No import errors detected
+[05:56] [REGISTRATION] PASSED
+[05:56] Found 675 registered nodes
+[05:56] 
+[05:56] [4/7] INSTANTIATION
+[05:56] ----------------------------------------
+[05:56] Testing node constructors...
+[05:56] All 675 node(s) instantiated successfully!
+[05:56] [INSTANTIATION] PASSED
+[05:56] 
+[05:56] [5/7] STATIC_CAPTURE
+[05:56] ----------------------------------------
+[05:56] Capturing 5 static screenshot(s)...
+[05:56] Starting headless browser...
+[05:58]   [1/5] STATIC apply_animation.json
+[05:58] Capturing: apply_animation.json
+[05:58]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[05:58]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:00]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:00]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:00]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:00]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[06:00]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[06:01]   [ComfyUI] Feature flags negotiated for client 3eab034f628e47019bf4b19fd145195b: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[06:05]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A84017006C190000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[06:05]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[06:05]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[06:05]   [Console-warning] [.WebGL-0x222c0bf74700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[06:06]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[06:06]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[06:06]   [Console-warning] [.WebGL-0x222c0bf74700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[06:06]   [Console-warning] [.WebGL-0x222c0bf74700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[06:09]   Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\comfy-test-results\screenshots\apply_animation.png
+[06:09]   [2/5] STATIC rig_human_with_texture.json
+[06:09] Capturing: rig_human_with_texture.json
+[06:09]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:09]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:09]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:09]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:09]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:09]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[06:09]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[06:09]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[06:09]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[06:09]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[06:09]   [ComfyUI] Feature flags negotiated for client 3eab034f628e47019bf4b19fd145195b: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[06:10]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A84017006C190000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[06:10]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[06:10]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[06:10]   [Console-warning] [.WebGL-0x222c0bf7a900]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[06:10]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[06:10]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[06:11]   [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
+[06:12]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A84017006C190000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[06:15]   Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\comfy-test-results\screenshots\rig_human_with_texture.png
+[06:15]   [3/5] STATIC rig_human_with_texture_mia.json
+[06:15] Capturing: rig_human_with_texture_mia.json
+[06:15]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:15]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:15]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:15]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:16]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:16]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:16]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:16]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:16]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[06:16]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[06:16]   [ComfyUI] Feature flags negotiated for client 3eab034f628e47019bf4b19fd145195b: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[06:17]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:17]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[06:17]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:17]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[06:20]   Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\comfy-test-results\screenshots\rig_human_with_texture_mia.png
+[06:20]   [4/5] STATIC rig_human_with_texture_mia_debug.json
+[06:20] Capturing: rig_human_with_texture_mia_debug.json
+[06:21]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:21]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:21]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:21]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:21]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:21]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:21]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:21]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:21]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[06:21]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[06:21]   [ComfyUI] Feature flags negotiated for client 3eab034f628e47019bf4b19fd145195b: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[06:22]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:22]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[06:23]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:23]   [Console-error] [UniRig Compare] Failed to load bundle
+[06:26]   Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\comfy-test-results\screenshots\rig_human_with_texture_mia_debug.png
+[06:26]   [5/5] STATIC rigged_manipulator.json
+[06:26] Capturing: rigged_manipulator.json
+[06:26]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:26]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:26]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:26]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:26]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:26]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:26]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:26]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:26]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[06:26]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[06:27]   [ComfyUI] Feature flags negotiated for client 3eab034f628e47019bf4b19fd145195b: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[06:27]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:27]   [Console-error] [UniRig Compare] Failed to load bundle
+[06:28]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:28]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[06:31]   Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\comfy-test-results\screenshots\rigged_manipulator.png
+[06:31] [STATIC_CAPTURE] PASSED
+[06:31] 
+[06:31] [6/7] VALIDATION
+[06:31] ----------------------------------------
+[06:31] Validating 5 workflow(s)...
+[06:31] Starting headless browser...
+[06:32]   [1/5] Validating apply_animation.json
+[06:32]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:32]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:32]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:32]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:33]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:33]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:33]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:33]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:33]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[06:33]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[06:33]   [ComfyUI] Feature flags negotiated for client b878426d144b413289d33f8a282bbfd1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[06:34]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A8301900444D0000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[06:34]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[06:34]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[06:34]   [Console-warning] [.WebGL-0x2ce40bee4e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[06:35]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[06:35]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[06:35]   [Console-warning] [.WebGL-0x2ce40bee4e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[06:35]   [Console-warning] [.WebGL-0x2ce40bee4e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[06:35]   [ComfyUI] === /validate endpoint called ===
+[06:35]   [ComfyUI] Received JSON with keys: ['prompt']
+[06:35]   [ComfyUI] Prompt has 3 nodes
+[06:35]   [ComfyUI]   Node 6: UniRigApplyAnimation
+[06:35]   [ComfyUI] Failed to validate prompt for output 7:
+[06:35]   [ComfyUI]     Inputs: {"model_fbx_path": ["8", 0], "animation_type": "mixamo", "animation_file": "Breakdance.fbx", "output_name": ""}
+[06:35]   [ComfyUI] * UniRigLoadRiggedMesh 8:
+[06:35]   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
+[06:35]   [ComfyUI]   - Required input is missing: fbx_file
+[06:35]   [ComfyUI]   Node 7: Preview3D
+[06:35]   [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
+[06:35]     FAILED: Workflow validation failed
+
+Details:
+Prompt outputs failed validation
+Node errors:
+{
+  "8": {
+    "errors": [
+      {
+        "type": "required_input_missing",
+        "message": "Required input is missing",
+        "details": "fbx_file",
+        "extra_info": {
+          "input_name": "fbx_file"
+        }
+      }
+    ],
+    "dependent_outputs": [
+      "7",
+      "6"
+    ],
+    "class_type": "UniRigLoadRiggedMesh"
+  }
+}
+[06:35]   [ComfyUI] Output will be ignored
+[06:35]   [ComfyUI]   Node 8: UniRigLoadRiggedMesh
+[06:35]   [2/5] Validating rig_human_with_texture.json
+[06:35]   [ComfyUI] Failed to validate prompt for output 6:
+[06:35]   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
+[06:35]   [ComfyUI] Output will be ignored
+[06:35]   [ComfyUI] Generated prompt_id: 5ec466ee-b513-430f-839a-c6733e35b469
+[06:35]   [ComfyUI] Calling execution.validate_prompt()...
+[06:35]   [ComfyUI] Validation result: valid=False
+[06:35]   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
+[06:35]   [ComfyUI]   Node errors: {"8": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["7", "6"], "class_type": "UniRigLoadRiggedMesh"}}
+[06:35]   [ComfyUI] === Validation FAILED ===
+[06:35]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:35]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:35]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:35]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:35]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:36]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[06:36]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[06:36]   [Console-error] Error loading extension /extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/js/mesh_preview_fbx.js:319:19
+[06:36]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[06:36]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[06:36]   [ComfyUI] Feature flags negotiated for client b878426d144b413289d33f8a282bbfd1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[06:37]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A8001900444D0000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[06:37]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[06:37]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[06:37]   [Console-warning] [.WebGL-0x2ce40bee5500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[06:37]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[06:37]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[06:37]   [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
+[06:38]   [Console-warning] [GroupMarkerNotSet(crbug.com/242999)!:A8001900444D0000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+[06:39]   [ComfyUI] === /validate endpoint called ===
+[06:39]   [ComfyUI] Received JSON with keys: ['prompt']
+[06:39]   [ComfyUI] Prompt has 4 nodes
+[06:39]   [ComfyUI]   Node 10: UniRigPreviewRiggedMesh
+[06:39]   [ComfyUI]     Inputs: {"fbx_output_path": ["39", 0], "preview": ""}
+[06:39]   [ComfyUI]   Node 27: UniRigLoadMesh
+[06:39]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
+[06:39]   [ComfyUI]   Node 39: UniRigAutoRig
+[06:39]   [ComfyUI]     Inputs: {"skeleton_template": "mixamo", "fbx_name": "", "target_face_count": 50000, "trimesh": ["27", 0], "model": ["40", 0]}
+[06:39]   [ComfyUI]   Node 40: UniRigLoadModel
+[06:39]   [ComfyUI]     Inputs: {"cache_to_gpu": false}
+[06:39]   [ComfyUI] Generated prompt_id: 32c07900-f2cd-451d-93f6-fbb29a4b2f09
+[06:39]   [ComfyUI] Calling execution.validate_prompt()...
+[06:39]   [ComfyUI] Validation result: valid=True
+[06:39]   [ComfyUI] === Validation PASSED ===
+[06:39]     OK
+[06:39]   [3/5] Validating rig_human_with_texture_mia.json
+[06:39]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:39]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:39]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:39]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:39]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:39]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:39]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:39]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:39]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[06:39]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[06:39]   [ComfyUI] Feature flags negotiated for client b878426d144b413289d33f8a282bbfd1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[06:40]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:40]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[06:41]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:41]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[06:42]   [ComfyUI] === /validate endpoint called ===
+[06:42]   [ComfyUI] Received JSON with keys: ['prompt']
+[06:42]   [ComfyUI] Prompt has 9 nodes
+[06:42]   [ComfyUI]   Node 10: UniRigPreviewRiggedMesh
+[06:42]   [ComfyUI]     Inputs: {"fbx_output_path": ["42", 0], "preview": ""}
+[06:42]   [ComfyUI]   Node 27: UniRigLoadMesh
+[06:42]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
+[06:42]   [ComfyUI]   Node 41: MIALoadModel
+[06:42]     OK
+[06:42]   [ComfyUI]     Inputs: {"cache_to_gpu": true}
+[06:42]   [4/5] Validating rig_human_with_texture_mia_debug.json
+[06:42]   [ComfyUI]   Node 42: MIAAutoRig
+[06:42]   [ComfyUI]     Inputs: {"fbx_name": "rigatoni", "no_fingers": false, "use_normal": false, "reset_to_rest": true, "trimesh": ["45", 0], "model": ["41", 0]}
+[06:42]   [ComfyUI]   Node 43: UniRigOrientationCheck
+[06:42]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["45", 0]}
+[06:42]   [ComfyUI]   Node 44: PreviewImage
+[06:42]   [ComfyUI]     Inputs: {"images": ["43", 0]}
+[06:42]   [ComfyUI]   Node 45: GeomPackTransformMesh
+[06:42]   [ComfyUI]     Inputs: {"operation": "rotate", "translate_x": 0, "translate_y": -90, "translate_z": 0, "rotate_x": 0, "rotate_y": 0, "rotate_z": 0, "scale_uniform": 1, "scale_x": 1, "scale_y": 1, "scale_z": 1, "mirror_axis"
+[06:42]   [ComfyUI]   Node 46: UniRigOrientationCheck
+[06:42]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["27", 0]}
+[06:42]   [ComfyUI]   Node 47: PreviewImage
+[06:42]   [ComfyUI]     Inputs: {"images": ["46", 0]}
+[06:42]   [ComfyUI] Generated prompt_id: e0399442-68c6-48c8-b97f-595065e5c6ac
+[06:42]   [ComfyUI] Calling execution.validate_prompt()...
+[06:42]   [ComfyUI] Validation result: valid=True
+[06:42]   [ComfyUI] === Validation PASSED ===
+[06:42]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:42]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:42]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:42]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:42]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:42]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:42]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:42]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:42]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[06:42]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[06:42]   [ComfyUI] Feature flags negotiated for client b878426d144b413289d33f8a282bbfd1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[06:43]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:43]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[06:44]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:44]   [Console-error] [UniRig Compare] Failed to load bundle
+[06:45]   [ComfyUI] === /validate endpoint called ===
+[06:45]   [ComfyUI] Received JSON with keys: ['prompt']
+[06:45]   [ComfyUI] Prompt has 11 nodes
+[06:45]   [ComfyUI]   Node 27: UniRigLoadMesh
+[06:45]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
+[06:45]   [ComfyUI]   Node 41: MIALoadModel
+[06:45]   [ComfyUI]     Inputs: {"cache_to_gpu": true}
+[06:45]   [ComfyUI]   Node 42: MIAAutoRig
+[06:45]   [ComfyUI]     Inputs: {"fbx_name": "rigatoni", "no_fingers": false, "use_normal": false, "reset_to_rest": true, "trimesh": ["45", 0], "model": ["41", 0]}
+[06:45]     OK
+[06:45]   [ComfyUI]   Node 43: UniRigOrientationCheck
+[06:45]   [5/5] Validating rigged_manipulator.json
+[06:45]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["45", 0]}
+[06:45]   [ComfyUI]   Node 44: PreviewImage
+[06:45]   [ComfyUI]     Inputs: {"images": ["43", 0]}
+[06:45]   [ComfyUI]   Node 45: GeomPackTransformMesh
+[06:45]   [ComfyUI]     Inputs: {"operation": "rotate", "translate_x": 0, "translate_y": 0, "translate_z": 0, "rotate_x": 0, "rotate_y": 0, "rotate_z": 0, "scale_uniform": 1, "scale_x": 1, "scale_y": 1, "scale_z": 1, "mirror_axis":
+[06:45]   [ComfyUI]   Node 46: UniRigOrientationCheck
+[06:45]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["27", 0]}
+[06:45]   [ComfyUI]   Node 47: PreviewImage
+[06:45]   [ComfyUI]     Inputs: {"images": ["46", 0]}
+[06:45]   [ComfyUI]   Node 49: UniRigCompareSkeletons
+[06:45]   [ComfyUI]     Inputs: {"fbx_path_left": ["42", 0], "fbx_path_right": ["51", 0], "preview": ""}
+[06:45]   [ComfyUI]   Node 50: UniRigLoadMesh
+[06:45]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/mixamo.fbx"}
+[06:45]   [ComfyUI]   Node 51: PrimitiveString
+[06:45]   [ComfyUI]     Inputs: {"value": "/home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx"}
+[06:45]   [ComfyUI] Generated prompt_id: 535ad0ca-56cd-4cbd-ae3b-da9520f0812a
+[06:45]   [ComfyUI] Calling execution.validate_prompt()...
+[06:45]   [ComfyUI] Validation result: valid=True
+[06:45]   [ComfyUI] === Validation PASSED ===
+[06:45]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:45]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:45]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:45]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:45]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:45]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/compare_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:45]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:45]   [Console-error] Error loading extension /extensions/ComfyUI-UniRig/js/debug_skeleton_widget.js Error: Extension named 'unirig.fbxpreview' already registered.
+    at Proxy.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:83:1634)
+    at Proxy.wrappedAction (http://127.0.0.1:8188/assets/vendor-vue-DaLZjKA7.js:8:5819)
+    at Object.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:86:51130)
+    at ComfyApp.registerExtension (http://127.0.0.1:8188/assets/index-BFHZsBkN.js:280:21199)
+    at createFBXPreviewExtension (http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:107:9)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:37
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:8188/extensions/ComfyUI-UniRig/js/mesh_preview_fbx.js:319:19
+[06:45]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[06:45]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[06:45]   [ComfyUI] Feature flags negotiated for client b878426d144b413289d33f8a282bbfd1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[06:46]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:46]   [Console-error] [UniRig Compare] Failed to load bundle
+[06:47]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[06:47]   [Console-error] [FBX Viewer] Failed to load bundle from: http://127.0.0.1:8188/extensions/ComfyUI-GeometryPack/three/viewer-bundle.js
+[06:48]   [ComfyUI] === /validate endpoint called ===
+[06:48]   [ComfyUI] Received JSON with keys: ['prompt']
+[06:48]   [ComfyUI] Failed to validate prompt for output 3:
+[06:48]   [ComfyUI] Prompt has 2 nodes
+[06:48]   [ComfyUI] * UniRigLoadRiggedMesh 1:
+[06:48]   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
+[06:48]   [ComfyUI]   Node 1: UniRigLoadRiggedMesh
+[06:48]   [ComfyUI]   - Required input is missing: fbx_file
+[06:48]   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
+[06:48]     FAILED: Workflow validation failed
+
+Details:
+Prompt outputs failed validation
+Node errors:
+{
+  "1": {
+    "errors": [
+      {
+        "type": "required_input_missing",
+        "message": "Required input is missing",
+        "details": "fbx_file",
+        "extra_info": {
+          "input_name": "fbx_file"
+        }
+      }
+    ],
+    "dependent_outputs": [
+      "3"
+    ],
+    "class_type": "UniRigLoadRiggedMesh"
+  }
+}
+[06:48]   [ComfyUI]   Node 3: UniRigPreviewRiggedMesh
+[06:48]   [ComfyUI] Output will be ignored
+[06:48]   [ComfyUI]     Inputs: {"fbx_output_path": ["1", 0], "preview": ""}
+[06:48]   [ComfyUI] Generated prompt_id: ace4812a-1da6-4fa3-95a9-8711500669bf
+[06:48]   [ComfyUI] Calling execution.validate_prompt()...
+[06:48]   [ComfyUI] Validation result: valid=False
+[06:48]   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
+[06:48]   [ComfyUI]   Node errors: {"1": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["3"], "class_type": "UniRigLoadRiggedMesh"}}
+[06:48]   [ComfyUI] === Validation FAILED ===
+[06:48] Stopping ComfyUI server...
+[06:48] Tearing down Windows isolation...
+[06:48]   Environment restored
+[06:48]   Isolation torn down
+[06:48] 
 windows: FAILED
-[08:40] Error: Node import failed (2 error(s))
-[08:40] Details: Cannot import C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack module for custom nodes: No module named 'pymeshfix'
-   1.3 seconds (IMPORT FAILED): C:\Users\runneradmin\venv\ComfyUI\custom_nodes\ComfyUI-GeometryPack
+[06:48] Error: Workflow validation failed (2 error(s))
+[06:48] Details:   - apply_animation.json: Workflow validation failed
+
+Details:
+Prompt outputs failed validation
+Node errors:
+{
+  "8": {
+    "errors": [
+      {
+        "type": "required_input_missing",
+        "message": "Required input is missing",
+        "details": "fbx_file",
+        "extra_info": {
+          "input_name": "fbx_file"
+        }
+      }
+    ],
+    "dependent_outputs": [
+      "7",
+      "6"
+    ],
+    "class_type": "UniRigLoadRiggedMesh"
+  }
+}
+  - rigged_manipulator.json: Workflow validation failed
+
+Details:
+Prompt outputs failed validation
+Node errors:
+{
+  "1": {
+    "errors": [
+      {
+        "type": "required_input_missing",
+        "message": "Required input is missing",
+        "details": "fbx_file",
+        "extra_info": {
+          "input_name": "fbx_file"
+        }
+      }
+    ],
+    "dependent_outputs": [
+      "3"
+    ],
+    "class_type": "UniRigLoadRiggedMesh"
+  }
+}

@@ -13,79 +13,73 @@
 [00:00] Installing custom node...
 [00:00] Linking ComfyUI-UniRig to custom_nodes/...
 [00:00] Installing node requirements...
-[00:00] Running: /Users/runner/venv/venv/bin/python3.13 -m uv pip install -r /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
+[00:00] Running: /Users/runner/venv/venv/bin/python3.11 -m uv pip install -r /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
 [00:02] Running install.py...
-[00:02] Running: /Users/runner/venv/venv/bin/python3.13 /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
-[00:43]   [apt] Skipping apt packages (not Linux)
-[00:43]   
-[00:43]   Installing 1 node dependencies...
-[00:43]     Cloning ComfyUI-GeometryPack from https://github.com/PozzettiAndrea/ComfyUI-GeometryPack...
-[00:43]     Installing requirements for ComfyUI-GeometryPack...
-[00:43]     Running install.py for ComfyUI-GeometryPack...
-[00:43]   No packages to install
-[00:43]   
-[00:43]   [isolated] Installing: nodes/nodes_gpu
-[00:43]   Generated /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/nodes_gpu/pixi.toml
-[00:43]   Running pixi install...
-[00:43]   pixi install failed:
-[00:43]    WARN Encountered 1 warning while parsing the manifest:
-[00:43]     ⚠ The target selector 'linux-64' does not match any of the platforms supported by the workspace
-[00:43]       ╭─[/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/nodes_gpu/pixi.toml:27:9]
-[00:43]    26 │     
-[00:43]    27 │     [target.linux-64.pypi-dependencies]
-[00:43]       ·             ────┬───
-[00:43]       ·                 ╰── target selector specified here
-[00:43]    28 │     triton = ">=3.0.0"
-[00:43]    29 │     
-[00:43]    30 │     [workspace]
-[00:43]    31 │     name = "nodes_gpu"
-[00:43]    32 │     version = "0.1.0"
-[00:43]    33 │     channels = [
-[00:43]    34 │         "conda-forge",
-[00:43]    35 │     ]
-[00:43]    36 │ ╭─▶ platforms = [
-[00:43]    37 │ │       "osx-arm64",
-[00:43]    38 │ ├─▶ ]
-[00:43]       · ╰──── the platforms supported by the workspace are defined here
-[00:43]    39 │     
-[00:43]       ╰────
-[00:43]     help: Add linux-64 to the supported platforms, using `pixi project platform add linux-64`
-[00:43]   
-[00:43]   Error:   × failed to solve the pypi requirements of environment 'default' for platform 'osx-arm64'
-[00:43]     ├─▶ failed to resolve pypi dependencies
-[00:43]     ├─▶ Failed to download and build `cumm==0.1.0`
-[00:43]     ├─▶ The build backend returned an error
-[00:43]     ╰─▶ Call to `setuptools.build_meta.build_wheel` failed (exit status: 1)
-[00:43]   
-[00:43]         [31m[stderr][39m
-[00:43]         Traceback (most recent call last):
-[00:43]           File "<string>", line 14, in <module>
-[00:43]             requires = get_requires_for_build({})
-[00:43]           File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpEdOgL4/lib/python3.13/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
-[00:43]             return self._get_build_requires(config_settings, requirements=[])
-[00:43]                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[00:43]           File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpEdOgL4/lib/python3.13/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
-[00:43]             self.run_setup()
-[00:43]             ~~~~~~~~~~~~~~^^
-[00:43]           File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpEdOgL4/lib/python3.13/site-packages/setuptools/build_meta.py", line 317, in run_setup
-[00:43]             exec(code, locals())
-[00:43]             ~~~~^^^^^^^^^^^^^^^^
-[00:43]           File "<string>", line 62, in <module>
-[00:43]         FileNotFoundError: [Errno 2] No such file or directory: 'version.txt'
-[00:43]   
-[00:43]         [36m[1mhint[0m[39m[1m:[0m This usually indicates a problem with the package or the build environment.
-[00:43] Command failed with code 1
-[00:43] stderr: Traceback (most recent call last):
+[00:02] Running: /Users/runner/venv/venv/bin/python3.11 /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
+[01:07]   [apt] Skipping apt packages (not Linux)
+[01:07]   
+[01:07]   Installing 1 node dependencies...
+[01:07]     Cloning ComfyUI-GeometryPack from https://github.com/PozzettiAndrea/ComfyUI-GeometryPack...
+[01:07]     Installing requirements for ComfyUI-GeometryPack...
+[01:07]     Running install.py for ComfyUI-GeometryPack...
+[01:07]   No packages to install
+[01:07]   
+[01:07]   [isolated] Installing: nodes/nodes_gpu
+[01:07]   Generated /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/nodes_gpu/pixi.toml
+[01:07]   Running pixi install...
+[01:07]   pixi install failed:
+[01:07]    WARN Encountered 1 warning while parsing the manifest:
+[01:07]     ⚠ The target selector 'linux-64' does not match any of the platforms supported by the workspace
+[01:07]       ╭─[/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/nodes_gpu/pixi.toml:27:9]
+[01:07]    26 │     
+[01:07]    27 │     [target.linux-64.pypi-dependencies]
+[01:07]       ·             ────┬───
+[01:07]       ·                 ╰── target selector specified here
+[01:07]    28 │     triton = ">=3.0.0"
+[01:07]    29 │     
+[01:07]    30 │     [workspace]
+[01:07]    31 │     name = "nodes_gpu"
+[01:07]    32 │     version = "0.1.0"
+[01:07]    33 │     channels = [
+[01:07]    34 │         "conda-forge",
+[01:07]    35 │     ]
+[01:07]    36 │ ╭─▶ platforms = [
+[01:07]    37 │ │       "osx-arm64",
+[01:07]    38 │ ├─▶ ]
+[01:07]       · ╰──── the platforms supported by the workspace are defined here
+[01:07]    39 │     
+[01:07]       ╰────
+[01:07]     help: Add linux-64 to the supported platforms, using `pixi project platform add linux-64`
+[01:07]   
+[01:07]   Error:   × failed to solve the pypi requirements of environment 'default' for platform 'osx-arm64'
+[01:07]     ├─▶ failed to resolve pypi dependencies
+[01:07]     ├─▶ Failed to download and build `cumm==0.1.0`
+[01:07]     ├─▶ The build backend returned an error
+[01:07]     ╰─▶ Call to `setuptools.build_meta.build_wheel` failed (exit status: 1)
+[01:07]   
+[01:07]         [31m[stderr][39m
+[01:07]         Traceback (most recent call last):
+[01:07]           File "<string>", line 14, in <module>
+[01:07]           File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmphqSv21/lib/python3.11/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+[01:07]             return self._get_build_requires(config_settings, requirements=[])
+[01:07]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[01:07]           File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmphqSv21/lib/python3.11/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+[01:07]             self.run_setup()
+[01:07]           File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmphqSv21/lib/python3.11/site-packages/setuptools/build_meta.py", line 317, in run_setup
+[01:07]             exec(code, locals())
+[01:07]           File "<string>", line 62, in <module>
+[01:07]         FileNotFoundError: [Errno 2] No such file or directory: 'version.txt'
+[01:07]   
+[01:07]         [36m[1mhint[0m[39m[1m:[0m This usually indicates a problem with the package or the build environment.
+[01:07] Command failed with code 1
+[01:07] stderr: Traceback (most recent call last):
   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py", line 2, in <module>
     install()
-    ~~~~~~~^^
-  File "/Users/runner/venv/venv/lib/python3.13/site-packages/comfy_env/install.py", line 74, in install
+  File "/Users/runner/venv/venv/lib/python3.11/site-packages/comfy_env/install.py", line 74, in install
     _install_isolated_subdirs(node_dir, log, dry_run)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/runner/venv/venv/lib/python3.13/site-packages/comfy_env/install.py", line 318, in _install_isolated_subdirs
+  File "/Users/runner/venv/venv/lib/python3.11/site-packages/comfy_env/install.py", line 318, in _install_isolated_subdirs
     pixi_install(sub_cfg, sub_dir, log)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/runner/venv/venv/lib/python3.13/site-packages/comfy_env/pixi/core.py", line 472, in pixi_install
+  File "/Users/runner/venv/venv/lib/python3.11/site-packages/comfy_env/pixi/core.py", line 472, in pixi_install
 RuntimeError: pixi install failed:  WARN Encountered 1 warning while parsing the manifest:
   ⚠ The target selector 'linux-64' does not match any of the platforms supported by the workspace
     ╭─[/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/nodes_gpu/pixi.toml:27:9]
@@ -118,16 +112,13 @@ Error:   × failed to solve the pypi requirements of environment 'default' for p
       [31m[stderr][39m
       Traceback (most recent call last):
         File "<string>", line 14, in <module>
-          requires = get_requires_for_build({})
-        File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpEdOgL4/lib/python3.13/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+        File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmphqSv21/lib/python3.11/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
           return self._get_build_requires(config_settings, requirements=[])
-                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpEdOgL4/lib/python3.13/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmphqSv21/lib/python3.11/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
           self.run_setup()
-          ~~~~~~~~~~~~~~^^
-        File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpEdOgL4/lib/python3.13/site-packages/setuptools/build_meta.py", line 317, in run_setup
+        File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmphqSv21/lib/python3.11/site-packages/setuptools/build_meta.py", line 317, in run_setup
           exec(code, locals())
-          ~~~~^^^^^^^^^^^^^^^^
         File "<string>", line 62, in <module>
       FileNotFoundError: [Errno 2] No such file or directory: 'version.txt'
 
@@ -135,6 +126,6 @@ Error:   × failed to solve the pypi requirements of environment 'default' for p
 
 
 
-[00:43] 
+[01:07] 
 macos: FAILED (unexpected error)
-[00:43] Error: Command '['/Users/runner/venv/venv/bin/python3.13', '/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py']' returned non-zero exit status 1.
+[01:07] Error: Command '['/Users/runner/venv/venv/bin/python3.11', '/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py']' returned non-zero exit status 1.
