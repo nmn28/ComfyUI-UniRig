@@ -35,14 +35,9 @@ class MIALoadModel:
     CATEGORY = "UniRig/MIA"
 
     def load_models(self, cache_to_gpu=True):
-        """Load and cache MIA models."""
-        # Lazy imports - only run in isolated worker
-        from mia_inference import load_mia_models
-
-        print(f"[MIALoadModel] Loading Make-It-Animatable models...")
-        print(f"[MIALoadModel] GPU caching: {'enabled' if cache_to_gpu else 'disabled'}")
-
-        models = load_mia_models(cache_to_gpu=cache_to_gpu)
-
-        print(f"[MIALoadModel] Models loaded successfully")
-        return (models,)
+        """Return MIA config. Models are loaded by MIAAutoRig when needed."""
+        print(f"[MIALoadModel] MIA config: cache_to_gpu={cache_to_gpu}")
+        return ({
+            "backend": "mia",
+            "cache_to_gpu": cache_to_gpu,
+        },)

@@ -99,7 +99,7 @@ def ensure_mia_models() -> bool:
         return False
 
 
-def load_mia_models(cache_to_gpu: bool = True) -> Dict[str, Any]:
+def load_mia_models(cache_to_gpu: bool = True) -> str:
     """
     Load all MIA models into memory.
 
@@ -107,7 +107,7 @@ def load_mia_models(cache_to_gpu: bool = True) -> Dict[str, Any]:
         cache_to_gpu: If True, keep models on GPU for faster inference.
 
     Returns:
-        Dictionary containing loaded models and metadata.
+        Cache key string (models stay in worker, can't be pickled to host).
     """
     global _MIA_MODEL_CACHE
 
@@ -115,7 +115,7 @@ def load_mia_models(cache_to_gpu: bool = True) -> Dict[str, Any]:
 
     if cache_key in _MIA_MODEL_CACHE:
         print(f"[MIA] Using cached models")
-        return _MIA_MODEL_CACHE[cache_key]
+        return cache_key  # Return key, not models
 
     # Ensure models are downloaded
     if not ensure_mia_models():
@@ -219,7 +219,14 @@ def load_mia_models(cache_to_gpu: bool = True) -> Dict[str, Any]:
     _MIA_MODEL_CACHE[cache_key] = models
     print(f"[MIA] All models loaded successfully")
 
-    return models
+    return cache_key  # Return key, not models (models can't be pickled to host)
+
+
+def get_cached_models(cache_key: str) -> Dict[str, Any]:
+    """Get models from cache by key."""
+    if cache_key not in _MIA_MODEL_CACHE:
+        raise RuntimeError(f"Models not loaded: {cache_key}")
+    return _MIA_MODEL_CACHE[cache_key]
 
 
 def run_mia_inference(
