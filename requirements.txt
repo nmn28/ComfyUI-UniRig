@@ -1,7 +1,7 @@
 # Environment manager (handles isolated environment and CUDA packages)
 comfy-env>=0.1.8
 comfy-3d-viewers==0.2.0
-trimesh = "*"
-numpy = "*"
-scipy = "*"
-libigl = "*"
+trimesh[easy]
+numpy
+scipy
+libigl
