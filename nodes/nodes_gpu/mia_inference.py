@@ -28,7 +28,7 @@ import trimesh
 # Get paths relative to this file
 UTILS_DIR = Path(__file__).parent.absolute()
 NODE_DIR = UTILS_DIR.parent
-LIB_DIR = NODE_DIR / "nodes" / "lib"  # lib is inside nodes/
+LIB_DIR = UTILS_DIR  # mia/ is in nodes_gpu/ (same directory as this file)
 
 # MIA models directory (downloaded from HuggingFace)
 # Stored in ComfyUI's models folder: ComfyUI/models/mia/
