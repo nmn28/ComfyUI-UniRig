@@ -1,76 +1,53 @@
 [00:00] Crash dump logging enabled: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\crash_dump.log
 [00:00] 
-[00:00] [1/4] SYNTAX
+[00:00] [1/6] SYNTAX
 [00:00] ----------------------------------------
 [00:00] Found pyproject.toml (modern format)
 [00:00] Found requirements.txt (legacy format)
 [00:02] Unicode check: OK (all characters cp1252-safe)
 [00:02] [SYNTAX] PASSED
 [00:02] Setting up Windows isolation...
-[00:02]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_7vqqo0p4\temp
+[00:02]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_z89sk3v1\temp
 [00:02]   Cleared 1 env var(s): COMFYUI_DIR
 [00:02]   Isolation active
 [00:02] 
-[00:02] [2/4] INSTALL
+[00:02] [2/6] INSTALL
 [00:02] ----------------------------------------
 [00:02] Using existing ComfyUI: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI
 [00:02] Node already installed, skipping installation
 [00:02] Installing validation endpoint...
 [00:02]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
 [00:02] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-[00:05] [INSTALL] PASSED
-[00:05] COMFY_TEST_GPU env var = ''
-[00:05] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
-[00:05] 
+[00:04] [INSTALL] PASSED
+[00:04] COMFY_TEST_GPU env var = ''
+[00:04] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
+[00:04] 
 Connecting to existing server at http://localhost:8188...
-[00:05] Connecting to existing server at http://localhost:8188...
-[00:07] Connected to server!
-[00:07] 
-[00:07] [3/4] REGISTRATION
-[00:07] ----------------------------------------
-[00:07] Checking for import errors in server logs...
-[00:07] No import errors detected
-[00:07] [REGISTRATION] PASSED
-[00:07] Found 675 registered nodes
-[00:07] 
-[4/4] INSTANTIATION: SKIPPED
-[00:07] 
-[5/4] STATIC_CAPTURE: SKIPPED
-[00:07] 
-[6/4] VALIDATION: SKIPPED
-[00:07] 
-[00:07] [7/4] EXECUTION
-[00:07] ----------------------------------------
-[00:07] No GPU detected - GPU workflows will be skipped
-[00:07] Running 5 workflow(s) (all with videos)...
-[00:07] Installing screenshot dependencies (playwright, pillow)...
-[00:14]   Packages installed, downloading chromium browser...
-[00:15]   Screenshot dependencies installed successfully
-[01:05] Results saved to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\results.json
-[01:05] Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\index.html
-[01:05] Tearing down Windows isolation...
-[01:05]   Environment restored
-[01:05]   Isolation torn down
-[01:05] 
+[00:04] Connecting to existing server at http://localhost:8188...
+[00:06] Connected to server!
+[00:06] 
+[00:06] [3/6] REGISTRATION
+[00:06] ----------------------------------------
+[00:06] Checking for import errors in server logs...
+[00:06] No import errors detected
+[00:06] [REGISTRATION] PASSED
+[00:06] Found 675 registered nodes
+[00:06] 
+[00:06] [4/6] INSTANTIATION
+[00:06] ----------------------------------------
+[00:06] Testing node constructors...
+[00:09] Tearing down Windows isolation...
+[00:09]   Environment restored
+[00:09]   Isolation torn down
+[00:09] 
 windows_portable: FAILED
-[01:05] Error: Workflow execution failed (5 error(s))
-[01:05] Details: apply_animation.json: Workflow validation failed
+[00:09] Error: Instantiation test failed
+[00:09] Details: stdout: [UniRig] Models directory: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\models\unirig
+[UniRig] Main nodes loaded (2 nodes)
+[comfy-env] Warning: Isolated environment not found
+[comfy-env] Expected: .pixi/envs/default or .venv
+[comfy-env] Run 'comfy-env install' in D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes
+[UniRig] Isolated nodes loaded (15 nodes)
+[UniRig] Total nodes loaded: 17
 
-Details:
-SyntaxError: Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)
-rig_human_with_texture.json: Workflow validation failed
-
-Details:
-SyntaxError: Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)
-rig_human_with_texture_mia.json: Workflow validation failed
-
-Details:
-SyntaxError: Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)
-rig_human_with_texture_mia_debug.json: Workflow validation failed
-
-Details:
-SyntaxError: Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)
-rigged_manipulator.json: Workflow validation failed
-
-Details:
-SyntaxError: Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)
+stderr: 
