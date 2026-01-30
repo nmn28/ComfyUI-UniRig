@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-30T16:55:21.153069+00:00",
+  "timestamp": "2026-01-30T17:04:04.896620+00:00",
   "platform": "windows",
   "hardware": {
     "os": "Windows-2025Server-10.0.26100-SP0",
@@ -14,42 +14,42 @@
     {
       "name": "apply_animation",
       "status": "fail",
-      "duration_seconds": 10.1,
-      "error": "Workflow validation failed\n\nDetails:\nPrompt outputs failed validation\nNode errors:\n{\n  \"8\": {\n    \"errors\": [\n      {\n        \"type\": \"required_input_missing\",\n        \"message\": \"Required input is missing\",\n        \"details\": \"fbx_file\",\n        \"extra_info\": {\n          \"input_name\": \"fbx_file\"\n        }\n      }\n    ],\n    \"dependent_outputs\": [\n      \"6\",\n      \"7\"\n    ],\n    \"class_type\": \"UniRigLoadRiggedMesh\"\n  }\n}",
+      "duration_seconds": 9.87,
+      "error": "Workflow validation failed\n\nDetails:\nPrompt outputs failed validation\nNode errors:\n{\n  \"8\": {\n    \"errors\": [\n      {\n        \"type\": \"required_input_missing\",\n        \"message\": \"Required input is missing\",\n        \"details\": \"fbx_file\",\n        \"extra_info\": {\n          \"input_name\": \"fbx_file\"\n        }\n      }\n    ],\n    \"dependent_outputs\": [\n      \"7\",\n      \"6\"\n    ],\n    \"class_type\": \"UniRigLoadRiggedMesh\"\n  }\n}",
       "hardware": {
         "os": "Windows-2025Server-10.0.26100-SP0",
         "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
       },
       "resources": {
         "cpu": {
-          "peak": 2.62,
-          "avg": 1.69
+          "peak": 1.72,
+          "avg": 0.97
         },
         "ram": {
           "peak": 5.09,
-          "avg": 4.9
+          "avg": 4.93
         },
         "cpu_count": 4,
         "total_ram_gb": 16.0,
-        "samples": 10
+        "samples": 9
       }
     },
     {
       "name": "rig_human_with_texture",
       "status": "fail",
-      "duration_seconds": 8.87,
-      "error": "Workflow execution failed: {'prompt_id': 'd1838bc5-363f-4b38-adf5-e3405260265a', 'node_id': '39', 'node_type': 'UniRigAutoRig', 'executed': ['40', '27'], 'exception_message': 'skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.\\n', 'exception_type': 'RuntimeError', 'traceback': ['  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 518, in execute\\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 329, in get_output_data\\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 303, in _async_map_node_over_list\\n    await process_inputs(input_dict, i)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 291, in process_inputs\\n    result = f(**inputs)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\auto_rig.py\", line 89, in auto_rig\\n    normalized_mesh, skeleton, texture_preview = skeleton_extractor.extract(\\n                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n        trimesh=trimesh,\\n        ^^^^^^^^^^^^^^^^\\n    ...<3 lines>...\\n        target_face_count=target_face_count\\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n    )\\n    ^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\skeleton_extraction.py\", line 310, in extract\\n    raise RuntimeError(\\n    ...<2 lines>...\\n    )\\n'], 'current_inputs': {'skeleton_template': ['mixamo'], 'fbx_name': [''], 'target_face_count': [50000], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': [\"{'skeleton_model': {'type': 'skeleton', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\custom_nodes\\\\\\\\ComfyUI-UniRig\\\\\\\\nodes\\\\\\\\unirig\\\\\\\\configs/task/quick_inference_skeleton_articulationxl_ar_256.yaml', 'unirig_path': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\custom_nodes\\\\\\\\ComfyUI-UniRig\\\\\\\\nodes\\\\\\\\unirig', 'models_dir': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\models\\\\\\\\unirig', 'cached': False, 'model_cache_key': None}, 'skinning_model': {'type': 'skinning', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\custom_nodes\\\\\\\\ComfyUI-UniRig\\\\\\\\nodes\\\\\\\\unirig\\\\\\\\configs/task/quick_inference_unirig_skin.yaml', 'unirig_path': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\custom_nodes\\\\\\\\ComfyUI-UniRig\\\\\\\\nodes\\\\\\\\unirig', 'models_dir': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\models\\\\\\\\unirig', 'cached': False, 'model_cache_key': None}, 'model_id': 'apozz/UniRig-safetensors', 'cache_to_gpu': False}\"]}, 'current_outputs': ['40', '27', '10', '39'], 'timestamp': 1769792095644}\n\nDetails:\nWorkflow: D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\workflows\\rig_human_with_texture.json\nNode error: UniRigAutoRig",
+      "duration_seconds": 8.0,
+      "error": "Workflow execution failed: {'prompt_id': '57029ab6-dee1-4058-94ae-0977e0001d67', 'node_id': '39', 'node_type': 'UniRigAutoRig', 'executed': ['40', '27'], 'exception_message': 'skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.\\n', 'exception_type': 'RuntimeError', 'traceback': ['  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 518, in execute\\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 329, in get_output_data\\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 303, in _async_map_node_over_list\\n    await process_inputs(input_dict, i)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 291, in process_inputs\\n    result = f(**inputs)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\auto_rig.py\", line 89, in auto_rig\\n    normalized_mesh, skeleton, texture_preview = skeleton_extractor.extract(\\n                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^\\n        trimesh=trimesh,\\n        ^^^^^^^^^^^^^^^^\\n    ...<3 lines>...\\n        target_face_count=target_face_count\\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n    )\\n    ^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\skeleton_extraction.py\", line 310, in extract\\n    raise RuntimeError(\\n    ...<2 lines>...\\n    )\\n'], 'current_inputs': {'skeleton_template': ['mixamo'], 'fbx_name': [''], 'target_face_count': [50000], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': [\"{'skeleton_model': {'type': 'skeleton', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\custom_nodes\\\\\\\\ComfyUI-UniRig\\\\\\\\nodes\\\\\\\\unirig\\\\\\\\configs/task/quick_inference_skeleton_articulationxl_ar_256.yaml', 'unirig_path': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\custom_nodes\\\\\\\\ComfyUI-UniRig\\\\\\\\nodes\\\\\\\\unirig', 'models_dir': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\models\\\\\\\\unirig', 'cached': False, 'model_cache_key': None}, 'skinning_model': {'type': 'skinning', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\custom_nodes\\\\\\\\ComfyUI-UniRig\\\\\\\\nodes\\\\\\\\unirig\\\\\\\\configs/task/quick_inference_unirig_skin.yaml', 'unirig_path': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\custom_nodes\\\\\\\\ComfyUI-UniRig\\\\\\\\nodes\\\\\\\\unirig', 'models_dir': 'D:\\\\\\\\a\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI-UniRig\\\\\\\\ComfyUI\\\\\\\\models\\\\\\\\unirig', 'cached': False, 'model_cache_key': None}, 'model_id': 'apozz/UniRig-safetensors', 'cache_to_gpu': False}\"]}, 'current_outputs': ['10', '40', '39', '27'], 'timestamp': 1769792620160}\n\nDetails:\nWorkflow: D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\workflows\\rig_human_with_texture.json\nNode error: UniRigAutoRig",
       "hardware": {
         "os": "Windows-2025Server-10.0.26100-SP0",
         "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
       },
       "resources": {
         "cpu": {
-          "peak": 4.0,
-          "avg": 3.18
+          "peak": 3.83,
+          "avg": 2.56
         },
         "ram": {
-          "peak": 5.62,
+          "peak": 5.47,
           "avg": 5.25
         },
         "cpu_count": 4,
@@ -60,8 +60,8 @@
     {
       "name": "rig_human_with_texture_mia",
       "status": "fail",
-      "duration_seconds": 10.33,
-      "error": "Workflow execution failed: {'prompt_id': '0b3740f4-1da1-4d10-8c88-13f3fc5b54f4', 'node_id': '42', 'node_type': 'MIAAutoRig', 'executed': ['45', '44', '46', '43', '41', '47', '27'], 'exception_message': \"No module named 'mia_inference'\\n\", 'exception_type': 'ModuleNotFoundError', 'traceback': ['  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 518, in execute\\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 329, in get_output_data\\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 303, in _async_map_node_over_list\\n    await process_inputs(input_dict, i)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 291, in process_inputs\\n    result = f(**inputs)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\mia_auto_rig.py\", line 81, in auto_rig\\n    from mia_inference import load_mia_models, get_cached_models, run_mia_inference\\n'], 'current_inputs': {'fbx_name': ['rigatoni'], 'no_fingers': [False], 'use_normal': [False], 'reset_to_rest': [True], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': [\"{'backend': 'mia', 'cache_to_gpu': True}\"]}, 'current_outputs': ['45', '44', '42', '10', '46', '43', '47', '41', '27'], 'timestamp': 1769792106113}\n\nDetails:\nWorkflow: D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\workflows\\rig_human_with_texture_mia.json\nNode error: MIAAutoRig",
+      "duration_seconds": 8.93,
+      "error": "Workflow execution failed: {'prompt_id': 'dd15f551-6c5a-4b9f-a52c-276584ca8ae7', 'node_id': '42', 'node_type': 'MIAAutoRig', 'executed': ['41', '45', '47', '46', '27'], 'exception_message': \"No module named 'mia_inference'\\n\", 'exception_type': 'ModuleNotFoundError', 'traceback': ['  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 518, in execute\\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 329, in get_output_data\\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 303, in _async_map_node_over_list\\n    await process_inputs(input_dict, i)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 291, in process_inputs\\n    result = f(**inputs)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\mia_auto_rig.py\", line 81, in auto_rig\\n    from mia_inference import load_mia_models, get_cached_models, run_mia_inference\\n'], 'current_inputs': {'fbx_name': ['rigatoni'], 'no_fingers': [False], 'use_normal': [False], 'reset_to_rest': [True], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': [\"{'backend': 'mia', 'cache_to_gpu': True}\"]}, 'current_outputs': ['41', '43', '10', '44', '45', '42', '47', '46', '27'], 'timestamp': 1769792629215}\n\nDetails:\nWorkflow: D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\workflows\\rig_human_with_texture_mia.json\nNode error: MIAAutoRig",
       "hardware": {
         "os": "Windows-2025Server-10.0.26100-SP0",
         "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
@@ -69,34 +69,34 @@
       "resources": {
         "cpu": {
           "peak": 4.0,
-          "avg": 3.65
+          "avg": 2.69
         },
         "ram": {
-          "peak": 5.97,
-          "avg": 5.58
+          "peak": 5.47,
+          "avg": 5.28
         },
         "cpu_count": 4,
         "total_ram_gb": 16.0,
-        "samples": 10
+        "samples": 9
       }
     },
     {
       "name": "rig_human_with_texture_mia_debug",
       "status": "fail",
-      "duration_seconds": 8.31,
-      "error": "Workflow execution failed: {'prompt_id': '32711684-c48d-4b40-9495-62649359327b', 'node_id': '42', 'node_type': 'MIAAutoRig', 'executed': ['45', '46', '47', '51', '41', '27'], 'exception_message': \"No module named 'mia_inference'\\n\", 'exception_type': 'ModuleNotFoundError', 'traceback': ['  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 518, in execute\\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 329, in get_output_data\\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 303, in _async_map_node_over_list\\n    await process_inputs(input_dict, i)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 291, in process_inputs\\n    result = f(**inputs)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\mia_auto_rig.py\", line 81, in auto_rig\\n    from mia_inference import load_mia_models, get_cached_models, run_mia_inference\\n'], 'current_inputs': {'fbx_name': ['rigatoni'], 'no_fingers': [False], 'use_normal': [False], 'reset_to_rest': [True], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': [\"{'backend': 'mia', 'cache_to_gpu': True}\"]}, 'current_outputs': ['49', '50', '27', '45', '42', '46', '43', '47', '51', '41', '44'], 'timestamp': 1769792114548}\n\nDetails:\nWorkflow: D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\workflows\\rig_human_with_texture_mia_debug.json\nNode error: MIAAutoRig",
+      "duration_seconds": 8.4,
+      "error": "Workflow execution failed: {'prompt_id': '2f4db4f0-2307-40a2-91df-882251db9171', 'node_id': '42', 'node_type': 'MIAAutoRig', 'executed': ['41', '51', '45', '47', '46', '27'], 'exception_message': \"No module named 'mia_inference'\\n\", 'exception_type': 'ModuleNotFoundError', 'traceback': ['  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 518, in execute\\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 329, in get_output_data\\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 303, in _async_map_node_over_list\\n    await process_inputs(input_dict, i)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\execution.py\", line 291, in process_inputs\\n    result = f(**inputs)\\n', '  File \"D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\mia_auto_rig.py\", line 81, in auto_rig\\n    from mia_inference import load_mia_models, get_cached_models, run_mia_inference\\n'], 'current_inputs': {'fbx_name': ['rigatoni'], 'no_fingers': [False], 'use_normal': [False], 'reset_to_rest': [True], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': [\"{'backend': 'mia', 'cache_to_gpu': True}\"]}, 'current_outputs': ['41', '43', '44', '51', '45', '42', '47', '46', '49', '27', '50'], 'timestamp': 1769792637880}\n\nDetails:\nWorkflow: D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\workflows\\rig_human_with_texture_mia_debug.json\nNode error: MIAAutoRig",
       "hardware": {
         "os": "Windows-2025Server-10.0.26100-SP0",
         "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
       },
       "resources": {
         "cpu": {
-          "peak": 3.84,
-          "avg": 2.67
+          "peak": 4.0,
+          "avg": 2.81
         },
         "ram": {
-          "peak": 5.76,
-          "avg": 5.48
+          "peak": 5.47,
+          "avg": 5.19
         },
         "cpu_count": 4,
         "total_ram_gb": 16.0,
@@ -106,7 +106,7 @@
     {
       "name": "rigged_manipulator",
       "status": "fail",
-      "duration_seconds": 6.03,
+      "duration_seconds": 6.39,
       "error": "Workflow validation failed\n\nDetails:\nPrompt outputs failed validation\nNode errors:\n{\n  \"1\": {\n    \"errors\": [\n      {\n        \"type\": \"required_input_missing\",\n        \"message\": \"Required input is missing\",\n        \"details\": \"fbx_file\",\n        \"extra_info\": {\n          \"input_name\": \"fbx_file\"\n        }\n      }\n    ],\n    \"dependent_outputs\": [\n      \"3\"\n    ],\n    \"class_type\": \"UniRigLoadRiggedMesh\"\n  }\n}",
       "hardware": {
         "os": "Windows-2025Server-10.0.26100-SP0",
@@ -114,12 +114,12 @@
       },
       "resources": {
         "cpu": {
-          "peak": 3.78,
-          "avg": 2.86
+          "peak": 3.59,
+          "avg": 2.72
         },
         "ram": {
-          "peak": 5.73,
-          "avg": 5.48
+          "peak": 5.43,
+          "avg": 5.19
         },
         "cpu_count": 4,
         "total_ram_gb": 16.0,

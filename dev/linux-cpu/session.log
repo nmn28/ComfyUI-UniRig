@@ -25,16 +25,16 @@ Starting ComfyUI server...
 [00:04]   [ComfyUI] 
 [00:04]   [ComfyUI] Prestartup times for custom nodes:
 [00:04]   [ComfyUI]    0.2 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
-[00:04]   [ComfyUI]    0.2 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[00:04]   [ComfyUI]    0.5 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
 [00:04]   [ComfyUI] 
 [00:05]   [ComfyUI] Checkpoint files will always be loaded safely.
-[00:05]   [ComfyUI] Total VRAM 15995 MB, total RAM 15995 MB
+[00:05]   [ComfyUI] Total VRAM 15991 MB, total RAM 15991 MB
 [00:05]   [ComfyUI] pytorch version: 2.10.0+cu128
 [00:05]   [ComfyUI] Set vram state to: DISABLED
 [00:05]   [ComfyUI] Device: cpu
 [00:10]   [ComfyUI] WARNING: You need pytorch with cu130 or higher to use optimized CUDA operations.
-[00:10]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
 [00:10]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+[00:10]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
 [00:10]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
 [00:11]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
 [00:16]   [ComfyUI] Python version: 3.13.11 (main, Dec  8 2025, 02:51:34) [GCC 13.3.0]
@@ -43,28 +43,28 @@ Starting ComfyUI server...
 [00:16]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
 [00:16]   [ComfyUI] ComfyUI frontend version: 1.37.11
 [00:16]   [ComfyUI] [Prompt Server] web root: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfyui_frontend_package/static
-[00:22]   [ComfyUI] 
-[00:22]   [ComfyUI] Import times for custom nodes:
-[00:22]   [ComfyUI]    0.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/websocket_image_save.py
-[00:22]   [ComfyUI]    0.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
-[00:22]   [ComfyUI]    1.2 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
-[00:22]   [ComfyUI]    1.2 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
-[00:22]   [ComfyUI] 
-[00:22]   [ComfyUI] Context impl SQLiteImpl.
-[00:22]   [ComfyUI] Will assume non-transactional DDL.
-[00:22]   [ComfyUI] Context impl SQLiteImpl.
-[00:22]   [ComfyUI] Will assume non-transactional DDL.
-[00:22]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
-[00:22]   [ComfyUI] Revision ID: 0001_assets
-[00:22]   [ComfyUI] Revises: None
-[00:22]   [ComfyUI] Create Date: 2025-12-10 00:00:00
-[00:22]   [ComfyUI] Database upgraded from None to 0001_assets
-[00:22]   [ComfyUI] Assets scan(roots=['models']) completed in 0.042s (created=11, skipped_existing=0, total_seen=11)
-[00:22]   [ComfyUI] Starting server
-[00:22]   [ComfyUI] 
-[00:22]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
-[00:22] Server responding, waiting for nodes to load...
-[00:42] Server is ready!
+[00:21]   [ComfyUI] 
+[00:21]   [ComfyUI] Import times for custom nodes:
+[00:21]   [ComfyUI]    0.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/websocket_image_save.py
+[00:21]   [ComfyUI]    0.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
+[00:21]   [ComfyUI]    1.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[00:21]   [ComfyUI]    1.1 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
+[00:21]   [ComfyUI] 
+[00:21]   [ComfyUI] Context impl SQLiteImpl.
+[00:21]   [ComfyUI] Will assume non-transactional DDL.
+[00:21]   [ComfyUI] Context impl SQLiteImpl.
+[00:21]   [ComfyUI] Will assume non-transactional DDL.
+[00:21]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
+[00:21]   [ComfyUI] Revision ID: 0001_assets
+[00:21]   [ComfyUI] Revises: None
+[00:21]   [ComfyUI] Create Date: 2025-12-10 00:00:00
+[00:21]   [ComfyUI] Database upgraded from None to 0001_assets
+[00:21]   [ComfyUI] Assets scan(roots=['models']) completed in 0.036s (created=11, skipped_existing=0, total_seen=11)
+[00:21]   [ComfyUI] Starting server
+[00:21]   [ComfyUI] 
+[00:21]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
+[00:21] Server responding, waiting for nodes to load...
+[00:41] Server is ready!
 [00:42] 
 [00:42] [3/4] REGISTRATION
 [00:42] ----------------------------------------
@@ -84,7 +84,7 @@ Starting ComfyUI server...
 [00:42] No GPU detected - GPU workflows will be skipped
 [00:42] Running 5 workflow(s) (all with videos)...
 [00:42] Installing screenshot dependencies (playwright, pillow)...
-[00:44]   Packages installed, downloading chromium browser...
+[00:45]   Packages installed, downloading chromium browser...
 [00:45]   Screenshot dependencies installed successfully
 [00:53]   [ComfyUI] === /validate endpoint called ===
 [00:53]   [ComfyUI] Received JSON with keys: ['prompt']
@@ -95,17 +95,17 @@ Starting ComfyUI server...
 [00:53]   [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
 [00:53]   [ComfyUI]   Node 8: UniRigLoadRiggedMesh
 [00:53]   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
-[00:53]   [ComfyUI] Generated prompt_id: a459a4c3-9742-464d-9c56-9dcbbd3a1354
+[00:53]   [ComfyUI] Generated prompt_id: ee98433d-7ced-4363-b8bc-04b97f75ee8c
 [00:53]   [ComfyUI] Calling execution.validate_prompt()...
-[00:53]   [ComfyUI] Failed to validate prompt for output 6:
+[00:53]   [ComfyUI] Failed to validate prompt for output 7:
 [00:53]   [ComfyUI] * UniRigLoadRiggedMesh 8:
 [00:53]   [ComfyUI]   - Required input is missing: fbx_file
 [00:53]   [ComfyUI] Output will be ignored
-[00:53]   [ComfyUI] Failed to validate prompt for output 7:
+[00:53]   [ComfyUI] Failed to validate prompt for output 6:
 [00:53]   [ComfyUI] Output will be ignored
 [00:53]   [ComfyUI] Validation result: valid=False
 [00:53]   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
-[00:53]   [ComfyUI]   Node errors: {"8": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["6", "7"], "class_type": "UniRigLoadRiggedMesh"}}
+[00:53]   [ComfyUI]   Node errors: {"8": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["7", "6"], "class_type": "UniRigLoadRiggedMesh"}}
 [00:53]   [ComfyUI] === Validation FAILED ===
 [00:59]   [ComfyUI] === /validate endpoint called ===
 [00:59]   [ComfyUI] Received JSON with keys: ['prompt']
@@ -118,7 +118,7 @@ Starting ComfyUI server...
 [00:59]   [ComfyUI]     Inputs: {"skeleton_template": "mixamo", "fbx_name": "", "target_face_count": 50000, "trimesh": ["27", 0], "model": ["40", 0]}
 [00:59]   [ComfyUI]   Node 40: UniRigLoadModel
 [00:59]   [ComfyUI]     Inputs: {"cache_to_gpu": false}
-[00:59]   [ComfyUI] Generated prompt_id: a0523a78-d917-40b4-99ca-179bac645e7e
+[00:59]   [ComfyUI] Generated prompt_id: ff4ea0db-3991-432a-b150-6ece9a693567
 [00:59]   [ComfyUI] Calling execution.validate_prompt()...
 [00:59]   [ComfyUI] Validation result: valid=True
 [00:59]   [ComfyUI] === Validation PASSED ===
@@ -167,7 +167,7 @@ Starting ComfyUI server...
 [00:59]   [ComfyUI]     )
 [00:59]   [ComfyUI] RuntimeError: skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.
 [00:59]   [ComfyUI] 
-[00:59]   [ComfyUI] Prompt executed in 0.72 seconds
+[00:59]   [ComfyUI] Prompt executed in 0.69 seconds
 [01:06]   [ComfyUI] === /validate endpoint called ===
 [01:06]   [ComfyUI] Received JSON with keys: ['prompt']
 [01:06]   [ComfyUI] Prompt has 9 nodes
@@ -189,7 +189,7 @@ Starting ComfyUI server...
 [01:06]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["27", 0]}
 [01:06]   [ComfyUI]   Node 47: PreviewImage
 [01:06]   [ComfyUI]     Inputs: {"images": ["46", 0]}
-[01:06]   [ComfyUI] Generated prompt_id: 67a19bc3-3a11-4858-a074-10a80ebadcf8
+[01:06]   [ComfyUI] Generated prompt_id: 012b32e7-9da4-4477-825f-b6fe74118be0
 [01:06]   [ComfyUI] Calling execution.validate_prompt()...
 [01:06]   [ComfyUI] Validation result: valid=True
 [01:06]   [ComfyUI] === Validation PASSED ===
@@ -323,7 +323,7 @@ Starting ComfyUI server...
 [01:07]   [ComfyUI]     from mia_inference import load_mia_models, get_cached_models, run_mia_inference
 [01:07]   [ComfyUI] ModuleNotFoundError: No module named 'mia_inference'
 [01:07]   [ComfyUI] 
-[01:07]   [ComfyUI] Prompt executed in 0.97 seconds
+[01:07]   [ComfyUI] Prompt executed in 1.61 seconds
 [01:13]   [ComfyUI] === /validate endpoint called ===
 [01:13]   [ComfyUI] Received JSON with keys: ['prompt']
 [01:13]   [ComfyUI] Prompt has 11 nodes
@@ -349,52 +349,52 @@ Starting ComfyUI server...
 [01:13]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/mixamo.fbx"}
 [01:13]   [ComfyUI]   Node 51: PrimitiveString
 [01:13]   [ComfyUI]     Inputs: {"value": "/home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx"}
-[01:13]   [ComfyUI] Generated prompt_id: 6721f31e-9b4b-49a0-9a97-5dd2da3edede
+[01:13]   [ComfyUI] Generated prompt_id: 7f8f3470-eed8-44f8-8037-c6fe87aa757d
 [01:13]   [ComfyUI] Calling execution.validate_prompt()...
 [01:13]   [ComfyUI] Validation result: valid=True
 [01:13]   [ComfyUI] === Validation PASSED ===
 [01:13]   [ComfyUI] got prompt
-[01:14]   [ComfyUI] !!! Exception during processing !!! No module named 'mia_inference'
-[01:14]   [ComfyUI] Traceback (most recent call last):
-[01:14]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 518, in execute
-[01:14]   [ComfyUI]     output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
-[01:14]   [ComfyUI]                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[01:14]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 329, in get_output_data
-[01:14]   [ComfyUI]     return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
-[01:14]   [ComfyUI]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[01:14]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 303, in _async_map_node_over_list
-[01:14]   [ComfyUI]     await process_inputs(input_dict, i)
-[01:14]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 291, in process_inputs
-[01:14]   [ComfyUI]     result = f(**inputs)
-[01:14]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/mia_auto_rig.py", line 81, in auto_rig
-[01:14]   [ComfyUI]     from mia_inference import load_mia_models, get_cached_models, run_mia_inference
-[01:14]   [ComfyUI] ModuleNotFoundError: No module named 'mia_inference'
-[01:14]   [ComfyUI] 
-[01:14]   [ComfyUI] Prompt executed in 0.88 seconds
-[01:19]   [ComfyUI] === /validate endpoint called ===
-[01:19]   [ComfyUI] Received JSON with keys: ['prompt']
-[01:19]   [ComfyUI] Prompt has 2 nodes
-[01:19]   [ComfyUI]   Node 1: UniRigLoadRiggedMesh
-[01:19]   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
-[01:19]   [ComfyUI]   Node 3: UniRigPreviewRiggedMesh
-[01:19]   [ComfyUI]     Inputs: {"fbx_output_path": ["1", 0], "preview": ""}
-[01:19]   [ComfyUI] Generated prompt_id: 90bf9996-8b21-4db8-bcda-984395f57859
-[01:19]   [ComfyUI] Calling execution.validate_prompt()...
-[01:19]   [ComfyUI] Failed to validate prompt for output 3:
-[01:19]   [ComfyUI] * UniRigLoadRiggedMesh 1:
-[01:19]   [ComfyUI]   - Required input is missing: fbx_file
-[01:19]   [ComfyUI] Output will be ignored
-[01:19]   [ComfyUI] Validation result: valid=False
-[01:19]   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
-[01:19]   [ComfyUI]   Node errors: {"1": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["3"], "class_type": "UniRigLoadRiggedMesh"}}
-[01:19]   [ComfyUI] === Validation FAILED ===
-[01:19] Results saved to /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/results.json
-[01:19] Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/index.html
-[01:19] Stopping ComfyUI server...
-[01:20] 
+[01:15]   [ComfyUI] !!! Exception during processing !!! No module named 'mia_inference'
+[01:15]   [ComfyUI] Traceback (most recent call last):
+[01:15]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 518, in execute
+[01:15]   [ComfyUI]     output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+[01:15]   [ComfyUI]                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[01:15]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 329, in get_output_data
+[01:15]   [ComfyUI]     return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+[01:15]   [ComfyUI]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[01:15]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 303, in _async_map_node_over_list
+[01:15]   [ComfyUI]     await process_inputs(input_dict, i)
+[01:15]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 291, in process_inputs
+[01:15]   [ComfyUI]     result = f(**inputs)
+[01:15]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/mia_auto_rig.py", line 81, in auto_rig
+[01:15]   [ComfyUI]     from mia_inference import load_mia_models, get_cached_models, run_mia_inference
+[01:15]   [ComfyUI] ModuleNotFoundError: No module named 'mia_inference'
+[01:15]   [ComfyUI] 
+[01:15]   [ComfyUI] Prompt executed in 1.25 seconds
+[01:21]   [ComfyUI] === /validate endpoint called ===
+[01:21]   [ComfyUI] Received JSON with keys: ['prompt']
+[01:21]   [ComfyUI] Prompt has 2 nodes
+[01:21]   [ComfyUI]   Node 1: UniRigLoadRiggedMesh
+[01:21]   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
+[01:21]   [ComfyUI]   Node 3: UniRigPreviewRiggedMesh
+[01:21]   [ComfyUI]     Inputs: {"fbx_output_path": ["1", 0], "preview": ""}
+[01:21]   [ComfyUI] Generated prompt_id: 5acd9634-292c-4082-ba7e-093eb80bd991
+[01:21]   [ComfyUI] Calling execution.validate_prompt()...
+[01:21]   [ComfyUI] Failed to validate prompt for output 3:
+[01:21]   [ComfyUI] * UniRigLoadRiggedMesh 1:
+[01:21]   [ComfyUI]   - Required input is missing: fbx_file
+[01:21]   [ComfyUI] Output will be ignored
+[01:21]   [ComfyUI] Validation result: valid=False
+[01:21]   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
+[01:21]   [ComfyUI]   Node errors: {"1": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["3"], "class_type": "UniRigLoadRiggedMesh"}}
+[01:21]   [ComfyUI] === Validation FAILED ===
+[01:21] Results saved to /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/results.json
+[01:21] Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/index.html
+[01:21] Stopping ComfyUI server...
+[01:21] 
 linux: FAILED
-[01:20] Error: Workflow execution failed (5 error(s))
-[01:20] Details: apply_animation.json: Workflow validation failed
+[01:21] Error: Workflow execution failed (5 error(s))
+[01:21] Details: apply_animation.json: Workflow validation failed
 
 Details:
 Prompt outputs failed validation
@@ -412,23 +412,23 @@ Node errors:
       }
     ],
     "dependent_outputs": [
-      "6",
-      "7"
+      "7",
+      "6"
     ],
     "class_type": "UniRigLoadRiggedMesh"
   }
 }
-rig_human_with_texture.json: Workflow execution failed: {'prompt_id': '4a7713f7-033b-4a2d-8575-6cb4c3f76f57', 'node_id': '39', 'node_type': 'UniRigAutoRig', 'executed': ['40', '27'], 'exception_message': 'skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.\n', 'exception_type': 'RuntimeError', 'traceback': ['  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 291, in process_inputs\n    result = f(**inputs)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/auto_rig.py", line 89, in auto_rig\n    normalized_mesh, skeleton, texture_preview = skeleton_extractor.extract(\n                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        trimesh=trimesh,\n        ^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n        target_face_count=target_face_count\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/skeleton_extraction.py", line 310, in extract\n    raise RuntimeError(\n    ...<2 lines>...\n    )\n'], 'current_inputs': {'skeleton_template': ['mixamo'], 'fbx_name': [''], 'target_face_count': [50000], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': ["{'skeleton_model': {'type': 'skeleton', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/unirig/configs/task/quick_inference_skeleton_articulationxl_ar_256.yaml', 'unirig_path': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/unirig', 'models_dir': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/models/unirig', 'cached': False, 'model_cache_key': None}, 'skinning_model': {'type': 'skinning', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/unirig/configs/task/quick_inference_unirig_skin.yaml', 'unirig_path': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/unirig', 'models_dir': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/models/unirig', 'cached': False, 'model_cache_key': None}, 'model_id': 'apozz/UniRig-safetensors', 'cache_to_gpu': False}"]}, 'current_outputs': ['39', '40', '10', '27'], 'timestamp': 1769792020897}
+rig_human_with_texture.json: Workflow execution failed: {'prompt_id': 'aa1999b6-5319-43b5-8426-e8c272149e21', 'node_id': '39', 'node_type': 'UniRigAutoRig', 'executed': ['40', '27'], 'exception_message': 'skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.\n', 'exception_type': 'RuntimeError', 'traceback': ['  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 291, in process_inputs\n    result = f(**inputs)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/auto_rig.py", line 89, in auto_rig\n    normalized_mesh, skeleton, texture_preview = skeleton_extractor.extract(\n                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        trimesh=trimesh,\n        ^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n        target_face_count=target_face_count\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/skeleton_extraction.py", line 310, in extract\n    raise RuntimeError(\n    ...<2 lines>...\n    )\n'], 'current_inputs': {'skeleton_template': ['mixamo'], 'fbx_name': [''], 'target_face_count': [50000], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': ["{'skeleton_model': {'type': 'skeleton', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/unirig/configs/task/quick_inference_skeleton_articulationxl_ar_256.yaml', 'unirig_path': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/unirig', 'models_dir': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/models/unirig', 'cached': False, 'model_cache_key': None}, 'skinning_model': {'type': 'skinning', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/unirig/configs/task/quick_inference_unirig_skin.yaml', 'unirig_path': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/unirig', 'models_dir': '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/models/unirig', 'cached': False, 'model_cache_key': None}, 'model_id': 'apozz/UniRig-safetensors', 'cache_to_gpu': False}"]}, 'current_outputs': ['39', '40', '10', '27'], 'timestamp': 1769792537543}
 
 Details:
 Workflow: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/workflows/rig_human_with_texture.json
 Node error: UniRigAutoRig
-rig_human_with_texture_mia.json: Workflow execution failed: {'prompt_id': 'a6383b14-6b13-4d56-be4f-5e33bbe3e292', 'node_id': '42', 'node_type': 'MIAAutoRig', 'executed': ['41', '45', '27', '46', '47'], 'exception_message': "No module named 'mia_inference'\n", 'exception_type': 'ModuleNotFoundError', 'traceback': ['  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 291, in process_inputs\n    result = f(**inputs)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/mia_auto_rig.py", line 81, in auto_rig\n    from mia_inference import load_mia_models, get_cached_models, run_mia_inference\n'], 'current_inputs': {'fbx_name': ['rigatoni'], 'no_fingers': [False], 'use_normal': [False], 'reset_to_rest': [True], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': ["{'backend': 'mia', 'cache_to_gpu': True}"]}, 'current_outputs': ['41', '45', '27', '44', '42', '46', '47', '10', '43'], 'timestamp': 1769792028356}
+rig_human_with_texture_mia.json: Workflow execution failed: {'prompt_id': '3f8becbe-ee18-43b5-99cc-b71debd4d0d6', 'node_id': '42', 'node_type': 'MIAAutoRig', 'executed': ['45', '41', '43', '46', '44', '47', '27'], 'exception_message': "No module named 'mia_inference'\n", 'exception_type': 'ModuleNotFoundError', 'traceback': ['  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 291, in process_inputs\n    result = f(**inputs)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/mia_auto_rig.py", line 81, in auto_rig\n    from mia_inference import load_mia_models, get_cached_models, run_mia_inference\n'], 'current_inputs': {'fbx_name': ['rigatoni'], 'no_fingers': [False], 'use_normal': [False], 'reset_to_rest': [True], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': ["{'backend': 'mia', 'cache_to_gpu': True}"]}, 'current_outputs': ['41', '45', '42', '10', '43', '46', '44', '47', '27'], 'timestamp': 1769792545416}
 
 Details:
 Workflow: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/workflows/rig_human_with_texture_mia.json
 Node error: MIAAutoRig
-rig_human_with_texture_mia_debug.json: Workflow execution failed: {'prompt_id': '19808f32-3219-4eb9-8feb-296c9fc1ecdf', 'node_id': '42', 'node_type': 'MIAAutoRig', 'executed': ['41', '51', '27', '45', '46', '47'], 'exception_message': "No module named 'mia_inference'\n", 'exception_type': 'ModuleNotFoundError', 'traceback': ['  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 291, in process_inputs\n    result = f(**inputs)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/mia_auto_rig.py", line 81, in auto_rig\n    from mia_inference import load_mia_models, get_cached_models, run_mia_inference\n'], 'current_inputs': {'fbx_name': ['rigatoni'], 'no_fingers': [False], 'use_normal': [False], 'reset_to_rest': [True], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': ["{'backend': 'mia', 'cache_to_gpu': True}"]}, 'current_outputs': ['41', '45', '27', '51', '44', '42', '46', '50', '49', '47', '43'], 'timestamp': 1769792035203}
+rig_human_with_texture_mia_debug.json: Workflow execution failed: {'prompt_id': '1084f67c-4cb6-4207-afd2-d237b6d563dd', 'node_id': '42', 'node_type': 'MIAAutoRig', 'executed': ['45', '41', '43', '46', '44', '47', '51', '27'], 'exception_message': "No module named 'mia_inference'\n", 'exception_type': 'ModuleNotFoundError', 'traceback': ['  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/execution.py", line 291, in process_inputs\n    result = f(**inputs)\n', '  File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/mia_auto_rig.py", line 81, in auto_rig\n    from mia_inference import load_mia_models, get_cached_models, run_mia_inference\n'], 'current_inputs': {'fbx_name': ['rigatoni'], 'no_fingers': [False], 'use_normal': [False], 'reset_to_rest': [True], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': ["{'backend': 'mia', 'cache_to_gpu': True}"]}, 'current_outputs': ['41', '45', '42', '43', '49', '46', '44', '50', '47', '51', '27'], 'timestamp': 1769792552852}
 
 Details:
 Workflow: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/workflows/rig_human_with_texture_mia_debug.json

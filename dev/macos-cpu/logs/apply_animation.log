@@ -3,12 +3,13 @@ Capturing execution frames: apply_animation.json
   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-  [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-  [Console-warning] [.WebGL-0x13c0019ae00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-  [Console-warning] [.WebGL-0x13c0019ae00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-  [Console-warning] [.WebGL-0x13c0019ae00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-  [Console-warning] [.WebGL-0x13c0019ae00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+  [Console-warning] WARNING: Multiple instances of Three.js being imported.
+  [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+  [Console-warning] [.WebGL-0x1040019a200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  [Console-warning] [.WebGL-0x1040019a200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  [Console-warning] [.WebGL-0x1040019a200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  [Console-warning] [.WebGL-0x1040019a200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
@@ -16,21 +17,48 @@ Capturing execution frames: apply_animation.json
   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
   Validating workflow...
-  [ComfyUI] === /validate endpoint called ===
-  [ComfyUI] Received JSON with keys: ['prompt']
-  [ComfyUI] Prompt has 3 nodes
-  [ComfyUI]   Node 6: UNKNOWN
-  [ComfyUI]     Inputs: {"UNKNOWN": "", "model_fbx_path": ["8", 0]}
-  [ComfyUI]   Node 7: Preview3D
-  [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
-  [ComfyUI]   Node 8: UNKNOWN
-  [ComfyUI]     Inputs: {"UNKNOWN": "refresh"}
-  [ComfyUI] Generated prompt_id: 4185a458-f1e4-4c7c-ab7a-b04d1048c5f0
-  [ComfyUI] Calling execution.validate_prompt()...
-  [ComfyUI] Validation result: valid=False
-  [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#6'", 'extra_info': {}}
-  [ComfyUI] === Validation FAILED ===
   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
+  [ComfyUI] === /validate endpoint called ===
     Status: FAILED
     Error: Workflow validation failed
-    Details: Cannot execute because a node is missing the class_type property.
+    Details: Prompt outputs failed validation
+Node errors:
+{
+  "8": {
+    "errors": [
+      {
+        "type": "required_input_missing",
+        "message": "Required input is missing",
+        "details": "fbx_file",
+        "extra_info": {
+          "input_name": "fbx_file"
+        }
+      }
+    ],
+    "dependent_outputs": [
+      "7",
+      "6"
+    ],
+    "class_type": "UniRigLoadRiggedMesh"
+  }
+}
+  [ComfyUI] Received JSON with keys: ['prompt']
+  [ComfyUI] Prompt has 3 nodes
+  [ComfyUI]   Node 6: UniRigApplyAnimation
+  [ComfyUI]     Inputs: {"model_fbx_path": ["8", 0], "animation_type": "mixamo", "animation_file": "Breakdance.fbx", "output_name": ""}
+  [ComfyUI]   Node 7: Preview3D
+  [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
+  [ComfyUI]   Node 8: UniRigLoadRiggedMesh
+  [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
+  [ComfyUI] Generated prompt_id: 0231edb1-296b-4d30-bbb7-3cb5c88665eb
+  [ComfyUI] Calling execution.validate_prompt()...
+  [ComfyUI] Failed to validate prompt for output 7:
+  [ComfyUI] * UniRigLoadRiggedMesh 8:
+  [ComfyUI]   - Required input is missing: fbx_file
+  [ComfyUI] Output will be ignored
+  [ComfyUI] Failed to validate prompt for output 6:
+  [ComfyUI] Output will be ignored
+  [ComfyUI] Validation result: valid=False
+  [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
+  [ComfyUI]   Node errors: {"8": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["7", "6"], "class_type": "UniRigLoadRiggedMesh"}}
+  [ComfyUI] === Validation FAILED ===

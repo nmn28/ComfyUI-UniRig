@@ -6,13 +6,13 @@ Capturing execution frames: rigged_manipulator.json
   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
   [Console-warning] WARNING: Multiple instances of Three.js being imported.
   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-  [ComfyUI] Feature flags negotiated for client 3d3680262daa4c07b01ec5970e27b6fb: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+  [ComfyUI] Feature flags negotiated for client cc88defc96b84bb78e36e026ef0aa92f: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
   Validating workflow...
   [ComfyUI] === /validate endpoint called ===
+  [ComfyUI] Received JSON with keys: ['prompt']
+  [ComfyUI] Prompt has 2 nodes
   [ComfyUI] Failed to validate prompt for output 3:
   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
-  [ComfyUI] Received JSON with keys: ['prompt']
-  [ComfyUI] * UniRigLoadRiggedMesh 1:
     Status: FAILED
     Error: Workflow validation failed
     Details: Prompt outputs failed validation
@@ -35,14 +35,14 @@ Node errors:
     "class_type": "UniRigLoadRiggedMesh"
   }
 }
-  [ComfyUI] Prompt has 2 nodes
-  [ComfyUI]   - Required input is missing: fbx_file
   [ComfyUI]   Node 1: UniRigLoadRiggedMesh
-  [ComfyUI] Output will be ignored
+  [ComfyUI] * UniRigLoadRiggedMesh 1:
   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
+  [ComfyUI]   - Required input is missing: fbx_file
   [ComfyUI]   Node 3: UniRigPreviewRiggedMesh
+  [ComfyUI] Output will be ignored
   [ComfyUI]     Inputs: {"fbx_output_path": ["1", 0], "preview": ""}
-  [ComfyUI] Generated prompt_id: 1c3ba5b7-67af-4e59-817b-0f55948a24bc
+  [ComfyUI] Generated prompt_id: 06f7d6e9-0ee9-4b44-90cc-03b855504b87
   [ComfyUI] Calling execution.validate_prompt()...
   [ComfyUI] Validation result: valid=False
   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}

@@ -6,21 +6,14 @@
 [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
 [Console-warning] WARNING: Multiple instances of Three.js being imported.
 [Console-log] [VTK Bundle] GLTFImporter included in bundle
-[Console-log] [GeomPack] Loading VTK.js textured mesh preview extension...
-[Console-log] [GeomPack] VTK.js textured mesh preview extension registered
-[Console-log] [GeomPack] Loading VTK.js bounding box preview extension...
-[Console-log] [GeomPack] VTK.js bounding box preview extension registered
-[Console-log] [BVHViewer] Loading BVH Viewer extension
-[Console-log] [BVHViewer] Loading BVH viewer extension...
-[Console-log] [BVHViewer] Extension registered: comfy3d.bvhviewer
-[Console-log] [GeomPack Gaussian] Loading extension...
-[Console-log] [GeomPack] Loading mesh preview extension...
-[Console-log] [GeomPack] Mesh preview extension registered
-[Console-log] [GeomPack Multi JS] Loading mesh_preview_multi.js extension
 [Console-log] [MHR] Loading MHR Viewer extension
 [Console-log] [MHRViewer] Extension registered: comfy3d.mhrviewer
-[Console-log] [GeomPack] Loading UV mesh preview extension...
-[Console-log] [GeomPack] UV mesh preview extension registered
+[Console-log] [GeomPack] Loading VTK.js bounding box preview extension...
+[Console-log] [GeomPack] VTK.js bounding box preview extension registered
+[Console-log] [GeomPack Gaussian] Loading extension...
+[Console-log] [FBXAnimationViewer] Loading FBX Animation Viewer extension
+[Console-log] [FBXAnimationViewer] Loading FBX Animation Viewer extension...
+[Console-log] [FBXAnimationViewer] Extension registered: comfy3d.fbxanimationviewer
 [Console-log] [FBX Preview] Auto-registering for all known FBX preview node types...
 [Console-log] [UniRig] Loading FBX mesh preview extension...
 [Console-log] [UniRig] Detected extension folder: ComfyUI-UniRig
@@ -37,21 +30,28 @@
 [Console-log] [UniRig Debug] Loading FBX mesh preview extension...
 [Console-log] [UniRig Debug] Detected extension folder: ComfyUI-UniRig
 [Console-log] [UniRig Debug] FBX mesh preview extension registered
-[Console-log] [CompareSMPLBVH] Loading Compare SMPL BVH extension
-[Console-log] [CompareSMPLBVH] Loading Compare SMPL BVH extension...
-[Console-log] [CompareSMPLBVH] Extension registered: comfy3d.comparesmplbvh
+[Console-log] [BVHViewer] Loading BVH Viewer extension
+[Console-log] [BVHViewer] Loading BVH viewer extension...
+[Console-log] [BVHViewer] Extension registered: comfy3d.bvhviewer
 [Console-log] [FileListUpdater] Loading File List Updater extension
 [Console-log] [FileListUpdater] Extension registered
-[Console-log] [SMPL] Loading SMPL Viewer extension
-[Console-log] [SMPLViewer] Extension registered: comfy3d.smplviewer
 [Console-log] [DynamicWidgets] Loading extension...
 [Console-log] [DynamicWidgets] Extension registered
-[Console-log] [FBXAnimationViewer] Loading FBX Animation Viewer extension
-[Console-log] [FBXAnimationViewer] Loading FBX Animation Viewer extension...
-[Console-log] [FBXAnimationViewer] Extension registered: comfy3d.fbxanimationviewer
 [Console-log] [UniRig Compare] Loading compare skeleton widget...
 [Console-log] [UniRig Compare] Detected extension folder: ComfyUI-UniRig
 [Console-log] [UniRig Compare] Compare skeleton widget registered
+[Console-log] [GeomPack] Loading UV mesh preview extension...
+[Console-log] [GeomPack] UV mesh preview extension registered
+[Console-log] [GeomPack] Loading mesh preview extension...
+[Console-log] [GeomPack] Mesh preview extension registered
+[Console-log] [GeomPack] Loading VTK.js textured mesh preview extension...
+[Console-log] [GeomPack] VTK.js textured mesh preview extension registered
+[Console-log] [SMPL] Loading SMPL Viewer extension
+[Console-log] [SMPLViewer] Extension registered: comfy3d.smplviewer
+[Console-log] [GeomPack Multi JS] Loading mesh_preview_multi.js extension
+[Console-log] [CompareSMPLBVH] Loading Compare SMPL BVH extension
+[Console-log] [CompareSMPLBVH] Loading Compare SMPL BVH extension...
+[Console-log] [CompareSMPLBVH] Extension registered: comfy3d.comparesmplbvh
 [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
 [Console-log] [DynamicWidgets] Loaded mappings for 6 nodes
 [Console-log] [UniRig] Registering Preview Rigged Mesh node
@@ -62,7 +62,7 @@
 [Console-log] [GeomPack Gaussian] Registering Preview Gaussian node
 [Console-log] [DynamicWidgets] Setting up node: GeomPackTransformMesh
 [Console-log] [UniRig] Node created, adding FBX viewer widget
-[Console-log] [UniRig] Setting iframe src to: /extensions/ComfyUI-UniRig/viewer_fbx.html?v=1769792030470
+[Console-log] [UniRig] Setting iframe src to: /extensions/ComfyUI-UniRig/viewer_fbx.html?v=1769792547818
 [Console-log] [UniRig] Widget created: DOMWidgetImpl
 [Console-log] [DynamicWidgets] GeomPackTransformMesh: operation="rotate", visible=[rotate_x, rotate_y, rotate_z]
 [Console-log] [DynamicWidgets] Widget "translate_x": hidden=true
@@ -87,7 +87,7 @@
 [Console-log] [UniRig] Iframe loaded successfully
 [Console-log] [DynamicWidgets] Setting up node: GeomPackTransformMesh
 [Console-log] [UniRig Compare] Node created, adding compare viewer widget
-[Console-log] [UniRig Compare] Setting iframe src to: /extensions/ComfyUI-UniRig/viewer_fbx_compare.html?v=1769792031425
+[Console-log] [UniRig Compare] Setting iframe src to: /extensions/ComfyUI-UniRig/viewer_fbx_compare.html?v=1769792548708
 [Console-log] [UniRig Compare] Widget created: DOMWidgetImpl
 [Console-log] [DynamicWidgets] GeomPackTransformMesh: operation="rotate", visible=[rotate_x, rotate_y, rotate_z]
 [Console-log] [DynamicWidgets] Widget "translate_x": hidden=true

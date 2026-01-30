@@ -6,19 +6,30 @@ Capturing execution frames: apply_animation.json
   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
   [Console-warning] WARNING: Multiple instances of Three.js being imported.
   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-  [ComfyUI] Feature flags negotiated for client 3d3680262daa4c07b01ec5970e27b6fb: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+  [ComfyUI] Feature flags negotiated for client cc88defc96b84bb78e36e026ef0aa92f: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-  [Console-warning] [.WebGL-0x223c0072c000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  [Console-warning] [.WebGL-0x2cb405f89500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-  [Console-warning] [.WebGL-0x223c0072c000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-  [Console-warning] [.WebGL-0x223c0072c000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  [Console-warning] [.WebGL-0x2cb405f89500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  [Console-warning] [.WebGL-0x2cb405f89500]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
   Validating workflow...
   [ComfyUI] === /validate endpoint called ===
+  [ComfyUI] Received JSON with keys: ['prompt']
+  [ComfyUI] Failed to validate prompt for output 7:
+  [ComfyUI] Prompt has 3 nodes
+  [ComfyUI] * UniRigLoadRiggedMesh 8:
+  [ComfyUI]   Node 6: UniRigApplyAnimation
+  [ComfyUI]   - Required input is missing: fbx_file
+  [ComfyUI]     Inputs: {"model_fbx_path": ["8", 0], "animation_type": "mixamo", "animation_file": "Breakdance.fbx", "output_name": ""}
   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
+  [ComfyUI] Output will be ignored
+  [ComfyUI]   Node 7: Preview3D
+  [ComfyUI] Failed to validate prompt for output 6:
+  [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
     Status: FAILED
     Error: Workflow validation failed
     Details: Prompt outputs failed validation
@@ -36,28 +47,18 @@ Node errors:
       }
     ],
     "dependent_outputs": [
-      "6",
-      "7"
+      "7",
+      "6"
     ],
     "class_type": "UniRigLoadRiggedMesh"
   }
 }
-  [ComfyUI] Received JSON with keys: ['prompt']
-  [ComfyUI] Failed to validate prompt for output 6:
-  [ComfyUI] Prompt has 3 nodes
-  [ComfyUI] * UniRigLoadRiggedMesh 8:
-  [ComfyUI]   Node 6: UniRigApplyAnimation
-  [ComfyUI]   - Required input is missing: fbx_file
-  [ComfyUI]     Inputs: {"model_fbx_path": ["8", 0], "animation_type": "mixamo", "animation_file": "Breakdance.fbx", "output_name": ""}
-  [ComfyUI] Output will be ignored
-  [ComfyUI]   Node 7: Preview3D
-  [ComfyUI] Failed to validate prompt for output 7:
-  [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
   [ComfyUI] Output will be ignored
   [ComfyUI]   Node 8: UniRigLoadRiggedMesh
   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
-  [ComfyUI] Generated prompt_id: 246366be-6908-4cd0-9f45-f919e896352c
+  [ComfyUI] Generated prompt_id: 4fbce81e-0958-446e-a317-0d04bb80f787
   [ComfyUI] Calling execution.validate_prompt()...
   [ComfyUI] Validation result: valid=False
   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
-  [ComfyUI]   Node errors: {"8": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["6", "7"], "class_type": "UniRigLoadRiggedMesh"}}
+  [ComfyUI]   Node errors: {"8": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["7", "6"], "class_type": "UniRigLoadRiggedMesh"}}
+  [ComfyUI] === Validation FAILED ===
