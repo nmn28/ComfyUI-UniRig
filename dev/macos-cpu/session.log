@@ -1,4 +1,4 @@
-[00:00] Crash dump logging enabled: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/comfy-test-results/crash_dump.log
+[00:00] Crash dump logging enabled: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/crash_dump.log
 [00:00] 
 [00:00] [1/7] SYNTAX
 [00:00] ----------------------------------------
@@ -9,134 +9,17 @@
 [00:00] 
 [00:00] [2/7] INSTALL
 [00:00] ----------------------------------------
-[00:00] Using existing ComfyUI: /Users/runner/venv/ComfyUI
-[00:00] Installing custom node...
-[00:00] Linking ComfyUI-UniRig to custom_nodes/...
-[00:00] Installing node requirements...
-[00:00] Running: /Users/runner/venv/venv/bin/python3.13 -m uv pip install -r /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
-[00:01] Running install.py...
-[00:01] Running: /Users/runner/venv/venv/bin/python3.13 /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
-[00:41]   [apt] Skipping apt packages (not Linux)
-[00:41]   
-[00:41]   [env] Setting 1 persistent environment variable(s)...
-[00:41]     - PYTORCH_CUDA_ALLOC_CONF=backend:native
-[00:41]     [env] Set PYTORCH_CUDA_ALLOC_CONF (launchctl)
-[00:41]     [env] Wrote /Users/runner/.comfy-env-profile
-[00:41]     [env] Added source line to /Users/runner/.bashrc
-[00:41]   [env] Restart terminal/ComfyUI for changes to take effect
-[00:41]   
-[00:41]   Installing 1 node dependencies...
-[00:41]     Cloning ComfyUI-GeometryPack from https://github.com/PozzettiAndrea/ComfyUI-GeometryPack...
-[00:41]     Installing requirements for ComfyUI-GeometryPack...
-[00:41]     Running install.py for ComfyUI-GeometryPack...
-[00:41]   No packages to install
-[00:41]   
-[00:41]   [isolated] Installing: nodes
-[00:41]   Using specified Python 3.11
-[00:41]   Generated /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/pixi.toml
-[00:41]   Running pixi install...
-[00:41]   pixi install failed:
-[00:41]    WARN Encountered 1 warning while parsing the manifest:
-[00:41]     ⚠ The target selector 'linux-64' does not match any of the platforms supported by the workspace
-[00:41]       ╭─[/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/pixi.toml:29:9]
-[00:41]    28 │     
-[00:41]    29 │     [target.linux-64.pypi-dependencies]
-[00:41]       ·             ────┬───
-[00:41]       ·                 ╰── target selector specified here
-[00:41]    30 │     triton = ">=3.0.0"
-[00:41]    31 │     
-[00:41]    32 │     [workspace]
-[00:41]    33 │     name = "nodes"
-[00:41]    34 │     version = "0.1.0"
-[00:41]    35 │     channels = [
-[00:41]    36 │         "conda-forge",
-[00:41]    37 │     ]
-[00:41]    38 │ ╭─▶ platforms = [
-[00:41]    39 │ │       "osx-arm64",
-[00:41]    40 │ ├─▶ ]
-[00:41]       · ╰──── the platforms supported by the workspace are defined here
-[00:41]    41 │     
-[00:41]       ╰────
-[00:41]     help: Add linux-64 to the supported platforms, using `pixi project platform add linux-64`
-[00:41]   
-[00:41]   Error:   × failed to solve the pypi requirements of environment 'default' for platform 'osx-arm64'
-[00:41]     ├─▶ failed to resolve pypi dependencies
-[00:41]     ├─▶ Failed to download and build `cumm==0.1.0`
-[00:41]     ├─▶ The build backend returned an error
-[00:41]     ╰─▶ Call to `setuptools.build_meta.build_wheel` failed (exit status: 1)
-[00:41]   
-[00:41]         [31m[stderr][39m
-[00:41]         Traceback (most recent call last):
-[00:41]           File "<string>", line 14, in <module>
-[00:41]           File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpYkYkin/lib/python3.11/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
-[00:41]             return self._get_build_requires(config_settings, requirements=[])
-[00:41]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[00:41]           File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpYkYkin/lib/python3.11/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
-[00:41]             self.run_setup()
-[00:41]           File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpYkYkin/lib/python3.11/site-packages/setuptools/build_meta.py", line 317, in run_setup
-[00:41]             exec(code, locals())
-[00:41]           File "<string>", line 62, in <module>
-[00:41]         FileNotFoundError: [Errno 2] No such file or directory: 'version.txt'
-[00:41]   
-[00:41]         [36m[1mhint[0m[39m[1m:[0m This usually indicates a problem with the package or the build environment.
-[00:41] Command failed with code 1
-[00:41] stderr: Traceback (most recent call last):
-  File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py", line 2, in <module>
-    install()
-    ~~~~~~~^^
-  File "/Users/runner/venv/venv/lib/python3.13/site-packages/comfy_env/install.py", line 74, in install
-    _install_isolated_subdirs(node_dir, log, dry_run)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/runner/venv/venv/lib/python3.13/site-packages/comfy_env/install.py", line 318, in _install_isolated_subdirs
-    pixi_install(sub_cfg, sub_dir, log)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/runner/venv/venv/lib/python3.13/site-packages/comfy_env/pixi/core.py", line 488, in pixi_install
-RuntimeError: pixi install failed:  WARN Encountered 1 warning while parsing the manifest:
-  ⚠ The target selector 'linux-64' does not match any of the platforms supported by the workspace
-    ╭─[/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/nodes/pixi.toml:29:9]
- 28 │     
- 29 │     [target.linux-64.pypi-dependencies]
-    ·             ────┬───
-    ·                 ╰── target selector specified here
- 30 │     triton = ">=3.0.0"
- 31 │     
- 32 │     [workspace]
- 33 │     name = "nodes"
- 34 │     version = "0.1.0"
- 35 │     channels = [
- 36 │         "conda-forge",
- 37 │     ]
- 38 │ ╭─▶ platforms = [
- 39 │ │       "osx-arm64",
- 40 │ ├─▶ ]
-    · ╰──── the platforms supported by the workspace are defined here
- 41 │     
-    ╰────
-  help: Add linux-64 to the supported platforms, using `pixi project platform add linux-64`
-
-Error:   × failed to solve the pypi requirements of environment 'default' for platform 'osx-arm64'
-  ├─▶ failed to resolve pypi dependencies
-  ├─▶ Failed to download and build `cumm==0.1.0`
-  ├─▶ The build backend returned an error
-  ╰─▶ Call to `setuptools.build_meta.build_wheel` failed (exit status: 1)
-
-      [31m[stderr][39m
-      Traceback (most recent call last):
-        File "<string>", line 14, in <module>
-        File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpYkYkin/lib/python3.11/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
-          return self._get_build_requires(config_settings, requirements=[])
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpYkYkin/lib/python3.11/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
-          self.run_setup()
-        File "/Users/runner/Library/Caches/rattler/cache/uv-cache/builds-v0/.tmpYkYkin/lib/python3.11/site-packages/setuptools/build_meta.py", line 317, in run_setup
-          exec(code, locals())
-        File "<string>", line 62, in <module>
-      FileNotFoundError: [Errno 2] No such file or directory: 'version.txt'
-
-      [36m[1mhint[0m[39m[1m:[0m This usually indicates a problem with the package or the build environment.
-
-
-
-[00:41] 
-macos: FAILED (unexpected error)
-[00:41] Error: Command '['/Users/runner/venv/venv/bin/python3.13', '/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py']' returned non-zero exit status 1.
+[00:00] Using existing ComfyUI: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI
+[00:00] Node already installed, skipping installation
+[00:00] Installing validation endpoint...
+[00:00]   ComfyUI-validate-endpoint already exists, skipping...
+[00:00] [INSTALL] PASSED
+[00:00] COMFY_TEST_GPU env var = ''
+[00:00] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
+[00:00] 
+Starting ComfyUI server...
+[00:00] Starting ComfyUI server on port 8188...
+[00:00] Starting ComfyUI server on port 8188...
+[00:00] 
+windows_portable: FAILED (unexpected error)
+[00:00] Error: [Errno 2] No such file or directory: '/Users/runner/work/ComfyUI-UniRig/python_embeded/python.exe'
