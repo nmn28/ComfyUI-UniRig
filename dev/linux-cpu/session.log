@@ -14,14 +14,14 @@
 [00:00] Linking ComfyUI-UniRig to custom_nodes/...
 [00:00] Installing node requirements...
 [00:00] Running: uv pip install --system -r /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
-[00:02] Running install.py...
-[00:02] Running: /home/runner/venv/venv/bin/python /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
-[00:02] Command failed with code 1
-[00:02] stderr: Traceback (most recent call last):
+[00:01] Running install.py...
+[00:01] Running: /home/runner/venv/venv/bin/python /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
+[00:01] Command failed with code 1
+[00:01] stderr: Traceback (most recent call last):
   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py", line 1, in <module>
     from comfy_env import install
 ModuleNotFoundError: No module named 'comfy_env'
 
-[00:02] 
+[00:01] 
 linux: FAILED (unexpected error)
-[00:02] Error: Command '['/home/runner/venv/venv/bin/python', '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py']' returned non-zero exit status 1.
+[00:01] Error: Command '['/home/runner/venv/venv/bin/python', '/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py']' returned non-zero exit status 1.

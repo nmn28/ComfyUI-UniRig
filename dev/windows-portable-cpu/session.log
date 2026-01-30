@@ -7,7 +7,7 @@
 [00:00] Unicode check: OK (all characters cp1252-safe)
 [00:00] [SYNTAX] PASSED
 [00:00] Setting up Windows isolation...
-[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_iybbrl9r\temp
+[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_3maa8nkh\temp
 [00:00]   Isolation active
 [00:00] 
 [00:00] [2/7] INSTALL
@@ -15,127 +15,123 @@
 [00:00] Using existing ComfyUI: C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI
 [00:00] Installing custom node...
 [00:00] Copying ComfyUI-UniRig to custom_nodes/...
-[00:01] Installing node requirements...
-[00:01] Running: C:\Users\runneradmin\venv\ComfyUI_windows_portable\python_embeded\python.exe -m pip install -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt
-[00:17]   Collecting comfy-env>=0.1.8 (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
-[00:17]     Downloading comfy_env-0.1.10-py3-none-any.whl.metadata (7.0 kB)
-[00:17]   Collecting comfy-3d-viewers==0.2.1 (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 3))
-[00:17]     Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl.metadata (2.2 kB)
-[00:17]   Requirement already satisfied: numpy in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 5)) (2.4.1)
-[00:17]   Requirement already satisfied: scipy in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 6)) (1.17.0)
-[00:17]   Collecting libigl (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 7))
-[00:17]     Downloading libigl-2.6.1-cp312-abi3-win_amd64.whl.metadata (4.8 kB)
-[00:17]   Collecting trimesh[easy] (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading trimesh-4.11.1-py3-none-any.whl.metadata (13 kB)
-[00:17]   Requirement already satisfied: pip>=21.0 in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2)) (25.3)
-[00:17]   Collecting tomli-w>=1.0.0 (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
-[00:17]     Downloading tomli_w-1.2.0-py3-none-any.whl.metadata (5.7 kB)
-[00:17]   Requirement already satisfied: uv>=0.4.0 in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2)) (0.9.28)
-[00:17]   Collecting colorlog (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading colorlog-6.10.1-py3-none-any.whl.metadata (11 kB)
-[00:17]   Collecting manifold3d>=2.3.0 (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading manifold3d-3.3.2-cp313-cp313-win_amd64.whl.metadata (19 kB)
-[00:17]   Requirement already satisfied: charset-normalizer in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.4.4)
-[00:17]   Collecting lxml (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading lxml-6.0.2-cp313-cp313-win_amd64.whl.metadata (3.7 kB)
-[00:17]   Collecting jsonschema (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
-[00:17]   Requirement already satisfied: networkx in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.6.1)
-[00:17]   Collecting svg.path (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading svg_path-7.0-py2.py3-none-any.whl.metadata (14 kB)
-[00:17]   Collecting pycollada (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading pycollada-0.9.3-py3-none-any.whl.metadata (1.7 kB)
-[00:17]   Collecting shapely (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading shapely-2.1.2-cp313-cp313-win_amd64.whl.metadata (7.1 kB)
-[00:17]   Collecting xxhash (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading xxhash-3.6.0-cp313-cp313-win_amd64.whl.metadata (13 kB)
-[00:17]   Collecting rtree (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading rtree-1.4.1-py3-none-win_amd64.whl.metadata (2.2 kB)
-[00:17]   Requirement already satisfied: httpx in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.28.1)
-[00:17]   Requirement already satisfied: pillow in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (12.1.0)
-[00:17]   Collecting vhacdx (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading vhacdx-0.0.10-cp313-cp313-win_amd64.whl.metadata (1.1 kB)
-[00:17]   Collecting mapbox_earcut>=1.0.2 (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading mapbox_earcut-2.0.0-cp313-cp313-win_amd64.whl.metadata (2.5 kB)
-[00:17]   Requirement already satisfied: colorama in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from colorlog->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.4.6)
-[00:17]   Requirement already satisfied: anyio in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (4.12.1)
-[00:17]   Requirement already satisfied: certifi in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (2026.1.4)
-[00:17]   Requirement already satisfied: httpcore==1.* in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (1.0.9)
-[00:17]   Requirement already satisfied: idna in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.11)
-[00:17]   Requirement already satisfied: h11>=0.16 in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from httpcore==1.*->httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.16.0)
-[00:17]   Requirement already satisfied: attrs>=22.2.0 in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (25.4.0)
-[00:17]   Collecting jsonschema-specifications>=2023.03.6 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
-[00:17]   Collecting referencing>=0.28.4 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
-[00:17]   Collecting rpds-py>=0.25.0 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading rpds_py-0.30.0-cp313-cp313-win_amd64.whl.metadata (4.2 kB)
-[00:17]   Collecting python-dateutil (from pycollada->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
-[00:17]   Collecting six>=1.5 (from python-dateutil->pycollada->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
-[00:17]     Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
-[00:17]   Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl (1.3 MB)
-[00:17]      ---------------------------------------- 1.3/1.3 MB 17.9 MB/s  0:00:00
-[00:17]   Downloading comfy_env-0.1.10-py3-none-any.whl (73 kB)
-[00:17]   Downloading trimesh-4.11.1-py3-none-any.whl (740 kB)
-[00:17]      ---------------------------------------- 740.4/740.4 kB 9.9 MB/s  0:00:00
-[00:17]   Downloading libigl-2.6.1-cp312-abi3-win_amd64.whl (13.5 MB)
-[00:17]      ---------------------------------------- 13.5/13.5 MB 94.3 MB/s  0:00:00
-[00:17]   Downloading manifold3d-3.3.2-cp313-cp313-win_amd64.whl (961 kB)
-[00:17]      ---------------------------------------- 961.4/961.4 kB 14.9 MB/s  0:00:00
-[00:17]   Downloading mapbox_earcut-2.0.0-cp313-cp313-win_amd64.whl (56 kB)
-[00:17]   Downloading tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
-[00:17]   Downloading colorlog-6.10.1-py3-none-any.whl (11 kB)
-[00:17]   Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
-[00:17]   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
-[00:17]   Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
-[00:17]   Downloading rpds_py-0.30.0-cp313-cp313-win_amd64.whl (240 kB)
-[00:17]   Downloading lxml-6.0.2-cp313-cp313-win_amd64.whl (4.0 MB)
-[00:17]      ---------------------------------------- 4.0/4.0 MB 54.8 MB/s  0:00:00
-[00:17]   Downloading pycollada-0.9.3-py3-none-any.whl (129 kB)
-[00:17]   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
-[00:17]   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
-[00:17]   Downloading rtree-1.4.1-py3-none-win_amd64.whl (389 kB)
-[00:17]   Downloading shapely-2.1.2-cp313-cp313-win_amd64.whl (1.7 MB)
-[00:17]      ---------------------------------------- 1.7/1.7 MB 46.7 MB/s  0:00:00
-[00:17]   Downloading svg_path-7.0-py2.py3-none-any.whl (18 kB)
-[00:17]   Downloading vhacdx-0.0.10-cp313-cp313-win_amd64.whl (195 kB)
-[00:17]   Downloading xxhash-3.6.0-cp313-cp313-win_amd64.whl (31 kB)
-[00:17]   Installing collected packages: xxhash, vhacdx, trimesh, tomli-w, svg.path, six, shapely, rtree, rpds-py, mapbox_earcut, manifold3d, lxml, comfy-3d-viewers, colorlog, referencing, python-dateutil, libigl, comfy-env, pycollada, jsonschema-specifications, jsonschema
-[00:17]   
-[00:17]   Successfully installed colorlog-6.10.1 comfy-3d-viewers-0.2.1 comfy-env-0.1.10 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 libigl-2.6.1 lxml-6.0.2 manifold3d-3.3.2 mapbox_earcut-2.0.0 pycollada-0.9.3 python-dateutil-2.9.0.post0 referencing-0.37.0 rpds-py-0.30.0 rtree-1.4.1 shapely-2.1.2 six-1.17.0 svg.path-7.0 tomli-w-1.2.0 trimesh-4.11.1 vhacdx-0.0.10 xxhash-3.6.0
-[00:17] Running install.py...
-[00:17] Running: C:\Users\runneradmin\venv\ComfyUI_windows_portable\python_embeded\python.exe C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\install.py
-[13:59]   [apt] Skipping apt packages (not Linux)
-[13:59]   
-[13:59]   [env] Setting 1 persistent environment variable(s)...
-[13:59]     - PYTORCH_CUDA_ALLOC_CONF=backend:native
-[13:59]     [env] Set PYTORCH_CUDA_ALLOC_CONF (Windows registry)
-[13:59]   [env] Restart terminal/ComfyUI for changes to take effect
-[13:59]   
-[13:59]   Installing 1 node dependencies...
-[13:59]     Cloning ComfyUI-GeometryPack from https://github.com/PozzettiAndrea/ComfyUI-GeometryPack...
-[13:59]     Installing requirements for ComfyUI-GeometryPack...
-[13:59]     Running install.py for ComfyUI-GeometryPack...
-[13:59]   No packages to install
-[13:59]   
-[13:59]   [isolated] Installing: nodes\nodes_blender
-[13:59]   Using specified Python 3.11
-[13:59]   Generated C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_blender\pixi.toml
-[13:59]   Running pixi install...
-[13:59]   Moved environment to C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_blender\_env_nodes_blender
-[13:59]   Installation complete!
-[13:59]   
-[13:59]   [isolated] Installing: nodes\nodes_gpu
-[13:59]   Detected CUDA 12.8 -> PyTorch 2.8
-[13:59]   Generated C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\nodes_gpu\pixi.toml
-[13:59]   Running pixi install...
-[13:59]   Installing CUDA packages: ['torch-scatter', 'torch-cluster', 'spconv', 'flash-attn']
-[13:59]     Installing torch-scatter from https://data.pyg.org/whl/torch-2.8.0%2Bcu128/torch_scatter-2.1.2%2Bpt28cu128-cp313-cp313-win_amd64.whl
-[13:59]     Installing torch-cluster from https://data.pyg.org/whl/torch-2.8.0%2Bcu128/torch_cluster-1.6.3%2Bpt28cu128-cp313-cp313-win_amd64.whl
-[13:59]     Installing spconv from https://github.com/PozzettiAndrea/cuda-wheels/releases/download/spconv_cu128-latest/spconv_cu128-2.3.8%2Bcu128torch28-cp313-cp313-win_amd64.whl
-[13:59] Command failed with code 1
-[13:59] stderr: Traceback (most recent call last):
+[00:00] Installing node requirements...
+[00:00] Running: C:\Users\runneradmin\venv\ComfyUI_windows_portable\python_embeded\python.exe -m pip install -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt
+[00:09]   Collecting comfy-env>=0.1.8 (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
+[00:09]     Downloading comfy_env-0.1.10-py3-none-any.whl.metadata (7.0 kB)
+[00:09]   Collecting comfy-3d-viewers==0.2.1 (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 3))
+[00:09]     Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl.metadata (2.2 kB)
+[00:09]   Requirement already satisfied: numpy in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 5)) (2.4.1)
+[00:09]   Requirement already satisfied: scipy in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 6)) (1.17.0)
+[00:09]   Collecting libigl (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 7))
+[00:09]     Downloading libigl-2.6.1-cp312-abi3-win_amd64.whl.metadata (4.8 kB)
+[00:09]   Collecting trimesh[easy] (from -r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading trimesh-4.11.1-py3-none-any.whl.metadata (13 kB)
+[00:09]   Requirement already satisfied: pip>=21.0 in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2)) (25.3)
+[00:09]   Collecting tomli-w>=1.0.0 (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2))
+[00:09]     Downloading tomli_w-1.2.0-py3-none-any.whl.metadata (5.7 kB)
+[00:09]   Requirement already satisfied: uv>=0.4.0 in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from comfy-env>=0.1.8->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 2)) (0.9.28)
+[00:09]   Collecting colorlog (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading colorlog-6.10.1-py3-none-any.whl.metadata (11 kB)
+[00:09]   Collecting manifold3d>=2.3.0 (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading manifold3d-3.3.2-cp313-cp313-win_amd64.whl.metadata (19 kB)
+[00:09]   Requirement already satisfied: charset-normalizer in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.4.4)
+[00:09]   Collecting lxml (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading lxml-6.0.2-cp313-cp313-win_amd64.whl.metadata (3.7 kB)
+[00:09]   Collecting jsonschema (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+[00:09]   Requirement already satisfied: networkx in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.6.1)
+[00:09]   Collecting svg.path (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading svg_path-7.0-py2.py3-none-any.whl.metadata (14 kB)
+[00:09]   Collecting pycollada (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading pycollada-0.9.3-py3-none-any.whl.metadata (1.7 kB)
+[00:09]   Collecting shapely (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading shapely-2.1.2-cp313-cp313-win_amd64.whl.metadata (7.1 kB)
+[00:09]   Collecting xxhash (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading xxhash-3.6.0-cp313-cp313-win_amd64.whl.metadata (13 kB)
+[00:09]   Collecting rtree (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading rtree-1.4.1-py3-none-win_amd64.whl.metadata (2.2 kB)
+[00:09]   Requirement already satisfied: httpx in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.28.1)
+[00:09]   Requirement already satisfied: pillow in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (12.1.0)
+[00:09]   Collecting vhacdx (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading vhacdx-0.0.10-cp313-cp313-win_amd64.whl.metadata (1.1 kB)
+[00:09]   Collecting mapbox_earcut>=1.0.2 (from trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading mapbox_earcut-2.0.0-cp313-cp313-win_amd64.whl.metadata (2.5 kB)
+[00:09]   Requirement already satisfied: colorama in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from colorlog->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.4.6)
+[00:09]   Requirement already satisfied: anyio in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (4.12.1)
+[00:09]   Requirement already satisfied: certifi in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (2026.1.4)
+[00:09]   Requirement already satisfied: httpcore==1.* in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (1.0.9)
+[00:09]   Requirement already satisfied: idna in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (3.11)
+[00:09]   Requirement already satisfied: h11>=0.16 in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from httpcore==1.*->httpx->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (0.16.0)
+[00:09]   Requirement already satisfied: attrs>=22.2.0 in c:\users\runneradmin\venv\comfyui_windows_portable\python_embeded\lib\site-packages (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4)) (25.4.0)
+[00:09]   Collecting jsonschema-specifications>=2023.03.6 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+[00:09]   Collecting referencing>=0.28.4 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+[00:09]   Collecting rpds-py>=0.25.0 (from jsonschema->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading rpds_py-0.30.0-cp313-cp313-win_amd64.whl.metadata (4.2 kB)
+[00:09]   Collecting python-dateutil (from pycollada->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+[00:09]   Collecting six>=1.5 (from python-dateutil->pycollada->trimesh[easy]->-r C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\requirements.txt (line 4))
+[00:09]     Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+[00:09]   Downloading comfy_3d_viewers-0.2.1-py3-none-any.whl (1.3 MB)
+[00:09]      ---------------------------------------- 1.3/1.3 MB 23.0 MB/s  0:00:00
+[00:09]   Downloading comfy_env-0.1.10-py3-none-any.whl (73 kB)
+[00:09]   Downloading trimesh-4.11.1-py3-none-any.whl (740 kB)
+[00:09]      ---------------------------------------- 740.4/740.4 kB 24.3 MB/s  0:00:00
+[00:09]   Downloading libigl-2.6.1-cp312-abi3-win_amd64.whl (13.5 MB)
+[00:09]      ---------------------------------------- 13.5/13.5 MB 123.2 MB/s  0:00:00
+[00:09]   Downloading manifold3d-3.3.2-cp313-cp313-win_amd64.whl (961 kB)
+[00:09]      ---------------------------------------- 961.4/961.4 kB 15.5 MB/s  0:00:00
+[00:09]   Downloading mapbox_earcut-2.0.0-cp313-cp313-win_amd64.whl (56 kB)
+[00:09]   Downloading tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
+[00:09]   Downloading colorlog-6.10.1-py3-none-any.whl (11 kB)
+[00:09]   Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+[00:09]   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+[00:09]   Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+[00:09]   Downloading rpds_py-0.30.0-cp313-cp313-win_amd64.whl (240 kB)
+[00:09]   Downloading lxml-6.0.2-cp313-cp313-win_amd64.whl (4.0 MB)
+[00:09]      ---------------------------------------- 4.0/4.0 MB 111.3 MB/s  0:00:00
+[00:09]   Downloading pycollada-0.9.3-py3-none-any.whl (129 kB)
+[00:09]   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+[00:09]   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+[00:09]   Downloading rtree-1.4.1-py3-none-win_amd64.whl (389 kB)
+[00:09]   Downloading shapely-2.1.2-cp313-cp313-win_amd64.whl (1.7 MB)
+[00:09]      ---------------------------------------- 1.7/1.7 MB 50.8 MB/s  0:00:00
+[00:09]   Downloading svg_path-7.0-py2.py3-none-any.whl (18 kB)
+[00:09]   Downloading vhacdx-0.0.10-cp313-cp313-win_amd64.whl (195 kB)
+[00:09]   Downloading xxhash-3.6.0-cp313-cp313-win_amd64.whl (31 kB)
+[00:09]   Installing collected packages: xxhash, vhacdx, trimesh, tomli-w, svg.path, six, shapely, rtree, rpds-py, mapbox_earcut, manifold3d, lxml, comfy-3d-viewers, colorlog, referencing, python-dateutil, libigl, comfy-env, pycollada, jsonschema-specifications, jsonschema
+[00:10]   
+[00:10]   Successfully installed colorlog-6.10.1 comfy-3d-viewers-0.2.1 comfy-env-0.1.10 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 libigl-2.6.1 lxml-6.0.2 manifold3d-3.3.2 mapbox_earcut-2.0.0 pycollada-0.9.3 python-dateutil-2.9.0.post0 referencing-0.37.0 rpds-py-0.30.0 rtree-1.4.1 shapely-2.1.2 six-1.17.0 svg.path-7.0 tomli-w-1.2.0 trimesh-4.11.1 vhacdx-0.0.10 xxhash-3.6.0
+[00:10] Running install.py...
+[00:10] Running: C:\Users\runneradmin\venv\ComfyUI_windows_portable\python_embeded\python.exe C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\install.py
+[01:58]   [apt] Skipping apt packages (not Linux)
+[01:58]   
+[01:58]   [env] Setting 1 persistent environment variable(s)...
+[01:58]     - PYTORCH_CUDA_ALLOC_CONF=backend:native
+[01:58]     [env] Set PYTORCH_CUDA_ALLOC_CONF (Windows registry)
+[01:58]   [env] Restart terminal/ComfyUI for changes to take effect
+[01:58]   
+[01:58]   Installing 1 node dependencies...
+[01:58]     Cloning ComfyUI-GeometryPack from https://github.com/PozzettiAndrea/ComfyUI-GeometryPack...
+[01:58]     Installing requirements for ComfyUI-GeometryPack...
+[01:58]     Warning: Failed to install ComfyUI-GeometryPack: [WinError 2] The system cannot find the file specified
+[01:58]   No packages to install
+[01:58]   
+[01:58]   [isolated] Installing: nodes
+[01:58]   Detected CUDA 12.8 -> PyTorch 2.8
+[01:58]   Pixi not found, downloading...
+[01:58]   Installed pixi to: C:\Users\runneradmin\.local\bin\pixi.exe
+[01:58]   Using specified Python 3.11
+[01:58]   Generated C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\pixi.toml
+[01:58]   Running pixi install...
+[01:58]   Installing CUDA packages: ['torch-scatter', 'torch-cluster', 'spconv', 'flash-attn']
+[01:58]     Installing torch-scatter from https://data.pyg.org/whl/torch-2.8.0%2Bcu128/torch_scatter-2.1.2%2Bpt28cu128-cp313-cp313-win_amd64.whl
+[01:58]   CUDA package install failed for torch-scatter:
+[01:58]   ERROR: torch_scatter-2.1.2+pt28cu128-cp313-cp313-win_amd64.whl is not a supported wheel on this platform.
+[01:58] Command failed with code 1
+[01:58] stderr: Traceback (most recent call last):
   File "C:\Users\runneradmin\venv\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\install.py", line 2, in <module>
     install()
     ~~~~~~~^^
@@ -145,12 +141,14 @@
   File "C:\Users\runneradmin\venv\ComfyUI_windows_portable\python_embeded\Lib\site-packages\comfy_env\install.py", line 318, in _install_isolated_subdirs
     pixi_install(sub_cfg, sub_dir, log)
     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\runneradmin\venv\ComfyUI_windows_portable\python_embeded\Lib\site-packages\comfy_env\pixi\core.py", line 505, in pixi_install
-RuntimeError: No wheel found for flash-attn with CUDA 12.8, torch 2.8, Python 3.13. Check cuda-wheels index.
+  File "C:\Users\runneradmin\venv\ComfyUI_windows_portable\python_embeded\Lib\site-packages\comfy_env\pixi\core.py", line 522, in pixi_install
+    raise RuntimeError(f"CUDA package install failed: {result.stderr}")
+RuntimeError: CUDA package install failed: ERROR: torch_scatter-2.1.2+pt28cu128-cp313-cp313-win_amd64.whl is not a supported wheel on this platform.
 
-[13:59] Tearing down Windows isolation...
-[13:59]   Environment restored
-[13:59]   Isolation torn down
-[13:59] 
+
+[01:58] Tearing down Windows isolation...
+[01:58]   Environment restored
+[01:58]   Isolation torn down
+[01:58] 
 windows_portable: FAILED (unexpected error)
-[13:59] Error: Command '['C:\\Users\\runneradmin\\venv\\ComfyUI_windows_portable\\python_embeded\\python.exe', 'C:\\Users\\runneradmin\\venv\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\install.py']' returned non-zero exit status 1.
+[01:58] Error: Command '['C:\\Users\\runneradmin\\venv\\ComfyUI_windows_portable\\python_embeded\\python.exe', 'C:\\Users\\runneradmin\\venv\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\install.py']' returned non-zero exit status 1.
