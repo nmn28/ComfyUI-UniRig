@@ -441,6 +441,7 @@ def _convert_smpl_tpose(joints, tails, vertices, skin, names):
 
 def _normalize_mixamo(joints, tails, vertices, skin, names):
     """Normalize Mixamo skeleton for animation compatibility."""
+    from mathutils import Vector, Quaternion
     print("[Direct FBX Export] Normalizing Mixamo skeleton...")
 
     # Get key bone indices
