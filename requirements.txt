@@ -2,6 +2,8 @@
 comfy-env>=0.1.11
 comfy-3d-viewers==0.2.1
 trimesh[easy]
+
+# Core 3D processing
 numpy
 scipy
 libigl
