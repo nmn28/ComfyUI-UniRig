@@ -4,20 +4,20 @@
 [00:00] ----------------------------------------
 [00:00] Found pyproject.toml (modern format)
 [00:00] Found requirements.txt (legacy format)
-[00:01] Unicode check: OK (all characters cp1252-safe)
-[00:01] [SYNTAX] PASSED
-[00:01] Setting up Windows isolation...
-[00:01]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_cug2e6dp\temp
-[00:01]   Cleared 1 env var(s): COMFYUI_DIR
-[00:01]   Isolation active
-[00:01] 
-[00:01] [2/7] INSTALL
-[00:01] ----------------------------------------
-[00:01] Using existing ComfyUI: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI
-[00:01] Node already installed, skipping installation
-[00:01] Installing validation endpoint...
-[00:01]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
-[00:01] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
+[00:02] Unicode check: OK (all characters cp1252-safe)
+[00:02] [SYNTAX] PASSED
+[00:02] Setting up Windows isolation...
+[00:02]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_68pimws2\temp
+[00:02]   Cleared 1 env var(s): COMFYUI_DIR
+[00:02]   Isolation active
+[00:02] 
+[00:02] [2/7] INSTALL
+[00:02] ----------------------------------------
+[00:02] Using existing ComfyUI: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI
+[00:02] Node already installed, skipping installation
+[00:02] Installing validation endpoint...
+[00:02]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
+[00:02] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
 [00:02] [INSTALL] PASSED
 [00:02] COMFY_TEST_GPU env var = ''
 [00:02] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
