@@ -19,79 +19,200 @@
 [00:00] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
 [00:00] 
 Starting ComfyUI server...
-[00:01] Starting ComfyUI server on port 8188...
-[00:01] Starting ComfyUI server on port 8188...
-[00:01] Waiting for server to be ready (timeout: 300s)...
-[00:08]   [ComfyUI] 
-[00:08]   [ComfyUI] Prestartup times for custom nodes:
-[00:08]   [ComfyUI]    0.4 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
-[00:08]   [ComfyUI]    3.8 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
-[00:08]   [ComfyUI] 
-[00:08]   [ComfyUI] WARNING: Potential Error in code: Torch already imported, torch should never be imported before this point.
-[00:08]   [ComfyUI] Checkpoint files will always be loaded safely.
-[00:08]   [ComfyUI] Total VRAM 7168 MB, total RAM 7168 MB
-[00:08]   [ComfyUI] pytorch version: 2.10.0
-[00:08]   [ComfyUI] Mac Version (15, 7, 3)
-[00:08]   [ComfyUI] Set vram state to: DISABLED
-[00:08]   [ComfyUI] Device: cpu
-[00:16]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'Extension file not found: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfy_kitchen/backends/cuda/_C.abi3.so', 'capabilities': []}
-[00:16]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
-[00:16]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
-[00:19]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
-[00:32]   [ComfyUI] Python version: 3.13.11 (v3.13.11:627894459a8, Dec  5 2025, 11:26:37) [Clang 16.0.0 (clang-1600.0.26.6)]
-[00:32]   [ComfyUI] ComfyUI version: 0.11.1
-[00:32]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
-[00:32]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
-[00:32]   [ComfyUI] ComfyUI frontend version: 1.37.11
-[00:32]   [ComfyUI] [Prompt Server] web root: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfyui_frontend_package/static
-[00:42]   [ComfyUI] Traceback (most recent call last):
-[00:42]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/nodes.py", line 2216, in load_custom_node
-[00:42]   [ComfyUI]     module_spec.loader.exec_module(module)
-[00:42]   [ComfyUI]     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-[00:42]   [ComfyUI]   File "<frozen importlib._bootstrap_external>", line 1023, in exec_module
-[00:42]   [ComfyUI]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-[00:42]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/__init__.py", line 20, in <module>
-[00:42]   [ComfyUI]     from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
-[00:42]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/__init__.py", line 17, in <module>
-[00:42]   [ComfyUI]     from .main import NODE_CLASS_MAPPINGS as main_mappings
-[00:42]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/main/__init__.py", line 19, in <module>
-[00:42]   [ComfyUI]     from . import repair
-[00:42]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/main/repair/__init__.py", line 17, in <module>
-[00:42]   [ComfyUI]     from .meshfix import NODE_CLASS_MAPPINGS as MESHFIX_MAPS, NODE_DISPLAY_NAME_MAPPINGS as MESHFIX_DISP
-[00:42]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/main/repair/meshfix.py", line 13, in <module>
-[00:42]   [ComfyUI]     import pymeshfix
-[00:42]   [ComfyUI] ModuleNotFoundError: No module named 'pymeshfix'
-[00:42]   [ComfyUI] 
-[00:42]   [ComfyUI] Cannot import /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack module for custom nodes: No module named 'pymeshfix'
-[00:42]   [ComfyUI] 
-[00:42]   [ComfyUI] Import times for custom nodes:
-[00:42]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
-[00:42]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/websocket_image_save.py
-[00:42]   [ComfyUI]    0.3 seconds (IMPORT FAILED): /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
-[00:42]   [ComfyUI]    2.9 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
-[00:42]   [ComfyUI] 
-[00:42]   [ComfyUI] Context impl SQLiteImpl.
-[00:42]   [ComfyUI] Will assume non-transactional DDL.
-[00:42]   [ComfyUI] Context impl SQLiteImpl.
-[00:42]   [ComfyUI] Will assume non-transactional DDL.
-[00:42]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
-[00:42]   [ComfyUI] Revision ID: 0001_assets
-[00:42]   [ComfyUI] Revises: None
-[00:42]   [ComfyUI] Create Date: 2025-12-10 00:00:00
-[00:42]   [ComfyUI] Database upgraded from None to 0001_assets
-[00:42]   [ComfyUI] Assets scan(roots=['models']) completed in 0.138s (created=11, skipped_existing=0, total_seen=11)
-[00:42]   [ComfyUI] Starting server
-[00:42]   [ComfyUI] 
-[00:42]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
-[00:43] Server responding, waiting for nodes to load...
-[01:03] Server is ready!
-[01:03] 
-[01:03] [3/4] REGISTRATION
-[01:03] ----------------------------------------
-[01:03] Checking for import errors in server logs...
-[01:03] Stopping ComfyUI server...
-[01:04] 
+[00:00] Starting ComfyUI server on port 8188...
+[00:00] Starting ComfyUI server on port 8188...
+[00:00] Waiting for server to be ready (timeout: 300s)...
+[00:02]   [ComfyUI] 
+[00:02]   [ComfyUI] Prestartup times for custom nodes:
+[00:02]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
+[00:02]   [ComfyUI] 
+[00:06]   [ComfyUI] Checkpoint files will always be loaded safely.
+[00:06]   [ComfyUI] Total VRAM 7168 MB, total RAM 7168 MB
+[00:06]   [ComfyUI] pytorch version: 2.10.0
+[00:06]   [ComfyUI] Mac Version (15, 7, 3)
+[00:06]   [ComfyUI] Set vram state to: DISABLED
+[00:06]   [ComfyUI] Device: cpu
+[00:10]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+[00:10]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+[00:10]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'Extension file not found: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfy_kitchen/backends/cuda/_C.abi3.so', 'capabilities': []}
+[00:11]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+[00:17]   [ComfyUI] Python version: 3.13.11 (v3.13.11:627894459a8, Dec  5 2025, 11:26:37) [Clang 16.0.0 (clang-1600.0.26.6)]
+[00:17]   [ComfyUI] ComfyUI version: 0.11.1
+[00:17]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
+[00:17]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
+[00:17]   [ComfyUI] ComfyUI frontend version: 1.37.11
+[00:17]   [ComfyUI] [Prompt Server] web root: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfyui_frontend_package/static
+[00:20]   [ComfyUI] Traceback (most recent call last):
+[00:20]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/__init__.py", line 12, in <module>
+[00:20]   [ComfyUI]     from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+[00:20]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/__init__.py", line 11, in <module>
+[00:20]   [ComfyUI]     from .mesh_io import UniRigLoadMesh, UniRigSaveMesh
+[00:20]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/mesh_io.py", line 9, in <module>
+[00:20]   [ComfyUI]     import trimesh
+[00:20]   [ComfyUI] ModuleNotFoundError: No module named 'trimesh'
+[00:20]   [ComfyUI] 
+[00:20]   [ComfyUI] Import times for custom nodes:
+[00:20]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/websocket_image_save.py
+[00:20]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
+[00:20]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
+[00:20]   [ComfyUI] 
+[00:20]   [ComfyUI] Context impl SQLiteImpl.
+[00:20]   [ComfyUI] Will assume non-transactional DDL.
+[00:20]   [ComfyUI] Context impl SQLiteImpl.
+[00:20]   [ComfyUI] Will assume non-transactional DDL.
+[00:20]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
+[00:20]   [ComfyUI] Revision ID: 0001_assets
+[00:20]   [ComfyUI] Revises: None
+[00:20]   [ComfyUI] Create Date: 2025-12-10 00:00:00
+[00:20]   [ComfyUI] Database upgraded from None to 0001_assets
+[00:20]   [ComfyUI] Assets scan(roots=['models']) completed in 0.024s (created=11, skipped_existing=0, total_seen=11)
+[00:20]   [ComfyUI] Starting server
+[00:20]   [ComfyUI] 
+[00:20]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
+[00:21] Server responding, waiting for nodes to load...
+[00:41] Server is ready!
+[00:41] 
+[00:41] [3/4] REGISTRATION
+[00:41] ----------------------------------------
+[00:41] Checking for import errors in server logs...
+[00:41] No import errors detected
+[00:41] [REGISTRATION] PASSED
+[00:41] Found 596 registered nodes
+[00:41] 
+[4/4] INSTANTIATION: SKIPPED
+[00:41] 
+[5/4] STATIC_CAPTURE: SKIPPED
+[00:41] 
+[6/4] VALIDATION: SKIPPED
+[00:41] 
+[00:41] [7/4] EXECUTION
+[00:41] ----------------------------------------
+[00:41] No GPU detected - GPU workflows will be skipped
+[00:41] Running 5 workflow(s) (all with videos)...
+[00:41] Installing screenshot dependencies (playwright, pillow)...
+[00:45]   Packages installed, downloading chromium browser...
+[00:46]   Screenshot dependencies installed successfully
+[00:56]   [ComfyUI] === /validate endpoint called ===
+[00:56]   [ComfyUI] Received JSON with keys: ['prompt']
+[00:56]   [ComfyUI] Prompt has 3 nodes
+[00:56]   [ComfyUI]   Node 6: UNKNOWN
+[00:56]   [ComfyUI]     Inputs: {"UNKNOWN": "", "model_fbx_path": ["8", 0]}
+[00:56]   [ComfyUI]   Node 7: Preview3D
+[00:56]   [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
+[00:56]   [ComfyUI]   Node 8: UNKNOWN
+[00:56]   [ComfyUI]     Inputs: {"UNKNOWN": "refresh"}
+[00:56]   [ComfyUI] Generated prompt_id: 4185a458-f1e4-4c7c-ab7a-b04d1048c5f0
+[00:56]   [ComfyUI] Calling execution.validate_prompt()...
+[00:56]   [ComfyUI] Validation result: valid=False
+[00:56]   [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#6'", 'extra_info': {}}
+[00:56]   [ComfyUI] === Validation FAILED ===
+[01:03]   [ComfyUI] === /validate endpoint called ===
+[01:03]   [ComfyUI] Received JSON with keys: ['prompt']
+[01:03]   [ComfyUI] Prompt has 4 nodes
+[01:03]   [ComfyUI]   Node 10: UNKNOWN
+[01:03]   [ComfyUI]     Inputs: {"UNKNOWN": "", "fbx_output_path": ["39", 0]}
+[01:03]   [ComfyUI]   Node 27: UNKNOWN
+[01:03]   [ComfyUI]     Inputs: {"UNKNOWN": "3d/realistic_male_character.glb"}
+[01:03]   [ComfyUI]   Node 39: UNKNOWN
+[01:03]   [ComfyUI]     Inputs: {"UNKNOWN": 50000, "trimesh": ["27", 0], "model": ["40", 0]}
+[01:03]   [ComfyUI]   Node 40: UNKNOWN
+[01:03]   [ComfyUI]     Inputs: {"UNKNOWN": false}
+[01:03]   [ComfyUI] Generated prompt_id: 1a8499b9-07e4-4e8e-8804-e1d5731e58c4
+[01:03]   [ComfyUI] Calling execution.validate_prompt()...
+[01:03]   [ComfyUI] Validation result: valid=False
+[01:03]   [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#10'", 'extra_info': {}}
+[01:03]   [ComfyUI] === Validation FAILED ===
+[01:09]   [ComfyUI] === /validate endpoint called ===
+[01:09]   [ComfyUI] Received JSON with keys: ['prompt']
+[01:09]   [ComfyUI] Prompt has 9 nodes
+[01:09]   [ComfyUI]   Node 10: UNKNOWN
+[01:09]   [ComfyUI]     Inputs: {"UNKNOWN": "", "fbx_output_path": ["42", 0]}
+[01:09]   [ComfyUI]   Node 27: UNKNOWN
+[01:09]   [ComfyUI]     Inputs: {"UNKNOWN": "3d/realistic_male_character.glb"}
+[01:09]   [ComfyUI]   Node 41: UNKNOWN
+[01:09]   [ComfyUI]     Inputs: {"UNKNOWN": true}
+[01:09]   [ComfyUI]   Node 42: UNKNOWN
+[01:09]   [ComfyUI]     Inputs: {"UNKNOWN": true, "trimesh": ["45", 0], "model": ["41", 0]}
+[01:09]   [ComfyUI]   Node 43: UNKNOWN
+[01:09]   [ComfyUI]     Inputs: {"UNKNOWN": 512, "mesh": ["45", 0]}
+[01:09]   [ComfyUI]   Node 44: PreviewImage
+[01:09]   [ComfyUI]     Inputs: {"images": ["43", 0]}
+[01:09]   [ComfyUI]   Node 45: UNKNOWN
+[01:09]   [ComfyUI]     Inputs: {"UNKNOWN": 0, "trimesh": ["27", 0]}
+[01:09]   [ComfyUI]   Node 46: UNKNOWN
+[01:09]   [ComfyUI]     Inputs: {"UNKNOWN": 512, "mesh": ["27", 0]}
+[01:09]   [ComfyUI]   Node 47: PreviewImage
+[01:09]   [ComfyUI]     Inputs: {"images": ["46", 0]}
+[01:09]   [ComfyUI] Generated prompt_id: 82aedd69-c5c1-4ad2-ae49-3bb219fe4fe5
+[01:09]   [ComfyUI] Calling execution.validate_prompt()...
+[01:09]   [ComfyUI] Validation result: valid=False
+[01:09]   [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#10'", 'extra_info': {}}
+[01:09]   [ComfyUI] === Validation FAILED ===
+[01:15]   [ComfyUI] === /validate endpoint called ===
+[01:15]   [ComfyUI] Received JSON with keys: ['prompt']
+[01:15]   [ComfyUI] Prompt has 11 nodes
+[01:15]   [ComfyUI]   Node 27: UNKNOWN
+[01:15]   [ComfyUI]     Inputs: {"UNKNOWN": "3d/realistic_male_character.glb"}
+[01:15]   [ComfyUI]   Node 41: UNKNOWN
+[01:15]   [ComfyUI]     Inputs: {"UNKNOWN": true}
+[01:15]   [ComfyUI]   Node 42: UNKNOWN
+[01:15]   [ComfyUI]     Inputs: {"UNKNOWN": true, "trimesh": ["45", 0], "model": ["41", 0]}
+[01:15]   [ComfyUI]   Node 43: UNKNOWN
+[01:15]   [ComfyUI]     Inputs: {"UNKNOWN": 512, "mesh": ["45", 0]}
+[01:15]   [ComfyUI]   Node 44: PreviewImage
+[01:15]   [ComfyUI]     Inputs: {"images": ["43", 0]}
+[01:15]   [ComfyUI]   Node 45: UNKNOWN
+[01:15]   [ComfyUI]     Inputs: {"UNKNOWN": 0, "trimesh": ["27", 0]}
+[01:15]   [ComfyUI]   Node 46: UNKNOWN
+[01:15]   [ComfyUI]     Inputs: {"UNKNOWN": 512, "mesh": ["27", 0]}
+[01:15]   [ComfyUI]   Node 47: PreviewImage
+[01:15]   [ComfyUI]     Inputs: {"images": ["46", 0]}
+[01:15]   [ComfyUI]   Node 49: UNKNOWN
+[01:15]   [ComfyUI]     Inputs: {"UNKNOWN": "", "fbx_path_left": ["42", 0], "fbx_path_right": ["51", 0]}
+[01:15]   [ComfyUI]   Node 50: UNKNOWN
+[01:15]   [ComfyUI]     Inputs: {"UNKNOWN": "3d/mixamo.fbx"}
+[01:15]   [ComfyUI]   Node 51: PrimitiveString
+[01:15]   [ComfyUI]     Inputs: {"value": "/home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx"}
+[01:15]   [ComfyUI] Generated prompt_id: 65a3c407-6241-47b7-85de-d323c9b9f572
+[01:15]   [ComfyUI] Calling execution.validate_prompt()...
+[01:15]   [ComfyUI] Validation result: valid=False
+[01:15]   [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#27'", 'extra_info': {}}
+[01:15]   [ComfyUI] === Validation FAILED ===
+[01:21]   [ComfyUI] === /validate endpoint called ===
+[01:21]   [ComfyUI] Received JSON with keys: ['prompt']
+[01:21]   [ComfyUI] Prompt has 2 nodes
+[01:21]   [ComfyUI]   Node 1: UNKNOWN
+[01:21]   [ComfyUI]     Inputs: {"UNKNOWN": "refresh"}
+[01:21]   [ComfyUI]   Node 3: UNKNOWN
+[01:21]   [ComfyUI]     Inputs: {"UNKNOWN": "", "fbx_output_path": ["1", 0]}
+[01:21]   [ComfyUI] Generated prompt_id: 682ee357-c294-4b91-85bf-7296c4bf0998
+[01:21]   [ComfyUI] Calling execution.validate_prompt()...
+[01:21]   [ComfyUI] Validation result: valid=False
+[01:21]   [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#1'", 'extra_info': {}}
+[01:21]   [ComfyUI] === Validation FAILED ===
+[01:21] Results saved to /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/results.json
+[01:21] Saved: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/index.html
+[01:21] Stopping ComfyUI server...
+[01:21] 
 macos: FAILED
-[01:04] Error: Node import failed (2 error(s))
-[01:04] Details: Cannot import /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack module for custom nodes: No module named 'pymeshfix'
-   0.3 seconds (IMPORT FAILED): /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[01:21] Error: Workflow execution failed (5 error(s))
+[01:21] Details: apply_animation.json: Workflow validation failed
+
+Details:
+Cannot execute because a node is missing the class_type property.
+rig_human_with_texture.json: Workflow validation failed
+
+Details:
+Cannot execute because a node is missing the class_type property.
+rig_human_with_texture_mia.json: Workflow validation failed
+
+Details:
+Cannot execute because a node is missing the class_type property.
+rig_human_with_texture_mia_debug.json: Workflow validation failed
+
+Details:
+Cannot execute because a node is missing the class_type property.
+rigged_manipulator.json: Workflow validation failed
+
+Details:
+Cannot execute because a node is missing the class_type property.

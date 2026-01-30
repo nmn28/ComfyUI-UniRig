@@ -1,0 +1,24 @@
+Capturing execution frames: rigged_manipulator.json
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  Validating workflow...
+  [ComfyUI] === /validate endpoint called ===
+  [ComfyUI] Received JSON with keys: ['prompt']
+  [ComfyUI] Prompt has 2 nodes
+  [ComfyUI]   Node 1: UNKNOWN
+  [ComfyUI]     Inputs: {"UNKNOWN": "refresh"}
+  [ComfyUI]   Node 3: UNKNOWN
+  [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
+  [ComfyUI]     Inputs: {"UNKNOWN": "", "fbx_output_path": ["1", 0]}
+  [ComfyUI] Generated prompt_id: 682ee357-c294-4b91-85bf-7296c4bf0998
+    Status: FAILED
+    Error: Workflow validation failed
+    Details: Cannot execute because a node is missing the class_type property.
+  [ComfyUI] Calling execution.validate_prompt()...
+  [ComfyUI] Validation result: valid=False
+  [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#1'", 'extra_info': {}}
+  [ComfyUI] === Validation FAILED ===

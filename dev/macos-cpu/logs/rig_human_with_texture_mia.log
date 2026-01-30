@@ -1,0 +1,38 @@
+Capturing execution frames: rig_human_with_texture_mia.json
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  Validating workflow...
+  [ComfyUI] === /validate endpoint called ===
+  [ComfyUI] Received JSON with keys: ['prompt']
+  [ComfyUI] Prompt has 9 nodes
+  [ComfyUI]   Node 10: UNKNOWN
+  [ComfyUI]     Inputs: {"UNKNOWN": "", "fbx_output_path": ["42", 0]}
+  [ComfyUI]   Node 27: UNKNOWN
+  [ComfyUI]     Inputs: {"UNKNOWN": "3d/realistic_male_character.glb"}
+  [ComfyUI]   Node 41: UNKNOWN
+  [ComfyUI]     Inputs: {"UNKNOWN": true}
+  [ComfyUI]   Node 42: UNKNOWN
+  [ComfyUI]     Inputs: {"UNKNOWN": true, "trimesh": ["45", 0], "model": ["41", 0]}
+  [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
+  [ComfyUI]   Node 43: UNKNOWN
+  [ComfyUI]     Inputs: {"UNKNOWN": 512, "mesh": ["45", 0]}
+  [ComfyUI]   Node 44: PreviewImage
+    Status: FAILED
+    Error: Workflow validation failed
+    Details: Cannot execute because a node is missing the class_type property.
+  [ComfyUI]     Inputs: {"images": ["43", 0]}
+  [ComfyUI]   Node 45: UNKNOWN
+  [ComfyUI]     Inputs: {"UNKNOWN": 0, "trimesh": ["27", 0]}
+  [ComfyUI]   Node 46: UNKNOWN
+  [ComfyUI]     Inputs: {"UNKNOWN": 512, "mesh": ["27", 0]}
+  [ComfyUI]   Node 47: PreviewImage
+  [ComfyUI]     Inputs: {"images": ["46", 0]}
+  [ComfyUI] Generated prompt_id: 82aedd69-c5c1-4ad2-ae49-3bb219fe4fe5
+  [ComfyUI] Calling execution.validate_prompt()...
+  [ComfyUI] Validation result: valid=False
+  [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#10'", 'extra_info': {}}
+  [ComfyUI] === Validation FAILED ===

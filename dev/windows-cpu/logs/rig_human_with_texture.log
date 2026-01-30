@@ -1,0 +1,137 @@
+Capturing execution frames: rig_human_with_texture.json
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+  [Console-warning] WARNING: Multiple instances of Three.js being imported.
+  [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+  [ComfyUI] Feature flags negotiated for client 3d3680262daa4c07b01ec5970e27b6fb: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+  [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+  [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+  [Console-warning] [.WebGL-0x223c07ca7800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+  [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+  [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+  [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
+  Validating workflow...
+  [ComfyUI] === /validate endpoint called ===
+  [ComfyUI] Received JSON with keys: ['prompt']
+  [ComfyUI] Prompt has 4 nodes
+  [ComfyUI]   Node 10: UniRigPreviewRiggedMesh
+  [ComfyUI]     Inputs: {"fbx_output_path": ["39", 0], "preview": ""}
+  [ComfyUI]   Node 27: UniRigLoadMesh
+  [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
+  [ComfyUI]   Node 39: UniRigAutoRig
+  [ComfyUI]     Inputs: {"skeleton_template": "mixamo", "fbx_name": "", "target_face_count": 50000, "trimesh": ["27", 0], "model": ["40", 0]}
+  [ComfyUI]   Node 40: UniRigLoadModel
+  [ComfyUI]     Inputs: {"cache_to_gpu": false}
+  [ComfyUI] Generated prompt_id: 04027fec-ca0d-47ce-8194-91e27765372a
+  [ComfyUI] Calling execution.validate_prompt()...
+  [ComfyUI] Validation result: valid=True
+  Queuing workflow for execution...
+  [ComfyUI] === Validation PASSED ===
+  [ComfyUI] got prompt
+  [ComfyUI] Using proactor: IocpProactor
+  [ComfyUI] Traceback (most recent call last):
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 177, in load_model
+  [ComfyUI]     task_config = _load_yaml_config(task_config_path)
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 98, in _load_yaml_config
+  [ComfyUI]     Box = _get_box()
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 16, in _get_box
+  [ComfyUI]     from box import Box
+  [ComfyUI] ModuleNotFoundError: No module named 'box'
+  [ComfyUI] Traceback (most recent call last):
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 341, in load_model
+  [ComfyUI]     task_config = _load_yaml_config(task_config_path)
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 98, in _load_yaml_config
+  [ComfyUI]     Box = _get_box()
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 16, in _get_box
+  [ComfyUI]     from box import Box
+  [ComfyUI] ModuleNotFoundError: No module named 'box'
+  [ComfyUI] !!! Exception during processing !!! skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.
+  [ComfyUI] Traceback (most recent call last):
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 518, in execute
+  [ComfyUI]     output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+  [ComfyUI]                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 329, in get_output_data
+  [ComfyUI]     return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+  [ComfyUI]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 303, in _async_map_node_over_list
+  [ComfyUI]     await process_inputs(input_dict, i)
+  [ComfyUI] [UniRigLoadModel] Loading UniRig models...
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 291, in process_inputs
+  [ComfyUI] [UniRigLoadModel] GPU caching: disabled
+  [ComfyUI]     result = f(**inputs)
+  [ComfyUI] [UniRigLoadSkeletonModel] Loading skeleton model: apozz/UniRig-safetensors
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\auto_rig.py", line 89, in auto_rig
+  [ComfyUI] [UniRigLoadSkeletonModel] GPU caching: disabled (will offload to CPU)
+  [ComfyUI]     normalized_mesh, skeleton, texture_preview = skeleton_extractor.extract(
+  [ComfyUI] [UniRigLoadSkeletonModel] Error loading model: No module named 'box'
+  [ComfyUI]                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+  [ComfyUI]         trimesh=trimesh,
+  [ComfyUI] [UniRigLoadSkinningModel] Loading skinning model: apozz/UniRig-safetensors
+  [ComfyUI]         ^^^^^^^^^^^^^^^^
+  [ComfyUI] [UniRigLoadSkinningModel] GPU caching: disabled (will offload to CPU)
+  [ComfyUI] [UniRigLoadSkinningModel] Error loading model: No module named 'box'
+  [ComfyUI]     ...<3 lines>...
+  [ComfyUI] [UniRigLoadModel] Both models loaded successfully
+  [ComfyUI] [UniRigLoadMesh] Found mesh in input folder: 3d/realistic_male_character.glb
+  [ComfyUI]         target_face_count=target_face_count
+  [ComfyUI] [UniRigLoadMesh] File extension detected: '.glb'
+  [ComfyUI]         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [ComfyUI] [UniRigLoadMesh] Loading: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d/realistic_male_character.glb
+  [ComfyUI] [UniRigLoadMesh] Loaded type: Scene
+  [ComfyUI]     )
+  [ComfyUI] [UniRigLoadMesh] Scene has 7 geometries
+  [ComfyUI]     ^
+  [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0': visual type = TextureVisuals
+  [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\skeleton_extraction.py", line 310, in extract
+  [ComfyUI]     raise RuntimeError(
+  [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
+  [ComfyUI]     ...<2 lines>...
+  [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
+  [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_1': visual type = TextureVisuals
+  [ComfyUI]     )
+  [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
+  [ComfyUI] RuntimeError: skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.
+  [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
+  [ComfyUI] 
+  [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_2': visual type = TextureVisuals
+  [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
+  [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
+  [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_3': visual type = TextureVisuals
+  [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
+  [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
+  [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_4': visual type = TextureVisuals
+  [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
+  [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
+  [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_5': visual type = TextureVisuals
+  [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
+  [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
+  [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_6': visual type = TextureVisuals
+  [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
+  [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
+  [ComfyUI] [UniRigLoadMesh] Converting Scene to single mesh (scene has 7 geometries)
+  [ComfyUI] [UniRigLoadMesh] After dump(): visual type = TextureVisuals
+  [ComfyUI] [UniRigLoadMesh] After dump(): material = PBRMaterial
+  [ComfyUI] [UniRigLoadMesh] Initial mesh: 394992 vertices, 642547 faces
+  [ComfyUI] [UniRigLoadMesh] Visual type: TextureVisuals
+  [ComfyUI] [UniRigLoadMesh]   Has UV coords: (394992, 2)
+  [ComfyUI] [UniRigLoadMesh]   Material type: PBRMaterial
+  [ComfyUI] [UniRigLoadMesh]   Has baseColorTexture!
+  [ComfyUI] [UniRigLoadMesh] Successfully loaded: 394992 vertices, 642547 faces
+  [ComfyUI] [UniRigLoadMesh] Loaded: 394992 vertices, 642547 faces
+  [ComfyUI] [UniRigAutoRig] Starting complete rigging pipeline...
+  [ComfyUI] [UniRigAutoRig] Skeleton template: mixamo
+  [ComfyUI] [UniRigAutoRig] Step 1/2: Extracting skeleton...
+  [ComfyUI] [UniRigExtractSkeletonNew] Starting skeleton extraction (cached model only)...
+  [ComfyUI] [UniRigExtractSkeletonNew] Skeleton template: mixamo
+  [ComfyUI] [UniRigExtractSkeletonNew] Mixamo requested, using vroid extraction + name remapping
+  [ComfyUI] Prompt executed in 1.29 seconds
+  Execution error: {'prompt_id': 'd1838bc5-363f-4b38-adf5-e3405260265a', 'node_id': '39', 'node_type': 'UniRigAutoRig', 'executed': ['40', '27'], 'exception_message': 'skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.\n', 'exception_type': 'RuntimeError', 'traceback': ['  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 291, in process_inputs\n    result = f(**inputs)\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\nodes\\auto_rig.py", line 89, in auto_rig\n    normalized_mesh, skeleton, texture_preview = skeleton_extractor.extract(\n                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        trimesh=trimesh,\n        ^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n        target_face_count=target_face_count\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\nodes\\skeleton_extraction.py", line 310, in extract\n    raise RuntimeError(\n    ...<2 lines>...\n    )\n'], 'current_inputs': {'skeleton_template': ['mixamo'], 'fbx_name': [''], 'target_face_count': [50000], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': ["{'skeleton_model': {'type': 'skeleton', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig\\\\configs/task/quick_inference_skeleton_articulationxl_ar_256.yaml', 'unirig_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig', 'models_dir': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\models\\\\unirig', 'cached': False, 'model_cache_key': None}, 'skinning_model': {'type': 'skinning', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig\\\\configs/task/quick_inference_unirig_skin.yaml', 'unirig_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig', 'models_dir': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\models\\\\unirig', 'cached': False, 'model_cache_key': None}, 'model_id': 'apozz/UniRig-safetensors', 'cache_to_gpu': False}"]}, 'current_outputs': ['40', '27', '10', '39'], 'timestamp': 1769792095644}
+    Status: FAILED
+    Error: Workflow execution failed: {'prompt_id': 'd1838bc5-363f-4b38-adf5-e3405260265a', 'node_id': '39', 'node_type': 'UniRigAutoRig', 'executed': ['40', '27'], 'exception_message': 'skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.\n', 'exception_type': 'RuntimeError', 'traceback': ['  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 291, in process_inputs\n    result = f(**inputs)\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\nodes\\auto_rig.py", line 89, in auto_rig\n    normalized_mesh, skeleton, texture_preview = skeleton_extractor.extract(\n                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        trimesh=trimesh,\n        ^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n        target_face_count=target_face_count\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\nodes\\skeleton_extraction.py", line 310, in extract\n    raise RuntimeError(\n    ...<2 lines>...\n    )\n'], 'current_inputs': {'skeleton_template': ['mixamo'], 'fbx_name': [''], 'target_face_count': [50000], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': ["{'skeleton_model': {'type': 'skeleton', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig\\\\configs/task/quick_inference_skeleton_articulationxl_ar_256.yaml', 'unirig_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig', 'models_dir': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\models\\\\unirig', 'cached': False, 'model_cache_key': None}, 'skinning_model': {'type': 'skinning', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig\\\\configs/task/quick_inference_unirig_skin.yaml', 'unirig_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig', 'models_dir': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\models\\\\unirig', 'cached': False, 'model_cache_key': None}, 'model_id': 'apozz/UniRig-safetensors', 'cache_to_gpu': False}"]}, 'current_outputs': ['40', '27', '10', '39'], 'timestamp': 1769792095644}
+    Details: Workflow: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\workflows\rig_human_with_texture.json
+Node error: UniRigAutoRig
