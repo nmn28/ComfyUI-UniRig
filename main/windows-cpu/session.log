@@ -1,745 +1,414 @@
 [00:00] Crash dump logging enabled: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\crash_dump.log
 [00:00] 
-[00:00] [1/4] SYNTAX
+[00:00] [1/6] SYNTAX
 [00:00] ----------------------------------------
 [00:00] Found pyproject.toml (modern format)
 [00:00] Found requirements.txt (legacy format)
 [00:01] Unicode check: OK (all characters cp1252-safe)
 [00:01] [SYNTAX] PASSED
 [00:01] Setting up Windows isolation...
-[00:01]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_dcoa16pe\temp
+[00:01]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_69bqauv8\temp
 [00:01]   Cleared 2 env var(s): COMFYUI_DIR, COMFY_VENV
 [00:01]   Isolation active
 [00:01] 
-[00:01] [2/4] INSTALL
+[00:01] [2/6] INSTALL
 [00:01] ----------------------------------------
 [00:01] Using existing ComfyUI: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI
 [00:01] Node already installed, skipping installation
 [00:01] Installing validation endpoint...
 [00:01]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
 [00:01] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-[00:03] [INSTALL] PASSED
-[00:03] COMFY_TEST_GPU env var = ''
-[00:03] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
-[00:03] 
+[00:02] [INSTALL] PASSED
+[00:02] COMFY_TEST_GPU env var = ''
+[00:02] 
 Starting ComfyUI server...
-[00:03] Starting ComfyUI server on port 8188...
-[00:03] Starting ComfyUI server on port 8188...
-[00:03] Waiting for server to be ready (timeout: 300s)...
-[00:06]   [ComfyUI] [GeometryPack] Copied 93 file(s) from comfy-3d-viewers package
-[00:06]   [ComfyUI] [GeometryPack] Copied dynamic_widgets.js from comfy-dynamic-widgets package
-[00:06]   [ComfyUI] [GeometryPack] Copied ArmoredWarrior_00005_.glb to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied camelhead.off to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied camel_b.obj to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied coca_cola.blend to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied cow.off to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied fandisk.ply to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied mount_textured.glb to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied rigged_human.fbx to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied spot_the_cow.obj to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied Stanford_Bunny.stl to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied truck.obj to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied tshirt.glb to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] Copied utah_teapot.stl to input/3d/
-[00:06]   [ComfyUI] [GeometryPack] [OK] Copied 13 asset(s) to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d
-[00:06]   [ComfyUI] [UniRig] Running prestartup script...
-[00:06]   [ComfyUI] [UniRig] Copied viewer_fbx.html from comfy-3d-viewers
-[00:06]   [ComfyUI] [UniRig] Copied viewer-bundle.js from comfy-3d-viewers
-[00:06]   [ComfyUI] [UniRig] Copied mesh_preview_fbx.js from comfy-3d-viewers
-[00:06]   [ComfyUI] [UniRig] Copied viewer_fbx_debug.html from comfy-3d-viewers
-[00:06]   [ComfyUI] [UniRig] Copied viewer_fbx_compare.html from comfy-3d-viewers
-[00:06]   [ComfyUI] [UniRig] Copied debug_skeleton_widget.js from comfy-3d-viewers
-[00:06]   [ComfyUI] [UniRig] Copied compare_skeleton_widget.js from comfy-3d-viewers
-[00:06]   [ComfyUI] [UniRig] Copied FinalBaseMesh.obj to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d\FinalBaseMesh.obj
-[00:06]   [ComfyUI] [UniRig] Copied mixamo.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d\mixamo.fbx
-[00:06]   [ComfyUI] [UniRig] Copied realistic_male_character.glb to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d\realistic_male_character.glb
-[00:06]   [ComfyUI] [UniRig] Copied mixamo/Breakdance.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\mixamo\Breakdance.fbx
-[00:06]   [ComfyUI] [UniRig] Copied mixamo/Capoeira.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\mixamo\Capoeira.fbx
-[00:06]   [ComfyUI] [UniRig] Copied mixamo/Dying.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\mixamo\Dying.fbx
-[00:06]   [ComfyUI] [UniRig] Copied mixamo/Hip_Hop_Dancing.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\mixamo\Hip_Hop_Dancing.fbx
-[00:06]   [ComfyUI] [UniRig] Copied mixamo/Mma_Kick.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\mixamo\Mma_Kick.fbx
-[00:06]   [ComfyUI] [UniRig] Copied smpl/amass_sample.npz to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\smpl\amass_sample.npz
-[00:06]   [ComfyUI] [UniRig] Copied smpl/dmpl_sample.npz to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\smpl\dmpl_sample.npz
-[00:06]   [ComfyUI] [UniRig] Animation templates ready at D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates
-[00:06]   [ComfyUI] [UniRig] Copied animation character: mixamo.fbx
-[00:06]   [ComfyUI] [UniRig] Animation characters ready at D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_characters
-[00:06]   [ComfyUI] [UniRig] Prestartup script completed.
-[00:06]   [ComfyUI] 
-[00:06]   [ComfyUI] Prestartup times for custom nodes:
-[00:06]   [ComfyUI]    0.0 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig
-[00:06]   [ComfyUI]    0.4 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack
-[00:06]   [ComfyUI] 
-[00:08]   [ComfyUI] Checkpoint files will always be loaded safely.
-[00:08]   [ComfyUI] Total VRAM 16379 MB, total RAM 16379 MB
-[00:08]   [ComfyUI] pytorch version: 2.10.0+cpu
-[00:08]   [ComfyUI] Set vram state to: DISABLED
-[00:08]   [ComfyUI] Device: cpu
-[00:12]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
-[00:12]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
-[00:12]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
-[00:14]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
-[00:21]   [ComfyUI] Python version: 3.13.11 (tags/v3.13.11:6278944, Dec  5 2025, 16:26:58) [MSC v.1944 64 bit (AMD64)]
-[00:21]   [ComfyUI] ComfyUI version: 0.11.1
-[00:21]   [ComfyUI] Using proactor: IocpProactor
-[00:21]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
-[00:21]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
-[00:21]   [ComfyUI] ComfyUI frontend version: 1.37.11
-[00:21]   [ComfyUI] [Prompt Server] web root: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\.comfy-venv\Lib\site-packages\comfyui_frontend_package\static
-[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_latent.py
-[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hypernetwork.py
-[00:21]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\hypernetworks
+[00:02] Starting ComfyUI server on port 8188...
+[00:02] Starting ComfyUI server on port 8188...
+[00:02] Waiting for server to be ready (timeout: 300s)...
+[00:05]   [ComfyUI] [GeometryPack] Copied 93 file(s) from comfy-3d-viewers package
+[00:05]   [ComfyUI] [GeometryPack] Copied dynamic_widgets.js from comfy-dynamic-widgets package
+[00:05]   [ComfyUI] [GeometryPack] Copied ArmoredWarrior_00005_.glb to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied camelhead.off to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied camel_b.obj to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied coca_cola.blend to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied cow.off to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied fandisk.ply to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied mount_textured.glb to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied rigged_human.fbx to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied spot_the_cow.obj to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied Stanford_Bunny.stl to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied truck.obj to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied tshirt.glb to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] Copied utah_teapot.stl to input/3d/
+[00:05]   [ComfyUI] [GeometryPack] [OK] Copied 13 asset(s) to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d
+[00:05]   [ComfyUI] [UniRig] Running prestartup script...
+[00:05]   [ComfyUI] [UniRig] Copied viewer_fbx.html from comfy-3d-viewers
+[00:05]   [ComfyUI] [UniRig] Copied viewer-bundle.js from comfy-3d-viewers
+[00:05]   [ComfyUI] [UniRig] Copied mesh_preview_fbx.js from comfy-3d-viewers
+[00:05]   [ComfyUI] [UniRig] Copied viewer_fbx_debug.html from comfy-3d-viewers
+[00:05]   [ComfyUI] [UniRig] Copied viewer_fbx_compare.html from comfy-3d-viewers
+[00:05]   [ComfyUI] [UniRig] Copied debug_skeleton_widget.js from comfy-3d-viewers
+[00:05]   [ComfyUI] [UniRig] Copied compare_skeleton_widget.js from comfy-3d-viewers
+[00:05]   [ComfyUI] [UniRig] Copied FinalBaseMesh.obj to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d\FinalBaseMesh.obj
+[00:05]   [ComfyUI] [UniRig] Copied mixamo.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d\mixamo.fbx
+[00:05]   [ComfyUI] [UniRig] Copied realistic_male_character.glb to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d\realistic_male_character.glb
+[00:05]   [ComfyUI] [UniRig] Copied mixamo/Breakdance.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\mixamo\Breakdance.fbx
+[00:05]   [ComfyUI] [UniRig] Copied mixamo/Capoeira.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\mixamo\Capoeira.fbx
+[00:05]   [ComfyUI] [UniRig] Copied mixamo/Dying.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\mixamo\Dying.fbx
+[00:05]   [ComfyUI] [UniRig] Copied mixamo/Hip_Hop_Dancing.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\mixamo\Hip_Hop_Dancing.fbx
+[00:05]   [ComfyUI] [UniRig] Copied mixamo/Mma_Kick.fbx to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\mixamo\Mma_Kick.fbx
+[00:05]   [ComfyUI] [UniRig] Copied smpl/amass_sample.npz to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\smpl\amass_sample.npz
+[00:05]   [ComfyUI] [UniRig] Copied smpl/dmpl_sample.npz to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates\smpl\dmpl_sample.npz
+[00:05]   [ComfyUI] [UniRig] Animation templates ready at D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_templates
+[00:05]   [ComfyUI] [UniRig] Copied animation character: mixamo.fbx
+[00:05]   [ComfyUI] [UniRig] Animation characters ready at D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\animation_characters
+[00:05]   [ComfyUI] [UniRig] Prestartup script completed.
+[00:05]   [ComfyUI] 
+[00:05]   [ComfyUI] Prestartup times for custom nodes:
+[00:05]   [ComfyUI]    0.0 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig
+[00:05]   [ComfyUI]    0.3 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack
+[00:05]   [ComfyUI] 
+[00:06]   [ComfyUI] Checkpoint files will always be loaded safely.
+[00:06]   [ComfyUI] Total VRAM 16383 MB, total RAM 16383 MB
+[00:06]   [ComfyUI] pytorch version: 2.10.0+cpu
+[00:06]   [ComfyUI] Set vram state to: DISABLED
+[00:06]   [ComfyUI] Device: cpu
+[00:11]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+[00:11]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
+[00:11]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+[00:12]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+[00:20]   [ComfyUI] Python version: 3.13.11 (tags/v3.13.11:6278944, Dec  5 2025, 16:26:58) [MSC v.1944 64 bit (AMD64)]
+[00:20]   [ComfyUI] ComfyUI version: 0.11.1
+[00:20]   [ComfyUI] Using proactor: IocpProactor
+[00:20]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
+[00:20]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
+[00:20]   [ComfyUI] ComfyUI frontend version: 1.37.11
+[00:20]   [ComfyUI] [Prompt Server] web root: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\.comfy-venv\Lib\site-packages\comfyui_frontend_package\static
+[00:20]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_latent.py
+[00:20]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hypernetwork.py
+[00:20]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\hypernetworks
+[00:20]   [ComfyUI] found 1 files
+[00:20]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_upscale_model.py
+[00:20]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\upscale_models
+[00:20]   [ComfyUI] found 1 files
+[00:20]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_post_processing.py
+[00:20]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_mask.py
+[00:20]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_compositing.py
+[00:20]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_rebatch.py
+[00:20]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_model_merging.py
+[00:20]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_tomesd.py
+[00:20]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_clip_sdxl.py
+[00:20]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_canny.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_freelunch.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_custom_sampler.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hypertile.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_model_advanced.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_model_downscale.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_images.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_video_model.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_train.py
+[00:21]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\loras
 [00:21]   [ComfyUI] found 1 files
-[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_upscale_model.py
-[00:22]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\upscale_models
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_dataset.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_sag.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_perpneg.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_stable3d.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_sdupscale.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_photomaker.py
+[00:21]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\photomaker
+[00:21]   [ComfyUI] found 1 files
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_pixart.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_cond.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_morphology.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_stable_cascade.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_differential_diffusion.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_ip2p.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_model_merging_model_specific.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_pag.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_align_your_steps.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_attention_multiply.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_advanced_samplers.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_webcam.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_audio.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_sd3.py
+[00:21]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\text_encoders
+[00:21]   [ComfyUI] found 1 files
+[00:21]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\clip
+[00:21]   [ComfyUI] found 1 files
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_gits.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_controlnet.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hunyuan.py
+[00:21]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\latent_upscale_models
+[00:21]   [ComfyUI] found 1 files
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_eps.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_flux.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lora_extract.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_torch_compile.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_mochi.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_slg.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_mahiro.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lt_upsampler.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lt_audio.py
+[00:21]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\checkpoints
+[00:21]   [ComfyUI] found 1 files
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lt.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hooks.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_load_3d.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_cosmos.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_video.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lumina2.py
+[00:21]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_wan.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lotus.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hunyuan3d.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_primitive.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_cfg.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_optimalsteps.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hidream.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_fresca.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_apg.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_preview_any.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_ace.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_string.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_camera_trajectory.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_edit_model.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_tcfg.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_context_windows.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_qwen.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_chroma_radiance.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_model_patch.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_easycache.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_audio_encoder.py
+[00:22]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\audio_encoders
 [00:22]   [ComfyUI] found 1 files
-[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_post_processing.py
-[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_mask.py
-[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_compositing.py
-[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_rebatch.py
-[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_model_merging.py
-[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_tomesd.py
-[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_clip_sdxl.py
-[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_canny.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_freelunch.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_custom_sampler.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hypertile.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_model_advanced.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_model_downscale.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_images.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_video_model.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_train.py
-[00:23]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\loras
-[00:23]   [ComfyUI] found 1 files
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_dataset.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_sag.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_perpneg.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_stable3d.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_sdupscale.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_photomaker.py
-[00:23]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\photomaker
-[00:23]   [ComfyUI] found 1 files
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_pixart.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_cond.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_morphology.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_stable_cascade.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_differential_diffusion.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_ip2p.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_model_merging_model_specific.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_pag.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_align_your_steps.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_attention_multiply.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_advanced_samplers.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_webcam.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_audio.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_sd3.py
-[00:23]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\text_encoders
-[00:23]   [ComfyUI] found 1 files
-[00:23]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\clip
-[00:23]   [ComfyUI] found 1 files
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_gits.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_controlnet.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hunyuan.py
-[00:23]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\latent_upscale_models
-[00:23]   [ComfyUI] found 1 files
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_eps.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_flux.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lora_extract.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_torch_compile.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_mochi.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_slg.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_mahiro.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lt_upsampler.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lt_audio.py
-[00:23]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\checkpoints
-[00:23]   [ComfyUI] found 1 files
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lt.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hooks.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_load_3d.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_cosmos.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_video.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lumina2.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_wan.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lotus.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hunyuan3d.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_primitive.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_cfg.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_optimalsteps.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_hidream.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_fresca.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_apg.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_preview_any.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_ace.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_string.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_camera_trajectory.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_edit_model.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_tcfg.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_context_windows.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_qwen.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_chroma_radiance.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_model_patch.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_easycache.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_audio_encoder.py
-[00:23]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\audio_encoders
-[00:23]   [ComfyUI] found 1 files
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_rope.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_logic.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_nop.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_kandinsky5.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_wanmove.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_image_compare.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_zimage.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lora_debug.py
-[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_bfl.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_bria.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_bytedance.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_gemini.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_grok.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_hunyuan3d.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_ideogram.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_kling.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_ltxv.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_luma.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_magnific.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_meshy.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_minimax.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_moonvalley.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_openai.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_pixverse.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_recraft.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_rodin.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_runway.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_sora.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_stability.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_topaz.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_tripo.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_veo2.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_vidu.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_wan.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_wavespeed.py
-[00:24]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack
-[00:24]   [ComfyUI] searching for blender in: C:\hostedtoolcache\windows\Python\3.13.11\x64;C:\npm\prefix;C:\Program Files\Git\usr\bin;C:\ProgramData\chocolatey\lib\pulumi\tools\Pulumi\bin;C:\Program Files\OpenSSL\bin;C:\hostedtoolcache\windows\Python\3.13.11\x64\Scripts;C:\Program Files\Git\mingw64\bin;C:\Users\runneradmin\bin;C:\Windows;C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.17-10\x64\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\runneradmin\.dotnet\tools;C:\Program Files\Microsoft SQL Server\170\DTS\Binn\;C:\Program Files\mongosh\;C:\Program Files\PowerShell\7\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\runneradmin\AppData\Roaming\Python\Python313\Scripts;C:\Program Files (x86)\GitHub CLI;C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Git\bin;c:\tools\php;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\cabal\bin;C:\Strawberry\c\bin;C:\hostedtoolcache\windows\stack\3.9.1\x64;C:\Windows\System32\OpenSSH\;C:\Program Files\LLVM\bin;C:\tools\zstd;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files (x86)\pipx_bin;C:\tools\kotlinc\bin;C:\Windows\System32\Wbem;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Amazon\SessionManagerPlugin\bin\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\hostedtoolcache\windows\go\1.24.12\x64\bin;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\nodejs\;C:\SeleniumWebDrivers\ChromeDriver;C:\Program Files\Microsoft Service Fabric\bin\Fabric\Fabric.Code;C:\Program Files\Amazon\AWSCLIV2\;C:\hostedtoolcache\windows\Python\3.12.10\x64;C:\hostedtoolcache\windows\Ruby\3.3.10\x64\bin;C:\Program Files (x86)\sbt\bin;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Strawberry\perl\bin;C:\ProgramData\kind;C:\Program Files\Microsoft\Web Platform Installer\;C:\mingw64\bin;C:\Windows\system32;C:\Program Files\CMake\bin;C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin;C:\Strawberry\perl\site\bin;C:\Program Files\dotnet;C:\ProgramData\Chocolatey\bin;C:\vcpkg;C:\SeleniumWebDrivers\GeckoDriver;C:\Program Files (x86)\LLVM\bin;C:\Program Files\Microsoft SDKs\Service Fabric\Tools\ServiceFabricLocalClusterManager;C:\Program Files\GitHub CLI\;C:\hostedtoolcache\windows\Python\3.12.10\x64\Scripts;C:\Program Files\R\R-4.5.2\bin\x64;C:\Program Files\ImageMagick-7.1.2-Q16-HDRI;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\WiX Toolset v3.14\bin;C:\Users\runneradmin\.cargo\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.12\bin;C:\Program Files\MongoDB\Server\7.0\bin;C:\SeleniumWebDrivers\EdgeDriver\;C:\\ghcup\bin
-[00:28]   [ComfyUI] [GeomPack] Main nodes loaded (50 nodes)
-[00:28]   [ComfyUI] [comfy-env] Wrapping 6 nodes from cgal
-[00:28]   [ComfyUI] [comfy-env]   site-packages: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\cgal\.pixi\envs\default\Lib\site-packages
-[00:28]   [ComfyUI] [comfy-env]   lib: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\cgal\.pixi\envs\default\Library\bin
-[00:28]   [ComfyUI] [comfy-env]   env_vars: KMP_DUPLICATE_LIB_OK=TRUE, OMP_NUM_THREADS=1
-[00:28]   [ComfyUI] [GeomPack] CGAL nodes loaded (6 nodes, isolated)
-[00:28]   [ComfyUI] [comfy-env] Wrapping 5 nodes from blender
-[00:28]   [ComfyUI] [comfy-env]   site-packages: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\blender\.pixi\envs\default\Lib\site-packages
-[00:28]   [ComfyUI] [comfy-env]   lib: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\blender\.pixi\envs\default\Library\bin
-[00:28]   [ComfyUI] [GeomPack] Blender nodes loaded (5 nodes, isolated)
-[00:28]   [ComfyUI] [comfy-env] Wrapping 1 nodes from gpu
-[00:28]   [ComfyUI] [comfy-env]   site-packages: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\gpu\.pixi\envs\default\Lib\site-packages
-[00:28]   [ComfyUI] [comfy-env]   lib: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\gpu\.pixi\envs\default\Library\bin
-[00:28]   [ComfyUI] [GeomPack] GPU nodes loaded (1 nodes, isolated)
-[00:28]   [ComfyUI] [GeomPack] Total nodes loaded: 62
-[00:28]   [ComfyUI] [GeometryPack] Generated widget mappings for 6 nodes (6 selectors)
-[00:28]   [ComfyUI] [GeomPack] Custom server routes registered
-[00:28]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig
-[00:28]   [ComfyUI] [UniRig] Models directory: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\unirig
-[00:28]   [ComfyUI] [UniRig] Main nodes loaded (2 nodes)
-[00:28]   [ComfyUI] [comfy-env] Warning: Isolated environment not found
-[00:28]   [ComfyUI] [comfy-env] Expected: .pixi/envs/default or .venv
-[00:28]   [ComfyUI] [comfy-env] Run 'comfy-env install' in D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes
-[00:28]   [ComfyUI] [UniRig] Isolated nodes loaded (15 nodes)
-[00:28]   [ComfyUI] [UniRig] Total nodes loaded: 17
-[00:28]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-[00:28]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\websocket_image_save.py
-[00:28]   [ComfyUI] 
-[00:28]   [ComfyUI] Import times for custom nodes:
-[00:28]   [ComfyUI]    0.0 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-[00:28]   [ComfyUI]    0.0 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\websocket_image_save.py
-[00:28]   [ComfyUI]    0.0 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig
-[00:28]   [ComfyUI]    3.3 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack
-[00:28]   [ComfyUI] 
-[00:28]   [ComfyUI] Database URL: sqlite:///D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\user\comfyui.db
-[00:28]   [ComfyUI] Context impl SQLiteImpl.
-[00:28]   [ComfyUI] Will assume non-transactional DDL.
-[00:28]   [ComfyUI] Context impl SQLiteImpl.
-[00:28]   [ComfyUI] Will assume non-transactional DDL.
-[00:28]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
-[00:28]   [ComfyUI] Revision ID: 0001_assets
-[00:28]   [ComfyUI] Revises: None
-[00:28]   [ComfyUI] Create Date: 2025-12-10 00:00:00
-[00:28]   [ComfyUI] new branch insert 0001_assets
-[00:28]   [ComfyUI] Database upgraded from None to 0001_assets
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\configs
-[00:28]   [ComfyUI] found 11 files
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\vae
-[00:28]   [ComfyUI] found 1 files
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\unet
-[00:28]   [ComfyUI] found 1 files
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\diffusion_models
-[00:28]   [ComfyUI] found 1 files
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\clip_vision
-[00:28]   [ComfyUI] found 1 files
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\style_models
-[00:28]   [ComfyUI] found 1 files
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\embeddings
-[00:28]   [ComfyUI] found 1 files
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\diffusers
-[00:28]   [ComfyUI] found 1 files
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\vae_approx
-[00:28]   [ComfyUI] found 1 files
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\controlnet
-[00:28]   [ComfyUI] found 1 files
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\gligen
-[00:28]   [ComfyUI] found 1 files
-[00:28]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\model_patches
-[00:28]   [ComfyUI] found 1 files
-[00:28]   [ComfyUI] Assets scan(roots=['models']) completed in 0.046s (created=11, skipped_existing=0, total_seen=11)
-[00:28]   [ComfyUI] Found example workflow folder 'workflows' for custom node 'ComfyUI-GeometryPack', consider renaming it to 'example_workflows'
-[00:28]   [ComfyUI] Found example workflow folder 'workflows' for custom node 'ComfyUI-UniRig', consider renaming it to 'example_workflows'
-[00:28]   [ComfyUI] Starting server
-[00:28]   [ComfyUI] 
-[00:28]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
-[00:28] Server responding, waiting for nodes to load...
-[00:48] Server is ready!
-[00:48] 
-[00:48] [3/4] REGISTRATION
-[00:48] ----------------------------------------
-[00:48] Checking for import errors in server logs...
-[00:48] No import errors detected
-[00:48] [REGISTRATION] PASSED
-[00:48] Found 675 registered nodes
-[00:48] 
-[4/4] INSTANTIATION: SKIPPED
-[00:48] 
-[5/4] STATIC_CAPTURE: SKIPPED
-[00:48] 
-[6/4] VALIDATION: SKIPPED
-[00:48] 
-[00:48] [7/4] EXECUTION
-[00:48] ----------------------------------------
-[00:48] No GPU detected - GPU workflows will be skipped
-[00:48] Running 5 workflow(s) (all with videos)...
-[00:48] Installing screenshot dependencies (playwright, pillow)...
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_rope.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_logic.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_nop.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_kandinsky5.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_wanmove.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_image_compare.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_zimage.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_extras\nodes_lora_debug.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_bfl.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_bria.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_bytedance.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_gemini.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_grok.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_hunyuan3d.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_ideogram.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_kling.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_ltxv.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_luma.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_magnific.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_meshy.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_minimax.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_moonvalley.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_openai.py
+[00:22]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_pixverse.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_recraft.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_rodin.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_runway.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_sora.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_stability.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_topaz.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_tripo.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_veo2.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_vidu.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_wan.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\comfy_api_nodes\nodes_wavespeed.py
+[00:23]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack
+[00:23]   [ComfyUI] searching for blender in: C:\hostedtoolcache\windows\Python\3.13.11\x64\Scripts;C:\Program Files (x86)\sbt\bin;C:\Program Files (x86)\pipx_bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Windows\system32;C:\Program Files\PowerShell\7\;C:\Users\runneradmin\bin;C:\hostedtoolcache\windows\Python\3.12.10\x64;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files (x86)\LLVM\bin;C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.17-10\x64\bin;C:\hostedtoolcache\windows\Python\3.13.11\x64;C:\Program Files\Microsoft\Web Platform Installer\;C:\hostedtoolcache\windows\stack\3.9.1\x64;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Amazon\SessionManagerPlugin\bin\;C:\Strawberry\perl\site\bin;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.12\bin;C:\cabal\bin;C:\ProgramData\kind;C:\Strawberry\perl\bin;C:\Program Files\LLVM\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps;C:\Strawberry\c\bin;C:\\ghcup\bin;C:\hostedtoolcache\windows\go\1.24.12\x64\bin;C:\hostedtoolcache\windows\Python\3.12.10\x64\Scripts;C:\Program Files\CMake\bin;C:\Program Files (x86)\WiX Toolset v3.14\bin;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SDKs\Service Fabric\Tools\ServiceFabricLocalClusterManager;C:\Program Files\GitHub CLI\;c:\tools\php;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Git\usr\bin;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\OpenSSL\bin;C:\Program Files\Git\mingw64\bin;C:\npm\prefix;C:\tools\zstd;C:\Program Files\Git\bin;C:\Windows\System32\Wbem;C:\tools\kotlinc\bin;C:\Program Files\ImageMagick-7.1.2-Q16-HDRI;C:\SeleniumWebDrivers\EdgeDriver\;C:\Windows;C:\Windows\System32\OpenSSH\;C:\hostedtoolcache\windows\Ruby\3.3.10\x64\bin;C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin;C:\mingw64\bin;C:\ProgramData\chocolatey\lib\pulumi\tools\Pulumi\bin;C:\Program Files\Git\cmd;C:\Users\runneradmin\AppData\Roaming\Python\Python313\Scripts;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\vcpkg;C:\ProgramData\Chocolatey\bin;C:\Program Files\Microsoft SQL Server\170\DTS\Binn\;C:\SeleniumWebDrivers\GeckoDriver;C:\Program Files\nodejs\;C:\Program Files\MongoDB\Server\7.0\bin;C:\Program Files\dotnet;C:\Program Files\Microsoft Service Fabric\bin\Fabric\Fabric.Code;C:\Program Files\R\R-4.5.2\bin\x64;C:\Program Files\mongosh\;C:\Users\runneradmin\.dotnet\tools;C:\Users\runneradmin\.cargo\bin;C:\SeleniumWebDrivers\ChromeDriver;C:\Program Files\dotnet\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\Program Files (x86)\GitHub CLI;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\
+[00:25]   [ComfyUI] [GeomPack] Main nodes loaded (50 nodes)
+[00:25]   [ComfyUI] [comfy-env] Wrapping 6 nodes from cgal
+[00:25]   [ComfyUI] [comfy-env]   site-packages: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\cgal\_env_gal\Lib\site-packages
+[00:25]   [ComfyUI] [comfy-env]   lib: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\cgal\_env_gal\Library\bin
+[00:25]   [ComfyUI] [comfy-env]   env_vars: KMP_DUPLICATE_LIB_OK=TRUE, OMP_NUM_THREADS=1, COMFYUI_BASE=D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI
+[00:25]   [ComfyUI] [GeomPack] CGAL nodes loaded (6 nodes, isolated)
+[00:25]   [ComfyUI] [comfy-env] Wrapping 5 nodes from blender
+[00:25]   [ComfyUI] [comfy-env]   site-packages: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\blender\_env_blender\Lib\site-packages
+[00:25]   [ComfyUI] [comfy-env]   lib: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\blender\_env_blender\Library\bin
+[00:25]   [ComfyUI] [comfy-env]   env_vars: COMFYUI_BASE=D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI
+[00:25]   [ComfyUI] [GeomPack] Blender nodes loaded (5 nodes, isolated)
+[00:25]   [ComfyUI] [comfy-env] Wrapping 1 nodes from gpu
+[00:25]   [ComfyUI] [comfy-env]   site-packages: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\gpu\_env_gpu\Lib\site-packages
+[00:25]   [ComfyUI] [comfy-env]   lib: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack\nodes\gpu\_env_gpu\Library\bin
+[00:25]   [ComfyUI] [comfy-env]   env_vars: COMFYUI_BASE=D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI
+[00:25]   [ComfyUI] [GeomPack] GPU nodes loaded (1 nodes, isolated)
+[00:25]   [ComfyUI] [GeomPack] Total nodes loaded: 62
+[00:25]   [ComfyUI] [GeometryPack] Generated widget mappings for 6 nodes (6 selectors)
+[00:25]   [ComfyUI] [GeomPack] Custom server routes registered
+[00:25]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig
+[00:25]   [ComfyUI] [UniRig] Models directory: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\unirig
+[00:25]   [ComfyUI] [UniRig] Main nodes loaded (2 nodes)
+[00:25]   [ComfyUI] [comfy-env] Wrapping 15 nodes from nodes
+[00:25]   [ComfyUI] [comfy-env]   site-packages: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\_env_nodes\Lib\site-packages
+[00:25]   [ComfyUI] [comfy-env]   lib: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\_env_nodes\Library\bin
+[00:25]   [ComfyUI] [comfy-env]   env_vars: COMFYUI_BASE=D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI
+[00:25]   [ComfyUI] [UniRig] Isolated nodes loaded (15 nodes)
+[00:25]   [ComfyUI] [UniRig] Total nodes loaded: 17
+[00:25]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
+[00:25]   [ComfyUI] Trying to load custom node D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\websocket_image_save.py
+[00:25]   [ComfyUI] 
+[00:25]   [ComfyUI] Import times for custom nodes:
+[00:25]   [ComfyUI]    0.0 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\websocket_image_save.py
+[00:25]   [ComfyUI]    0.0 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
+[00:25]   [ComfyUI]    0.1 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig
+[00:25]   [ComfyUI]    2.5 seconds: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-GeometryPack
+[00:25]   [ComfyUI] 
+[00:25]   [ComfyUI] Database URL: sqlite:///D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\user\comfyui.db
+[00:26]   [ComfyUI] Context impl SQLiteImpl.
+[00:26]   [ComfyUI] Will assume non-transactional DDL.
+[00:26]   [ComfyUI] Context impl SQLiteImpl.
+[00:26]   [ComfyUI] Will assume non-transactional DDL.
+[00:26]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
+[00:26]   [ComfyUI] Revision ID: 0001_assets
+[00:26]   [ComfyUI] Revises: None
+[00:26]   [ComfyUI] Create Date: 2025-12-10 00:00:00
+[00:26]   [ComfyUI] new branch insert 0001_assets
+[00:26]   [ComfyUI] Database upgraded from None to 0001_assets
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\configs
+[00:26]   [ComfyUI] found 11 files
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\vae
+[00:26]   [ComfyUI] found 1 files
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\unet
+[00:26]   [ComfyUI] found 1 files
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\diffusion_models
+[00:26]   [ComfyUI] found 1 files
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\clip_vision
+[00:26]   [ComfyUI] found 1 files
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\style_models
+[00:26]   [ComfyUI] found 1 files
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\embeddings
+[00:26]   [ComfyUI] found 1 files
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\diffusers
+[00:26]   [ComfyUI] found 1 files
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\vae_approx
+[00:26]   [ComfyUI] found 1 files
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\controlnet
+[00:26]   [ComfyUI] found 1 files
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\gligen
+[00:26]   [ComfyUI] found 1 files
+[00:26]   [ComfyUI] recursive file list on directory D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\models\model_patches
+[00:26]   [ComfyUI] found 1 files
+[00:26]   [ComfyUI] Assets scan(roots=['models']) completed in 0.060s (created=11, skipped_existing=0, total_seen=11)
+[00:26]   [ComfyUI] Found example workflow folder 'workflows' for custom node 'ComfyUI-GeometryPack', consider renaming it to 'example_workflows'
+[00:26]   [ComfyUI] Found example workflow folder 'workflows' for custom node 'ComfyUI-UniRig', consider renaming it to 'example_workflows'
+[00:26]   [ComfyUI] Starting server
+[00:26]   [ComfyUI] 
+[00:26]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
+[00:26] Server responding, waiting for nodes to load...
+[00:46] Server is ready!
+[00:46] 
+[00:46] [3/6] REGISTRATION
+[00:46] ----------------------------------------
+[00:46] Checking for import errors in server logs...
+[00:46] No import errors detected
+[00:46] [REGISTRATION] PASSED
+[00:46] Found 675 registered nodes
+[00:46] 
+[00:46] [4/6] INSTANTIATION
+[00:46] ----------------------------------------
+[00:46] Testing node constructors...
+[00:50] All 675 node(s) instantiated successfully!
+[00:50] [INSTANTIATION] PASSED
+[00:50] 
+[00:50] [5/6] STATIC_CAPTURE
+[00:50] ----------------------------------------
+[00:50] Capturing 5 static screenshot(s)...
+[00:50] Installing screenshot dependencies (playwright, pillow)...
 [00:54]   Packages installed, downloading chromium browser...
-[00:54]   Screenshot dependencies installed successfully
-[00:59]   [ComfyUI] Feature flags negotiated for client 0e8843c20d9c4315b154f95379bd04f1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
-[01:07]   [ComfyUI] === /validate endpoint called ===
-[01:07]   [ComfyUI] Received JSON with keys: ['prompt']
-[01:07]   [ComfyUI] Prompt has 3 nodes
-[01:07]   [ComfyUI] Failed to validate prompt for output 6:
-[01:07]   [ComfyUI]   Node 6: UniRigApplyAnimation
-[01:07]   [ComfyUI] * UniRigLoadRiggedMesh 8:
-[01:07]   [ComfyUI]     Inputs: {"model_fbx_path": ["8", 0], "animation_type": "mixamo", "animation_file": "Breakdance.fbx", "output_name": ""}
-[01:07]   [ComfyUI]   - Required input is missing: fbx_file
-[01:07]   [ComfyUI]   Node 7: Preview3D
-[01:07]   [ComfyUI] Output will be ignored
-[01:07]   [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
-[01:07]   [ComfyUI] Failed to validate prompt for output 7:
-[01:07]   [ComfyUI]   Node 8: UniRigLoadRiggedMesh
-[01:07]   [ComfyUI] Output will be ignored
-[01:07]   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
-[01:07]   [ComfyUI] Generated prompt_id: 28e81c31-c399-4abe-8beb-75f33a615bff
-[01:07]   [ComfyUI] Calling execution.validate_prompt()...
-[01:07]   [ComfyUI] Validation result: valid=False
-[01:07]   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
-[01:07]   [ComfyUI]   Node errors: {"8": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["6", "7"], "class_type": "UniRigLoadRiggedMesh"}}
-[01:07]   [ComfyUI] === Validation FAILED ===
-[01:07]   [ComfyUI] Exception in callback _ProactorBasePipeTransport._call_connection_lost()
-[01:07]   [ComfyUI] handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
-[01:07]   [ComfyUI] Traceback (most recent call last):
-[01:07]   [ComfyUI]   File "C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\asyncio\events.py", line 89, in _run
-[01:07]   [ComfyUI]     self._context.run(self._callback, *self._args)
-[01:07]   [ComfyUI]     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[01:07]   [ComfyUI]   File "C:\hostedtoolcache\windows\Python\3.13.11\x64\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
-[01:07]   [ComfyUI]     self._sock.shutdown(socket.SHUT_RDWR)
-[01:07]   [ComfyUI]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-[01:07]   [ComfyUI] ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
-[01:08]   [ComfyUI] Feature flags negotiated for client 0e8843c20d9c4315b154f95379bd04f1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
-[01:13]   [ComfyUI] === /validate endpoint called ===
-[01:13]   [ComfyUI] Received JSON with keys: ['prompt']
-[01:13]   [ComfyUI] Prompt has 4 nodes
-[01:13]   [ComfyUI]   Node 10: UniRigPreviewRiggedMesh
-[01:13]   [ComfyUI]     Inputs: {"fbx_output_path": ["39", 0], "preview": ""}
-[01:13]   [ComfyUI]   Node 27: UniRigLoadMesh
-[01:13]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
-[01:13]   [ComfyUI]   Node 39: UniRigAutoRig
-[01:13]   [ComfyUI]     Inputs: {"skeleton_template": "mixamo", "fbx_name": "", "target_face_count": 50000, "trimesh": ["27", 0], "model": ["40", 0]}
-[01:13]   [ComfyUI]   Node 40: UniRigLoadModel
-[01:13]   [ComfyUI]     Inputs: {"cache_to_gpu": false}
-[01:13]   [ComfyUI] Generated prompt_id: 12177cff-7d7b-4b94-a97f-1c38d8d24932
-[01:13]   [ComfyUI] Calling execution.validate_prompt()...
-[01:13]   [ComfyUI] Validation result: valid=True
-[01:13]   [ComfyUI] === Validation PASSED ===
-[01:13]   [ComfyUI] got prompt
-[01:13]   [ComfyUI] Using proactor: IocpProactor
-[01:14]   [ComfyUI] Traceback (most recent call last):
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 177, in load_model
-[01:14]   [ComfyUI]     task_config = _load_yaml_config(task_config_path)
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 98, in _load_yaml_config
-[01:14]   [ComfyUI]     Box = _get_box()
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 16, in _get_box
-[01:14]   [ComfyUI]     from box import Box
-[01:14]   [ComfyUI] ModuleNotFoundError: No module named 'box'
-[01:14]   [ComfyUI] Traceback (most recent call last):
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 341, in load_model
-[01:14]   [ComfyUI]     task_config = _load_yaml_config(task_config_path)
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 98, in _load_yaml_config
-[01:14]   [ComfyUI]     Box = _get_box()
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\model_loaders.py", line 16, in _get_box
-[01:14]   [ComfyUI]     from box import Box
-[01:14]   [ComfyUI] ModuleNotFoundError: No module named 'box'
-[01:14]   [ComfyUI] !!! Exception during processing !!! skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.
-[01:14]   [ComfyUI] Traceback (most recent call last):
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 518, in execute
-[01:14]   [ComfyUI] [UniRigLoadModel] Loading UniRig models...
-[01:14]   [ComfyUI]     output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
-[01:14]   [ComfyUI] [UniRigLoadModel] GPU caching: disabled
-[01:14]   [ComfyUI]                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[01:14]   [ComfyUI] [UniRigLoadSkeletonModel] Loading skeleton model: apozz/UniRig-safetensors
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 329, in get_output_data
-[01:14]   [ComfyUI] [UniRigLoadSkeletonModel] GPU caching: disabled (will offload to CPU)
-[01:14]   [ComfyUI]     return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
-[01:14]   [ComfyUI] [UniRigLoadSkeletonModel] Error loading model: No module named 'box'
-[01:14]   [ComfyUI]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[01:14]   [ComfyUI] [UniRigLoadSkinningModel] Loading skinning model: apozz/UniRig-safetensors
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 303, in _async_map_node_over_list
-[01:14]   [ComfyUI] [UniRigLoadSkinningModel] GPU caching: disabled (will offload to CPU)
-[01:14]   [ComfyUI]     await process_inputs(input_dict, i)
-[01:14]   [ComfyUI] [UniRigLoadSkinningModel] Error loading model: No module named 'box'
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 291, in process_inputs
-[01:14]   [ComfyUI] [UniRigLoadModel] Both models loaded successfully
-[01:14]   [ComfyUI]     result = f(**inputs)
-[01:14]   [ComfyUI] [UniRigLoadMesh] Found mesh in input folder: 3d/realistic_male_character.glb
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\auto_rig.py", line 89, in auto_rig
-[01:14]   [ComfyUI] [UniRigLoadMesh] File extension detected: '.glb'
-[01:14]   [ComfyUI]     normalized_mesh, skeleton, texture_preview = skeleton_extractor.extract(
-[01:14]   [ComfyUI] [UniRigLoadMesh] Loading: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d/realistic_male_character.glb
-[01:14]   [ComfyUI]                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~^
-[01:14]   [ComfyUI] [UniRigLoadMesh] Loaded type: Scene
-[01:14]   [ComfyUI]         trimesh=trimesh,
-[01:14]   [ComfyUI] [UniRigLoadMesh] Scene has 7 geometries
-[01:14]   [ComfyUI]         ^^^^^^^^^^^^^^^^
-[01:14]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0': visual type = TextureVisuals
-[01:14]   [ComfyUI]     ...<3 lines>...
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:14]   [ComfyUI]         target_face_count=target_face_count
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:14]   [ComfyUI]         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[01:14]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_1': visual type = TextureVisuals
-[01:14]   [ComfyUI]     )
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:14]   [ComfyUI]     ^
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:14]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\skeleton_extraction.py", line 310, in extract
-[01:14]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_2': visual type = TextureVisuals
-[01:14]   [ComfyUI]     raise RuntimeError(
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:14]   [ComfyUI]     ...<2 lines>...
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:14]   [ComfyUI]     )
-[01:14]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_3': visual type = TextureVisuals
-[01:14]   [ComfyUI] RuntimeError: skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:14]   [ComfyUI] 
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:14]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_4': visual type = TextureVisuals
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:14]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_5': visual type = TextureVisuals
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:14]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_6': visual type = TextureVisuals
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:14]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:14]   [ComfyUI] [UniRigLoadMesh] Converting Scene to single mesh (scene has 7 geometries)
-[01:14]   [ComfyUI] [UniRigLoadMesh] After dump(): visual type = TextureVisuals
-[01:14]   [ComfyUI] [UniRigLoadMesh] After dump(): material = PBRMaterial
-[01:14]   [ComfyUI] [UniRigLoadMesh] Initial mesh: 394992 vertices, 642547 faces
-[01:14]   [ComfyUI] [UniRigLoadMesh] Visual type: TextureVisuals
-[01:14]   [ComfyUI] [UniRigLoadMesh]   Has UV coords: (394992, 2)
-[01:14]   [ComfyUI] [UniRigLoadMesh]   Material type: PBRMaterial
-[01:14]   [ComfyUI] [UniRigLoadMesh]   Has baseColorTexture!
-[01:14]   [ComfyUI] [UniRigLoadMesh] Successfully loaded: 394992 vertices, 642547 faces
-[01:14]   [ComfyUI] [UniRigLoadMesh] Loaded: 394992 vertices, 642547 faces
-[01:14]   [ComfyUI] [UniRigAutoRig] Starting complete rigging pipeline...
-[01:14]   [ComfyUI] [UniRigAutoRig] Skeleton template: mixamo
-[01:14]   [ComfyUI] [UniRigAutoRig] Step 1/2: Extracting skeleton...
-[01:14]   [ComfyUI] [UniRigExtractSkeletonNew] Starting skeleton extraction (cached model only)...
-[01:14]   [ComfyUI] [UniRigExtractSkeletonNew] Skeleton template: mixamo
-[01:14]   [ComfyUI] [UniRigExtractSkeletonNew] Mixamo requested, using vroid extraction + name remapping
-[01:14]   [ComfyUI] Prompt executed in 1.04 seconds
-[01:17]   [ComfyUI] Feature flags negotiated for client 0e8843c20d9c4315b154f95379bd04f1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
-[01:21]   [ComfyUI] === /validate endpoint called ===
-[01:21]   [ComfyUI] Received JSON with keys: ['prompt']
-[01:21]   [ComfyUI] Prompt has 9 nodes
-[01:21]   [ComfyUI]   Node 10: UniRigPreviewRiggedMesh
-[01:21]   [ComfyUI]     Inputs: {"fbx_output_path": ["42", 0], "preview": ""}
-[01:21]   [ComfyUI]   Node 27: UniRigLoadMesh
-[01:21]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
-[01:21]   [ComfyUI]   Node 41: MIALoadModel
-[01:21]   [ComfyUI]     Inputs: {"cache_to_gpu": true}
-[01:21]   [ComfyUI]   Node 42: MIAAutoRig
-[01:21]   [ComfyUI]     Inputs: {"fbx_name": "rigatoni", "no_fingers": false, "use_normal": false, "reset_to_rest": true, "trimesh": ["45", 0], "model": ["41", 0]}
-[01:21]   [ComfyUI]   Node 43: UniRigOrientationCheck
-[01:21]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["45", 0]}
-[01:21]   [ComfyUI]   Node 44: PreviewImage
-[01:21]   [ComfyUI]     Inputs: {"images": ["43", 0]}
-[01:21]   [ComfyUI]   Node 45: GeomPackTransformMesh
-[01:21]   [ComfyUI]     Inputs: {"operation": "rotate", "translate_x": 0, "translate_y": -90, "translate_z": 0, "rotate_x": 0, "rotate_y": 0, "rotate_z": 0, "scale_uniform": 1, "scale_x": 1, "scale_y": 1, "scale_z": 1, "mirror_axis"
-[01:21]   [ComfyUI]   Node 46: UniRigOrientationCheck
-[01:21]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["27", 0]}
-[01:21]   [ComfyUI]   Node 47: PreviewImage
-[01:21]   [ComfyUI]     Inputs: {"images": ["46", 0]}
-[01:21]   [ComfyUI] Generated prompt_id: 1c65daf2-b46e-423d-bb28-9ec42f88eb2f
-[01:21]   [ComfyUI] Calling execution.validate_prompt()...
-[01:21]   [ComfyUI] Validation result: valid=True
-[01:21]   [ComfyUI] === Validation PASSED ===
-[01:21]   [ComfyUI] got prompt
-[01:21]   [ComfyUI] Using proactor: IocpProactor
-[01:24]   [ComfyUI] !!! Exception during processing !!! No module named 'mia_inference'
-[01:24]   [ComfyUI] Traceback (most recent call last):
-[01:24]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 518, in execute
-[01:24]   [ComfyUI]     output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
-[01:24]   [ComfyUI]                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[01:24]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 329, in get_output_data
-[01:24]   [ComfyUI]     return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
-[01:24]   [ComfyUI]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[01:24]   [ComfyUI] [MIALoadModel] MIA config: cache_to_gpu=True
-[01:24]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 303, in _async_map_node_over_list
-[01:24]   [ComfyUI] [UniRigLoadMesh] Found mesh in input folder: 3d/realistic_male_character.glb
-[01:24]   [ComfyUI]     await process_inputs(input_dict, i)
-[01:24]   [ComfyUI] [UniRigLoadMesh] File extension detected: '.glb'
-[01:24]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 291, in process_inputs
-[01:24]   [ComfyUI] [UniRigLoadMesh] Loading: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d/realistic_male_character.glb
-[01:24]   [ComfyUI]     result = f(**inputs)
-[01:24]   [ComfyUI] [UniRigLoadMesh] Loaded type: Scene
-[01:24]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\mia_auto_rig.py", line 81, in auto_rig
-[01:24]   [ComfyUI] [UniRigLoadMesh] Scene has 7 geometries
-[01:24]   [ComfyUI]     from mia_inference import load_mia_models, get_cached_models, run_mia_inference
-[01:24]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0': visual type = TextureVisuals
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:24]   [ComfyUI] ModuleNotFoundError: No module named 'mia_inference'
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:24]   [ComfyUI] 
-[01:24]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_1': visual type = TextureVisuals
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:24]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_2': visual type = TextureVisuals
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:24]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_3': visual type = TextureVisuals
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:24]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_4': visual type = TextureVisuals
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:24]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_5': visual type = TextureVisuals
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:24]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_6': visual type = TextureVisuals
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:24]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:24]   [ComfyUI] [UniRigLoadMesh] Converting Scene to single mesh (scene has 7 geometries)
-[01:24]   [ComfyUI] [UniRigLoadMesh] After dump(): visual type = TextureVisuals
-[01:24]   [ComfyUI] [UniRigLoadMesh] After dump(): material = PBRMaterial
-[01:24]   [ComfyUI] [UniRigLoadMesh] Initial mesh: 394992 vertices, 642547 faces
-[01:24]   [ComfyUI] [UniRigLoadMesh] Visual type: TextureVisuals
-[01:24]   [ComfyUI] [UniRigLoadMesh]   Has UV coords: (394992, 2)
-[01:24]   [ComfyUI] [UniRigLoadMesh]   Material type: PBRMaterial
-[01:24]   [ComfyUI] [UniRigLoadMesh]   Has baseColorTexture!
-[01:24]   [ComfyUI] [UniRigLoadMesh] Successfully loaded: 394992 vertices, 642547 faces
-[01:24]   [ComfyUI] [UniRigLoadMesh] Loaded: 394992 vertices, 642547 faces
-[01:24]   [ComfyUI] [OrientationCheck] Checking mesh orientation...
-[01:24]   [ComfyUI] [OrientationCheck] Mesh: 394992 vertices, 642547 faces
-[01:24]   [ComfyUI] [OrientationCheck] Dimensions: X=0.251, Y=1.000, Z=0.928
-[01:24]   [ComfyUI] [OrientationCheck] Tallest axis: Y
-[01:24]   [ComfyUI] [OrientationCheck] [OK] Orientation appears correct (Y-up)
-[01:24]   [ComfyUI] [OrientationCheck] Reference mesh not found: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\assets\FinalBaseMesh.obj
-[01:24]   [ComfyUI] [OrientationCheck] Reference not available, rendering single view
-[01:24]   [ComfyUI] [OrientationCheck] Pyrender failed: ('Unable to load OpenGL library', "Could not find module 'OSMesa' (or one of its dependencies). Try using the full path with constructor syntax.", 'OSMesa', None), using wireframe fallback
-[01:24]   [ComfyUI] [OrientationCheck] Done. Output shape: torch.Size([1, 512, 128, 3])
-[01:24]   [ComfyUI] [Transform] Input: 394992 vertices, 642547 faces
-[01:24]   [ComfyUI] [Transform] Operation: rotate
-[01:24]   [ComfyUI] [Transform] Complete
-[01:24]   [ComfyUI] Prompt executed in 2.25 seconds
-[01:26]   [ComfyUI] Feature flags negotiated for client 0e8843c20d9c4315b154f95379bd04f1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
-[01:31]   [ComfyUI] === /validate endpoint called ===
-[01:31]   [ComfyUI] Received JSON with keys: ['prompt']
-[01:31]   [ComfyUI] Prompt has 11 nodes
-[01:31]   [ComfyUI]   Node 27: UniRigLoadMesh
-[01:31]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/realistic_male_character.glb"}
-[01:31]   [ComfyUI]   Node 41: MIALoadModel
-[01:31]   [ComfyUI]     Inputs: {"cache_to_gpu": true}
-[01:31]   [ComfyUI]   Node 42: MIAAutoRig
-[01:31]   [ComfyUI]     Inputs: {"fbx_name": "rigatoni", "no_fingers": false, "use_normal": false, "reset_to_rest": true, "trimesh": ["45", 0], "model": ["41", 0]}
-[01:31]   [ComfyUI]   Node 43: UniRigOrientationCheck
-[01:31]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["45", 0]}
-[01:31]   [ComfyUI]   Node 44: PreviewImage
-[01:31]   [ComfyUI]     Inputs: {"images": ["43", 0]}
-[01:31]   [ComfyUI]   Node 45: GeomPackTransformMesh
-[01:31]   [ComfyUI]     Inputs: {"operation": "rotate", "translate_x": 0, "translate_y": 0, "translate_z": 0, "rotate_x": 0, "rotate_y": 0, "rotate_z": 0, "scale_uniform": 1, "scale_x": 1, "scale_y": 1, "scale_z": 1, "mirror_axis":
-[01:31]   [ComfyUI]   Node 46: UniRigOrientationCheck
-[01:31]   [ComfyUI]     Inputs: {"max_height": 512, "mesh": ["27", 0]}
-[01:31]   [ComfyUI]   Node 47: PreviewImage
-[01:31]   [ComfyUI]     Inputs: {"images": ["46", 0]}
-[01:31]   [ComfyUI]   Node 49: UniRigCompareSkeletons
-[01:31]   [ComfyUI]     Inputs: {"fbx_path_left": ["42", 0], "fbx_path_right": ["51", 0], "preview": ""}
-[01:31]   [ComfyUI]   Node 50: UniRigLoadMesh
-[01:31]   [ComfyUI]     Inputs: {"source_folder": "input", "file_path": "3d/mixamo.fbx"}
-[01:31]   [ComfyUI]   Node 51: PrimitiveString
-[01:31]   [ComfyUI]     Inputs: {"value": "/home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx"}
-[01:31]   [ComfyUI] Generated prompt_id: c73ada20-2535-4d07-bfd8-b0f3aaca8541
-[01:31]   [ComfyUI] Calling execution.validate_prompt()...
-[01:31]   [ComfyUI] Validation result: valid=True
-[01:31]   [ComfyUI] === Validation PASSED ===
-[01:31]   [ComfyUI] got prompt
-[01:31]   [ComfyUI] Using proactor: IocpProactor
-[01:33]   [ComfyUI] !!! Exception during processing !!! No module named 'mia_inference'
-[01:33]   [ComfyUI] [MIALoadModel] MIA config: cache_to_gpu=True
-[01:33]   [ComfyUI] Traceback (most recent call last):
-[01:33]   [ComfyUI] [UniRigLoadMesh] Found mesh in input folder: 3d/realistic_male_character.glb
-[01:33]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 518, in execute
-[01:33]   [ComfyUI] [UniRigLoadMesh] File extension detected: '.glb'
-[01:33]   [ComfyUI]     output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
-[01:33]   [ComfyUI] [UniRigLoadMesh] Loading: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\input\3d/realistic_male_character.glb
-[01:33]   [ComfyUI]                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[01:33]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 329, in get_output_data
-[01:33]   [ComfyUI] [UniRigLoadMesh] Loaded type: Scene
-[01:33]   [ComfyUI]     return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
-[01:33]   [ComfyUI] [UniRigLoadMesh] Scene has 7 geometries
-[01:33]   [ComfyUI]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[01:33]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0': visual type = TextureVisuals
-[01:33]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 303, in _async_map_node_over_list
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:33]   [ComfyUI]     await process_inputs(input_dict, i)
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:33]   [ComfyUI]   File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\execution.py", line 291, in process_inputs
-[01:33]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_1': visual type = TextureVisuals
-[01:33]   [ComfyUI]     result = f(**inputs)
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-omfyUI\custom_nodes\ComfyUI-UniRig\nodes\mia_auto_rig.py", line 81, in auto_rig
-[01:33]   [ComfyUI]     from mia_inference import load_mia_models, get_cached_models, run_mia_inference
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:33]   [ComfyUI] ModuleNotFoundError: No module named 'mia_inference'
-[01:33]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_2': visual type = TextureVisuals
-[01:33]   [ComfyUI] 
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:33]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_3': visual type = TextureVisuals
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:33]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_4': visual type = TextureVisuals
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:33]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_5': visual type = TextureVisuals
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:33]   [ComfyUI] [UniRigLoadMesh]   Geometry 'tripo_node_d0bcade7_tripo_mat_d0bcade7_0_6': visual type = TextureVisuals
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Material: PBRMaterial
-[01:33]   [ComfyUI] [UniRigLoadMesh]     Has baseColorTexture: yes
-[01:33]   [ComfyUI] [UniRigLoadMesh] Converting Scene to single mesh (scene has 7 geometries)
-[01:33]   [ComfyUI] [UniRigLoadMesh] After dump(): visual type = TextureVisuals
-[01:33]   [ComfyUI] [UniRigLoadMesh] After dump(): material = PBRMaterial
-[01:33]   [ComfyUI] [UniRigLoadMesh] Initial mesh: 394992 vertices, 642547 faces
-[01:33]   [ComfyUI] [UniRigLoadMesh] Visual type: TextureVisuals
-[01:33]   [ComfyUI] [UniRigLoadMesh]   Has UV coords: (394992, 2)
-[01:33]   [ComfyUI] [UniRigLoadMesh]   Material type: PBRMaterial
-[01:33]   [ComfyUI] [UniRigLoadMesh]   Has baseColorTexture!
-[01:33]   [ComfyUI] [UniRigLoadMesh] Successfully loaded: 394992 vertices, 642547 faces
-[01:33]   [ComfyUI] [UniRigLoadMesh] Loaded: 394992 vertices, 642547 faces
-[01:33]   [ComfyUI] [OrientationCheck] Checking mesh orientation...
-[01:33]   [ComfyUI] [OrientationCheck] Mesh: 394992 vertices, 642547 faces
-[01:33]   [ComfyUI] [OrientationCheck] Dimensions: X=0.251, Y=1.000, Z=0.928
-[01:33]   [ComfyUI] [OrientationCheck] Tallest axis: Y
-[01:33]   [ComfyUI] [OrientationCheck] [OK] Orientation appears correct (Y-up)
-[01:33]   [ComfyUI] [OrientationCheck] Reference mesh not found: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\assets\FinalBaseMesh.obj
-[01:33]   [ComfyUI] [OrientationCheck] Reference not available, rendering single view
-[01:33]   [ComfyUI] [OrientationCheck] Pyrender failed: ('Unable to load OpenGL library', "Could not find module 'OSMesa' (or one of its dependencies). Try using the full path with constructor syntax.", 'OSMesa', None), using wireframe fallback
-[01:33]   [ComfyUI] [OrientationCheck] Done. Output shape: torch.Size([1, 512, 128, 3])
-[01:33]   [ComfyUI] [Transform] Input: 394992 vertices, 642547 faces
-[01:33]   [ComfyUI] [Transform] Operation: rotate
-[01:33]   [ComfyUI] [Transform] Complete
-[01:33]   [ComfyUI] Prompt executed in 2.08 seconds
-[01:35]   [ComfyUI] Feature flags negotiated for client 0e8843c20d9c4315b154f95379bd04f1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
-[01:40]   [ComfyUI] === /validate endpoint called ===
-[01:40]   [ComfyUI] Received JSON with keys: ['prompt']
-[01:40]   [ComfyUI] Failed to validate prompt for output 3:
-[01:40]   [ComfyUI] Prompt has 2 nodes
-[01:40]   [ComfyUI] * UniRigLoadRiggedMesh 1:
-[01:40]   [ComfyUI]   Node 1: UniRigLoadRiggedMesh
-[01:40]   [ComfyUI]   - Required input is missing: fbx_file
-[01:40]   [ComfyUI]     Inputs: {"source_folder": "output", "refresh": "refresh"}
-[01:40]   [ComfyUI] Output will be ignored
-iggedMesh
-[01:40]   [ComfyUI]     Inputs: {"fbx_output_path": ["1", 0], "preview": ""}
-[01:40]   [ComfyUI] Generated prompt_id: 1c68db15-b303-4198-9bd8-862462546a71
-[01:40]   [ComfyUI] Calling execution.validate_prompt()...
-[01:40]   [ComfyUI] Validation result: valid=False
-[01:40]   [ComfyUI]   Error: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
-[01:40]   [ComfyUI]   Node errors: {"1": {"errors": [{"type": "required_input_missing", "message": "Required input is missing", "details": "fbx_file", "extra_info": {"input_name": "fbx_file"}}], "dependent_outputs": ["3"], "class_type": "UniRigLoadRiggedMesh"}}
-[01:40]   [ComfyUI] === Validation FAILED ===
-[01:40] Results saved to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\results.json
-[01:40] Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\index.html
-[01:40] Stopping ComfyUI server...
-[01:40] Tearing down Windows isolation...
-[01:40]   Environment restored
-[01:40]   Isolation torn down
-[01:40] 
-windows: FAILED
-[01:40] Error: Workflow execution failed (5 error(s))
-[01:40] Details: apply_animation.json: Workflow validation failed
-
-Details:
-Prompt outputs failed validation
-Node errors:
-{
-  "8": {
-    "errors": [
-      {
-        "type": "required_input_missing",
-        "message": "Required input is missing",
-        "details": "fbx_file",
-        "extra_info": {
-          "input_name": "fbx_file"
-        }
-      }
-    ],
-    "dependent_outputs": [
-      "6",
-      "7"
-    ],
-    "class_type": "UniRigLoadRiggedMesh"
-  }
-}
-rig_human_with_texture.json: Workflow execution failed: {'prompt_id': 'c8894e90-2178-4aba-8285-89609e2f02c7', 'node_id': '39', 'node_type': 'UniRigAutoRig', 'executed': ['40', '27'], 'exception_message': 'skeleton_model checkpoint not found. Please connect a UniRigLoadSkeletonModel node.\n', 'exception_type': 'RuntimeError', 'traceback': ['  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 291, in process_inputs\n    result = f(**inputs)\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\nodes\\auto_rig.py", line 89, in auto_rig\n    normalized_mesh, skeleton, texture_preview = skeleton_extractor.extract(\n                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        trimesh=trimesh,\n        ^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n        target_face_count=target_face_count\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\nodes\\skeleton_extraction.py", line 310, in extract\n    raise RuntimeError(\n    ...<2 lines>...\n    )\n'], 'current_inputs': {'skeleton_template': ['mixamo'], 'fbx_name': [''], 'target_face_count': [50000], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': ["{'skeleton_model': {'type': 'skeleton', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig\\\\configs/task/quick_inference_skeleton_articulationxl_ar_256.yaml', 'unirig_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig', 'models_dir': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\models\\\\unirig', 'cached': False, 'model_cache_key': None}, 'skinning_model': {'type': 'skinning', 'model_id': 'apozz/UniRig-safetensors', 'task_config_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig\\\\configs/task/quick_inference_unirig_skin.yaml', 'unirig_path': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-UniRig\\\\nodes\\\\unirig', 'models_dir': 'D:\\\\a\\\\ComfyUI-UniRig\\\\ComfyUI-UniRig\\\\ComfyUI\\\\models\\\\unirig', 'cached': False, 'model_cache_key': None}, 'model_id': 'apozz/UniRig-safetensors', 'cache_to_gpu': False}"]}, 'current_outputs': ['10', '40', '39', '27'], 'timestamp': 1769793999382}
-
-Details:
-Workflow: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\workflows\rig_human_with_texture.json
-Node error: UniRigAutoRig
-rig_human_with_texture_mia.json: Workflow execution failed: {'prompt_id': '8eb1ff80-3e65-4692-abf2-ac1813c46170', 'node_id': '42', 'node_type': 'MIAAutoRig', 'executed': ['45', '47', '41', '46', '27'], 'exception_message': "No module named 'mia_inference'\n", 'exception_type': 'ModuleNotFoundError', 'traceback': ['  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 291, in process_inputs\n    result = f(**inputs)\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\nodes\\mia_auto_rig.py", line 81, in auto_rig\n    from mia_inference import load_mia_models, get_cached_models, run_mia_inference\n'], 'current_inputs': {'fbx_name': ['rigatoni'], 'no_fingers': [False], 'use_normal': [False], 'reset_to_rest': [True], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': ["{'backend': 'mia', 'cache_to_gpu': True}"]}, 'current_outputs': ['45', '44', '47', '43', '41', '10', '46', '42', '27'], 'timestamp': 1769794008918}
-
-Details:
-Workflow: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\workflows\rig_human_with_texture_mia.json
-Node error: MIAAutoRig
-rig_human_with_texture_mia_debug.json: Workflow execution failed: {'prompt_id': 'b038e040-3b74-410f-8505-2c21633b35b5', 'node_id': '42', 'node_type': 'MIAAutoRig', 'executed': ['51', '45', '47', '41', '46', '27'], 'exception_message': "No module named 'mia_inference'\n", 'exception_type': 'ModuleNotFoundError', 'traceback': ['  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 518, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 329, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 303, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\execution.py", line 291, in process_inputs\n    result = f(**inputs)\n', '  File "D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI\\custom_nodes\\ComfyUI-UniRig\\nodes\\mia_auto_rig.py", line 81, in auto_rig\n    from mia_inference import load_mia_models, get_cached_models, run_mia_inference\n'], 'current_inputs': {'fbx_name': ['rigatoni'], 'no_fingers': [False], 'use_normal': [False], 'reset_to_rest': [True], 'trimesh': ['<trimesh.Trimesh(vertices.shape=(394992, 3), faces.shape=(642547, 3), name=`realistic_male_character.glb`)>'], 'model': ["{'backend': 'mia', 'cache_to_gpu': True}"]}, 'current_outputs': ['50', '51', '45', '44', '47', '49', '43', '41', '42', '46', '27'], 'timestamp': 1769794017851}
-
-Details:
-Workflow: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\workflows\rig_human_with_texture_mia_debug.json
-Node error: MIAAutoRig
-rigged_manipulator.json: Workflow validation failed
-
-Details:
-Prompt outputs failed validation
-Node errors:
-{
-  "1": {
-    "errors": [
-      {
-        "type": "required_input_missing",
-        "message": "Required input is missing",
-        "details": "fbx_file",
-        "extra_info": {
-          "input_name": "fbx_file"
-        }
-      }
-    ],
-    "dependent_outputs": [
-      "3"
-    ],
-    "class_type": "UniRigLoadRiggedMesh"
-  }
-}
+[00:55]   Screenshot dependencies installed successfully
+[00:55] Starting headless browser...
+[00:56]   [1/5] STATIC apply_animation.json
+[00:56] Capturing: apply_animation.json
+[00:57]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:57]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:58]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:58]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:58]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:58]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[00:58]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[00:58]   [ComfyUI] Feature flags negotiated for client 52c83741318a4d0c967e7962daaa77a1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[01:03]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[01:03]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[01:03]   [Console-warning] [.WebGL-0x351c006cc700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[01:03]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[01:03]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[01:03]   [Console-warning] [.WebGL-0x351c006cc700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[01:03]   [Console-warning] [.WebGL-0x351c006cc700]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[01:06]   Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\screenshots\apply_animation.png
+[01:06]   [2/5] STATIC rig_human_with_texture.json
+[01:06] Capturing: rig_human_with_texture.json
+[01:06]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:06]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:07]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:07]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:07]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:07]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[01:07]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[01:07]   [ComfyUI] Feature flags negotiated for client 52c83741318a4d0c967e7962daaa77a1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[01:08]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[01:08]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[01:08]   [Console-warning] [.WebGL-0x351c0b6c4000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[01:08]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[01:08]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
+[01:09]   [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
+[01:13]   Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\screenshots\rig_human_with_texture.png
+[01:13]   [3/5] STATIC rig_human_with_texture_mia.json
+[01:13] Capturing: rig_human_with_texture_mia.json
+[01:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:13]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[01:13]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[01:13]   [ComfyUI] Feature flags negotiated for client 52c83741318a4d0c967e7962daaa77a1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[01:18]   Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\screenshots\rig_human_with_texture_mia.png
+[01:18]   [4/5] STATIC rig_human_with_texture_mia_debug.json
+[01:18] Capturing: rig_human_with_texture_mia_debug.json
+[01:18]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:19]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:19]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:19]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:19]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:19]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[01:19]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[01:19]   [ComfyUI] Feature flags negotiated for client 52c83741318a4d0c967e7962daaa77a1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[01:24]   Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\screenshots\rig_human_with_texture_mia_debug.png
+[01:24]   [5/5] STATIC rigged_manipulator.json
+[01:24] Capturing: rigged_manipulator.json
+[01:24]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:24]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:25]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:25]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:25]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:25]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
+[01:25]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[01:25]   [ComfyUI] Feature flags negotiated for client 52c83741318a4d0c967e7962daaa77a1: {'supports_preview_metadata': True, 'supports_manager_v4_ui': True}
+[01:30]   Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\screenshots\rigged_manipulator.png
+[01:30] [STATIC_CAPTURE] PASSED
+[01:30] 
+[6/6] VALIDATION: SKIPPED
+[01:30] 
+[01:30] [7/6] EXECUTION
+[01:30] ----------------------------------------
+[01:30] No GPU detected - GPU workflows will be skipped
+[01:30] Running 5 workflow(s) (all with videos)...
+[01:31]   [1/5] SKIPPED (GPU required) apply_animation.json
+[01:31]   [2/5] SKIPPED (GPU required) rig_human_with_texture.json
+[01:31]   [3/5] SKIPPED (GPU required) rig_human_with_texture_mia.json
+[01:32]   [4/5] SKIPPED (GPU required) rig_human_with_texture_mia_debug.json
+[01:32]   [5/5] SKIPPED (GPU required) rigged_manipulator.json
+[01:33] Results saved to D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\results.json
+[01:33] Saved: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI\custom_nodes\ComfyUI-UniRig\comfy-test-results\index.html
+[01:34] [EXECUTION] PASSED
+[01:34] Stopping ComfyUI server...
+[01:34] Tearing down Windows isolation...
+[01:34]   Environment restored
+[01:34]   Isolation torn down
+[01:34] 
+windows: PASSED
