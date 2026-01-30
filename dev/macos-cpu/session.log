@@ -22,340 +22,76 @@ Starting ComfyUI server...
 [00:00] Starting ComfyUI server on port 8188...
 [00:00] Starting ComfyUI server on port 8188...
 [00:00] Waiting for server to be ready (timeout: 300s)...
-[00:02]   [ComfyUI] 
-[00:02]   [ComfyUI] Prestartup times for custom nodes:
-[00:02]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
-[00:02]   [ComfyUI] 
+[00:04]   [ComfyUI] 
+[00:04]   [ComfyUI] Prestartup times for custom nodes:
+[00:04]   [ComfyUI]    0.1 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[00:04]   [ComfyUI]    2.2 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
+[00:04]   [ComfyUI] 
+[00:04]   [ComfyUI] WARNING: Potential Error in code: Torch already imported, torch should never be imported before this point.
 [00:04]   [ComfyUI] Checkpoint files will always be loaded safely.
 [00:04]   [ComfyUI] Total VRAM 7168 MB, total RAM 7168 MB
 [00:04]   [ComfyUI] pytorch version: 2.10.0
 [00:04]   [ComfyUI] Mac Version (15, 7, 3)
 [00:04]   [ComfyUI] Set vram state to: DISABLED
 [00:04]   [ComfyUI] Device: cpu
-[00:11]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
-[00:11]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
-[00:11]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'Extension file not found: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfy_kitchen/backends/cuda/_C.abi3.so', 'capabilities': []}
-[00:12]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
-[00:17]   [ComfyUI] Python version: 3.13.11 (v3.13.11:627894459a8, Dec  5 2025, 11:26:37) [Clang 16.0.0 (clang-1600.0.26.6)]
-[00:17]   [ComfyUI] ComfyUI version: 0.11.1
-[00:17]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
-[00:17]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
-[00:17]   [ComfyUI] ComfyUI frontend version: 1.37.11
-[00:17]   [ComfyUI] [Prompt Server] web root: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfyui_frontend_package/static
-[00:19]   [ComfyUI] Traceback (most recent call last):
-[00:19]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/__init__.py", line 12, in <module>
-[00:19]   [ComfyUI]     from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
-[00:19]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/__init__.py", line 11, in <module>
-[00:19]   [ComfyUI]     from .mesh_io import UniRigLoadMesh, UniRigSaveMesh
-[00:19]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/nodes/mesh_io.py", line 9, in <module>
-[00:19]   [ComfyUI]     import trimesh
-[00:19]   [ComfyUI] ModuleNotFoundError: No module named 'trimesh'
-[00:19]   [ComfyUI] 
-[00:19]   [ComfyUI] Import times for custom nodes:
-[00:19]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/websocket_image_save.py
-[00:19]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
-[00:19]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
-[00:19]   [ComfyUI] 
-[00:19]   [ComfyUI] Context impl SQLiteImpl.
-[00:19]   [ComfyUI] Will assume non-transactional DDL.
-[00:19]   [ComfyUI] Context impl SQLiteImpl.
-[00:19]   [ComfyUI] Will assume non-transactional DDL.
-[00:19]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
-[00:19]   [ComfyUI] Revision ID: 0001_assets
-[00:19]   [ComfyUI] Revises: None
-[00:19]   [ComfyUI] Create Date: 2025-12-10 00:00:00
-[00:19]   [ComfyUI] Database upgraded from None to 0001_assets
-[00:19]   [ComfyUI] Assets scan(roots=['models']) completed in 0.016s (created=11, skipped_existing=0, total_seen=11)
-[00:19]   [ComfyUI] Starting server
-[00:19]   [ComfyUI] 
-[00:19]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
-[00:19] Server responding, waiting for nodes to load...
-[00:39] Server is ready!
-[00:39] 
-[00:39] [3/7] REGISTRATION
-[00:39] ----------------------------------------
-[00:39] Checking for import errors in server logs...
-[00:39] No import errors detected
-[00:39] [REGISTRATION] PASSED
-[00:39] Found 596 registered nodes
-[00:39] 
-[00:39] [4/7] INSTANTIATION
-[00:39] ----------------------------------------
-[00:39] Testing node constructors...
-[00:45] All 596 node(s) instantiated successfully!
-[00:45] [INSTANTIATION] PASSED
-[00:45] 
-[00:45] [5/7] STATIC_CAPTURE
-[00:45] ----------------------------------------
-[00:45] Capturing 5 static screenshot(s)...
-[00:45] Installing screenshot dependencies (playwright, pillow)...
-[00:47]   Packages installed, downloading chromium browser...
-[00:47]   Screenshot dependencies installed successfully
-[00:47] Starting headless browser...
-[00:48]   [1/5] STATIC apply_animation.json
-[00:48] Capturing: apply_animation.json
-[00:48]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:48]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:49]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:49]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:49]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[00:49]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:51]   [Console-warning] [.WebGL-0x124001dc800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[00:51]   [Console-warning] [.WebGL-0x124001dc800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[00:51]   [Console-warning] [.WebGL-0x124001dc800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[00:51]   [Console-warning] [.WebGL-0x124001dc800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
-[00:51]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[00:51]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[00:51]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[00:51]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[00:54]   Saved: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/apply_animation.png
-[00:54]   [2/5] STATIC rig_human_with_texture.json
-[00:54] Capturing: rig_human_with_texture.json
-[00:54]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:54]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:54]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:54]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:54]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[00:54]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:56]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[00:56]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[00:56]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[00:56]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[00:57]   [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
-[01:00]   Saved: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture.png
-[01:00]   [3/5] STATIC rig_human_with_texture_mia.json
-[01:00] Capturing: rig_human_with_texture_mia.json
-[01:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:00]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[01:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:06]   Saved: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture_mia.png
-[01:06]   [4/5] STATIC rig_human_with_texture_mia_debug.json
-[01:06] Capturing: rig_human_with_texture_mia_debug.json
-[01:06]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:06]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:06]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:06]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:06]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[01:06]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:11]   Saved: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture_mia_debug.png
-[01:11]   [5/5] STATIC rigged_manipulator.json
-[01:11] Capturing: rigged_manipulator.json
-[01:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:11]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[01:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:17]   Saved: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rigged_manipulator.png
-[01:18] [STATIC_CAPTURE] PASSED
-[01:18] 
-[01:18] [6/7] VALIDATION
-[01:18] ----------------------------------------
-[01:18] Validating 5 workflow(s)...
-[01:18] Starting headless browser...
-[01:19]   [1/5] Validating apply_animation.json
-[01:19]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:19]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:20]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:20]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:20]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[01:20]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:22]   [Console-warning] [.WebGL-0x104001ac200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[01:22]   [Console-warning] [.WebGL-0x104001ac200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[01:22]   [Console-warning] [.WebGL-0x104001ac200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[01:22]   [Console-warning] [.WebGL-0x104001ac200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
-[01:22]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[01:22]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[01:23]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[01:23]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[01:23]   [ComfyUI] === /validate endpoint called ===
-[01:23]   [ComfyUI] Received JSON with keys: ['prompt']
-[01:23]   [ComfyUI] Prompt has 3 nodes
-[01:23]   [ComfyUI]   Node 6: UNKNOWN
-[01:23]   [ComfyUI]     Inputs: {"UNKNOWN": "", "model_fbx_path": ["8", 0]}
-[01:23]   [ComfyUI]   Node 7: Preview3D
-[01:23]   [ComfyUI]     Inputs: {"model_file": ["6", 0], "image": ""}
-[01:23]   [ComfyUI]   Node 8: UNKNOWN
-[01:23]   [ComfyUI]     Inputs: {"UNKNOWN": "refresh"}
-[01:23]   [ComfyUI] Generated prompt_id: aeb8b225-947c-41bf-b416-0720df0b6650
-[01:23]   [ComfyUI] Calling execution.validate_prompt()...
-[01:23]   [ComfyUI] Validation result: valid=False
-[01:23]   [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#6'", 'extra_info': {}}
-[01:23]   [ComfyUI] === Validation FAILED ===
-[01:23]   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
-[01:23]     FAILED: Workflow validation failed
-
-Details:
-Cannot execute because a node is missing the class_type property.
-[01:23]   [2/5] Validating rig_human_with_texture.json
-[01:23]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:23]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:23]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:23]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:23]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[01:23]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:24]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[01:24]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[01:25]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[01:25]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
-    at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[01:26]   [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
-[01:27]   [ComfyUI] === /validate endpoint called ===
-[01:27]   [ComfyUI] Received JSON with keys: ['prompt']
-[01:27]   [ComfyUI] Prompt has 4 nodes
-[01:27]   [ComfyUI]   Node 10: UNKNOWN
-[01:27]   [ComfyUI]     Inputs: {"UNKNOWN": "", "fbx_output_path": ["39", 0]}
-[01:27]   [ComfyUI]   Node 27: UNKNOWN
-[01:27]   [ComfyUI]     Inputs: {"UNKNOWN": "3d/realistic_male_character.glb"}
-[01:27]   [ComfyUI]   Node 39: UNKNOWN
-[01:27]   [ComfyUI]     Inputs: {"UNKNOWN": 50000, "trimesh": ["27", 0], "model": ["40", 0]}
-[01:27]   [ComfyUI]   Node 40: UNKNOWN
-[01:27]   [ComfyUI]     Inputs: {"UNKNOWN": false}
-[01:27]   [ComfyUI] Generated prompt_id: 1a93c868-d070-416d-8c40-d7c2d91d9e4c
-[01:27]   [ComfyUI] Calling execution.validate_prompt()...
-[01:27]   [ComfyUI] Validation result: valid=False
-[01:27]   [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#10'", 'extra_info': {}}
-[01:27]   [ComfyUI] === Validation FAILED ===
-[01:27]   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
-[01:27]     FAILED: Workflow validation failed
-
-Details:
-Cannot execute because a node is missing the class_type property.
-[01:27]   [3/5] Validating rig_human_with_texture_mia.json
-[01:27]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:27]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:27]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:27]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:27]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[01:27]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:30]   [ComfyUI] === /validate endpoint called ===
-[01:30]   [ComfyUI] Received JSON with keys: ['prompt']
-[01:30]   [ComfyUI] Prompt has 9 nodes
-[01:30]   [ComfyUI]   Node 10: UNKNOWN
-[01:30]   [ComfyUI]     Inputs: {"UNKNOWN": "", "fbx_output_path": ["42", 0]}
-[01:30]   [ComfyUI]   Node 27: UNKNOWN
-[01:30]   [ComfyUI]     Inputs: {"UNKNOWN": "3d/realistic_male_character.glb"}
-[01:30]   [ComfyUI]   Node 41: UNKNOWN
-[01:30]   [ComfyUI]     Inputs: {"UNKNOWN": true}
-[01:30]   [ComfyUI]   Node 42: UNKNOWN
-[01:30]   [ComfyUI]     Inputs: {"UNKNOWN": true, "trimesh": ["45", 0], "model": ["41", 0]}
-[01:30]   [ComfyUI]   Node 43: UNKNOWN
-[01:30]   [ComfyUI]     Inputs: {"UNKNOWN": 512, "mesh": ["45", 0]}
-[01:30]   [ComfyUI]   Node 44: PreviewImage
-[01:30]   [ComfyUI]     Inputs: {"images": ["43", 0]}
-[01:30]   [ComfyUI]   Node 45: UNKNOWN
-[01:30]   [ComfyUI]     Inputs: {"UNKNOWN": 0, "trimesh": ["27", 0]}
-[01:30]   [ComfyUI]   Node 46: UNKNOWN
-[01:30]   [ComfyUI]     Inputs: {"UNKNOWN": 512, "mesh": ["27", 0]}
-[01:30]   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
-[01:30]   [ComfyUI]   Node 47: PreviewImage
-[01:30]   [ComfyUI]     Inputs: {"images": ["46", 0]}
-[01:30]   [ComfyUI] Generated prompt_id: d73836e2-9d09-4e03-a5ae-00d235eef9d3
-[01:30]   [ComfyUI] Calling execution.validate_prompt()...
-[01:30]   [ComfyUI] Validation result: valid=False
-[01:30]   [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#10'", 'extra_info': {}}
-[01:30]   [ComfyUI] === Validation FAILED ===
-[01:30]     FAILED: Workflow validation failed
-
-Details:
-Cannot execute because a node is missing the class_type property.
-[01:30]   [4/5] Validating rig_human_with_texture_mia_debug.json
-[01:30]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:30]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:30]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:30]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:30]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[01:30]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:33]   [ComfyUI] === /validate endpoint called ===
-[01:33]   [ComfyUI] Received JSON with keys: ['prompt']
-[01:33]   [ComfyUI] Prompt has 11 nodes
-[01:33]   [ComfyUI]   Node 27: UNKNOWN
-[01:33]   [ComfyUI]     Inputs: {"UNKNOWN": "3d/realistic_male_character.glb"}
-[01:33]   [ComfyUI]   Node 41: UNKNOWN
-[01:33]   [ComfyUI]     Inputs: {"UNKNOWN": true}
-[01:33]   [ComfyUI]   Node 42: UNKNOWN
-[01:33]   [ComfyUI]     Inputs: {"UNKNOWN": true, "trimesh": ["45", 0], "model": ["41", 0]}
-[01:33]   [ComfyUI]   Node 43: UNKNOWN
-[01:33]   [ComfyUI]     Inputs: {"UNKNOWN": 512, "mesh": ["45", 0]}
-[01:33]   [ComfyUI]   Node 44: PreviewImage
-[01:33]   [ComfyUI]     Inputs: {"images": ["43", 0]}
-[01:33]   [ComfyUI]   Node 45: UNKNOWN
-[01:33]   [ComfyUI]     Inputs: {"UNKNOWN": 0, "trimesh": ["27", 0]}
-[01:33]   [ComfyUI]   Node 46: UNKNOWN
-[01:33]   [ComfyUI]     Inputs: {"UNKNOWN": 512, "mesh": ["27", 0]}
-[01:33]   [ComfyUI]   Node 47: PreviewImage
-[01:33]   [ComfyUI]     Inputs: {"images": ["46", 0]}
-[01:33]   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
-[01:33]   [ComfyUI]   Node 49: UNKNOWN
-[01:33]   [ComfyUI]     Inputs: {"UNKNOWN": "", "fbx_path_left": ["42", 0], "fbx_path_right": ["51", 0]}
-[01:33]     FAILED: Workflow validation failed
-
-Details:
-Cannot execute because a node is missing the class_type property.
-[01:33]   [ComfyUI]   Node 50: UNKNOWN
-[01:33]   [5/5] Validating rigged_manipulator.json
-[01:33]   [ComfyUI]     Inputs: {"UNKNOWN": "3d/mixamo.fbx"}
-[01:33]   [ComfyUI]   Node 51: PrimitiveString
-[01:33]   [ComfyUI]     Inputs: {"value": "/home/shadeform/unirig/ComfyUI/input/3d/mixamo.fbx"}
-[01:33]   [ComfyUI] Generated prompt_id: e45a4ac9-7fc7-4422-83f4-c558a23aa536
-[01:33]   [ComfyUI] Calling execution.validate_prompt()...
-[01:33]   [ComfyUI] Validation result: valid=False
-[01:33]   [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#27'", 'extra_info': {}}
-[01:33]   [ComfyUI] === Validation FAILED ===
-[01:33]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:33]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:34]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:34]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:34]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[01:34]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:37]   [ComfyUI] === /validate endpoint called ===
-[01:37]   [ComfyUI] Received JSON with keys: ['prompt']
-[01:37]   [ComfyUI] Prompt has 2 nodes
-[01:37]   [ComfyUI]   Node 1: UNKNOWN
-[01:37]   [ComfyUI]     Inputs: {"UNKNOWN": "refresh"}
-[01:37]   [ComfyUI]   Node 3: UNKNOWN
-[01:37]   [ComfyUI]     Inputs: {"UNKNOWN": "", "fbx_output_path": ["1", 0]}
-[01:37]   [ComfyUI] Generated prompt_id: 28ca644f-c2ce-47c8-9d97-46369448231d
-[01:37]   [ComfyUI] Calling execution.validate_prompt()...
-[01:37]   [ComfyUI] Validation result: valid=False
-[01:37]   [ComfyUI]   Error: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#1'", 'extra_info': {}}
-[01:37]   [ComfyUI] === Validation FAILED ===
-[01:37]   [Console-error] Failed to load resource: the server responded with a status of 400 (Bad Request)
-[01:37]     FAILED: Workflow validation failed
-
-Details:
-Cannot execute because a node is missing the class_type property.
-[01:37] Stopping ComfyUI server...
-[01:37] 
+[00:07]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+[00:07]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'Extension file not found: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfy_kitchen/backends/cuda/_C.abi3.so', 'capabilities': []}
+[00:07]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+[00:07]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+[00:12]   [ComfyUI] Python version: 3.13.11 (v3.13.11:627894459a8, Dec  5 2025, 11:26:37) [Clang 16.0.0 (clang-1600.0.26.6)]
+[00:12]   [ComfyUI] ComfyUI version: 0.11.1
+[00:12]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
+[00:12]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
+[00:12]   [ComfyUI] ComfyUI frontend version: 1.37.11
+[00:12]   [ComfyUI] [Prompt Server] web root: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfyui_frontend_package/static
+[00:15]   [ComfyUI] Traceback (most recent call last):
+[00:15]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/nodes.py", line 2216, in load_custom_node
+[00:15]   [ComfyUI]     module_spec.loader.exec_module(module)
+[00:15]   [ComfyUI]     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+[00:15]   [ComfyUI]   File "<frozen importlib._bootstrap_external>", line 1023, in exec_module
+[00:15]   [ComfyUI]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[00:15]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/__init__.py", line 20, in <module>
+[00:15]   [ComfyUI]     from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+[00:15]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/__init__.py", line 17, in <module>
+[00:15]   [ComfyUI]     from .main import NODE_CLASS_MAPPINGS as main_mappings
+[00:15]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/main/__init__.py", line 19, in <module>
+[00:15]   [ComfyUI]     from . import repair
+[00:15]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/main/repair/__init__.py", line 17, in <module>
+[00:15]   [ComfyUI]     from .meshfix import NODE_CLASS_MAPPINGS as MESHFIX_MAPS, NODE_DISPLAY_NAME_MAPPINGS as MESHFIX_DISP
+[00:15]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/main/repair/meshfix.py", line 13, in <module>
+[00:15]   [ComfyUI]     import pymeshfix
+[00:15]   [ComfyUI] ModuleNotFoundError: No module named 'pymeshfix'
+[00:15]   [ComfyUI] 
+[00:15]   [ComfyUI] Cannot import /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack module for custom nodes: No module named 'pymeshfix'
+[00:15]   [ComfyUI] 
+[00:15]   [ComfyUI] Import times for custom nodes:
+[00:15]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/websocket_image_save.py
+[00:15]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
+[00:15]   [ComfyUI]    0.1 seconds (IMPORT FAILED): /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[00:15]   [ComfyUI]    0.9 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
+[00:15]   [ComfyUI] 
+[00:15]   [ComfyUI] Context impl SQLiteImpl.
+[00:15]   [ComfyUI] Will assume non-transactional DDL.
+[00:15]   [ComfyUI] Context impl SQLiteImpl.
+[00:15]   [ComfyUI] Will assume non-transactional DDL.
+[00:15]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
+[00:15]   [ComfyUI] Revision ID: 0001_assets
+[00:15]   [ComfyUI] Revises: None
+[00:15]   [ComfyUI] Create Date: 2025-12-10 00:00:00
+[00:15]   [ComfyUI] Database upgraded from None to 0001_assets
+[00:15]   [ComfyUI] Assets scan(roots=['models']) completed in 0.021s (created=11, skipped_existing=0, total_seen=11)
+[00:15]   [ComfyUI] Starting server
+[00:15]   [ComfyUI] 
+[00:15]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
+[00:15] Server responding, waiting for nodes to load...
+[00:35] Server is ready!
+[00:35] 
+[00:35] [3/7] REGISTRATION
+[00:35] ----------------------------------------
+[00:35] Checking for import errors in server logs...
+[00:35] Stopping ComfyUI server...
+[00:36] 
 macos: FAILED
-[01:37] Error: Workflow validation failed (5 error(s))
-[01:37] Details:   - apply_animation.json: Workflow validation failed
-
-Details:
-Cannot execute because a node is missing the class_type property.
-  - rig_human_with_texture.json: Workflow validation failed
-
-Details:
-Cannot execute because a node is missing the class_type property.
-  - rig_human_with_texture_mia.json: Workflow validation failed
-
-Details:
-Cannot execute because a node is missing the class_type property.
-  - rig_human_with_texture_mia_debug.json: Workflow validation failed
-
-Details:
-Cannot execute because a node is missing the class_type property.
-  - rigged_manipulator.json: Workflow validation failed
-
-Details:
-Cannot execute because a node is missing the class_type property.
+[00:36] Error: Node import failed (2 error(s))
+[00:36] Details: Cannot import /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack module for custom nodes: No module named 'pymeshfix'
+   0.1 seconds (IMPORT FAILED): /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack

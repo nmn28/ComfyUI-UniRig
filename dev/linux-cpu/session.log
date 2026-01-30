@@ -14,19 +14,19 @@
 [00:01] Installing validation endpoint...
 [00:01]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
 [00:01] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
-[00:01] [INSTALL] PASSED
-[00:01] COMFY_TEST_GPU env var = ''
-[00:01] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
-[00:01] 
+[00:02] [INSTALL] PASSED
+[00:02] COMFY_TEST_GPU env var = ''
+[00:02] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
+[00:02] 
 Starting ComfyUI server...
-[00:01] Starting ComfyUI server on port 8188...
-[00:01] Starting ComfyUI server on port 8188...
-[00:01] Waiting for server to be ready (timeout: 300s)...
-[00:03]   [ComfyUI] 
-[00:03]   [ComfyUI] Prestartup times for custom nodes:
-[00:03]   [ComfyUI]    0.1 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
-[00:03]   [ComfyUI]    0.2 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
-[00:03]   [ComfyUI] 
+[00:02] Starting ComfyUI server on port 8188...
+[00:02] Starting ComfyUI server on port 8188...
+[00:02] Waiting for server to be ready (timeout: 300s)...
+[00:04]   [ComfyUI] 
+[00:04]   [ComfyUI] Prestartup times for custom nodes:
+[00:04]   [ComfyUI]    0.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[00:04]   [ComfyUI]    0.2 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
+[00:04]   [ComfyUI] 
 [00:05]   [ComfyUI] Checkpoint files will always be loaded safely.
 [00:05]   [ComfyUI] Total VRAM 15991 MB, total RAM 15991 MB
 [00:05]   [ComfyUI] pytorch version: 2.10.0+cu128
@@ -34,8 +34,8 @@ Starting ComfyUI server...
 [00:05]   [ComfyUI] Device: cpu
 [00:09]   [ComfyUI] WARNING: You need pytorch with cu130 or higher to use optimized CUDA operations.
 [00:09]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
-[00:09]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
 [00:09]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
+[00:09]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
 [00:10]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
 [00:15]   [ComfyUI] Python version: 3.13.11 (main, Dec  8 2025, 02:51:34) [GCC 13.3.0]
 [00:15]   [ComfyUI] ComfyUI version: 0.11.1
@@ -67,7 +67,7 @@ Starting ComfyUI server...
 [00:19]   [ComfyUI]    0.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/websocket_image_save.py
 [00:19]   [ComfyUI]    0.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
 [00:19]   [ComfyUI]    0.1 seconds (IMPORT FAILED): /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
-[00:19]   [ComfyUI]    1.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
+[00:19]   [ComfyUI]    0.9 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
 [00:19]   [ComfyUI] 
 [00:19]   [ComfyUI] Context impl SQLiteImpl.
 [00:19]   [ComfyUI] Will assume non-transactional DDL.
@@ -78,19 +78,19 @@ Starting ComfyUI server...
 [00:19]   [ComfyUI] Revises: None
 [00:19]   [ComfyUI] Create Date: 2025-12-10 00:00:00
 [00:19]   [ComfyUI] Database upgraded from None to 0001_assets
-[00:19]   [ComfyUI] Assets scan(roots=['models']) completed in 0.040s (created=11, skipped_existing=0, total_seen=11)
+[00:19]   [ComfyUI] Assets scan(roots=['models']) completed in 0.038s (created=11, skipped_existing=0, total_seen=11)
 [00:19]   [ComfyUI] Starting server
 [00:19]   [ComfyUI] 
 [00:19]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
-[00:19] Server responding, waiting for nodes to load...
-[00:39] Server is ready!
-[00:39] 
-[00:39] [3/7] REGISTRATION
-[00:39] ----------------------------------------
-[00:39] Checking for import errors in server logs...
-[00:39] Stopping ComfyUI server...
-[00:39] 
+[00:20] Server responding, waiting for nodes to load...
+[00:40] Server is ready!
+[00:40] 
+[00:40] [3/7] REGISTRATION
+[00:40] ----------------------------------------
+[00:40] Checking for import errors in server logs...
+[00:40] Stopping ComfyUI server...
+[00:40] 
 linux: FAILED
-[00:39] Error: Node import failed (2 error(s))
-[00:39] Details: Cannot import /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack module for custom nodes: No module named 'pymeshfix'
+[00:40] Error: Node import failed (2 error(s))
+[00:40] Details: Cannot import /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack module for custom nodes: No module named 'pymeshfix'
    0.1 seconds (IMPORT FAILED): /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
