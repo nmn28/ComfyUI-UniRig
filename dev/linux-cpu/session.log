@@ -12,7 +12,8 @@
 [00:01] Using existing ComfyUI: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI
 [00:01] Node already installed, skipping installation
 [00:01] Installing validation endpoint...
-[00:01]   ComfyUI-validate-endpoint already exists, skipping...
+[00:01]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
+[00:01] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
 [00:01] [INSTALL] PASSED
 [00:01] COMFY_TEST_GPU env var = ''
 [00:01] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
@@ -20,6 +21,14 @@
 Starting ComfyUI server...
 [00:01] Starting ComfyUI server on port 8188...
 [00:01] Starting ComfyUI server on port 8188...
-[00:01] 
-windows_portable: FAILED (unexpected error)
-[00:01] Error: [Errno 2] No such file or directory: '/home/runner/work/ComfyUI-UniRig/python_embeded/python.exe'
+[00:01] Waiting for server to be ready (timeout: 300s)...
+[00:01]   [ComfyUI] Traceback (most recent call last):
+[00:01]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/main.py", line 10, in <module>
+[00:01]   [ComfyUI]     from app.assets.scanner import seed_assets
+[00:01]   [ComfyUI]   File "/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/app/assets/scanner.py", line 5, in <module>
+[00:01]   [ComfyUI]     import sqlalchemy
+[00:01]   [ComfyUI] ModuleNotFoundError: No module named 'sqlalchemy'
+[00:02] 
+linux: FAILED
+[00:02] Error: ComfyUI server exited unexpectedly
+[00:02] Details: Exit code: 1
