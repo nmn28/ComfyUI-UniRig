@@ -12,15 +12,10 @@ import pickle
 import json
 import folder_paths
 
-# Support both relative imports (ComfyUI) and absolute imports (testing)
-try:
-    from .constants import BLENDER_TIMEOUT, PARSE_TIMEOUT, MESH_INFO_TIMEOUT, DEFAULT_EXTRUDE_SIZE
-except ImportError:
-    from constants import BLENDER_TIMEOUT, PARSE_TIMEOUT, MESH_INFO_TIMEOUT, DEFAULT_EXTRUDE_SIZE
+MESH_INFO_TIMEOUT = 30  # seconds
 
 try:
     from .base import (
-        BLENDER_EXE,
         BLENDER_PARSE_SKELETON,
         BLENDER_EXTRACT_MESH_INFO,
         NODE_DIR,
@@ -28,12 +23,14 @@ try:
     )
 except ImportError:
     from base import (
-        BLENDER_EXE,
         BLENDER_PARSE_SKELETON,
         BLENDER_EXTRACT_MESH_INFO,
         NODE_DIR,
         LIB_DIR,
     )
+
+# Blender executable no longer used - set to None for backwards compatibility
+BLENDER_EXE = None
 
 
 # Direct bone debug extraction module (bpy as Python module)
@@ -410,7 +407,7 @@ class UniRigExportPosedFBX:
     OUTPUT_NODE = True
 
     def export_posed_fbx(self, rigged_mesh, output_filename, bone_transforms_json="{}"):
-        """Export rigged mesh with custom pose to FBX."""
+        """Export rigged mesh with custom pose to FBX using bpy directly."""
         print(f"[UniRigExportPosedFBX] Exporting posed FBX...")
 
         # Get original FBX path
@@ -427,60 +424,28 @@ class UniRigExportPosedFBX:
         except json.JSONDecodeError as e:
             raise ValueError(f"Invalid JSON in bone_transforms_json: {e}")
 
-        # Save bone transforms to temporary JSON file
-        temp_dir = folder_paths.get_temp_directory()
-        transforms_json_path = os.path.join(temp_dir, f"bone_transforms_{int(time.time())}.json")
-        with open(transforms_json_path, 'w') as f:
-            json.dump(bone_transforms, f)
-
-        print(f"[UniRigExportPosedFBX] Saved transforms to: {transforms_json_path}")
-
         # Prepare output path
         output_dir = folder_paths.get_output_directory()
         if not output_filename.endswith('.fbx'):
             output_filename = output_filename + '.fbx'
         output_fbx_path = os.path.join(output_dir, output_filename)
 
+        # Use direct bpy export
         try:
-            # Path to Blender script
-            blender_script = os.path.join(NODE_DIR, 'nodes', 'lib', 'blender_export_posed_fbx.py')
+            from .lib.direct_export_posed_fbx import export_posed_fbx as direct_export
+            direct_export(fbx_path, output_fbx_path, bone_transforms)
+        except ImportError as e:
+            raise RuntimeError(
+                f"Failed to import direct_export_posed_fbx: {e}\n"
+                "Make sure bpy is available in your environment (unirig isolated environment)."
+            )
 
-            if not os.path.exists(blender_script):
-                raise RuntimeError(f"Blender export script not found: {blender_script}")
+        if not os.path.exists(output_fbx_path):
+            raise RuntimeError(f"Export completed but output file not found: {output_fbx_path}")
 
-            if not os.path.exists(BLENDER_EXE):
-                raise RuntimeError(f"Blender executable not found: {BLENDER_EXE}")
+        print(f"[UniRigExportPosedFBX] [OK] Successfully exported to: {output_fbx_path}")
 
-            # Build command
-            cmd = [
-                BLENDER_EXE,
-                '--background',
-                '--python', blender_script,
-                '--',
-                fbx_path,
-                output_fbx_path,
-                transforms_json_path,
-            ]
-
-            print(f"[UniRigExportPosedFBX] Running Blender to export posed FBX...")
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=BLENDER_TIMEOUT, encoding='utf-8', errors='replace')
-
-            if result.returncode != 0:
-                print(f"[UniRigExportPosedFBX] Blender stderr: {result.stderr}")
-                print(f"[UniRigExportPosedFBX] Blender stdout: {result.stdout}")
-                raise RuntimeError(f"FBX export failed with return code {result.returncode}")
-
-            if not os.path.exists(output_fbx_path):
-                raise RuntimeError(f"Export completed but output file not found: {output_fbx_path}")
-
-            print(f"[UniRigExportPosedFBX] [OK] Successfully exported to: {output_fbx_path}")
-
-            return (output_fbx_path,)
-
-        finally:
-            # Clean up temporary JSON file
-            if os.path.exists(transforms_json_path):
-                os.unlink(transforms_json_path)
+        return (output_fbx_path,)
 
 
 class UniRigViewRigging:

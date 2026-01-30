@@ -3,36 +3,44 @@ Make-It-Animatable inference wrapper.
 
 Provides functions to load MIA models and run inference for humanoid rigging.
 Uses vendored MIA code from lib/mia/ for model loading (no bpy dependency).
+
+IMPORTANT: All heavy imports (bpy, numpy, torch, trimesh) are lazy-loaded inside
+functions to ensure torch_cluster (via mia/model.py) loads BEFORE bpy initializes
+its bundled libraries. This avoids a segfault caused by library conflicts.
 """
 
 import os
 import sys
 from pathlib import Path
-from typing import Dict, Any, Optional
-from unittest.mock import MagicMock
+from typing import Dict, Any, Optional, TYPE_CHECKING
 
-# Try to import bpy directly (works in isolated _env_unirig with Blender 4.2 as Python module)
-# Only mock if bpy is truly unavailable (inference-only mode without Blender)
-try:
-    import bpy
-    _HAS_BPY = True
-except ImportError:
-    from unittest.mock import MagicMock
-    sys.modules['bpy'] = MagicMock()
-    _HAS_BPY = False
+# Type hints only - not imported at runtime
+if TYPE_CHECKING:
+    import numpy as np
+    import torch
+    import trimesh
 
-import numpy as np
-import torch
-import trimesh
+# Lazy bpy availability check (don't import at module level!)
+_HAS_BPY: Optional[bool] = None
+
+
+def _check_bpy_available() -> bool:
+    """Lazily check if bpy is available. Called only when needed."""
+    global _HAS_BPY
+    if _HAS_BPY is None:
+        try:
+            import bpy  # noqa: F401
+            _HAS_BPY = True
+        except ImportError:
+            _HAS_BPY = False
+    return _HAS_BPY
 
 # Get paths relative to this file
 UTILS_DIR = Path(__file__).parent.absolute()
 NODE_DIR = UTILS_DIR.parent
-LIB_DIR = NODE_DIR / "nodes" / "lib"  # lib is inside nodes/
+LIB_DIR = UTILS_DIR  # mia/ is in nodes_gpu/ (same directory as this file)
 
-# MIA models directory (downloaded from HuggingFace)
-# Stored in ComfyUI's models folder: ComfyUI/models/mia/
-# HuggingFace downloads to: {local_dir}/output/best/new/
+# MIA models directory: ComfyUI/models/mia/
 # Supports override via MIA_MODELS_PATH environment variable
 try:
     import folder_paths
@@ -44,10 +52,7 @@ except ImportError:
 if os.environ.get('MIA_MODELS_PATH'):
     MIA_MODELS_DIR = Path(os.environ['MIA_MODELS_PATH'])
 else:
-    MIA_MODELS_DIR = _COMFY_MODELS_DIR / "mia" / "output" / "best" / "new"
-
-# MIA_PATH is the local_dir for HuggingFace downloads
-MIA_PATH = _COMFY_MODELS_DIR / "mia"
+    MIA_MODELS_DIR = _COMFY_MODELS_DIR / "mia"
 
 # Required model files
 MIA_MODEL_FILES = [
@@ -70,6 +75,8 @@ def ensure_mia_models() -> bool:
     Returns:
         True if all models are available, False otherwise.
     """
+    import shutil
+
     missing = [m for m in MIA_MODEL_FILES if not (MIA_MODELS_DIR / m).exists()]
 
     if not missing:
@@ -84,14 +91,15 @@ def ensure_mia_models() -> bool:
 
         for model_file in missing:
             print(f"[MIA] Downloading {model_file}...")
-            hf_hub_download(
+            # Download to HF cache, then copy to our flat directory
+            cached_path = hf_hub_download(
                 repo_id="jasongzy/Make-It-Animatable",
                 filename=f"output/best/new/{model_file}",
-                local_dir=str(MIA_PATH),
-                local_dir_use_symlinks=False,
             )
+            target_path = MIA_MODELS_DIR / model_file
+            shutil.copy2(cached_path, target_path)
 
-        print(f"[MIA] All models downloaded successfully")
+        print(f"[MIA] All models downloaded to {MIA_MODELS_DIR}")
         return True
 
     except Exception as e:
@@ -99,7 +107,7 @@ def ensure_mia_models() -> bool:
         return False
 
 
-def load_mia_models(cache_to_gpu: bool = True) -> Dict[str, Any]:
+def load_mia_models(cache_to_gpu: bool = True) -> str:
     """
     Load all MIA models into memory.
 
@@ -107,15 +115,17 @@ def load_mia_models(cache_to_gpu: bool = True) -> Dict[str, Any]:
         cache_to_gpu: If True, keep models on GPU for faster inference.
 
     Returns:
-        Dictionary containing loaded models and metadata.
+        Cache key string (models stay in worker, can't be pickled to host).
     """
+    import torch  # Lazy import - loads torch_cluster via mia/ BEFORE bpy
+
     global _MIA_MODEL_CACHE
 
     cache_key = f"mia_models_gpu={cache_to_gpu}"
 
     if cache_key in _MIA_MODEL_CACHE:
         print(f"[MIA] Using cached models")
-        return _MIA_MODEL_CACHE[cache_key]
+        return cache_key  # Return key, not models
 
     # Ensure models are downloaded
     if not ensure_mia_models():
@@ -219,11 +229,18 @@ def load_mia_models(cache_to_gpu: bool = True) -> Dict[str, Any]:
     _MIA_MODEL_CACHE[cache_key] = models
     print(f"[MIA] All models loaded successfully")
 
-    return models
+    return cache_key  # Return key, not models (models can't be pickled to host)
+
+
+def get_cached_models(cache_key: str) -> Dict[str, Any]:
+    """Get models from cache by key."""
+    if cache_key not in _MIA_MODEL_CACHE:
+        raise RuntimeError(f"Models not loaded: {cache_key}")
+    return _MIA_MODEL_CACHE[cache_key]
 
 
 def run_mia_inference(
-    mesh: trimesh.Trimesh,
+    mesh: "trimesh.Trimesh",
     models: Dict[str, Any],
     output_path: str,
     no_fingers: bool = True,
@@ -244,6 +261,9 @@ def run_mia_inference(
     Returns:
         Path to output FBX file.
     """
+    import numpy as np  # Lazy import
+    import folder_paths  # Lazy import
+
     # Use vendored pipeline from lib/mia
     if str(LIB_DIR) not in sys.path:
         sys.path.insert(0, str(LIB_DIR))
@@ -348,6 +368,7 @@ def run_mia_inference(
 
     output_data = {
         "mesh": data.mesh,
+        "original_visual": data.original_visual,  # Preserved from input for texture export
         "gs": None,
         "joints": joints_np[..., :3],
         "joints_tail": joints_np[..., 3:] if joints_np.shape[-1] > 3 else None,
@@ -377,6 +398,8 @@ def _export_mia_fbx_direct(
     Export MIA results to FBX using bpy directly (inlined, no imports needed).
     """
     import tempfile
+    import numpy as np  # Lazy import
+    import bpy  # Lazy import - only imported here AFTER torch_cluster loaded
     from mathutils import Vector, Matrix
 
     mesh = data["mesh"]
@@ -403,8 +426,16 @@ def _export_mia_fbx_direct(
         print(f"[MIA Export] WARNING: Mesh has no visual attribute!")
     parent_indices = data.get("parent_indices")
 
+    # Restore original visual (textures/materials) before export
+    # The MIA pipeline vertex mutations destroy the visual, so we restore it here
+    original_visual = data.get("original_visual")
+    if original_visual is not None:
+        mesh.visual = original_visual
+        print(f"[MIA Export] Restored original visual: {type(original_visual).__name__}")
+    else:
+        print(f"[MIA Export] WARNING: No original_visual to restore")
+
     # Export processed mesh to temp GLB for import into Blender
-    # Textures are preserved because mesh.visual is now intact (fix in mesh_io.py)
     temp_mesh_file = tempfile.NamedTemporaryFile(suffix=".glb", delete=False)
     mesh_path = temp_mesh_file.name
     temp_mesh_file.close()
@@ -691,6 +722,8 @@ def _export_mia_fbx_direct(
 
 def _apply_pose_to_rest_inline(armature_obj, pose, bones_idx_dict, parent_indices, input_meshes, mia_joints, template_bone_data=None):
     """Apply MIA's pose prediction to transform skeleton from input pose to T-pose rest (inlined)."""
+    import numpy as np  # Lazy import
+    import bpy  # Lazy import
     from mathutils import Matrix
 
     def ortho6d_to_matrix(ortho6d):
@@ -826,7 +859,7 @@ def _export_mia_fbx(
     Falls back to subprocess method if bpy is not available.
     """
     # Get template path - use UniRig's bundled Mixamo template
-    ASSETS_DIR = NODE_DIR / "assets"
+    ASSETS_DIR = NODE_DIR / "assets"  # ComfyUI-UniRig/assets
     template_path = ASSETS_DIR / "animation_characters" / "mixamo.fbx"
     if not template_path.exists():
         # Fallback to MIA template if available
@@ -836,7 +869,7 @@ def _export_mia_fbx(
         else:
             raise FileNotFoundError(f"No Mixamo template found. Expected at: {template_path}")
 
-    if _HAS_BPY:
+    if _check_bpy_available():
         # Use bpy directly (preferred - no subprocess needed)
         print("[MIA] Using bpy directly for FBX export...")
         _export_mia_fbx_direct(data, output_path, remove_fingers, reset_to_rest, template_path)
@@ -860,137 +893,14 @@ def _export_mia_fbx_subprocess(
     """
     Fallback: Export MIA results to FBX using Blender subprocess.
 
-    Used when bpy is not available (inference-only mode).
+    NOTE: Blender subprocess export is no longer supported.
+    This function now raises an error directing users to use the bpy-based export.
     """
-    import subprocess
-    import tempfile
-    import json
-    import shutil
-
-    BLENDER_EXE = None
-
-    # Check environment variable first
-    if os.environ.get('BLENDER_PATH'):
-        blender_path = os.environ.get('BLENDER_PATH')
-        if os.path.isfile(blender_path):
-            BLENDER_EXE = blender_path
-
-    # Use comfy_env to find Blender (checks PATH and ComfyUI/tools/)
-    if BLENDER_EXE is None:
-        try:
-            from comfy_env.tools import find_blender
-            # Blender is installed to ComfyUI/tools/blender/ (shared across all nodes)
-            COMFYUI_ROOT = NODE_DIR.parent.parent  # custom_nodes/../.. = ComfyUI/
-            blender_exe = find_blender(COMFYUI_ROOT / "tools" / "blender")
-            if blender_exe:
-                BLENDER_EXE = str(blender_exe)
-        except ImportError:
-            # Fallback to PATH
-            BLENDER_EXE = shutil.which('blender')
-
-    if BLENDER_EXE is None:
-        raise RuntimeError(
-            "Blender not found and bpy not available. Run: python install.py\n"
-            "Or set BLENDER_PATH environment variable to your Blender executable."
-        )
-
-    # Save mesh to temp file (can't pickle trimesh directly)
-    temp_mesh_path = tempfile.NamedTemporaryFile(suffix=".glb", delete=False).name
-    mesh = data["mesh"]
-    if hasattr(mesh, 'export'):
-        mesh.export(temp_mesh_path)
-    else:
-        # If it's already a path or vertices/faces
-        import trimesh
-        trimesh.Trimesh(vertices=mesh.vertices, faces=mesh.faces).export(temp_mesh_path)
-
-    # Save data using JSON + raw binary (avoids numpy pickle version issues)
-    temp_dir = tempfile.mkdtemp()
-    temp_json = os.path.join(temp_dir, "data.json")
-    temp_bw = os.path.join(temp_dir, "bw.bin")
-    temp_joints = os.path.join(temp_dir, "joints.bin")
-    temp_joints_tail = os.path.join(temp_dir, "joints_tail.bin")
-    temp_pose = os.path.join(temp_dir, "pose.bin")
-
-    # Save arrays as raw binary
-    data["bw"].astype(np.float32).tofile(temp_bw)
-    data["joints"].astype(np.float32).tofile(temp_joints)
-    if data.get("joints_tail") is not None:
-        data["joints_tail"].astype(np.float32).tofile(temp_joints_tail)
-    if data.get("pose") is not None:
-        data["pose"].astype(np.float32).tofile(temp_pose)
-
-    # Save metadata as JSON
-    bones_idx_dict = dict(data["bones_idx_dict"])
-    json_data = {
-        "mesh_path": temp_mesh_path,
-        "bw_path": temp_bw,
-        "bw_shape": list(data["bw"].shape),
-        "joints_path": temp_joints,
-        "joints_shape": list(data["joints"].shape),
-        "bones_idx_dict": bones_idx_dict,
-    }
-    if data.get("joints_tail") is not None:
-        json_data["joints_tail_path"] = temp_joints_tail
-        json_data["joints_tail_shape"] = list(data["joints_tail"].shape)
-    if data.get("pose") is not None:
-        json_data["pose_path"] = temp_pose
-        json_data["pose_shape"] = list(data["pose"].shape)
-    if data.get("parent_indices") is not None:
-        json_data["parent_indices"] = data["parent_indices"]
-
-    with open(temp_json, 'w') as f:
-        json.dump(json_data, f)
-
-    try:
-        # Build Blender command - use our own script (no torch dependency)
-        blender_script = UTILS_DIR / "mia_export.py"
-
-        cmd = [
-            str(BLENDER_EXE),
-            "--background",
-            "--python", str(blender_script),
-            "--",
-            "--input_path", temp_json,
-            "--output_path", output_path,
-            "--template_path", str(template_path),
-        ]
-
-        if remove_fingers:
-            cmd.append("--remove_fingers")
-        if reset_to_rest:
-            cmd.append("--reset_to_rest")
-
-        # Run Blender
-        print(f"[MIA] Running Blender: {' '.join(cmd[:4])}...")
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            timeout=300,
-            encoding='utf-8',
-            errors='replace'
-        )
-
-        # Always print output for debugging
-        if result.stdout:
-            print(f"[MIA] Blender stdout: {result.stdout[-2000:]}")  # Last 2000 chars
-        if result.stderr:
-            print(f"[MIA] Blender stderr: {result.stderr[-2000:]}")
-
-        if result.returncode != 0:
-            raise RuntimeError(f"Blender export failed with code {result.returncode}")
-
-        # Verify output was created
-        if not os.path.exists(output_path):
-            raise RuntimeError(f"Blender completed but output file not created: {output_path}")
-
-    finally:
-        # Cleanup temp files
-        if os.path.exists(temp_dir):
-            shutil.rmtree(temp_dir)
-        if os.path.exists(temp_mesh_path):
-            os.remove(temp_mesh_path)
+    raise RuntimeError(
+        "Blender subprocess export is no longer supported.\n"
+        "Please ensure bpy is available in your environment.\n"
+        "The MIA nodes require running in the unirig isolated environment with bpy."
+    )
 
 
 def clear_mia_cache():

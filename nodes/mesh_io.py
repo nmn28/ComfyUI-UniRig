@@ -21,118 +21,28 @@ except:
     COMFYUI_INPUT_FOLDER = None
     COMFYUI_OUTPUT_FOLDER = None
 
-# Import Blender path from base module
+# Import LIB_DIR from base module
 try:
-    from .base import BLENDER_EXE, LIB_DIR
+    from .base import LIB_DIR
 except ImportError:
-    from base import BLENDER_EXE, LIB_DIR
-
-# Blender FBX loading script
-BLENDER_LOAD_FBX = str(LIB_DIR / "blender_load_fbx.py")
-
-# Timeout for Blender operations (seconds)
-BLENDER_TIMEOUT = 120
+    from base import LIB_DIR
 
 
 def load_fbx_with_blender(file_path: str) -> Tuple[Optional[trimesh.Trimesh], str]:
     """
-    Load an FBX file using Blender as an intermediary.
-
-    FBX files cannot be loaded directly by trimesh/igl, so we use Blender
-    to convert FBX to GLB format, which trimesh can handle.
+    FBX loading is no longer supported via Blender.
 
     Args:
         file_path: Path to FBX file
 
     Returns:
-        Tuple of (mesh, error_message)
+        Tuple of (None, error_message)
     """
-    if not BLENDER_EXE or not os.path.exists(BLENDER_EXE):
-        return None, (
-            "FBX file format requires Blender for conversion.\n"
-            "Blender is not installed or not found.\n\n"
-            "To fix this:\n"
-            "1. Run: comfy-env install\n"
-            "   OR\n"
-            "2. Install Blender manually and add to PATH\n\n"
-            "Alternatively, convert your FBX to GLB/OBJ format using Blender or other software."
-        )
-
-    if not os.path.exists(BLENDER_LOAD_FBX):
-        return None, f"Blender FBX script not found: {BLENDER_LOAD_FBX}"
-
-    print(f"[UniRigLoadMesh] Loading FBX via Blender: {file_path}")
-
-    try:
-        # Create a temporary GLB file
-        with tempfile.TemporaryDirectory() as tmpdir:
-            glb_path = os.path.join(tmpdir, "converted.glb")
-
-            # Run Blender to convert FBX to GLB
-            cmd = [
-                BLENDER_EXE,
-                "--background",
-                "--python", BLENDER_LOAD_FBX,
-                "--",
-                file_path,
-                glb_path
-            ]
-
-            print(f"[UniRigLoadMesh] Running Blender FBX conversion...")
-            result = subprocess.run(
-                cmd,
-                capture_output=True,
-                text=True,
-                timeout=BLENDER_TIMEOUT,
-                encoding='utf-8',
-                errors='replace'
-            )
-
-            # Log output for debugging
-            if result.stdout:
-                for line in result.stdout.strip().split('\n'):
-                    if line.startswith('[Blender'):
-                        print(f"[UniRigLoadMesh] {line}")
-
-            if result.returncode != 0:
-                error_msg = f"Blender FBX conversion failed (code {result.returncode})"
-                if result.stderr:
-                    error_msg += f": {result.stderr[:500]}"
-                return None, error_msg
-
-            if not os.path.exists(glb_path):
-                return None, "Blender did not produce output GLB file"
-
-            print(f"[UniRigLoadMesh] Loading converted GLB: {glb_path}")
-
-            # Load the converted GLB with trimesh
-            # Use process=False and maintain_order=True to preserve mesh.visual (textures/materials)
-            # Do NOT use force='mesh' as it can lose visual/texture data during Scene-to-mesh conversion
-            loaded = trimesh.load(glb_path, process=False, maintain_order=True)
-
-            # Handle Scene vs Mesh
-            if isinstance(loaded, trimesh.Scene):
-                # Use dump with concatenate=True to merge geometries while preserving visual data
-                mesh = loaded.dump(concatenate=True)
-            else:
-                mesh = loaded
-
-            if mesh is None or len(mesh.vertices) == 0:
-                return None, "Converted mesh is empty"
-
-            # Store original FBX metadata
-            mesh.metadata['file_path'] = file_path
-            mesh.metadata['file_name'] = os.path.basename(file_path)
-            mesh.metadata['file_format'] = '.fbx'
-            mesh.metadata['loaded_via'] = 'blender'
-
-            print(f"[UniRigLoadMesh] FBX loaded via Blender: {len(mesh.vertices)} vertices, {len(mesh.faces)} faces")
-            return mesh, ""
-
-    except subprocess.TimeoutExpired:
-        return None, f"Blender FBX conversion timed out after {BLENDER_TIMEOUT}s"
-    except Exception as e:
-        return None, f"FBX loading error: {str(e)}"
+    return None, (
+        "FBX file format is not directly supported.\n\n"
+        "Please convert your FBX to GLB/OBJ format using Blender or other software,\n"
+        "then load the converted file."
+    )
 
 
 def load_mesh_file(file_path: str) -> Tuple[Optional[trimesh.Trimesh], str]:

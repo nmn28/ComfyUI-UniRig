@@ -22,32 +22,6 @@ UNIRIG_PATH = LIB_DIR / "unirig"
 if str(UNIRIG_PATH) not in sys.path:
     sys.path.insert(0, str(UNIRIG_PATH))
 
-# Set BLENDER_EXE environment variable if not already set
-if 'BLENDER_EXE' not in os.environ:
-    import platform
-    # Check common Blender locations
-    blender_candidates = []
-    if platform.system() == "Windows":
-        blender_candidates = [
-            LIB_DIR / "blender" / "blender.exe",
-        ]
-    elif platform.system() == "Darwin":  # Mac
-        blender_candidates = [
-            LIB_DIR / "blender" / "Blender.app" / "Contents" / "MacOS" / "Blender",
-            LIB_DIR / "blender" / "blender",
-        ]
-    else:  # Linux
-        blender_candidates = [
-            LIB_DIR / "blender" / "blender-4.2.3-linux-x64" / "blender",
-            LIB_DIR / "blender" / "blender",
-        ]
-
-    for blender_path in blender_candidates:
-        if blender_path.exists():
-            os.environ['BLENDER_EXE'] = str(blender_path)
-            print(f"[UniRigCache] Found Blender: {blender_path}")
-            break
-
 from src.inference.download import download
 from src.data.extract import get_files
 from src.data.dataset import UniRigDatasetModule, DatasetConfig

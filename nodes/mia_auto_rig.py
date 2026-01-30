@@ -4,12 +4,8 @@ MIAAutoRig - Fast humanoid rigging using Make-It-Animatable.
 Uses comfy-env isolated environment for GPU dependencies.
 """
 
-import os
-import sys
 import time
 from pathlib import Path
-
-from comfy_env import isolated
 
 # ComfyUI folder paths
 try:
@@ -18,18 +14,7 @@ try:
 except ImportError:
     OUTPUT_DIR = Path(__file__).parent.parent / "output"
 
-# Add utils to path for imports
-UTILS_DIR = Path(__file__).parent.parent / "utils"
-if str(UTILS_DIR) not in sys.path:
-    sys.path.insert(0, str(UTILS_DIR))
 
-try:
-    from ..utils.mia_inference import run_mia_inference
-except ImportError:
-    from mia_inference import run_mia_inference
-
-
-@isolated(env="unirig", import_paths=[".", ".."])
 class MIAAutoRig:
     """
     Fast humanoid rigging using Make-It-Animatable.
@@ -91,9 +76,27 @@ class MIAAutoRig:
         3. Predict blend weights, joint positions, and pose
         4. Post-process and export FBX
         """
+        # Lazy import - only run in isolated worker
+        # Use absolute import since nodes_gpu dir is in sys.path (isolated env)
+        from mia_inference import load_mia_models, get_cached_models, run_mia_inference
+
         total_start = time.time()
+
+        # DEBUG: Check visual immediately on receipt (before any MIA code)
+        print(f"[MIAAutoRig] DEBUG: Received mesh visual type: {type(trimesh.visual).__name__ if hasattr(trimesh, 'visual') else 'NO VISUAL'}")
+        if hasattr(trimesh, 'visual') and hasattr(trimesh.visual, 'material'):
+            print(f"[MIAAutoRig] DEBUG:   Material: {type(trimesh.visual.material).__name__}")
+
         print(f"[MIAAutoRig] Starting Make-It-Animatable rigging pipeline...")
         print(f"[MIAAutoRig] Options: no_fingers={no_fingers}, use_normal={use_normal}, reset_to_rest={reset_to_rest}")
+
+        # model is a config dict from MIALoadModel - extract settings
+        cache_to_gpu = model.get("cache_to_gpu", True)
+        print(f"[MIAAutoRig] Config: cache_to_gpu={cache_to_gpu}")
+
+        # Load models internally (downloads from HuggingFace if needed)
+        cache_key = load_mia_models(cache_to_gpu=cache_to_gpu)
+        models = get_cached_models(cache_key)
 
         # Generate output filename
         if fbx_name:
@@ -106,10 +109,10 @@ class MIAAutoRig:
         OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
         output_path = str(OUTPUT_DIR / output_filename)
 
-        # Run MIA inference
+        # Run MIA inference with loaded models
         result_path = run_mia_inference(
             mesh=trimesh,
-            models=model,
+            models=models,
             output_path=output_path,
             no_fingers=no_fingers,
             use_normal=use_normal,

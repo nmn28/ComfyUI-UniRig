@@ -8,7 +8,6 @@ os.environ['PYOPENGL_PLATFORM'] = 'osmesa'
 
 import numpy as np
 import trimesh
-import torch
 from PIL import Image, ImageDraw, ImageFont
 from pathlib import Path
 
@@ -18,8 +17,8 @@ try:
 except:
     folder_paths = None
 
-# Path to bundled reference mesh
-NODE_DIR = Path(__file__).parent.parent
+# Path to bundled reference mesh (now in nodes/blender/, so go up two levels to custom_node root)
+NODE_DIR = Path(__file__).parent.parent.parent
 REFERENCE_MESH_PATH = NODE_DIR / "assets" / "FinalBaseMesh.obj"
 
 
@@ -325,6 +324,7 @@ class UniRigOrientationCheck:
             image = render_mesh_front_view(mesh, width, max_height)
 
         # Convert to ComfyUI IMAGE format (B, H, W, C) with values 0-1
+        import torch  # Lazy import
         image_tensor = torch.from_numpy(image).float() / 255.0
         image_tensor = image_tensor.unsqueeze(0)  # Add batch dimension
 
