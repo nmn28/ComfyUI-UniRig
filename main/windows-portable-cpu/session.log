@@ -7,7 +7,7 @@
 [00:02] Unicode check: OK (all characters cp1252-safe)
 [00:02] [SYNTAX] PASSED
 [00:02] Setting up Windows isolation...
-[00:02]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_4001jf0j\temp
+[00:02]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_7wabmj_0\temp
 [00:02]   Cleared 1 env var(s): COMFYUI_DIR
 [00:02]   Isolation active
 [00:02] 
@@ -18,30 +18,30 @@
 [00:02] Installing validation endpoint...
 [00:02]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
 [00:02] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-[00:04] [INSTALL] PASSED
-[00:04] COMFY_TEST_GPU env var = ''
-[00:04] 
+[00:14] [INSTALL] PASSED
+[00:14] COMFY_TEST_GPU env var = ''
+[00:14] 
 Connecting to existing server at http://localhost:8188...
-[00:04] Connecting to existing server at http://localhost:8188...
-[00:07] Connected to server!
-[00:07] 
-[00:07] [3/6] REGISTRATION
-[00:07] ----------------------------------------
-[00:07] Checking for import errors in server logs...
-[00:07] No import errors detected
-[00:07] [REGISTRATION] PASSED
-[00:07] Found 675 registered nodes
-[00:07] 
-[00:07] [4/6] INSTANTIATION
-[00:07] ----------------------------------------
-[00:07] Testing node constructors...
-[00:10] Tearing down Windows isolation...
-[00:10]   Environment restored
-[00:10]   Isolation torn down
-[00:10] 
+[00:14] Connecting to existing server at http://localhost:8188...
+[00:16] Connected to server!
+[00:16] 
+[00:16] [3/6] REGISTRATION
+[00:16] ----------------------------------------
+[00:16] Checking for import errors in server logs...
+[00:16] No import errors detected
+[00:16] [REGISTRATION] PASSED
+[00:16] Found 675 registered nodes
+[00:16] 
+[00:16] [4/6] INSTANTIATION
+[00:16] ----------------------------------------
+[00:16] Testing node constructors...
+[00:19] Tearing down Windows isolation...
+[00:19]   Environment restored
+[00:19]   Isolation torn down
+[00:19] 
 windows_portable: FAILED
-[00:10] Error: Instantiation test failed
-[00:10] Details: stdout: [UniRig] Models directory: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\models\unirig
+[00:19] Error: Instantiation test failed
+[00:19] Details: stdout: [UniRig] Models directory: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\models\unirig
 [UniRig] Main nodes loaded (2 nodes)
 [comfy-env] Wrapping 15 nodes from nodes
 [comfy-env]   site-packages: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\_env_nodes\Lib\site-packages
