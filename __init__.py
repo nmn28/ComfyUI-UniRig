@@ -32,7 +32,7 @@ try:
     @PromptServer.instance.routes.get('/unirig/fbx_files')
     async def get_fbx_files(request):
         try:
-            from .nodes.nodes_blender.skeleton_io import UniRigLoadRiggedMesh
+            from .nodes.skeleton_io import UniRigLoadRiggedMesh
             source = request.query.get('source_folder', 'output')
             if source == "input":
                 files = UniRigLoadRiggedMesh.get_fbx_files_from_input()
