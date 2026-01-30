@@ -40,9 +40,7 @@ UTILS_DIR = Path(__file__).parent.absolute()
 NODE_DIR = UTILS_DIR.parent
 LIB_DIR = UTILS_DIR  # mia/ is in nodes_gpu/ (same directory as this file)
 
-# MIA models directory (downloaded from HuggingFace)
-# Stored in ComfyUI's models folder: ComfyUI/models/mia/
-# HuggingFace downloads to: {local_dir}/output/best/new/
+# MIA models directory: ComfyUI/models/mia/
 # Supports override via MIA_MODELS_PATH environment variable
 try:
     import folder_paths
@@ -54,10 +52,7 @@ except ImportError:
 if os.environ.get('MIA_MODELS_PATH'):
     MIA_MODELS_DIR = Path(os.environ['MIA_MODELS_PATH'])
 else:
-    MIA_MODELS_DIR = _COMFY_MODELS_DIR / "mia" / "output" / "best" / "new"
-
-# MIA_PATH is the local_dir for HuggingFace downloads
-MIA_PATH = _COMFY_MODELS_DIR / "mia"
+    MIA_MODELS_DIR = _COMFY_MODELS_DIR / "mia"
 
 # Required model files
 MIA_MODEL_FILES = [
@@ -80,6 +75,8 @@ def ensure_mia_models() -> bool:
     Returns:
         True if all models are available, False otherwise.
     """
+    import shutil
+
     missing = [m for m in MIA_MODEL_FILES if not (MIA_MODELS_DIR / m).exists()]
 
     if not missing:
@@ -94,14 +91,15 @@ def ensure_mia_models() -> bool:
 
         for model_file in missing:
             print(f"[MIA] Downloading {model_file}...")
-            hf_hub_download(
+            # Download to HF cache, then copy to our flat directory
+            cached_path = hf_hub_download(
                 repo_id="jasongzy/Make-It-Animatable",
                 filename=f"output/best/new/{model_file}",
-                local_dir=str(MIA_PATH),
-                local_dir_use_symlinks=False,
             )
+            target_path = MIA_MODELS_DIR / model_file
+            shutil.copy2(cached_path, target_path)
 
-        print(f"[MIA] All models downloaded successfully")
+        print(f"[MIA] All models downloaded to {MIA_MODELS_DIR}")
         return True
 
     except Exception as e:
@@ -370,6 +368,7 @@ def run_mia_inference(
 
     output_data = {
         "mesh": data.mesh,
+        "original_visual": data.original_visual,  # Preserved from input for texture export
         "gs": None,
         "joints": joints_np[..., :3],
         "joints_tail": joints_np[..., 3:] if joints_np.shape[-1] > 3 else None,
@@ -427,8 +426,16 @@ def _export_mia_fbx_direct(
         print(f"[MIA Export] WARNING: Mesh has no visual attribute!")
     parent_indices = data.get("parent_indices")
 
+    # Restore original visual (textures/materials) before export
+    # The MIA pipeline vertex mutations destroy the visual, so we restore it here
+    original_visual = data.get("original_visual")
+    if original_visual is not None:
+        mesh.visual = original_visual
+        print(f"[MIA Export] Restored original visual: {type(original_visual).__name__}")
+    else:
+        print(f"[MIA Export] WARNING: No original_visual to restore")
+
     # Export processed mesh to temp GLB for import into Blender
-    # Textures are preserved because mesh.visual is now intact (fix in mesh_io.py)
     temp_mesh_file = tempfile.NamedTemporaryFile(suffix=".glb", delete=False)
     mesh_path = temp_mesh_file.name
     temp_mesh_file.close()

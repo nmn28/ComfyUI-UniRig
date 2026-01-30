@@ -81,6 +81,12 @@ class MIAAutoRig:
         from mia_inference import load_mia_models, get_cached_models, run_mia_inference
 
         total_start = time.time()
+
+        # DEBUG: Check visual immediately on receipt (before any MIA code)
+        print(f"[MIAAutoRig] DEBUG: Received mesh visual type: {type(trimesh.visual).__name__ if hasattr(trimesh, 'visual') else 'NO VISUAL'}")
+        if hasattr(trimesh, 'visual') and hasattr(trimesh.visual, 'material'):
+            print(f"[MIAAutoRig] DEBUG:   Material: {type(trimesh.visual.material).__name__}")
+
         print(f"[MIAAutoRig] Starting Make-It-Animatable rigging pipeline...")
         print(f"[MIAAutoRig] Options: no_fingers={no_fingers}, use_normal={use_normal}, reset_to_rest={reset_to_rest}")
 
