@@ -7,7 +7,7 @@
 [00:02] Unicode check: OK (all characters cp1252-safe)
 [00:02] [SYNTAX] PASSED
 [00:02] Setting up Windows isolation...
-[00:02]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_z89sk3v1\temp
+[00:02]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o8ek4y5b\temp
 [00:02]   Cleared 1 env var(s): COMFYUI_DIR
 [00:02]   Isolation active
 [00:02] 
@@ -20,7 +20,6 @@
 [00:02] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
 [00:04] [INSTALL] PASSED
 [00:04] COMFY_TEST_GPU env var = ''
-[00:04] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
 [00:04] 
 Connecting to existing server at http://localhost:8188...
 [00:04] Connecting to existing server at http://localhost:8188...
@@ -31,11 +30,11 @@ Connecting to existing server at http://localhost:8188...
 [00:06] Checking for import errors in server logs...
 [00:06] No import errors detected
 [00:06] [REGISTRATION] PASSED
-[00:06] Found 675 registered nodes
-[00:06] 
-[00:06] [4/6] INSTANTIATION
-[00:06] ----------------------------------------
-[00:06] Testing node constructors...
+[00:07] Found 675 registered nodes
+[00:07] 
+[00:07] [4/6] INSTANTIATION
+[00:07] ----------------------------------------
+[00:07] Testing node constructors...
 [00:09] Tearing down Windows isolation...
 [00:09]   Environment restored
 [00:09]   Isolation torn down
@@ -44,9 +43,10 @@ windows_portable: FAILED
 [00:09] Error: Instantiation test failed
 [00:09] Details: stdout: [UniRig] Models directory: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\models\unirig
 [UniRig] Main nodes loaded (2 nodes)
-[comfy-env] Warning: Isolated environment not found
-[comfy-env] Expected: .pixi/envs/default or .venv
-[comfy-env] Run 'comfy-env install' in D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes
+[comfy-env] Wrapping 15 nodes from nodes
+[comfy-env]   site-packages: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\_env_nodes\Lib\site-packages
+[comfy-env]   lib: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\_env_nodes\Library\bin
+[comfy-env]   env_vars: COMFYUI_BASE=D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI
 [UniRig] Isolated nodes loaded (15 nodes)
 [UniRig] Total nodes loaded: 17
 
