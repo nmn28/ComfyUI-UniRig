@@ -4,51 +4,52 @@
 [00:00] ----------------------------------------
 [00:00] Found pyproject.toml (modern format)
 [00:00] Found requirements.txt (legacy format)
-[00:02] Unicode check: OK (all characters cp1252-safe)
-[00:02] [SYNTAX] PASSED
-[00:02] Setting up Windows isolation...
-[00:02]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_x8qahxc0\temp
-[00:02]   Cleared 1 env var(s): COMFYUI_DIR
-[00:02]   Isolation active
-[00:02] 
-[00:02] [2/7] INSTALL
-[00:02] ----------------------------------------
-[00:02] Using existing ComfyUI: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI
-[00:02] Node already installed, skipping installation
-[00:02] Installing validation endpoint...
-[00:02]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
-[00:02] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-[00:02] [INSTALL] PASSED
-[00:02] COMFY_TEST_GPU env var = ''
-[00:02] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
-[00:02] 
+[00:00] Unicode check: OK (all characters cp1252-safe)
+[00:00] [SYNTAX] PASSED
+[00:00] Setting up Windows isolation...
+[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_eee7o1m7\temp
+[00:00]   Cleared 1 env var(s): COMFYUI_DIR
+[00:00]   Isolation active
+[00:00] 
+[00:00] [2/7] INSTALL
+[00:00] ----------------------------------------
+[00:00] Using existing ComfyUI: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI
+[00:00] Node already installed, skipping installation
+[00:00] Installing validation endpoint...
+[00:00]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
+[00:00] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
+[00:01] [INSTALL] PASSED
+[00:01] COMFY_TEST_GPU env var = ''
+[00:01] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
+[00:01] 
 Connecting to existing server at http://localhost:8188...
-[00:02] Connecting to existing server at http://localhost:8188...
-[00:04] Connected to server!
-[00:04] 
-[00:04] [3/7] REGISTRATION
-[00:04] ----------------------------------------
-[00:04] Checking for import errors in server logs...
-[00:04] No import errors detected
-[00:04] [REGISTRATION] PASSED
-[00:04] Found 613 registered nodes
-[00:04] 
-[00:04] [4/7] INSTANTIATION
-[00:04] ----------------------------------------
-[00:04] Testing node constructors...
-[00:07] Tearing down Windows isolation...
-[00:07]   Environment restored
-[00:07]   Isolation torn down
-[00:07] 
+[00:01] Connecting to existing server at http://localhost:8188...
+[00:03] Connected to server!
+[00:03] 
+[00:03] [3/7] REGISTRATION
+[00:03] ----------------------------------------
+[00:03] Checking for import errors in server logs...
+[00:03] No import errors detected
+[00:03] [REGISTRATION] PASSED
+[00:03] Found 596 registered nodes
+[00:03] 
+[00:03] [4/7] INSTANTIATION
+[00:03] ----------------------------------------
+[00:03] Testing node constructors...
+[00:05] Tearing down Windows isolation...
+[00:05]   Environment restored
+[00:05]   Isolation torn down
+[00:05] 
 windows_portable: FAILED
-[00:07] Error: Instantiation test failed
-[00:07] Details: stdout: [UniRig] Models directory: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\models\unirig
-[UniRig] Main nodes loaded (2 nodes)
-[comfy-env] Wrapping 15 nodes from nodes
-[comfy-env]   site-packages: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\_env_nodes\Lib\site-packages
-[comfy-env]   lib: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\_env_nodes\Library\bin
-[comfy-env]   env_vars: COMFYUI_BASE=D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI
-[UniRig] Isolated nodes loaded (15 nodes)
-[UniRig] Total nodes loaded: 17
+[00:05] Error: Instantiation test failed
+[00:05] Details: stdout: [ComfyUI-UniRig] Import failed: No module named 'trimesh'
 
-stderr: 
+stderr: Traceback (most recent call last):
+  File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\__init__.py", line 12, in <module>
+    from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+  File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\__init__.py", line 11, in <module>
+    from .mesh_io import UniRigLoadMesh, UniRigSaveMesh
+  File "D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\mesh_io.py", line 9, in <module>
+    import trimesh
+ModuleNotFoundError: No module named 'trimesh'
+
