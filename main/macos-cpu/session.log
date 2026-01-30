@@ -1,4 +1,4 @@
-[00:00] Crash dump logging enabled: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-test/crash_dump.log
+[00:00] Crash dump logging enabled: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/crash_dump.log
 [00:00] 
 [00:00] [1/7] SYNTAX
 [00:00] ----------------------------------------
@@ -9,35 +9,89 @@
 [00:00] 
 [00:00] [2/7] INSTALL
 [00:00] ----------------------------------------
-[00:00] Setting up ComfyUI...
-[00:00] Cloning ComfyUI (latest)...
-[00:00] Running: git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/ComfyUI
-[00:01] Creating virtual environment...
-[00:01] Running: /Library/Frameworks/Python.framework/Versions/3.13/bin/python -m venv /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv
-[00:04] Installing uv into venv...
-[00:04] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python -m pip install uv
-[00:04]   Collecting uv
-[00:04]     Using cached uv-0.9.27-py3-none-macosx_11_0_arm64.whl.metadata (11 kB)
-[00:04]   Using cached uv-0.9.27-py3-none-macosx_11_0_arm64.whl (19.8 MB)
-[00:04]   Installing collected packages: uv
-[00:04]   Successfully installed uv-0.9.27
-[00:04] Installing PyTorch...
-[00:04] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python -m uv pip install torch torchvision torchaudio
-[00:12] Installing ComfyUI requirements...
-[00:12] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python -m uv pip install -r /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/ComfyUI/requirements.txt
-[00:22] Installing custom node...
-[00:22] Linking ComfyUI-UniRig to custom_nodes/...
-[00:22] Installing node requirements...
-[00:22] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python -m uv pip install -r /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/requirements.txt
-[00:29] Running install.py...
-[00:29] Running: /private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py
-[00:34]   ============================================================
-[00:34]   ComfyUI-UniRig Installation
-[00:34]   ============================================================
-[00:34]   
-[00:34]   [UniRig] Installation FAILED: install() got an unexpected keyword argument 'config'
-[00:34]   [UniRig] Report issues at: https://github.com/PozzettiAndrea/ComfyUI-UniRig/issues
-[00:34] Command failed with code 1
-[00:37] 
-macos: FAILED (unexpected error)
-[00:37] Error: Command '['/private/var/folders/yz/zr09txvs5dn18vt4cn21kzl40000gn/T/comfy_test_stc8rq2_/venv/bin/python', '/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/install.py']' returned non-zero exit status 1.
+[00:00] Using existing ComfyUI: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI
+[00:00] Node already installed, skipping installation
+[00:00] Installing validation endpoint...
+[00:00]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
+[00:00] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
+[00:01] [INSTALL] PASSED
+[00:01] COMFY_TEST_GPU env var = ''
+[00:01] Applying env_vars from comfy-env.toml: PYTORCH_CUDA_ALLOC_CONF=backend:native
+[00:01] 
+Starting ComfyUI server...
+[00:01] Starting ComfyUI server on port 8188...
+[00:01] Starting ComfyUI server on port 8188...
+[00:01] Waiting for server to be ready (timeout: 300s)...
+[00:08]   [ComfyUI] 
+[00:08]   [ComfyUI] Prestartup times for custom nodes:
+[00:08]   [ComfyUI]    0.2 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[00:08]   [ComfyUI]    4.1 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
+[00:08]   [ComfyUI] 
+[00:08]   [ComfyUI] WARNING: Potential Error in code: Torch already imported, torch should never be imported before this point.
+[00:08]   [ComfyUI] Checkpoint files will always be loaded safely.
+[00:08]   [ComfyUI] Total VRAM 7168 MB, total RAM 7168 MB
+[00:08]   [ComfyUI] pytorch version: 2.10.0
+[00:08]   [ComfyUI] Mac Version (15, 7, 3)
+[00:08]   [ComfyUI] Set vram state to: DISABLED
+[00:08]   [ComfyUI] Device: cpu
+[00:13]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'Extension file not found: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfy_kitchen/backends/cuda/_C.abi3.so', 'capabilities': []}
+[00:13]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+[00:13]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+[00:14]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+[00:20]   [ComfyUI] Python version: 3.13.11 (v3.13.11:627894459a8, Dec  5 2025, 11:26:37) [Clang 16.0.0 (clang-1600.0.26.6)]
+[00:20]   [ComfyUI] ComfyUI version: 0.11.1
+[00:20]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
+[00:20]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
+[00:20]   [ComfyUI] ComfyUI frontend version: 1.37.11
+[00:20]   [ComfyUI] [Prompt Server] web root: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfyui_frontend_package/static
+[00:25]   [ComfyUI] Traceback (most recent call last):
+[00:25]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/nodes.py", line 2216, in load_custom_node
+[00:25]   [ComfyUI]     module_spec.loader.exec_module(module)
+[00:25]   [ComfyUI]     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+[00:25]   [ComfyUI]   File "<frozen importlib._bootstrap_external>", line 1023, in exec_module
+[00:25]   [ComfyUI]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+[00:25]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/__init__.py", line 20, in <module>
+[00:25]   [ComfyUI]     from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+[00:25]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/__init__.py", line 17, in <module>
+[00:25]   [ComfyUI]     from .main import NODE_CLASS_MAPPINGS as main_mappings
+[00:25]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/main/__init__.py", line 19, in <module>
+[00:25]   [ComfyUI]     from . import repair
+[00:25]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/main/repair/__init__.py", line 17, in <module>
+[00:25]   [ComfyUI]     from .meshfix import NODE_CLASS_MAPPINGS as MESHFIX_MAPS, NODE_DISPLAY_NAME_MAPPINGS as MESHFIX_DISP
+[00:25]   [ComfyUI]   File "/Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack/nodes/main/repair/meshfix.py", line 13, in <module>
+[00:25]   [ComfyUI]     import pymeshfix
+[00:25]   [ComfyUI] ModuleNotFoundError: No module named 'pymeshfix'
+[00:25]   [ComfyUI] 
+[00:25]   [ComfyUI] Cannot import /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack module for custom nodes: No module named 'pymeshfix'
+[00:25]   [ComfyUI] 
+[00:25]   [ComfyUI] Import times for custom nodes:
+[00:25]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/websocket_image_save.py
+[00:25]   [ComfyUI]    0.0 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
+[00:25]   [ComfyUI]    0.1 seconds (IMPORT FAILED): /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[00:25]   [ComfyUI]    1.4 seconds: /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
+[00:25]   [ComfyUI] 
+[00:25]   [ComfyUI] Context impl SQLiteImpl.
+[00:25]   [ComfyUI] Will assume non-transactional DDL.
+[00:25]   [ComfyUI] Context impl SQLiteImpl.
+[00:25]   [ComfyUI] Will assume non-transactional DDL.
+[00:25]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
+[00:25]   [ComfyUI] Revision ID: 0001_assets
+[00:25]   [ComfyUI] Revises: None
+[00:25]   [ComfyUI] Create Date: 2025-12-10 00:00:00
+[00:25]   [ComfyUI] Database upgraded from None to 0001_assets
+[00:25]   [ComfyUI] Assets scan(roots=['models']) completed in 0.033s (created=11, skipped_existing=0, total_seen=11)
+[00:25]   [ComfyUI] Starting server
+[00:25]   [ComfyUI] 
+[00:25]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
+[00:26] Server responding, waiting for nodes to load...
+[00:46] Server is ready!
+[00:46] 
+[00:46] [3/7] REGISTRATION
+[00:46] ----------------------------------------
+[00:46] Checking for import errors in server logs...
+[00:46] Stopping ComfyUI server...
+[00:46] 
+macos: FAILED
+[00:46] Error: Node import failed (2 error(s))
+[00:46] Details: Cannot import /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack module for custom nodes: No module named 'pymeshfix'
+   0.1 seconds (IMPORT FAILED): /Users/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
