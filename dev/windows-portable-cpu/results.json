@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-01-30T16:41:01.173190+00:00",
+  "platform": "windows_portable",
+  "hardware": {
+    "os": "Windows-2025Server-10.0.26100-SP0",
+    "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
+  },
+  "summary": {
+    "total": 5,
+    "passed": 0,
+    "failed": 5
+  },
+  "workflows": [
+    {
+      "name": "apply_animation",
+      "status": "fail",
+      "duration_seconds": 12.08,
+      "error": "Workflow validation failed\n\nDetails:\nSyntaxError: Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)",
+      "hardware": {
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
+      },
+      "resources": {
+        "cpu": {
+          "peak": 2.56,
+          "avg": 0.59
+        },
+        "ram": {
+          "peak": 5.58,
+          "avg": 5.42
+        },
+        "cpu_count": 4,
+        "total_ram_gb": 16.0,
+        "samples": 11
+      }
+    },
+    {
+      "name": "rig_human_with_texture",
+      "status": "fail",
+      "duration_seconds": 9.47,
+      "error": "Workflow validation failed\n\nDetails:\nSyntaxError: Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)",
+      "hardware": {
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
+      },
+      "resources": {
+        "cpu": {
+          "peak": 4.0,
+          "avg": 1.78
+        },
+        "ram": {
+          "peak": 5.62,
+          "avg": 5.52
+        },
+        "cpu_count": 4,
+        "total_ram_gb": 16.0,
+        "samples": 9
+      }
+    },
+    {
+      "name": "rig_human_with_texture_mia",
+      "status": "fail",
+      "duration_seconds": 9.1,
+      "error": "Workflow validation failed\n\nDetails:\nSyntaxError: Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)",
+      "hardware": {
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
+      },
+      "resources": {
+        "cpu": {
+          "peak": 3.41,
+          "avg": 2.26
+        },
+        "ram": {
+          "peak": 5.59,
+          "avg": 5.46
+        },
+        "cpu_count": 4,
+        "total_ram_gb": 16.0,
+        "samples": 9
+      }
+    },
+    {
+      "name": "rig_human_with_texture_mia_debug",
+      "status": "fail",
+      "duration_seconds": 10.08,
+      "error": "Workflow validation failed\n\nDetails:\nSyntaxError: Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)",
+      "hardware": {
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
+      },
+      "resources": {
+        "cpu": {
+          "peak": 3.52,
+          "avg": 2.45
+        },
+        "ram": {
+          "peak": 5.41,
+          "avg": 5.31
+        },
+        "cpu_count": 4,
+        "total_ram_gb": 16.0,
+        "samples": 10
+      }
+    },
+    {
+      "name": "rigged_manipulator",
+      "status": "fail",
+      "duration_seconds": 9.69,
+      "error": "Workflow validation failed\n\nDetails:\nSyntaxError: Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)",
+      "hardware": {
+        "os": "Windows-2025Server-10.0.26100-SP0",
+        "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD"
+      },
+      "resources": {
+        "cpu": {
+          "peak": 3.52,
+          "avg": 1.83
+        },
+        "ram": {
+          "peak": 5.32,
+          "avg": 5.23
+        },
+        "cpu_count": 4,
+        "total_ram_gb": 16.0,
+        "samples": 9
+      }
+    }
+  ]
+}
