@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-01-31T17:53:13.085605+00:00",
+  "timestamp": "2026-01-31T18:04:31.851161+00:00",
   "platform": "linux",
   "hardware": {
     "os": "Linux-6.11.0-1018-azure-x86_64-with-glibc2.39",
-    "cpu": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz"
+    "cpu": "AMD EPYC 7763 64-Core Processor"
   },
   "summary": {
     "total": 5,
