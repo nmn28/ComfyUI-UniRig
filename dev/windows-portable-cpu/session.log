@@ -7,7 +7,7 @@
 [00:00] Unicode check: OK (all characters cp1252-safe)
 [00:00] [SYNTAX] PASSED
 [00:00] Setting up Windows isolation...
-[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_4sw333lz\temp
+[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test__n__q_ux\temp
 [00:00]   Cleared 1 env var(s): COMFYUI_DIR
 [00:00]   Isolation active
 [00:00] 
@@ -18,30 +18,29 @@
 [00:00] Installing validation endpoint...
 [00:00]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
 [00:00] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-[00:00] [INSTALL] PASSED
-[00:00] COMFY_TEST_GPU env var = ''
-[00:00] 
+[00:01] [INSTALL] PASSED
+[00:01] COMFY_TEST_GPU env var = ''
+[00:01] 
 Connecting to existing server at http://localhost:8188...
-[00:00] Connecting to existing server at http://localhost:8188...
-[00:02] Connected to server!
-[00:02] 
-[00:02] [3/6] REGISTRATION
-[00:02] ----------------------------------------
-[00:02] Checking for import errors in server logs...
-[00:02] No import errors detected
-[00:02] [REGISTRATION] PASSED
-[00:03] Found 675 registered nodes
+[00:01] Connecting to existing server at http://localhost:8188...
+[00:03] Connected to server!
+[00:03] 
+[00:03] [3/6] REGISTRATION
+[00:03] ----------------------------------------
+[00:03] Checking for import errors in server logs...
+[00:03] No import errors detected
+[00:03] [REGISTRATION] PASSED
+[00:03] Found 596 registered nodes
 [00:03] 
 [00:03] [4/6] INSTANTIATION
 [00:03] ----------------------------------------
 [00:03] Testing node constructors...
-[00:06] Tearing down Windows isolation...
-[00:06]   Environment restored
-[00:06]   Isolation torn down
-[00:06] 
+[00:03] Tearing down Windows isolation...
+[00:03]   Environment restored
+[00:03]   Isolation torn down
+[00:03] 
 windows_portable: FAILED
-[00:06] Error: Instantiation test failed
-[00:06] Details: stdout: [UniRig] Models directory: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\models\unirig
-[comfy-env] Wrapped 17 nodes for isolation
+[00:03] Error: Instantiation test failed
+[00:03] Details: stdout: {"success": false, "error": "Failed to import ComfyUI-UniRig: cannot import name 'PIXI_VERSION' from 'comfy_env.packages.pixi' (D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\comfy_env\\packages\\pixi.py)"}
 
 stderr: 
