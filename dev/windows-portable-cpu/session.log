@@ -7,7 +7,7 @@
 [00:00] Unicode check: OK (all characters cp1252-safe)
 [00:00] [SYNTAX] PASSED
 [00:00] Setting up Windows isolation...
-[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_balz66g8\temp
+[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_2gyd7xnr\temp
 [00:00]   Cleared 1 env var(s): COMFYUI_DIR
 [00:00]   Isolation active
 [00:00] 
@@ -40,6 +40,6 @@ Connecting to existing server at http://localhost:8188...
 [00:03] 
 windows_portable: FAILED
 [00:03] Error: Instantiation test failed
-[00:03] Details: stdout: {"success": false, "error": "Failed to import ComfyUI-UniRig: cannot import name 'PIXI_VERSION' from 'comfy_env.packages.pixi' (D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\comfy_env\\packages\\pixi.py)"}
+[00:03] Details: stdout: {"success": false, "error": "Failed to import ComfyUI-UniRig: No module named 'comfy_env'"}
 
 stderr: 
