@@ -4,170 +4,166 @@
 [00:00] ----------------------------------------
 [00:00] Found pyproject.toml (modern format)
 [00:00] Found requirements.txt (legacy format)
-[00:01] Unicode check: OK (all characters cp1252-safe)
-[00:01] [SYNTAX] PASSED
-[00:01] 
-[00:01] [2/6] INSTALL
-[00:01] ----------------------------------------
-[00:01] Using existing ComfyUI: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI
-[00:01] Node already installed, skipping installation
-[00:01] Installing validation endpoint...
-[00:01]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
-[00:01] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
-[00:01] [INSTALL] PASSED
-[00:01] COMFY_TEST_GPU env var = ''
-[00:01] 
+[00:00] Unicode check: OK (all characters cp1252-safe)
+[00:00] [SYNTAX] PASSED
+[00:00] 
+[00:00] [2/6] INSTALL
+[00:00] ----------------------------------------
+[00:00] Using existing ComfyUI: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI
+[00:00] Node already installed, skipping installation
+[00:00] Installing validation endpoint...
+[00:00]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
+[00:00] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
+[00:00] [INSTALL] PASSED
+[00:00] COMFY_TEST_GPU env var = ''
+[00:00] 
 Starting ComfyUI server...
-[00:01] Starting ComfyUI server on port 8188...
-[00:01] Starting ComfyUI server on port 8188...
-[00:01] Waiting for server to be ready (timeout: 300s)...
-[00:04]   [ComfyUI] 
-[00:04]   [ComfyUI] Prestartup times for custom nodes:
-[00:04]   [ComfyUI]    0.2 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
-[00:04]   [ComfyUI]    0.5 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
-[00:04]   [ComfyUI] 
-[00:05]   [ComfyUI] Checkpoint files will always be loaded safely.
-[00:05]   [ComfyUI] Total VRAM 15995 MB, total RAM 15995 MB
-[00:05]   [ComfyUI] pytorch version: 2.10.0+cu128
-[00:05]   [ComfyUI] Set vram state to: DISABLED
-[00:05]   [ComfyUI] Device: cpu
-[00:10]   [ComfyUI] WARNING: You need pytorch with cu130 or higher to use optimized CUDA operations.
-[00:10]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
-[00:10]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
-[00:10]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
-[00:11]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
-[00:16]   [ComfyUI] Python version: 3.13.11 (main, Dec  8 2025, 02:51:34) [GCC 13.3.0]
-[00:17]   [ComfyUI] ComfyUI version: 0.11.1
-[00:17]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
-[00:17]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
-[00:17]   [ComfyUI] ComfyUI frontend version: 1.37.11
-[00:17]   [ComfyUI] [Prompt Server] web root: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfyui_frontend_package/static
-[00:21]   [ComfyUI] 
-[00:21]   [ComfyUI] Import times for custom nodes:
-[00:21]   [ComfyUI]    0.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/websocket_image_save.py
-[00:21]   [ComfyUI]    0.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
-[00:21]   [ComfyUI]    1.1 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
-[00:21]   [ComfyUI]    1.1 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
-[00:21]   [ComfyUI] 
-[00:21]   [ComfyUI] Context impl SQLiteImpl.
-[00:21]   [ComfyUI] Will assume non-transactional DDL.
-[00:21]   [ComfyUI] Context impl SQLiteImpl.
-[00:21]   [ComfyUI] Will assume non-transactional DDL.
-[00:21]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
-[00:21]   [ComfyUI] Revision ID: 0001_assets
-[00:21]   [ComfyUI] Revises: None
-[00:21]   [ComfyUI] Create Date: 2025-12-10 00:00:00
-[00:21]   [ComfyUI] Database upgraded from None to 0001_assets
-[00:21]   [ComfyUI] Assets scan(roots=['models']) completed in 0.034s (created=11, skipped_existing=0, total_seen=11)
-[00:21]   [ComfyUI] Starting server
-[00:21]   [ComfyUI] 
-[00:21]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
-[00:22] Server responding, waiting for nodes to load...
-[00:42] Server is ready!
-[00:42] 
-[00:42] [3/6] REGISTRATION
-[00:42] ----------------------------------------
-[00:42] Checking for import errors in server logs...
-[00:42] No import errors detected
-[00:42] [REGISTRATION] PASSED
-[00:42] Found 675 registered nodes
-[00:42] 
-[00:42] [4/6] INSTANTIATION
-[00:42] ----------------------------------------
-[00:42] Testing node constructors...
-[00:45] All 675 node(s) instantiated successfully!
-[00:45] [INSTANTIATION] PASSED
-[00:45] 
-[00:45] [5/6] STATIC_CAPTURE
-[00:45] ----------------------------------------
-[00:45] Capturing 5 static screenshot(s)...
-[00:45] Installing screenshot dependencies (playwright, pillow)...
-[00:47]   Packages installed, downloading chromium browser...
-[00:48]   Screenshot dependencies installed successfully
-[00:48] Starting headless browser...
-[00:49]   [1/5] STATIC apply_animation.json
-[00:49] Capturing: apply_animation.json
+[00:00] Starting ComfyUI server on port 8188...
+[00:00] Starting ComfyUI server on port 8188...
+[00:00] Waiting for server to be ready (timeout: 300s)...
+[00:02]   [ComfyUI] Failed to execute startup-script: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/prestartup_script.py / cannot import name 'copy_viewer' from 'comfy_3d_viewers' (/home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfy_3d_viewers/__init__.py)
+[00:03]   [ComfyUI] 
+[00:03]   [ComfyUI] Prestartup times for custom nodes:
+[00:03]   [ComfyUI]    0.1 seconds (PRESTARTUP FAILED): /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
+[00:03]   [ComfyUI]    0.5 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[00:03]   [ComfyUI] 
+[00:04]   [ComfyUI] Checkpoint files will always be loaded safely.
+[00:04]   [ComfyUI] Total VRAM 15995 MB, total RAM 15995 MB
+[00:04]   [ComfyUI] pytorch version: 2.10.0+cu128
+[00:04]   [ComfyUI] Set vram state to: DISABLED
+[00:04]   [ComfyUI] Device: cpu
+[00:09]   [ComfyUI] WARNING: You need pytorch with cu130 or higher to use optimized CUDA operations.
+[00:09]   [ComfyUI] Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
+[00:09]   [ComfyUI] Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+[00:09]   [ComfyUI] Found comfy_kitchen backend cuda: {'available': False, 'disabled': True, 'unavailable_reason': 'CUDA not available on this system', 'capabilities': []}
+[00:09]   [ComfyUI] Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+[00:15]   [ComfyUI] Python version: 3.13.11 (main, Dec  8 2025, 02:51:34) [GCC 13.3.0]
+[00:15]   [ComfyUI] ComfyUI version: 0.11.1
+[00:15]   [ComfyUI] ****** User settings have been changed to be stored on the server instead of browser storage. ******
+[00:15]   [ComfyUI] ****** For multi-user setups add the --multi-user CLI argument to enable multiple user profiles. ******
+[00:15]   [ComfyUI] ComfyUI frontend version: 1.37.11
+[00:15]   [ComfyUI] [Prompt Server] web root: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/.comfy-venv/lib/python3.13/site-packages/comfyui_frontend_package/static
+[00:19]   [ComfyUI] 
+[00:19]   [ComfyUI] Import times for custom nodes:
+[00:19]   [ComfyUI]    0.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/websocket_image_save.py
+[00:19]   [ComfyUI]    0.0 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-validate-endpoint
+[00:19]   [ComfyUI]    0.9 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-GeometryPack
+[00:19]   [ComfyUI]    1.2 seconds: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig
+[00:19]   [ComfyUI] 
+[00:19]   [ComfyUI] Context impl SQLiteImpl.
+[00:19]   [ComfyUI] Will assume non-transactional DDL.
+[00:19]   [ComfyUI] Context impl SQLiteImpl.
+[00:19]   [ComfyUI] Will assume non-transactional DDL.
+[00:19]   [ComfyUI] Running upgrade  -> 0001_assets, Initial assets schema
+[00:19]   [ComfyUI] Revision ID: 0001_assets
+[00:19]   [ComfyUI] Revises: None
+[00:19]   [ComfyUI] Create Date: 2025-12-10 00:00:00
+[00:19]   [ComfyUI] Database upgraded from None to 0001_assets
+[00:19]   [ComfyUI] Assets scan(roots=['models']) completed in 0.034s (created=11, skipped_existing=0, total_seen=11)
+[00:19]   [ComfyUI] Starting server
+[00:19]   [ComfyUI] 
+[00:19]   [ComfyUI] To see the GUI go to: http://127.0.0.1:8188
+[00:19] Server responding, waiting for nodes to load...
+[00:39] Server is ready!
+[00:40] 
+[00:40] [3/6] REGISTRATION
+[00:40] ----------------------------------------
+[00:41] Checking for import errors in server logs...
+[00:41] No import errors detected
+[00:41] [REGISTRATION] PASSED
+[00:41] Found 675 registered nodes
+[00:41] 
+[00:41] [4/6] INSTANTIATION
+[00:41] ----------------------------------------
+[00:41] Testing node constructors...
+[00:43] All 675 node(s) instantiated successfully!
+[00:43] [INSTANTIATION] PASSED
+[00:43] 
+[00:43] [5/6] STATIC_CAPTURE
+[00:43] ----------------------------------------
+[00:43] Capturing 5 static screenshot(s)...
+[00:43] Installing screenshot dependencies (playwright, pillow)...
+[00:46]   Packages installed, downloading chromium browser...
+[00:46]   Screenshot dependencies installed successfully
+[00:46] Starting headless browser...
+[00:48]   [1/5] STATIC apply_animation.json
+[00:48] Capturing: apply_animation.json
+[00:48]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:48]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
 [00:49]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
 [00:49]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:50]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:50]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:50]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:50]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[00:50]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[00:52]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[00:52]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+[00:49]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:49]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[00:51]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[00:51]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[00:52]   [Console-warning] [.WebGL-0x249c04c07c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[00:52]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[00:52]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+[00:51]   [Console-warning] [.WebGL-0x364406aace00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[00:51]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[00:51]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[00:52]   [Console-warning] [.WebGL-0x249c04c07c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[00:52]   [Console-warning] [.WebGL-0x249c04c07c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
-[00:55]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/apply_animation.png
-[00:55]   [2/5] STATIC rig_human_with_texture.json
-[00:55] Capturing: rig_human_with_texture.json
-[00:56]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:56]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:56]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:56]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:56]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[00:56]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[00:56]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[00:57]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[00:57]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+[00:51]   [Console-warning] [.WebGL-0x364406aace00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[00:51]   [Console-warning] [.WebGL-0x364406aace00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[00:54]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/apply_animation.png
+[00:54]   [2/5] STATIC rig_human_with_texture.json
+[00:54] Capturing: rig_human_with_texture.json
+[00:54]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:54]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:55]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:55]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:55]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[00:55]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[00:56]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[00:56]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[00:57]   [Console-warning] [.WebGL-0x249c04c0b800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
-[00:57]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
-[00:57]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
+[00:56]   [Console-warning] [.WebGL-0x364406aaf200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[00:56]   [Console-error] Failed to load resource: the server responded with a status of 403 (Forbidden)
+[00:56]   [Console-error] Error loading model: zy: fetch for "http://127.0.0.1:8188/api/view?type=output&subfolder=%2Fhome%2Fubuntu%2Funirig%2FComfyUI%2Foutput&filename=rigged_human_mixamo_Breakdance.fbx" responded with 403: Forbidden
     at http://127.0.0.1:8188/assets/vendor-three-DH0o8VQ7.js:3824:114758
-[00:58]   [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
-[01:02]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture.png
-[01:02]   [3/5] STATIC rig_human_with_texture_mia.json
-[01:02] Capturing: rig_human_with_texture_mia.json
-[01:02]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:02]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:02]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:02]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:02]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:02]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[01:02]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[01:07]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture_mia.png
-[01:07]   [4/5] STATIC rig_human_with_texture_mia_debug.json
-[01:07] Capturing: rig_human_with_texture_mia_debug.json
-[01:07]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:07]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:08]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:08]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:08]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:08]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[01:08]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[01:13]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture_mia_debug.png
-[01:13]   [5/5] STATIC rigged_manipulator.json
-[01:13] Capturing: rigged_manipulator.json
-[01:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:13]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
-[01:13]   [Console-warning] WARNING: Multiple instances of Three.js being imported.
-[01:13]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
-[01:18]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rigged_manipulator.png
-[01:18] [STATIC_CAPTURE] PASSED
-[01:18] 
+[00:57]   [Console-warning] WebGL: INVALID_OPERATION: loseContext: context already lost
+[01:00]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture.png
+[01:00]   [3/5] STATIC rig_human_with_texture_mia.json
+[01:00] Capturing: rig_human_with_texture_mia.json
+[01:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:00]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:01]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[01:05]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture_mia.png
+[01:05]   [4/5] STATIC rig_human_with_texture_mia_debug.json
+[01:05] Capturing: rig_human_with_texture_mia_debug.json
+[01:05]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:05]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:06]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:06]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:06]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:06]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[01:11]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rig_human_with_texture_mia_debug.png
+[01:11]   [5/5] STATIC rigged_manipulator.json
+[01:11] Capturing: rigged_manipulator.json
+[01:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:11]   [Console-error] Failed to load resource: the server responded with a status of 404 (Not Found)
+[01:11]   [Console-warning] [MaskEditor] ComfyApp.open_maskeditor is deprecated. Plugins should migrate to using the command system or direct node context menu integration.
+[01:16]   Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/screenshots/rigged_manipulator.png
+[01:16] [STATIC_CAPTURE] PASSED
+[01:16] 
 [6/6] VALIDATION: SKIPPED
+[01:16] 
+[01:16] [7/6] EXECUTION
+[01:16] ----------------------------------------
+[01:16] No GPU detected - GPU workflows will be skipped
+[01:16] Running 5 workflow(s) (all with videos)...
+[01:16]   [1/5] SKIPPED (GPU required) apply_animation.json
+[01:17]   [2/5] SKIPPED (GPU required) rig_human_with_texture.json
+[01:17]   [3/5] SKIPPED (GPU required) rig_human_with_texture_mia.json
+[01:17]   [4/5] SKIPPED (GPU required) rig_human_with_texture_mia_debug.json
+[01:17]   [5/5] SKIPPED (GPU required) rigged_manipulator.json
+[01:17] Results saved to /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/results.json
+[01:17] Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/index.html
+[01:17] [EXECUTION] PASSED
+[01:17] Stopping ComfyUI server...
 [01:18] 
-[01:18] [7/6] EXECUTION
-[01:18] ----------------------------------------
-[01:18] No GPU detected - GPU workflows will be skipped
-[01:18] Running 5 workflow(s) (all with videos)...
-[01:19]   [1/5] SKIPPED (GPU required) apply_animation.json
-[01:19]   [2/5] SKIPPED (GPU required) rig_human_with_texture.json
-[01:19]   [3/5] SKIPPED (GPU required) rig_human_with_texture_mia.json
-[01:19]   [4/5] SKIPPED (GPU required) rig_human_with_texture_mia_debug.json
-[01:20]   [5/5] SKIPPED (GPU required) rigged_manipulator.json
-[01:20] Results saved to /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/results.json
-[01:20] Saved: /home/runner/work/ComfyUI-UniRig/ComfyUI-UniRig/ComfyUI/custom_nodes/ComfyUI-UniRig/comfy-test-results/index.html
-[01:20] [EXECUTION] PASSED
-[01:20] Stopping ComfyUI server...
-[01:20] 
 linux: PASSED
