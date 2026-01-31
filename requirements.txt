@@ -1,6 +1,6 @@
 # Environment manager (handles isolated environment and CUDA packages)
-comfy-env>=0.1.15
-comfy-3d-viewers==0.2.1
+comfy-env==0.1.19
+comfy-3d-viewers==0.2.2
 trimesh[easy]
 
 # Core 3D processing
