@@ -4,50 +4,43 @@
 [00:00] ----------------------------------------
 [00:00] Found pyproject.toml (modern format)
 [00:00] Found requirements.txt (legacy format)
-[00:02] Unicode check: OK (all characters cp1252-safe)
-[00:02] [SYNTAX] PASSED
-[00:02] Setting up Windows isolation...
-[00:02]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_o8ek4y5b\temp
-[00:02]   Cleared 1 env var(s): COMFYUI_DIR
-[00:02]   Isolation active
-[00:02] 
-[00:02] [2/6] INSTALL
-[00:02] ----------------------------------------
-[00:02] Using existing ComfyUI: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI
-[00:02] Node already installed, skipping installation
-[00:02] Installing validation endpoint...
-[00:02]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
-[00:02] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
-[00:04] [INSTALL] PASSED
-[00:04] COMFY_TEST_GPU env var = ''
-[00:04] 
+[00:00] Unicode check: OK (all characters cp1252-safe)
+[00:00] [SYNTAX] PASSED
+[00:00] Setting up Windows isolation...
+[00:00]   Isolated TEMP: C:\Users\runneradmin\AppData\Local\Temp\comfy_test_96ocpusr\temp
+[00:00]   Cleared 1 env var(s): COMFYUI_DIR
+[00:00]   Isolation active
+[00:00] 
+[00:00] [2/6] INSTALL
+[00:00] ----------------------------------------
+[00:00] Using existing ComfyUI: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI
+[00:00] Node already installed, skipping installation
+[00:00] Installing validation endpoint...
+[00:00]   Cloning PozzettiAndrea/ComfyUI-validate-endpoint...
+[00:00] Running: git clone --depth 1 https://github.com/PozzettiAndrea/ComfyUI-validate-endpoint.git D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-validate-endpoint
+[00:01] [INSTALL] PASSED
+[00:01] COMFY_TEST_GPU env var = ''
+[00:01] 
 Connecting to existing server at http://localhost:8188...
-[00:04] Connecting to existing server at http://localhost:8188...
-[00:06] Connected to server!
-[00:06] 
-[00:06] [3/6] REGISTRATION
-[00:06] ----------------------------------------
-[00:06] Checking for import errors in server logs...
-[00:06] No import errors detected
-[00:06] [REGISTRATION] PASSED
-[00:07] Found 675 registered nodes
-[00:07] 
-[00:07] [4/6] INSTANTIATION
-[00:07] ----------------------------------------
-[00:07] Testing node constructors...
-[00:09] Tearing down Windows isolation...
-[00:09]   Environment restored
-[00:09]   Isolation torn down
-[00:09] 
+[00:01] Connecting to existing server at http://localhost:8188...
+[00:03] Connected to server!
+[00:03] 
+[00:03] [3/6] REGISTRATION
+[00:03] ----------------------------------------
+[00:03] Checking for import errors in server logs...
+[00:03] No import errors detected
+[00:03] [REGISTRATION] PASSED
+[00:03] Found 658 registered nodes
+[00:03] 
+[00:03] [4/6] INSTANTIATION
+[00:03] ----------------------------------------
+[00:03] Testing node constructors...
+[00:03] Tearing down Windows isolation...
+[00:03]   Environment restored
+[00:03]   Isolation torn down
+[00:03] 
 windows_portable: FAILED
-[00:09] Error: Instantiation test failed
-[00:09] Details: stdout: [UniRig] Models directory: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\models\unirig
-[UniRig] Main nodes loaded (2 nodes)
-[comfy-env] Wrapping 15 nodes from nodes
-[comfy-env]   site-packages: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\_env_nodes\Lib\site-packages
-[comfy-env]   lib: D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-UniRig\nodes\_env_nodes\Library\bin
-[comfy-env]   env_vars: COMFYUI_BASE=D:\a\ComfyUI-UniRig\ComfyUI-UniRig\ComfyUI_windows_portable\ComfyUI
-[UniRig] Isolated nodes loaded (15 nodes)
-[UniRig] Total nodes loaded: 17
+[00:03] Error: Instantiation test failed
+[00:03] Details: stdout: {"success": false, "error": "Failed to import ComfyUI-UniRig: cannot import name 'wrap_nodes' from 'comfy_env' (D:\\a\\ComfyUI-UniRig\\ComfyUI-UniRig\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\comfy_env\\__init__.py)"}
 
 stderr: 
