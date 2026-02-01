@@ -152,14 +152,40 @@ class UniRigApplySkinningMLNew:
                 "Please connect a UniRigLoadSkinningModel node."
             )
 
-        # Validate model has checkpoint path
-        if not skinning_model.get("checkpoint_path"):
-            raise RuntimeError(
-                "skinning_model checkpoint not found. "
-                "Please connect a UniRigLoadSkinningModel node."
-            )
+        # If checkpoint_path is missing, try to download it on-demand
+        checkpoint_path = skinning_model.get("checkpoint_path")
+        if not checkpoint_path:
+            print(f"[UniRigApplySkinningMLNew] Checkpoint not pre-loaded, downloading on-demand...")
+            try:
+                # Ensure UniRig is in path
+                if UNIRIG_PATH not in sys.path:
+                    sys.path.insert(0, UNIRIG_PATH)
 
-        print(f"[UniRigApplySkinningMLNew] Using pre-loaded cached model")
+                from src.inference.download import download
+
+                # Load task config to get checkpoint URL
+                task_config_path = skinning_model.get("task_config_path")
+                if task_config_path and os.path.exists(task_config_path):
+                    import yaml
+                    with open(task_config_path, 'r') as f:
+                        task_config = yaml.safe_load(f)
+                    checkpoint_url = task_config.get('resume_from_checkpoint')
+                    if checkpoint_url:
+                        print(f"[UniRigApplySkinningMLNew] Downloading checkpoint from: {checkpoint_url}")
+                        checkpoint_path = download(checkpoint_url)
+                        skinning_model["checkpoint_path"] = checkpoint_path
+                        print(f"[UniRigApplySkinningMLNew] Checkpoint downloaded: {checkpoint_path}")
+                    else:
+                        raise RuntimeError("No checkpoint URL in task config")
+                else:
+                    raise RuntimeError(f"Task config not found: {task_config_path}")
+            except Exception as e:
+                raise RuntimeError(
+                    f"Failed to download skinning model checkpoint: {e}. "
+                    "Please ensure UniRig models are properly installed."
+                )
+
+        print(f"[UniRigApplySkinningMLNew] Using checkpoint: {checkpoint_path}")
         task_config_path = skinning_model.get("task_config_path")
 
         # Create temporary directory
