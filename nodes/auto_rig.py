@@ -62,6 +62,7 @@ class UniRigAutoRig:
     RETURN_NAMES = ("fbx_output_path",)
     FUNCTION = "auto_rig"
     CATEGORY = "UniRig"
+    OUTPUT_NODE = True  # Mark as output node for ComfyUI
 
     def auto_rig(self, trimesh, model,
                  skeleton_template="mixamo", fbx_name="", target_face_count=50000):
