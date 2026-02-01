@@ -58,6 +58,7 @@ class MIAAutoRig:
     RETURN_NAMES = ("fbx_output_path",)
     FUNCTION = "auto_rig"
     CATEGORY = "UniRig/MIA"
+    OUTPUT_NODE = True  # Required for comfyui-api to detect as output
 
     def auto_rig(
         self,
