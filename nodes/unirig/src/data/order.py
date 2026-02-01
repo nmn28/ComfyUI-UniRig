@@ -85,11 +85,15 @@ class Order():
                 print(f"[Order] WARNING: cls='{cls}' or part='{part}' not found in self.parts")
 
         print(f"[Order] Total named bones: {len(names)}, num_bones: {num_bones}")
-        if len(names) < num_bones:
+
+        # Handle case where model generated fewer bones than skeleton class expects
+        if len(names) > num_bones:
+            print(f"[Order] WARNING: Model generated {num_bones} bones but cls='{cls}' expects {len(names)}. Truncating names to match.")
+            names = names[:num_bones]
+        elif len(names) < num_bones:
             print(f"[Order] Filling {num_bones - len(names)} extra bones with generic names")
-        assert len(names) <= num_bones, f"Expected {len(names)} bones for cls='{cls}', got {num_bones} bones"
-        for i in range(len(names), num_bones):
-            names.append(f"bone_{i}")
+            for i in range(len(names), num_bones):
+                names.append(f"bone_{i}")
         return names
     
     def arrange_names(self, cls: str, names: List[str], parents: List[Union[int, None]]) -> Tuple[List[str], Dict[int, Union[str]]]:
