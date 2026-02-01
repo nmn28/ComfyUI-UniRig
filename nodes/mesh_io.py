@@ -8,6 +8,9 @@ import tempfile
 import numpy as np
 import trimesh
 import igl
+import hashlib
+import urllib.request
+import urllib.error
 from pathlib import Path
 from typing import Tuple, Optional
 
@@ -20,6 +23,62 @@ except:
     # Fallback if folder_paths not available (e.g., during testing)
     COMFYUI_INPUT_FOLDER = None
     COMFYUI_OUTPUT_FOLDER = None
+
+
+def is_url(path: str) -> bool:
+    """Check if a path is a URL."""
+    return path.startswith('http://') or path.startswith('https://') or path.startswith('s3://')
+
+
+def download_mesh_from_url(url: str, download_dir: str = None) -> Tuple[Optional[str], str]:
+    """
+    Download a mesh file from a URL.
+
+    Args:
+        url: URL to download from
+        download_dir: Directory to save the file (defaults to COMFYUI_INPUT_FOLDER)
+
+    Returns:
+        Tuple of (local_path, error_message)
+    """
+    if download_dir is None:
+        download_dir = COMFYUI_INPUT_FOLDER or tempfile.gettempdir()
+
+    # Create a unique filename based on URL hash + original extension
+    url_hash = hashlib.md5(url.encode()).hexdigest()[:12]
+
+    # Extract extension from URL
+    url_path = url.split('?')[0]  # Remove query params
+    ext = os.path.splitext(url_path)[1].lower()
+    if not ext or ext not in ['.obj', '.ply', '.stl', '.off', '.gltf', '.glb', '.fbx', '.dae', '.3ds']:
+        ext = '.glb'  # Default to GLB
+
+    local_filename = f"downloaded_{url_hash}{ext}"
+    local_path = os.path.join(download_dir, local_filename)
+
+    # Check if already downloaded
+    if os.path.exists(local_path):
+        print(f"[UniRigLoadMesh] Using cached file: {local_path}")
+        return local_path, ""
+
+    print(f"[UniRigLoadMesh] Downloading mesh from URL: {url}")
+
+    try:
+        # Download the file
+        req = urllib.request.Request(url, headers={'User-Agent': 'UniRig/1.0'})
+        with urllib.request.urlopen(req, timeout=120) as response:
+            with open(local_path, 'wb') as f:
+                f.write(response.read())
+
+        print(f"[UniRigLoadMesh] Downloaded to: {local_path}")
+        return local_path, ""
+
+    except urllib.error.HTTPError as e:
+        return None, f"HTTP Error {e.code}: {e.reason}"
+    except urllib.error.URLError as e:
+        return None, f"URL Error: {e.reason}"
+    except Exception as e:
+        return None, f"Download failed: {str(e)}"
 
 # Import LIB_DIR from base module
 try:
@@ -247,8 +306,14 @@ def save_mesh_file(mesh: trimesh.Trimesh, file_path: str) -> Tuple[bool, str]:
 
 class UniRigLoadMesh:
     """
-    Load a mesh from ComfyUI input or output folder (OBJ, PLY, STL, OFF, etc.)
+    Load a mesh from ComfyUI input or output folder, or from a URL.
+    Supports OBJ, PLY, STL, OFF, GLB, GLTF, etc.
     Returns trimesh.Trimesh objects for mesh handling.
+
+    Accepts:
+    - Local file paths (relative to input/output folder)
+    - Absolute file paths
+    - HTTP/HTTPS URLs (will be downloaded and cached)
     """
 
     # Supported mesh extensions for file browser
@@ -256,21 +321,15 @@ class UniRigLoadMesh:
 
     @classmethod
     def INPUT_TYPES(cls):
-        # Get list of available mesh files from input folder (default)
-        mesh_files = cls.get_mesh_files_from_input()
-
-        # If no files found, provide a default message
-        if not mesh_files:
-            mesh_files = ["No mesh files found"]
-
         return {
             "required": {
                 "source_folder": (["input", "output"], {
                     "default": "input",
-                    "tooltip": "Source folder to load mesh from (ComfyUI input or output directory)"
+                    "tooltip": "Source folder to load mesh from (ignored if file_path is a URL)"
                 }),
-                "file_path": (mesh_files, {
-                    "tooltip": "Mesh file to load. Refresh the node after changing source_folder."
+                "file_path": ("STRING", {
+                    "default": "",
+                    "tooltip": "Mesh file path or URL (http/https). URLs will be downloaded and cached."
                 }),
             },
         }
@@ -344,13 +403,16 @@ class UniRigLoadMesh:
 
     def load_mesh(self, source_folder, file_path):
         """
-        Load mesh from file.
+        Load mesh from file or URL.
 
-        Looks for files in the specified source folder (input or output).
+        Supports:
+        - Local files in the specified source folder (input or output)
+        - Absolute file paths
+        - HTTP/HTTPS URLs (downloaded and cached automatically)
 
         Args:
-            source_folder: "input" or "output"
-            file_path: Path to mesh file (relative to source folder or absolute)
+            source_folder: "input" or "output" (ignored if file_path is a URL)
+            file_path: Path to mesh file, or URL to download from
 
         Returns:
             tuple: (trimesh.Trimesh,)
@@ -358,45 +420,55 @@ class UniRigLoadMesh:
         if not file_path or file_path.strip() == "":
             raise ValueError("File path cannot be empty")
 
-        # Try to find the file
-        full_path = None
-        searched_paths = []
+        file_path = file_path.strip()
 
-        if source_folder == "input" and COMFYUI_INPUT_FOLDER is not None:
-            # First, try in ComfyUI input/3d folder
-            input_3d_path = os.path.join(COMFYUI_INPUT_FOLDER, "3d", file_path)
-            searched_paths.append(input_3d_path)
-            if os.path.exists(input_3d_path):
-                full_path = input_3d_path
-                print(f"[UniRigLoadMesh] Found mesh in input/3d folder: {file_path}")
+        # Check if it's a URL - download it first
+        if is_url(file_path):
+            print(f"[UniRigLoadMesh] Detected URL, downloading...")
+            local_path, error = download_mesh_from_url(file_path)
+            if local_path is None:
+                raise ValueError(f"Failed to download mesh from URL: {error}")
+            full_path = local_path
+        else:
+            # Try to find the file locally
+            full_path = None
+            searched_paths = []
 
-            # Second, try in ComfyUI input folder
+            if source_folder == "input" and COMFYUI_INPUT_FOLDER is not None:
+                # First, try in ComfyUI input/3d folder
+                input_3d_path = os.path.join(COMFYUI_INPUT_FOLDER, "3d", file_path)
+                searched_paths.append(input_3d_path)
+                if os.path.exists(input_3d_path):
+                    full_path = input_3d_path
+                    print(f"[UniRigLoadMesh] Found mesh in input/3d folder: {file_path}")
+
+                # Second, try in ComfyUI input folder
+                if full_path is None:
+                    input_path = os.path.join(COMFYUI_INPUT_FOLDER, file_path)
+                    searched_paths.append(input_path)
+                    if os.path.exists(input_path):
+                        full_path = input_path
+                        print(f"[UniRigLoadMesh] Found mesh in input folder: {file_path}")
+
+            elif source_folder == "output" and COMFYUI_OUTPUT_FOLDER is not None:
+                output_path = os.path.join(COMFYUI_OUTPUT_FOLDER, file_path)
+                searched_paths.append(output_path)
+                if os.path.exists(output_path):
+                    full_path = output_path
+                    print(f"[UniRigLoadMesh] Found mesh in output folder: {file_path}")
+
+            # If not found in source folder, try as absolute path
             if full_path is None:
-                input_path = os.path.join(COMFYUI_INPUT_FOLDER, file_path)
-                searched_paths.append(input_path)
-                if os.path.exists(input_path):
-                    full_path = input_path
-                    print(f"[UniRigLoadMesh] Found mesh in input folder: {file_path}")
-
-        elif source_folder == "output" and COMFYUI_OUTPUT_FOLDER is not None:
-            output_path = os.path.join(COMFYUI_OUTPUT_FOLDER, file_path)
-            searched_paths.append(output_path)
-            if os.path.exists(output_path):
-                full_path = output_path
-                print(f"[UniRigLoadMesh] Found mesh in output folder: {file_path}")
-
-        # If not found in source folder, try as absolute path
-        if full_path is None:
-            searched_paths.append(file_path)
-            if os.path.exists(file_path):
-                full_path = file_path
-                print(f"[UniRigLoadMesh] Loading from absolute path: {file_path}")
-            else:
-                # Generate error message with all searched paths
-                error_msg = f"File not found: '{file_path}'\nSearched in:"
-                for path in searched_paths:
-                    error_msg += f"\n  - {path}"
-                raise ValueError(error_msg)
+                searched_paths.append(file_path)
+                if os.path.exists(file_path):
+                    full_path = file_path
+                    print(f"[UniRigLoadMesh] Loading from absolute path: {file_path}")
+                else:
+                    # Generate error message with all searched paths
+                    error_msg = f"File not found: '{file_path}'\nSearched in:"
+                    for path in searched_paths:
+                        error_msg += f"\n  - {path}"
+                    raise ValueError(error_msg)
 
         # Load the mesh
         loaded_mesh, error = load_mesh_file(full_path)
