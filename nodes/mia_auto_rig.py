@@ -2,8 +2,14 @@
 MIAAutoRig - Fast humanoid rigging using Make-It-Animatable.
 
 Uses comfy-env isolated environment for GPU dependencies.
+
+TEXTURE SEPARATION:
+When separate_textures=True, outputs geometry-only FBX/GLB and returns
+textures as base64-encoded data for separate S3 upload. This reduces
+output size from 21-45MB to ~2-3MB for better performance at scale.
 """
 
+import json
 import time
 from pathlib import Path
 
@@ -51,11 +57,15 @@ class MIAAutoRig:
                     "default": True,
                     "tooltip": "Transform output to T-pose rest position for animation compatibility."
                 }),
+                "separate_textures": ("BOOLEAN", {
+                    "default": True,
+                    "tooltip": "Export geometry-only (2-3MB) and return textures separately for S3 upload. Faster and more scalable."
+                }),
             }
         }
 
-    RETURN_TYPES = ("STRING",)
-    RETURN_NAMES = ("fbx_output_path",)
+    RETURN_TYPES = ("STRING", "STRING", "STRING",)
+    RETURN_NAMES = ("fbx_output_path", "glb_output_path", "textures_json",)
     FUNCTION = "auto_rig"
     CATEGORY = "UniRig/MIA"
     OUTPUT_NODE = True  # Required for comfyui-api to detect as output
@@ -68,6 +78,7 @@ class MIAAutoRig:
         no_fingers=True,
         use_normal=False,
         reset_to_rest=True,
+        separate_textures=True,
     ):
         """
         Complete rigging pipeline using Make-It-Animatable.
@@ -113,20 +124,39 @@ class MIAAutoRig:
         output_path = str(OUTPUT_DIR / output_filename)
 
         # Run MIA inference with loaded models
-        result_path = run_mia_inference(
+        print(f"[MIAAutoRig] Separate textures mode: {separate_textures}")
+        result = run_mia_inference(
             mesh=trimesh,
             models=models,
             output_path=output_path,
             no_fingers=no_fingers,
             use_normal=use_normal,
             reset_to_rest=reset_to_rest,
+            separate_textures=separate_textures,
         )
 
         total_time = time.time() - total_start
+
+        # Handle result format (dict when separate_textures, string otherwise for backwards compat)
+        if isinstance(result, dict):
+            fbx_path = result.get('output_path', output_path)
+            glb_path = result.get('glb_path', '')
+            textures = result.get('textures', [])
+            textures_json = json.dumps(textures) if textures else '[]'
+        else:
+            # Legacy format - just a path string
+            fbx_path = result
+            glb_path = ''
+            textures_json = '[]'
+
         print(f"[MIAAutoRig] ========================================")
         print(f"[MIAAutoRig] Make-It-Animatable rigging complete!")
         print(f"[MIAAutoRig] Total time: {total_time:.2f}s")
-        print(f"[MIAAutoRig] Output: {result_path}")
+        print(f"[MIAAutoRig] FBX output: {fbx_path}")
+        if glb_path:
+            print(f"[MIAAutoRig] GLB output: {glb_path}")
+        if textures:
+            print(f"[MIAAutoRig] Textures extracted: {len(textures)}")
         print(f"[MIAAutoRig] ========================================")
 
-        return (result_path,)
+        return (fbx_path, glb_path, textures_json,)
