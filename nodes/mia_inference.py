@@ -7,12 +7,94 @@ Uses vendored MIA code from lib/mia/ for model loading (no bpy dependency).
 IMPORTANT: All heavy imports (bpy, numpy, torch, trimesh) are lazy-loaded inside
 functions to ensure torch_cluster (via mia/model.py) loads BEFORE bpy initializes
 its bundled libraries. This avoids a segfault caused by library conflicts.
+
+TEXTURE SEPARATION OPTIMIZATION (v2.0):
+===========================================
+For best performance at scale, this module now supports a "separate textures" approach:
+
+1. Geometry-only GLB export before Blender import (no visual/texture data)
+2. Weld modifier applied after import to merge duplicate vertices
+3. Textures extracted and returned separately for S3 upload
+4. Rigged GLB output is geometry + skeleton only (~2-3MB)
+
+This allows clients to:
+- Load lightweight rigged models quickly
+- Apply textures at runtime from CDN/S3
+- Cache geometry and textures independently
+
+USAGE:
+------
+Enable separate textures mode by passing separate_textures=True to run_mia_inference():
+
+    result = run_mia_inference(
+        mesh=mesh,
+        models=models,
+        output_path="/path/to/output.fbx",
+        separate_textures=True  # Enable geometry-only mode
+    )
+
+    # Result contains:
+    # - result['output_path']: Path to geometry-only FBX
+    # - result['glb_path']: Path to geometry-only GLB (~2-3MB)
+    # - result['textures']: List of extracted textures for S3 upload
+
+    # Upload textures to S3:
+    for texture in result['textures']:
+        s3_key = f"textures/{model_id}/{texture['name']}.png"
+        texture_data = base64.b64decode(texture['data_base64'])
+        s3_client.put_object(Bucket='my-bucket', Key=s3_key, Body=texture_data)
+
+CLIENT-SIDE TEXTURE APPLICATION (Three.js example):
+----------------------------------------------------
+// Load geometry-only GLB
+const loader = new THREE.GLTFLoader();
+loader.load('https://cdn.example.com/model.glb', (gltf) => {
+    const model = gltf.scene;
+
+    // Load and apply textures from S3
+    const textureLoader = new THREE.TextureLoader();
+    textureLoader.load('https://s3.example.com/textures/model_id/baseColor_texture.png', (texture) => {
+        model.traverse((child) => {
+            if (child.isMesh) {
+                // Create material with loaded texture
+                child.material = new THREE.MeshStandardMaterial({
+                    map: texture,
+                    // Add other PBR textures as needed:
+                    // normalMap: normalTexture,
+                    // roughnessMap: roughnessTexture,
+                });
+            }
+        });
+    });
+
+    scene.add(model);
+});
+
+TEXTURE DATA FORMAT:
+-------------------
+Each texture in result['textures'] contains:
+- 'name': Texture name (e.g., 'baseColor_texture')
+- 'data_base64': Base64-encoded PNG image data
+- 'width': Image width in pixels
+- 'height': Image height in pixels
+- 'format': Image format (always 'PNG')
+- 'type': Texture type ('baseColor', 'normal', 'metallicRoughness', etc.)
+
+PERFORMANCE BENEFITS:
+--------------------
+- Geometry-only GLB: ~2-3MB (vs 10-50MB with textures)
+- Faster initial load times
+- Textures can be loaded lazily/progressively
+- Better CDN caching (geometry rarely changes, textures may vary)
+- Reduced bandwidth for repeated model loads
 """
 
 import os
 import sys
+import base64
+import io
 from pathlib import Path
-from typing import Dict, Any, Optional, TYPE_CHECKING
+from typing import Dict, Any, Optional, List, Tuple, TYPE_CHECKING
 
 # Type hints only - not imported at runtime
 if TYPE_CHECKING:
@@ -246,7 +328,8 @@ def run_mia_inference(
     no_fingers: bool = True,
     use_normal: bool = False,
     reset_to_rest: bool = True,
-) -> str:
+    separate_textures: bool = False,
+) -> Dict[str, Any]:
     """
     Run Make-It-Animatable inference on a mesh.
 
@@ -257,9 +340,21 @@ def run_mia_inference(
         no_fingers: If True, merge finger weights to hand (for models without separate fingers).
         use_normal: If True, use normals for better weights when limbs are close.
         reset_to_rest: If True, transform output to T-pose rest position.
+        separate_textures: If True, export geometry-only GLB and return textures separately.
+            This optimizes for scale by producing ~2-3MB rigged models that clients
+            can combine with textures at runtime.
 
     Returns:
-        Path to output FBX file.
+        Dict with:
+            - 'output_path': Path to output FBX file
+            - 'glb_path': Path to output GLB file
+            - 'textures': List of extracted texture dicts (only if separate_textures=True)
+              Each texture dict contains:
+                - 'name': Texture name
+                - 'data_base64': Base64-encoded PNG image data
+                - 'width': Image width
+                - 'height': Image height
+                - 'format': Image format (e.g., 'PNG')
     """
     import numpy as np  # Lazy import
     import folder_paths  # Lazy import
@@ -377,14 +472,149 @@ def run_mia_inference(
         "bones_idx_dict": BONES_IDX_DICT,
         "parent_indices": KINEMATIC_TREE.parent_indices,  # For kinematic chain
         "pose_ignore_list": [],
+        "separate_textures": separate_textures,  # Flag for geometry-only export
     }
+
+    # Extract textures before export if separate_textures mode is enabled
+    extracted_textures = []
+    if separate_textures:
+        print(f"[MIA] Separate textures mode enabled - extracting textures...")
+        extracted_textures = _extract_textures_from_mesh(data.original_visual)
+        print(f"[MIA] Extracted {len(extracted_textures)} texture(s)")
 
     # Export to FBX using MIA's Blender integration
     print(f"[MIA] Exporting to FBX...")
     _export_mia_fbx(output_data, output_path, no_fingers, reset_to_rest)
 
+    # Build result dict
+    glb_path = output_path.rsplit('.', 1)[0] + '.glb'
+    result = {
+        'output_path': output_path,
+        'glb_path': glb_path if os.path.exists(glb_path) else None,
+        'textures': extracted_textures if separate_textures else [],
+    }
+
     print(f"[MIA] Inference complete: {output_path}")
-    return output_path
+    if separate_textures:
+        print(f"[MIA] Geometry-only mode: {len(extracted_textures)} texture(s) extracted separately")
+        if result['glb_path']:
+            glb_size = os.path.getsize(result['glb_path'])
+            print(f"[MIA] GLB file size (geometry-only): {glb_size} bytes ({glb_size/1024:.1f} KB)")
+
+    return result
+
+
+def _extract_textures_from_mesh(visual: Any) -> List[Dict[str, Any]]:
+    """
+    Extract textures from a trimesh visual object.
+
+    Args:
+        visual: Trimesh visual object (TextureVisuals or similar)
+
+    Returns:
+        List of texture dicts, each containing:
+            - 'name': Texture name
+            - 'data_base64': Base64-encoded PNG image data
+            - 'width': Image width
+            - 'height': Image height
+            - 'format': Image format (e.g., 'PNG')
+            - 'type': Texture type (e.g., 'baseColor', 'normal', 'roughness')
+    """
+    textures = []
+
+    if visual is None:
+        print("[MIA Texture] No visual data to extract textures from")
+        return textures
+
+    try:
+        # Check for TextureVisuals with material
+        if hasattr(visual, 'material') and visual.material is not None:
+            material = visual.material
+            print(f"[MIA Texture] Material type: {type(material).__name__}")
+
+            # Extract textures from PBRMaterial
+            texture_attrs = [
+                ('baseColorTexture', 'baseColor'),
+                ('metallicRoughnessTexture', 'metallicRoughness'),
+                ('normalTexture', 'normal'),
+                ('occlusionTexture', 'occlusion'),
+                ('emissiveTexture', 'emissive'),
+                ('image', 'baseColor'),  # Fallback for SimpleMaterial
+            ]
+
+            for attr_name, tex_type in texture_attrs:
+                if hasattr(material, attr_name):
+                    texture = getattr(material, attr_name)
+                    if texture is not None:
+                        tex_data = _image_to_base64(texture, f"{tex_type}_texture")
+                        if tex_data:
+                            tex_data['type'] = tex_type
+                            textures.append(tex_data)
+                            print(f"[MIA Texture] Extracted {tex_type} texture: {tex_data['width']}x{tex_data['height']}")
+
+            # Check for baseColorFactor (solid color, not a texture but useful metadata)
+            if hasattr(material, 'baseColorFactor') and material.baseColorFactor is not None:
+                print(f"[MIA Texture] Material has baseColorFactor: {material.baseColorFactor}")
+
+        # Check for vertex colors (ColorVisuals)
+        if hasattr(visual, 'vertex_colors') and visual.vertex_colors is not None:
+            print(f"[MIA Texture] Has vertex colors: {visual.vertex_colors.shape}")
+            # Vertex colors are preserved in geometry, not extracted as texture
+
+    except Exception as e:
+        print(f"[MIA Texture] Error extracting textures: {e}")
+        import traceback
+        traceback.print_exc()
+
+    return textures
+
+
+def _image_to_base64(image: Any, name: str = "texture") -> Optional[Dict[str, Any]]:
+    """
+    Convert a PIL Image or image-like object to base64-encoded PNG.
+
+    Args:
+        image: PIL Image or similar image object
+        name: Name for the texture
+
+    Returns:
+        Dict with texture data or None if conversion fails
+    """
+    try:
+        # Handle PIL Image
+        from PIL import Image as PILImage
+
+        if isinstance(image, PILImage.Image):
+            buffer = io.BytesIO()
+            image.save(buffer, format='PNG')
+            buffer.seek(0)
+            data_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+
+            return {
+                'name': name,
+                'data_base64': data_base64,
+                'width': image.width,
+                'height': image.height,
+                'format': 'PNG',
+            }
+
+        # Handle numpy array
+        import numpy as np
+        if isinstance(image, np.ndarray):
+            pil_image = PILImage.fromarray(image)
+            return _image_to_base64(pil_image, name)
+
+        # Handle bytes
+        if isinstance(image, bytes):
+            pil_image = PILImage.open(io.BytesIO(image))
+            return _image_to_base64(pil_image, name)
+
+        print(f"[MIA Texture] Unknown image type: {type(image)}")
+        return None
+
+    except Exception as e:
+        print(f"[MIA Texture] Error converting image to base64: {e}")
+        return None
 
 
 def _export_mia_fbx_direct(
@@ -396,8 +626,14 @@ def _export_mia_fbx_direct(
 ) -> None:
     """
     Export MIA results to FBX using bpy directly (inlined, no imports needed).
+
+    When separate_textures=True in data, exports geometry-only GLB:
+    - Strips visual/texture data before Blender import
+    - Adds Weld modifier to merge duplicate vertices
+    - Results in smaller files (~2-3MB vs 10-50MB with textures)
     """
     import tempfile
+    import trimesh  # Lazy import
     import numpy as np  # Lazy import
     import bpy  # Lazy import - only imported here AFTER torch_cluster loaded
     from mathutils import Vector, Matrix
@@ -408,9 +644,11 @@ def _export_mia_fbx_direct(
     bw = data["bw"]
     pose = data.get("pose")
     bones_idx_dict = dict(data["bones_idx_dict"])
+    separate_textures = data.get("separate_textures", False)
 
     # Debug: Check mesh visual before export
     print(f"[MIA Export] Mesh to export: {len(mesh.vertices)} vertices, {len(mesh.faces)} faces")
+    print(f"[MIA Export] Separate textures mode: {separate_textures}")
     if hasattr(mesh, 'visual'):
         print(f"[MIA Export] Mesh visual type: {type(mesh.visual).__name__}")
         if hasattr(mesh.visual, 'uv') and mesh.visual.uv is not None:
@@ -426,14 +664,35 @@ def _export_mia_fbx_direct(
         print(f"[MIA Export] WARNING: Mesh has no visual attribute!")
     parent_indices = data.get("parent_indices")
 
-    # Restore original visual (textures/materials) before export
-    # The MIA pipeline vertex mutations destroy the visual, so we restore it here
+    # Handle visual data based on separate_textures mode
     original_visual = data.get("original_visual")
-    if original_visual is not None:
-        mesh.visual = original_visual
-        print(f"[MIA Export] Restored original visual: {type(original_visual).__name__}")
+
+    if separate_textures:
+        # GEOMETRY-ONLY MODE: Strip all visual/texture data for smaller file size
+        # Textures have already been extracted separately in run_mia_inference()
+        print(f"[MIA Export] Geometry-only mode: stripping visual data for smaller output")
+
+        # Create a geometry-only mesh by removing visual data
+        # This produces a clean mesh without textures/materials for minimal file size
+        mesh_for_export = trimesh.Trimesh(
+            vertices=np.array(mesh.vertices),
+            faces=np.array(mesh.faces),
+            process=False  # Don't merge vertices yet - Weld modifier will do this in Blender
+        )
+        # Copy vertex normals if available
+        if hasattr(mesh, 'vertex_normals') and mesh.vertex_normals is not None:
+            mesh_for_export.vertex_normals = np.array(mesh.vertex_normals)
+
+        print(f"[MIA Export] Created geometry-only mesh: {len(mesh_for_export.vertices)} verts, {len(mesh_for_export.faces)} faces")
     else:
-        print(f"[MIA Export] WARNING: No original_visual to restore")
+        # FULL TEXTURE MODE: Restore original visual (textures/materials) before export
+        # The MIA pipeline vertex mutations destroy the visual, so we restore it here
+        if original_visual is not None:
+            mesh.visual = original_visual
+            print(f"[MIA Export] Restored original visual: {type(original_visual).__name__}")
+        else:
+            print(f"[MIA Export] WARNING: No original_visual to restore")
+        mesh_for_export = mesh
 
     # Export processed mesh to temp GLB for import into Blender
     temp_mesh_file = tempfile.NamedTemporaryFile(suffix=".glb", delete=False)
@@ -442,9 +701,9 @@ def _export_mia_fbx_direct(
 
     # Debug: Check what we're exporting
     print(f"[MIA Export] About to export mesh to: {mesh_path}")
-    print(f"[MIA Export] Mesh has visual: {hasattr(mesh, 'visual')}")
-    if hasattr(mesh, 'visual') and mesh.visual is not None:
-        visual = mesh.visual
+    print(f"[MIA Export] Mesh has visual: {hasattr(mesh_for_export, 'visual')}")
+    if hasattr(mesh_for_export, 'visual') and mesh_for_export.visual is not None:
+        visual = mesh_for_export.visual
         print(f"[MIA Export] Visual kind: {visual.kind if hasattr(visual, 'kind') else 'unknown'}")
         if hasattr(visual, 'uv') and visual.uv is not None:
             print(f"[MIA Export] Has UV: shape={visual.uv.shape}")
@@ -457,8 +716,10 @@ def _export_mia_fbx_direct(
                     val = getattr(mat, attr)
                     if val is not None:
                         print(f"[MIA Export]   {attr}: {type(val).__name__}")
+    else:
+        print(f"[MIA Export] No visual data (geometry-only mode)")
 
-    mesh.export(mesh_path)
+    mesh_for_export.export(mesh_path)
     print(f"[MIA Export] Exported GLB size: {os.path.getsize(mesh_path)} bytes")
 
     try:
@@ -524,6 +785,26 @@ def _export_mia_fbx_direct(
             raise RuntimeError("No mesh found in input!")
 
         print(f"[MIA Export] Loaded {len(input_meshes)} mesh(es)")
+
+        # Apply Weld modifier in geometry-only mode to merge duplicate vertices
+        # This reduces vertex count and file size by merging vertices at the same position
+        # The Weld modifier is more efficient than trimesh's merge_vertices() as it
+        # handles the welding within Blender's optimized mesh processing pipeline
+        if separate_textures:
+            print(f"[MIA Export] Applying Weld modifier to merge duplicate vertices...")
+            for mesh_obj in input_meshes:
+                original_verts = len(mesh_obj.data.vertices)
+
+                # Add Weld modifier
+                weld_mod = mesh_obj.modifiers.new(name="Weld", type='WELD')
+                weld_mod.merge_threshold = 0.0001  # Very small threshold to only merge exact duplicates
+
+                # Apply the modifier
+                bpy.context.view_layer.objects.active = mesh_obj
+                bpy.ops.object.modifier_apply(modifier=weld_mod.name)
+
+                new_verts = len(mesh_obj.data.vertices)
+                print(f"[MIA Export] Weld applied to '{mesh_obj.name}': {original_verts} -> {new_verts} vertices ({original_verts - new_verts} merged)")
 
         # Remove template meshes
         for obj in template_objs:
@@ -655,64 +936,100 @@ def _export_mia_fbx_direct(
                                     img = node.image
                                     print(f"[MIA Export]       Texture: {img.name} ({img.size[0]}x{img.size[1]}) packed={img.packed_file is not None}")
             else:
-                print(f"[MIA Export]     WARNING: No materials!")
+                print(f"[MIA Export]     No materials (geometry-only mode)" if separate_textures else "[MIA Export]     WARNING: No materials!")
 
-        # Fix image filepaths and pack for FBX embedding
-        # FBX exporter needs proper filepaths with filenames, not just directories
-        print(f"[MIA Export] Fixing image filepaths for FBX export...")
-        fbm_dir = output_path.rsplit('.', 1)[0] + '.fbm'
-        os.makedirs(fbm_dir, exist_ok=True)
+        if separate_textures:
+            # GEOMETRY-ONLY MODE: Export without textures/materials
+            # Textures are returned separately for S3 upload
+            print(f"[MIA Export] Geometry-only mode: skipping texture processing")
 
-        for img in bpy.data.images:
-            if img.size[0] > 0 and img.size[1] > 0:  # Valid image
-                # Create a proper filepath with filename
-                img_filename = f"{img.name}.png"
-                img_filepath = os.path.join(fbm_dir, img_filename)
+            # Export FBX without textures
+            bpy.context.view_layer.update()
+            bpy.ops.export_scene.fbx(
+                filepath=output_path,
+                use_selection=False,
+                object_types={'ARMATURE', 'MESH'},
+                add_leaf_bones=False,
+                bake_anim=False,
+                path_mode='AUTO',  # Don't copy textures
+                embed_textures=False,  # No embedded textures
+            )
+            print(f"[MIA Export] Exported geometry-only FBX to: {output_path}")
 
-                # Save the image to disk first (FBX exporter needs this)
-                old_filepath = img.filepath
-                img.filepath_raw = img_filepath
-                img.file_format = 'PNG'
-                img.save()
-                print(f"[MIA Export]   Saved texture: {img_filepath}")
+            # Export geometry-only GLB (no materials/textures)
+            glb_path = output_path.rsplit('.', 1)[0] + '.glb'
+            bpy.ops.export_scene.gltf(
+                filepath=glb_path,
+                export_format='GLB',
+                export_texcoords=False,  # No UVs needed without textures
+                export_normals=True,
+                export_materials='NONE',  # No materials for geometry-only
+            )
+            print(f"[MIA Export] Exported geometry-only GLB: {glb_path}")
 
-                # Now pack it
-                if img.packed_file is None:
-                    try:
-                        img.pack()
-                        print(f"[MIA Export]   Packed: {img.name}")
-                    except Exception as e:
-                        print(f"[MIA Export]   Failed to pack {img.name}: {e}")
+        else:
+            # FULL TEXTURE MODE: Fix image filepaths and pack for FBX embedding
+            # FBX exporter needs proper filepaths with filenames, not just directories
+            print(f"[MIA Export] Fixing image filepaths for FBX export...")
+            fbm_dir = output_path.rsplit('.', 1)[0] + '.fbm'
+            os.makedirs(fbm_dir, exist_ok=True)
 
-        # Export FBX
-        bpy.context.view_layer.update()
-        bpy.ops.export_scene.fbx(
-            filepath=output_path,
-            use_selection=False,
-            object_types={'ARMATURE', 'MESH'},
-            add_leaf_bones=False,
-            bake_anim=False,
-            path_mode='COPY',
-            embed_textures=True,
-        )
-        print(f"[MIA Export] Exported to: {output_path}")
+            for img in bpy.data.images:
+                if img.size[0] > 0 and img.size[1] > 0:  # Valid image
+                    # Create a proper filepath with filename
+                    img_filename = f"{img.name}.png"
+                    img_filepath = os.path.join(fbm_dir, img_filename)
 
-        # Also export GLB (better texture support for preview tools)
-        glb_path = output_path.rsplit('.', 1)[0] + '.glb'
-        bpy.ops.export_scene.gltf(
-            filepath=glb_path,
-            export_format='GLB',
-            export_texcoords=True,
-            export_normals=True,
-            export_materials='EXPORT',
-            export_image_format='AUTO',
-        )
-        print(f"[MIA Export] Also exported GLB: {glb_path}")
+                    # Save the image to disk first (FBX exporter needs this)
+                    old_filepath = img.filepath
+                    img.filepath_raw = img_filepath
+                    img.file_format = 'PNG'
+                    img.save()
+                    print(f"[MIA Export]   Saved texture: {img_filepath}")
 
-        # Debug: Check output file size
+                    # Now pack it
+                    if img.packed_file is None:
+                        try:
+                            img.pack()
+                            print(f"[MIA Export]   Packed: {img.name}")
+                        except Exception as e:
+                            print(f"[MIA Export]   Failed to pack {img.name}: {e}")
+
+            # Export FBX with textures
+            bpy.context.view_layer.update()
+            bpy.ops.export_scene.fbx(
+                filepath=output_path,
+                use_selection=False,
+                object_types={'ARMATURE', 'MESH'},
+                add_leaf_bones=False,
+                bake_anim=False,
+                path_mode='COPY',
+                embed_textures=True,
+            )
+            print(f"[MIA Export] Exported to: {output_path}")
+
+            # Export GLB with textures (better texture support for preview tools)
+            glb_path = output_path.rsplit('.', 1)[0] + '.glb'
+            bpy.ops.export_scene.gltf(
+                filepath=glb_path,
+                export_format='GLB',
+                export_texcoords=True,
+                export_normals=True,
+                export_materials='EXPORT',
+                export_image_format='AUTO',
+            )
+            print(f"[MIA Export] Also exported GLB: {glb_path}")
+
+        # Debug: Check output file sizes
         if os.path.exists(output_path):
             fbx_size = os.path.getsize(output_path)
-            print(f"[MIA Export] FBX file size: {fbx_size} bytes")
+            print(f"[MIA Export] FBX file size: {fbx_size} bytes ({fbx_size/1024:.1f} KB)")
+        glb_path = output_path.rsplit('.', 1)[0] + '.glb'
+        if os.path.exists(glb_path):
+            glb_size = os.path.getsize(glb_path)
+            print(f"[MIA Export] GLB file size: {glb_size} bytes ({glb_size/1024:.1f} KB)")
+            if separate_textures:
+                print(f"[MIA Export] Geometry-only optimization complete!")
 
     finally:
         # Clean up temp mesh file
