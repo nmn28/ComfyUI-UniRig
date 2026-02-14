@@ -19,6 +19,10 @@ from .skeleton_io import (
 from .rest_pose_node import UniRigExtractRestPose
 from .orientation_check import UniRigOrientationCheck
 
+# Clothing pipeline nodes
+from .cloth_fit import LoadClothingMesh, ClothFitGarment
+from .weight_transfer import TransferSkinWeights, CombineAvatarClothing
+
 NODE_CLASS_MAPPINGS = {
     "UniRigLoadMesh": UniRigLoadMesh,
     "UniRigSaveMesh": UniRigSaveMesh,
@@ -37,6 +41,11 @@ NODE_CLASS_MAPPINGS = {
     "UniRigCompareSkeletons": UniRigCompareSkeletons,
     "UniRigExtractRestPose": UniRigExtractRestPose,
     "UniRigOrientationCheck": UniRigOrientationCheck,
+    # Clothing pipeline
+    "LoadClothingMesh": LoadClothingMesh,
+    "ClothFitGarment": ClothFitGarment,
+    "TransferSkinWeights": TransferSkinWeights,
+    "CombineAvatarClothing": CombineAvatarClothing,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -57,4 +66,9 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "UniRigCompareSkeletons": "UniRig: Compare Skeletons",
     "UniRigExtractRestPose": "UniRig: Extract Rest Pose",
     "UniRigOrientationCheck": "UniRig: Orientation Check",
+    # Clothing pipeline
+    "LoadClothingMesh": "Clothing: Load Mesh",
+    "ClothFitGarment": "Clothing: Cloth-Fit Garment",
+    "TransferSkinWeights": "Clothing: Transfer Skin Weights",
+    "CombineAvatarClothing": "Clothing: Combine Avatar + Clothing",
 }
