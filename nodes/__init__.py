@@ -22,6 +22,7 @@ from .orientation_check import UniRigOrientationCheck
 # Clothing pipeline nodes
 from .cloth_fit import LoadClothingMesh, ClothFitGarment
 from .weight_transfer import TransferSkinWeights, CombineAvatarClothing
+from .garment_placement import GarmentPlacement, LoadReferenceMannequin
 
 NODE_CLASS_MAPPINGS = {
     "UniRigLoadMesh": UniRigLoadMesh,
@@ -46,6 +47,8 @@ NODE_CLASS_MAPPINGS = {
     "ClothFitGarment": ClothFitGarment,
     "TransferSkinWeights": TransferSkinWeights,
     "CombineAvatarClothing": CombineAvatarClothing,
+    "GarmentPlacement": GarmentPlacement,
+    "LoadReferenceMannequin": LoadReferenceMannequin,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -71,4 +74,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "ClothFitGarment": "Clothing: Cloth-Fit Garment",
     "TransferSkinWeights": "Clothing: Transfer Skin Weights",
     "CombineAvatarClothing": "Clothing: Combine Avatar + Clothing",
+    "GarmentPlacement": "Clothing: Place on Body",
+    "LoadReferenceMannequin": "Clothing: Load Reference Mannequin",
 }
