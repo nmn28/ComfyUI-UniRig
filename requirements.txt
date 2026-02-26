@@ -1,9 +1,12 @@
 # Environment manager (handles isolated environment and CUDA packages)
-comfy-env==0.1.19
-comfy-3d-viewers==0.2.2
-trimesh[easy]
+comfy-env==0.2.14
+comfy-3d-viewers==0.2.33
+comfy-sparse-attn==0.0.4
+
+trimesh
 
 # Core 3D processing
 numpy
 scipy
 libigl
+hf_xet
