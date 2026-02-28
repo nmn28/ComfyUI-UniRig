@@ -974,14 +974,10 @@ def _export_mia_fbx_direct(
                 export_texcoords=False,  # No UVs needed without textures
                 export_normals=True,
                 export_materials='NONE',  # No materials for geometry-only
-                # Draco compression for smaller file size (~70-90% reduction)
-                export_draco_mesh_compression_enable=True,
-                export_draco_mesh_compression_level=7,
-                export_draco_position_quantization=11,
-                export_draco_normal_quantization=8,
-                export_draco_texcoord_quantization=10,
+                # Draco disabled - GLTFKit2 on iOS returns zero vertex positions with Draco
+                export_draco_mesh_compression_enable=False,
             )
-            print(f"[MIA Export] Exported Draco-compressed geometry-only GLB: {glb_path}")
+            print(f"[MIA Export] Exported geometry-only GLB: {glb_path}")
 
         else:
             # FULL TEXTURE MODE: Fix image filepaths and pack for FBX embedding
@@ -1043,14 +1039,10 @@ def _export_mia_fbx_direct(
                 export_normals=True,
                 export_materials='EXPORT',
                 export_image_format='AUTO',
-                # Draco compression for smaller file size (~70-90% reduction)
-                export_draco_mesh_compression_enable=True,
-                export_draco_mesh_compression_level=7,
-                export_draco_position_quantization=11,
-                export_draco_normal_quantization=8,
-                export_draco_texcoord_quantization=10,
+                # Draco disabled - GLTFKit2 on iOS returns zero vertex positions with Draco
+                export_draco_mesh_compression_enable=False,
             )
-            print(f"[MIA Export] Exported Draco-compressed GLB: {glb_path}")
+            print(f"[MIA Export] Exported GLB: {glb_path}")
 
         # Debug: Check output file sizes
         if os.path.exists(output_path):
