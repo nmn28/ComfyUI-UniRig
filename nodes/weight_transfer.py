@@ -396,6 +396,15 @@ if clothing_mesh and armature:
 
     print(f"[Combine] Combined under armature: {armature.name}")
 
+# Apply armature scale before export (fixes 0.01 scale from FBX import)
+for obj in bpy.data.objects:
+    if obj.type == 'ARMATURE':
+        bpy.context.view_layer.objects.active = obj
+        obj.select_set(True)
+        bpy.ops.object.transform_apply(scale=True)
+        obj.select_set(False)
+        print(f"[Combine] Applied scale transform to armature: {obj.name}")
+
 # Export combined
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.export_scene.gltf(

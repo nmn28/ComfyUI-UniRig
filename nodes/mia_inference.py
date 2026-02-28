@@ -943,6 +943,16 @@ def _export_mia_fbx_direct(
             # Textures are returned separately for S3 upload
             print(f"[MIA Export] Geometry-only mode: skipping texture processing")
 
+            # Apply armature scale before export (fixes 0.01 scale from FBX import)
+            # This bakes scale into vertices so armature exports at scale 1.0
+            for obj in bpy.data.objects:
+                if obj.type == 'ARMATURE':
+                    bpy.context.view_layer.objects.active = obj
+                    obj.select_set(True)
+                    bpy.ops.object.transform_apply(scale=True)
+                    obj.select_set(False)
+                    print(f"[MIA Export] Applied scale transform to armature: {obj.name}")
+
             # Export FBX without textures
             bpy.context.view_layer.update()
             bpy.ops.export_scene.fbx(
@@ -1000,6 +1010,16 @@ def _export_mia_fbx_direct(
                             print(f"[MIA Export]   Packed: {img.name}")
                         except Exception as e:
                             print(f"[MIA Export]   Failed to pack {img.name}: {e}")
+
+            # Apply armature scale before export (fixes 0.01 scale from FBX import)
+            # This bakes scale into vertices so armature exports at scale 1.0
+            for obj in bpy.data.objects:
+                if obj.type == 'ARMATURE':
+                    bpy.context.view_layer.objects.active = obj
+                    obj.select_set(True)
+                    bpy.ops.object.transform_apply(scale=True)
+                    obj.select_set(False)
+                    print(f"[MIA Export] Applied scale transform to armature: {obj.name}")
 
             # Export FBX with textures
             bpy.context.view_layer.update()
