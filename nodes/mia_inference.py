@@ -668,22 +668,44 @@ def _export_mia_fbx_direct(
     original_visual = data.get("original_visual")
 
     if separate_textures:
-        # GEOMETRY-ONLY MODE: Strip all visual/texture data for smaller file size
+        # GEOMETRY-ONLY MODE: Strip texture images but PRESERVE UVs
+        # UVs are needed for post-rig PBR texture re-embedding via gltf-transform.
         # Textures have already been extracted separately in run_mia_inference()
-        print(f"[MIA Export] Geometry-only mode: stripping visual data for smaller output")
+        print(f"[MIA Export] Geometry-only mode: stripping textures but preserving UVs")
 
-        # Create a geometry-only mesh by removing visual data
-        # This produces a clean mesh without textures/materials for minimal file size
-        mesh_for_export = trimesh.Trimesh(
-            vertices=np.array(mesh.vertices),
-            faces=np.array(mesh.faces),
-            process=False  # Don't merge vertices yet - Weld modifier will do this in Blender
-        )
+        has_uvs = (original_visual is not None
+                   and hasattr(original_visual, 'uv')
+                   and original_visual.uv is not None)
+
+        if has_uvs:
+            # Create mesh with UVs but a blank material (no embedded texture images)
+            import trimesh.visual
+            blank_material = trimesh.visual.material.PBRMaterial()
+            uv_only_visual = trimesh.visual.TextureVisuals(
+                uv=original_visual.uv,
+                material=blank_material,
+            )
+            mesh_for_export = trimesh.Trimesh(
+                vertices=np.array(mesh.vertices),
+                faces=np.array(mesh.faces),
+                visual=uv_only_visual,
+                process=False,
+            )
+            print(f"[MIA Export] Preserved UVs: shape={original_visual.uv.shape}")
+        else:
+            # Fallback: no UVs available on original visual
+            print(f"[MIA Export] WARNING: No UVs found on original visual, creating bare geometry")
+            mesh_for_export = trimesh.Trimesh(
+                vertices=np.array(mesh.vertices),
+                faces=np.array(mesh.faces),
+                process=False,
+            )
+
         # Copy vertex normals if available
         if hasattr(mesh, 'vertex_normals') and mesh.vertex_normals is not None:
             mesh_for_export.vertex_normals = np.array(mesh.vertex_normals)
 
-        print(f"[MIA Export] Created geometry-only mesh: {len(mesh_for_export.vertices)} verts, {len(mesh_for_export.faces)} faces")
+        print(f"[MIA Export] Created mesh: {len(mesh_for_export.vertices)} verts, {len(mesh_for_export.faces)} faces, UVs={'yes' if has_uvs else 'no'}")
     else:
         # FULL TEXTURE MODE: Restore original visual (textures/materials) before export
         # The MIA pipeline vertex mutations destroy the visual, so we restore it here
@@ -971,13 +993,13 @@ def _export_mia_fbx_direct(
             bpy.ops.export_scene.gltf(
                 filepath=glb_path,
                 export_format='GLB',
-                export_texcoords=False,  # No UVs needed without textures
+                export_texcoords=True,   # Preserve UVs for post-rig PBR texture re-embedding
                 export_normals=True,
-                export_materials='NONE',  # No materials for geometry-only
+                export_materials='NONE',  # Textures re-embedded post-rig via gltf-transform
                 # Draco disabled - GLTFKit2 on iOS returns zero vertex positions with Draco
                 export_draco_mesh_compression_enable=False,
             )
-            print(f"[MIA Export] Exported geometry-only GLB: {glb_path}")
+            print(f"[MIA Export] Exported GLB with UVs (no materials): {glb_path}")
 
         else:
             # FULL TEXTURE MODE: Fix image filepaths and pack for FBX embedding
