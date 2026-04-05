@@ -10,7 +10,7 @@ bpy = ">=4.2,<4.3"
 # Core
 numpy = "<2.0"
 trimesh = { version = "*", extras = ["easy"] }
-torch = "*"
+torch = "==2.8.0"
 
 # ML libs
 transformers = "==4.51.3"
@@ -23,13 +23,13 @@ omegaconf = "*"
 python-box = "*"
 huggingface_hub = "*"
 wandb = "*"
-spconv-cu121 = "*"
+spconv-cu120 = "*"
 
 # Geometry
 fast-simplification = "*"
 pyrender = "*"
 libigl = "*"
-cumm-cu121 = "==0.7.11"
+cumm-cu120 = "==0.7.11"
 embreex = "*"
 pccm = "*"
 shapely = "*"
